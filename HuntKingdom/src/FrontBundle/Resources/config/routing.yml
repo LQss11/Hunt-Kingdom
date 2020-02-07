@@ -1,6 +1,0 @@
-front_homepage:
-    path:     /
-    defaults: { _controller: FrontBundle:Default:index }
-front_index:
-    path:     /client
-    defaults: { _controller: FrontBundle:index:index }
