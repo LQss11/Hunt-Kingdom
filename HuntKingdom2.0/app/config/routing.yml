@@ -1,0 +1,17 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /User
+
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /Main
+
+
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
