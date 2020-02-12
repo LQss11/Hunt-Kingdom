@@ -1,0 +1,68 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form-title" style="background-image: url({{ asset('Log/images/bg-01.jpg') }});">
+					<span class="login100-form-title-1">
+                        Register
+					</span>
+            </div>
+
+            <span class="login100-form validate-form">
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">First Name</span>
+                        {{ form_widget(form.firstname,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Last Name</span>
+                        {{ form_widget(form.lastname,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Email</span>
+                        {{ form_widget(form.email,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+                        {{ form_widget(form.username,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Password</span>
+                        {{ form_widget(form.plainPassword.first,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Password</span>
+                        {{ form_widget(form.plainPassword.second,{
+                            label:false
+                        }) }}
+                        <span class="focus-input100"></span>
+					</div>
+
+	<div class="container-login100-form-btn">
+						<input class="login100-form-btn" type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+
+{{ form_end(form) }}
+</span>
+
+
+        </div>
+    </div>
+</div>
