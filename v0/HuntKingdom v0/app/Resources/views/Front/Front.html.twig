@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>HuntKingdom</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="manifest" href="site.webmanifest"> -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}">
+        <!-- Place favicon.ico in the root directory -->
+
+
+
+        {% block stylesheets %}
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/gijgo.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/slicknav.css') }}">
+        <link rel="stylesheet" href="{{ asset('FrontEnd/css/style.css') }}">
+        <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+        {% endblock %}
+
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+
+    <body>
+    {% block header %}
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center no-gutters">
+                            <div>
+                                <div class="logo">
+                                    <a href="{{ path('Main') }}">
+                                        <img src="{{ asset('FrontEnd/img/logo4.png') }}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div >
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="{{ path('Main') }}" class="active" > home</a></li>
+                                            <li><a href="{{ path('Produit') }}">Produits</a></li>
+                                            <li><a href="{{ path('Espece') }}">Especes</a></li>
+                                            <li><a href="{{ path('Evenement') }}">Evenements</a></li>
+                                            <li><a href="{{ path('Reclamation') }}">Reclamations</a></li>
+                                            <li><a href="{{ path('Forum') }}">Forum</a></li>
+                                            <li><a href="{{ path('Panier') }}">Panier</a></li>
+                                            <li><a href="">                 </a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="say_hello">
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                                    <a href="{{ path('fos_user_profile_show') }}">
+                                        <i class="ti-facebook"></i> Profile</a>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                {% else %}
+                                    <tr>
+                                        <td>
+                                    <a href="{{ path('fos_user_security_login') }}">
+                                        {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                    </a>
+                                        </td>
+                                        <td>
+
+
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                </div>
+                            </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+
+
+    <!-- slider_area_start -->
+        <div class="slider_area">
+            <div class="slider_active owl-carousel">
+                <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-9 col-md-9 col-md-12">
+                                <div class="slider_text text-center">
+                                    <h3>Especes</h3>
+                                    <a href="{{ path('Espece') }}" class="boxed-btn3">Consulter Les Especes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-9 col-md-9 col-md-12">
+                                <div class="slider_text text-center">
+                                    <h3>Evenements</h3>
+                                    <a href="{{ path('Evenement') }}" class="boxed-btn3">Consulter Les Evenements</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-9 col-md-9 col-md-12">
+                                <div class="slider_text text-center">
+                                    <h3>Achat des Produits</h3>
+                                    <a href="{{ path('Produit') }}" class="boxed-btn3">Consulter Les Produits</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider_area_end -->
+
+    {% endblock %}
+
+
+    {% block content %}{% endblock %}
+
+
+    {% block footer %}
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="{{ asset('Our Logo') }}" alt="">
+                                </a>
+                            </div>
+                            <p>Esprit Alghzela <br>Ariena Soghra<br>
+                                <a href="#">+216 27 879 522</a> <br>
+                                <a href="#">SKZ@esprit.tn</a>
+                            </p>
+                            <p>
+
+
+
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4 offset-xl-1">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Useful Links
+                            </h3>
+                            <ul>
+                                <li><a href="#">Menu</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#"> Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Subscribe
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit">Subscribe</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end  -->
+    {% endblock %}
+
+
+    {% block javascripts %}  <!-- JS here -->
+        <script src="{{ asset('FrontEnd/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/vendor/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/popper.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/ajax-form.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/waypoints.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.counterup.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/imagesloaded.pkgd.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/scrollIt.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.scrollUp.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/wow.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/gijgo.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/nice-select.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.slicknav.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/plugins.js') }}"></script>
+
+
+
+        <!--contact js-->
+        <script src="{{ asset('FrontEnd/js/contact.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.form.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('FrontEnd/js/mail-script.js') }}"></script>
+
+
+        <script src="{{ asset('FrontEnd/js/main.js') }}"></script>
+
+        <script>
+            $('#datepicker').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                    rightIcon: '<span class="fa fa-calendar-o"></span>'
+                }
+            });
+            $('#datepicker2').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                    rightIcon: '<span class="fa fa-calendar-o"></span>'
+                }
+
+            });
+        </script>
+    {% endblock %}
+
+    </body>
+</html>
