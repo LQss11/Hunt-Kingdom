@@ -1,7 +1,0 @@
-main_homepage:
-    path:     /Index
-    defaults: { _controller: MainBundle:Default:index }
-
-main_homepageback:
-    path:     /IndexBack
-    defaults: { _controller: MainBundle:Default:indexBack }
