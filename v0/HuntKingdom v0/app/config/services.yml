@@ -1,6 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
+    upload_dir: '../var/uploads'
     #parameter_name: value
 
 services:
@@ -13,6 +14,9 @@ services:
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
         public: false
+
+        bind:
+            $uploadDir: '%upload_dir%'
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

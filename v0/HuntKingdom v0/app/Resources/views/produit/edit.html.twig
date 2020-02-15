@@ -1,0 +1,77 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Produit edit</h1>
+    <a href="{{ path('produit_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Product Display</button></a>
+    {{ form_start(edit_form) }}
+    <div class="card-body">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom du Produit</label>
+            {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Quantite Du Produit</label>
+            {{ form_widget(edit_form.quantite, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description Du Produit</label>
+            {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Prix Du Produit</label>
+            {{ form_widget(edit_form.prix, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Fournisseur Du Produit</label>
+            {{ form_widget(edit_form.idFournisseur,  {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">etatPromo Du Produit</label>
+            {{ form_widget(edit_form.etatPromo,  {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Garantie Du Produit</label>
+            {{ form_widget(edit_form.garantie, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Categorie Du Produit</label>
+            {{ form_widget(edit_form.categorie,  {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            {{ form_widget(edit_form.image,  {'attr': {'class': 'form-control'}}) }}</label>
+
+        </div>
+
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <input class="btn btn-primary" type="submit" value="Edit" />
+    </div>
+    {{ form_rest(edit_form) }}
+
+
+    {{ form_end(edit_form) }}
+
+    <ul>
+
+
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-danger" type="submit" value="Delete This Product">
+        {{ form_end(delete_form) }}
+
+    </ul>
+    <ul>
+
+
+        {{ form_rest(edit_form) }}
+
+
+        {{ form_end(edit_form) }}
+
+    </ul>
+{% endblock %}
+

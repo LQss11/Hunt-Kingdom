@@ -19,7 +19,7 @@ class DefaultController extends Controller
         ]);
     }
     /**
-     * @Route("/admin/MainView/MainIndexBack", name="BackOffice")
+     * @Route("/admin/", name="BackOffice")
      */
     public function backAction(Request $request)
     {

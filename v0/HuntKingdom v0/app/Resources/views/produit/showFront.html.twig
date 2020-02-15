@@ -1,0 +1,73 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+<center> <br><br><br><br>
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+
+                    <div class="preview-pic tab-content">
+                        <img src="{{  asset(asset('images/' ~ produit.image ))  }}" width="450" height="450">
+                    </div>
+
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">{{ produit.nom }}</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">Garantie : {{ produit.garantie }} years </span>
+                    </div>
+
+                    <h4 class="price">current price: <span>{{ produit.prix }} dt</span></h4>
+                   Etat promo {{ produit.etatPromo }}
+                    <p class="vote">
+
+                        {% if produit.quantite >10 %} <strong>{{ produit.quantite }}</strong>
+                    {% elseif produit.quantite >0 %}<strong> ONLY {{ produit.quantite }} left</strong>
+                    {% else  %}<strong><h5 style="color: red;">SOLD OUT</h5></strong>
+                        {% endif %}
+                    <p class="product-description">  {{ produit.description }}</p>
+                    <div class="action">
+                        <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

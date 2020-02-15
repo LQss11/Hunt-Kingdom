@@ -1,0 +1,26 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-75">
+                        <h3>Our Categories</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for categorie in categories %}
+        <a  href="{{ path('categorie_showProductsFront', { 'id': categorie.id }) }}">
+            <h3>          {{ categorie.nom }}</h3>
+            <div class="single_gallery big_img">
+                <img src="{{  asset(asset('images/' ~ categorie.image ))  }}">
+                {{ categorie.description }}
+            </div></a>
+            {% endfor %}
+
+    </div>
+
+{% endblock %}
