@@ -17,7 +17,15 @@ class PromotionController extends Controller
      *
      */
     public function indexAction()
-    { $cpt=0;
+    { $user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
+
+        $cpt=0;
         $em = $this->getDoctrine()->getManager();
 $promo =new Promotion();
         $promotions = $em->getRepository('ProduitBundle:Promotion')->findAll();
@@ -31,14 +39,20 @@ $promo =new Promotion();
         return $this->render('promotion/index.html.twig', array('product'=>$product,'cpt'=>$cpt,
             'promotions' => $promotions
         ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Creates a new promotion entity.
      *
      */
     public function newAction(Request $request)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $promotion = new Promotion();
         $form = $this->createForm('ProduitBundle\Form\PromotionType', $promotion);
         $form->handleRequest($request);
@@ -61,14 +75,20 @@ $product[0]->setEtatPromo(1);
             'promotion' => $promotion,
             'form' => $form->createView(),
         ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Finds and displays a promotion entity.
      *
      */
     public function showAction(Promotion $promotion)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($promotion);
         $product=$this->getDoctrine()->getManager()->getRepository("ProduitBundle:Produit")->findBy(array('id'=>$promotion->getIdProduit()));
 
@@ -76,14 +96,20 @@ $product[0]->setEtatPromo(1);
             'promotion' => $promotion,
             'delete_form' => $deleteForm->createView(),
         ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Displays a form to edit an existing promotion entity.
      *
      */
     public function editAction(Request $request, Promotion $promotion)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($promotion);
         $editForm = $this->createForm('ProduitBundle\Form\PromotionType', $promotion);
         $editForm->handleRequest($request);
@@ -99,7 +125,11 @@ $product[0]->setEtatPromo(1);
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
+
+
+
+
 
     /**
      * Deletes a promotion entity.

@@ -4,22 +4,22 @@ categorie_index:
     methods:  GET
 
 categorie_show:
-    path:     /admin/{id}/show
+    path:     /{id}/show
     defaults: { _controller: "ProduitBundle:Categorie:show" }
     methods:  GET
 
 categorie_new:
-    path:     /admin/new
+    path:     /new
     defaults: { _controller: "ProduitBundle:Categorie:new" }
     methods:  [GET, POST]
 
 categorie_edit:
-    path:     /admin/{id}/edit
+    path:     /{id}/edit
     defaults: { _controller: "ProduitBundle:Categorie:edit" }
     methods:  [GET, POST]
 
 categorie_delete:
-    path:     /admin/{id}/delete
+    path:     /{id}/delete
     defaults: { _controller: "ProduitBundle:Categorie:delete" }
     methods:  DELETE
 

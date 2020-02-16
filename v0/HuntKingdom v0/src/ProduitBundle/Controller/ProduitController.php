@@ -17,7 +17,13 @@ class ProduitController extends Controller
      *
      */
     public function indexAction()
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $em = $this->getDoctrine()->getManager();
 
         $produits = $em->getRepository('ProduitBundle:Produit')->findAll();
@@ -25,26 +31,21 @@ class ProduitController extends Controller
         return $this->render('produit/index.html.twig', array(
             'produits' => $produits,
         ));
+    }return $this->redirectToRoute('fos_user_security_login');
     }
-
-    public function frontAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $produits = $em->getRepository('ProduitBundle:Produit')->findAll();
-
-        return $this->render('produit/indexFront.html.twig', array(
-            'produits' => $produits,
-        ));
-    }
-
 
     /**
      * Creates a new produit entity.
      *
      */
     public function newAction(Request $request)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $produit = new Produit();
         $produit->setIdFournisseur(0);
         $produit->setEtatPromo(0);
@@ -68,36 +69,40 @@ class ProduitController extends Controller
             'produit' => $produit,
             'form' => $form->createView(),
         ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Finds and displays a produit entity.
      *
      */
     public function showAction(Produit $produit)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($produit);
 
         return $this->render('produit/show.html.twig', array(
             'produit' => $produit,
             'delete_form' => $deleteForm->createView(),
         ));
-    }
-
-
-    public function showFrontAction(Produit $produit)
-    {
-        return $this->render('produit/showFront.html.twig', array(
-            'produit' => $produit
-        ));
-    }
+    }return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Displays a form to edit an existing produit entity.
      *
      */
     public function editAction(Request $request, Produit $produit)
-    {
+    {$user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($produit);
         $editForm = $this->createForm('ProduitBundle\Form\ProduitType', $produit);
         $editForm->handleRequest($request);
@@ -115,6 +120,32 @@ class ProduitController extends Controller
             'produit' => $produit,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+        ));
+    }return $this->redirectToRoute('fos_user_security_login');}
+
+
+
+    public function frontAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $paginator=$this->get('knp_paginator');
+        $produits = $em->getRepository('ProduitBundle:Produit')->findAll();
+
+        $pagination = $paginator->paginate(
+            $produits,
+            $request->query->getInt('page', 1), /*page number*/
+            4 /*limit per page*/
+        );
+        return $this->render('produit/indexFront.html.twig', array(
+            'pagination' => $pagination,
+        ));
+    }
+
+    public function showFrontAction(Produit $produit)
+    {
+        return $this->render('produit/showFront.html.twig', array(
+            'produit' => $produit
         ));
     }
 

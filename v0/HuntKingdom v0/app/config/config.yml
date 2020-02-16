@@ -87,3 +87,9 @@ fos_user:
     from_email:
         address: "mohamedkhalil.chakroun@esprit.tn"
         sender_name: "khalil"
+
+knp_paginator:
+    default_options:
+        page_name: page                 # page query parameter name
+    template:
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template

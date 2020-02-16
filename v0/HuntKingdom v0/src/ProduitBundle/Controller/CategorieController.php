@@ -18,15 +18,18 @@ class CategorieController extends Controller
      *
      */
     public function indexAction()
-    {
+    { $user= $this->getUser();
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+                                {return $this->redirectToRoute('fos_user_security_login');}
+
+                                else{
         $em = $this->getDoctrine()->getManager();
-
         $categories = $em->getRepository('ProduitBundle:Categorie')->findAll();
-
         return $this->render('categorie/index.html.twig', array(
-            'categories' => $categories,
-        ));
-    }
+            'categories' => $categories,));                         }
+        return $this->redirectToRoute('fos_user_security_login');
+                          }
 
     /**
      * Creates a new categorie entity.
@@ -34,25 +37,34 @@ class CategorieController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user= $this->getUser();
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+            {return $this->redirectToRoute('fos_user_security_login');}
+
+            else{
+
         $categorie = new Categorie();
         $form = $this->createForm('ProduitBundle\Form\CategorieType', $categorie);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $file = $form['image']->getData();
-            $file->move('images/', $file->getClientOriginalName());
-            $categorie->setImage(''.$file->getClientOriginalName());
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($categorie);
-            $em->flush();
-
-            return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
-        }
+                                    if ($form->isSubmitted() && $form->isValid())
+                                    {
+                                        $file = $form['image']->getData();
+                                        $file->move('images/', $file->getClientOriginalName());
+                                        $categorie->setImage(''.$file->getClientOriginalName());
+                                        $em = $this->getDoctrine()->getManager();
+                                        $em->persist($categorie);
+                                        $em->flush();
+                                        return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
+                                    }
 
         return $this->render('categorie/new.html.twig', array(
             'categorie' => $categorie,
             'form' => $form->createView(),
         ));
+
+    }
+       return $this->redirectToRoute('fos_user_security_login');
     }
 
     /**
@@ -61,6 +73,13 @@ class CategorieController extends Controller
      */
     public function showAction(Categorie $categorie)
     {
+        $user= $this->getUser();
+
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($categorie);
 
         return $this->render('categorie/show.html.twig', array(
@@ -68,13 +87,20 @@ class CategorieController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+        return $this->redirectToRoute('fos_user_security_login');
+    }
 
     /**
      * Displays a form to edit an existing categorie entity.
      *
      */
     public function editAction(Request $request, Categorie $categorie)
-    {
+    {$user= $this->getUser();
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
         $deleteForm = $this->createDeleteForm($categorie);
         $editForm = $this->createForm('ProduitBundle\Form\CategorieType', $categorie);
         $editForm->handleRequest($request);
@@ -94,11 +120,32 @@ class CategorieController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+        return $this->redirectToRoute('fos_user_security_login');}
 
     /**
      * Deletes a categorie entity.
      *
      */
+
+    public function showProductsAction(Request $request)
+    {$user= $this->getUser();
+        if ($user == null || ($user->getRoles()[0] !='ROLE_ADMIN'))
+
+        {return $this->redirectToRoute('fos_user_security_login');}
+
+        else{
+            $input=$request->get('id');
+            $em=$this->getDoctrine()->getManager();
+
+            $products=$em->getRepository(Produit::class)->findall();
+
+            $products=$em->getRepository("ProduitBundle:Produit")->findBy(array('categorie'=>$input));
+
+            return $this->render('categorie/showProducts.html.twig',array('products'=>$products));
+        }
+        return $this->redirectToRoute('fos_user_security_login');}
+
+
     public function deleteAction(Request $request, Categorie $categorie)
     {
         $form = $this->createDeleteForm($categorie);
@@ -112,7 +159,6 @@ class CategorieController extends Controller
 
         return $this->redirectToRoute('categorie_index');
     }
-
     /**
      * Creates a form to delete a categorie entity.
      *
@@ -129,30 +175,21 @@ class CategorieController extends Controller
         ;
     }
 
-
     public function showProductsFrontAction(Request $request)
     {
         $input=$request->get('id');
         $em=$this->getDoctrine()->getManager();
-
-        $products=$em->getRepository(Produit::class)->findall();
-$categorie=$em->getRepository("ProduitBundle:Categorie")->findById($input);
-        $products=$em->getRepository("ProduitBundle:Produit")->findBy(array('categorie'=>$input));
-
-        return $this->render('categorie/showProductsFront.html.twig',array('produits'=>$products,'categorie'=>$categorie));
-    }
-
-
-    public function showProductsAction(Request $request)
-    {
-        $input=$request->get('id');
-        $em=$this->getDoctrine()->getManager();
-
-        $products=$em->getRepository(Produit::class)->findall();
+        $categorie=$em->getRepository("ProduitBundle:Categorie")->findById($input);
 
         $products=$em->getRepository("ProduitBundle:Produit")->findBy(array('categorie'=>$input));
+        $paginator=$this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $products,
+            $request->query->getInt('page', 1), /*page number*/
+            4 /*limit per page*/
+        );
 
-        return $this->render('categorie/showProducts.html.twig',array('products'=>$products));
+        return $this->render('categorie/showProductsFront.html.twig',array('pagination'=>$pagination,'categorie'=>$categorie));
     }
 
     public function frontAction()
