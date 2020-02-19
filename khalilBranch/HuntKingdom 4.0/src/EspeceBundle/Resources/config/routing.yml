@@ -1,0 +1,3 @@
+espece_homepage:
+    path:     /
+    defaults: { _controller: EspeceBundle:Default:index }

@@ -1,0 +1,41 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content%}
+    <h1>Users list</h1>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Last login</th>
+                <th>enabled</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.lastLogin|date("m/d/Y") }}</td>
+                <td>
+                            <a href="{{ path('user_ChangeEtat', { 'id': user.id }) }}">
+                                {% if user.enabled==1 %}
+                              <button type="button" class="btn btn-block btn-success btn-sm">EnableD</button>
+                                {% else %}<button type="button" class="btn btn-block btn-danger btn-sm">Blocked</button>
+                                    {% endif %}
+                               </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

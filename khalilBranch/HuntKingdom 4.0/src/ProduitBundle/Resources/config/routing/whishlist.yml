@@ -1,0 +1,29 @@
+whishlist_index:
+    path:     /
+    defaults: { _controller: "ProduitBundle:Whishlist:index" }
+    methods:  GET
+
+whishlist_supp:
+    path:     /{id}/supp
+    defaults: { _controller: "ProduitBundle:Whishlist:supp" }
+    methods:  [GET, POST,DELETE]
+
+whishlist_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProduitBundle:Whishlist:show" }
+    methods:  GET
+
+whishlist_new:
+    path:     /{id}/new
+    defaults: { _controller: "ProduitBundle:Whishlist:new" }
+    methods:  [GET, POST]
+
+whishlist_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProduitBundle:Whishlist:edit" }
+    methods:  [GET, POST]
+
+whishlist_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProduitBundle:Whishlist:delete" }
+    methods:  DELETE
