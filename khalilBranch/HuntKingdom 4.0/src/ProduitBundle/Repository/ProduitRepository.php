@@ -25,6 +25,11 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
             ->createQuery("SELECT p FROM ProduitBundle:Produit p order by p.nom");
         return $query->getResult();
     }
+    public function  searchPromo(){
+        $query=$this->getEntityManager()
+            ->createQuery("SELECT p FROM ProduitBundle:Produit p where p.etatPromo=1");
+        return $query->getResult();
+    }
     public function listeWish()
     {
         $query = $this->getEntityManager()

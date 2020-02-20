@@ -70,11 +70,11 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    transport: gmail
+    host:      smtp.gmail.com
+    username:  mohamedkhalil.chakroun@esprit.tn
+    password:  khalil11412658
+
 
 sensio_framework_extra:
    router:

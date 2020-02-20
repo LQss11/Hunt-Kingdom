@@ -68,6 +68,9 @@
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
       <path value="$PROJECT_DIR$/vendor/h4cc/wkhtmltopdf-amd64" />
       <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
+      <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/ob/highcharts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-json" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XRuooJ9uM4a4GqH4zdiA3sWjEe" />
@@ -110,17 +113,19 @@
       <command value="s doctrine:generate:entities ProduitBundle:Whishlist" />
       <command value="s doctrine:generate:crud ProduitBundle:Categorie" />
       <command value="s doctrine:generate:crud ProduitBundle:Promotion" />
-      <command value="s doctrine:generate:entity" />
       <command value="s doctrine:generate:crud ProduitBundle:Rating" />
       <command value="s doctrine:generate:entities ProduitBundle:Rating" />
       <command value="s doctrine:generate:entities MainBundle:User" />
       <command value="s doctrine:generate:crud MainBundle:User" />
       <command value="s doctrine:generate:crud ProduitBundle:Produit" />
       <command value="s doctrine:generate:entities ProduitBundle:Produit" />
-      <command value="s doctrine:schema:validate" />
       <command value="s doctrine:generate:entities ProduitBundle:Promotion" />
-      <command value="s doctrine:schema:update --force " />
       <command value="s doctrine:generate:crud ProduitBundle:Whishlist" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s doctrine:generate:entities MainBundle:Mail" />
+      <command value="s doctrine:generate:form MainBundle:Mail" />
+      <command value="s doctrine:schema:update --force " />
+      <command value="s doctrine:schema:validate" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -167,6 +172,7 @@
       <workItem from="1582061935205" duration="31000" />
       <workItem from="1582066419511" duration="29434000" />
       <workItem from="1582121589707" duration="3731000" />
+      <workItem from="1582126709258" duration="28550000" />
     </task>
     <servers />
   </component>
@@ -192,7 +198,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/src/ProduitBundle/Entity/Promotion.php</url>
-          <line>167</line>
+          <line>168</line>
           <properties>
             <option name="className" value="\ProduitBundle\Entity\Promotion" />
             <option name="methodName" value="getDateDebut" />

@@ -29,7 +29,7 @@ class Produit
 
     /**
      * @var int
-     *
+     * @Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="quantite", type="integer")
      */
     private $quantite;
@@ -43,7 +43,7 @@ class Produit
 
     /**
      * @var float
-     *
+     *@Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="prix", type="float")
      */
     private $prix;
@@ -64,7 +64,7 @@ class Produit
 
     /**
      * @var int
-     *
+     *@Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="garantie", type="integer")
      */
     private $garantie;
@@ -76,7 +76,7 @@ class Produit
     private $categorie;
     /**
      * @var string
-     * @Assert\File(mimeTypes={ "image/jpeg", "image/png"})
+     * @Assert\Image(mimeTypes={ "image/jpeg", "image/png"})
      * @ORM\Column(name="image", type="string")
      */
     private $image;

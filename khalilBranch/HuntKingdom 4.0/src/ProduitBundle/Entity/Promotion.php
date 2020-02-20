@@ -1,8 +1,9 @@
 <?php
 
 namespace ProduitBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * Promotion
@@ -30,7 +31,7 @@ class Promotion
     private $dateFin;
     /**
      * @var \DateTime
-     *
+     *@Assert\GreaterThan("today")
      * @ORM\Column(name="dateDebut", type="datetime", options={"default" :"CURRENT_TIMESTAMP"})
      */
 
@@ -38,13 +39,13 @@ class Promotion
     private $dateDebut;
     /**
      * @var float
-     *
+     * @Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="prix", type="float",options={"default" :0})
      */
     private $prix;
     /**
      * @var int
-     *
+     * @Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="pourcentage", type="integer")
      */
     private $pourcentage;

@@ -194,6 +194,13 @@ $promotion->setActive(1);
         if($promo[0]->getActive()==0)
         {$promo[0]->setActive(1);
             $promo[0]->getIdProduit()->setEtatPromo(1);
+$body="Check the new  promotion on ".$promo[0]->getIdProduit()->getNom()." with a pourcentage".$promo[0]->getPourcentage();
+            $message = \Swift_Message::newInstance()
+                ->setSubject("Promotion !!!")
+                ->setFrom('mohamedkhalil.chakroun11@gmail.com')
+                ->setTo('khalilchakroun11@gmail.com')
+                ->setBody($body);
+            $this->get('mailer')->send($message);
         }
         else{
             $promo[0]->setActive(0);
