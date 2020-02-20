@@ -1,0 +1,35 @@
+supprimer:
+  path:  /supprimer/{id}
+  defaults: { _controller: EcommerceBundle:Panier:supprimer }
+
+ajouter:
+  path:  /ajouter/{id}
+  defaults: { _controller: EcommerceBundle:Panier:ajouter }
+
+panier:
+  path:  /
+  defaults: { _controller: EcommerceBundle:Panier:panier }
+
+livraison:
+  path:  /livraison
+  defaults: { _controller: EcommerceBundle:Panier:livraison }
+
+validation:
+  path:  /validation
+  defaults: { _controller: EcommerceBundle:Panier:validation }
+
+
+
+
+Store_checkout:
+  path:     /Store/checkout/
+  defaults: { _controller: EcommerceBundle:Paypal:Payment }
+
+Store_success_P:
+  path:     /Store/pay
+  defaults: { _controller: EcommerceBundle:Paypal:pay }
+
+Store_success:
+  path:     /Store/Success
+  defaults: { _controller: EcommerceBundle:Paypal:pay }
+
