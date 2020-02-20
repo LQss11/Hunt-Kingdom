@@ -1,0 +1,67 @@
+{% extends "layout/layout.html.twig" %}
+{% set totalHT = 0 %}
+{% set totalTTC = 0%}
+{% set refTva = {} %}
+{% for produit in produits %}
+    {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : 0 }) %}
+{% endfor %}
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <div class="span3">
+            {% include 'modulesUsed/navigation.html.twig' %}
+            </div>
+
+            <div class="span9">
+                <h2>Valider mon parnier</h2>
+                <form>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Références</th>
+                                <th>Quantité</th>
+                                <th>Prix unitaire</th>
+                                <th>Total HT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for produit in produits %}
+                            <tr>
+
+                                <td>{{ produit.nom }}</td>
+                                <td>
+                                    {{ panier[produit.id] }}
+                                </td>
+                                <td>{{ produit.prix }} $</td>
+                                <td>{{ produit.prix * panier[produit.id] }} $</td>
+
+                            </tr>
+
+                                {% set totalHT = totalHT + (produit.prix * panier[produit.id]) %}
+                                {% set totalTTC = totalTTC + (produit.prix * panier[produit.id])|tva(produit.tva.multiplicate) %}
+                                {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + ( produit.prix * panier[produit.id])|montantTva(produit.tva.multiplicate) }) %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+
+                {% if produits|length != 0 %}
+                    <dl class="dl-horizontal pull-right">
+                        <dt>Total HT :</dt><dd>{{ totalHT }}$</dd>
+
+                        {% for key, tva in refTva %}
+                            <dt>TVA {{ key }} :</dt><dd>{{ tva }} $</dd>
+                        {% endfor %}
+
+                        <dt>Total TTC :</dt><dd>{{ totalTTC }} $</dd>
+                    </dl>
+
+                {% endif %}
+                <div class="clearfix"></div>
+                <a href="{{ path('Store_checkout') }}" target="_blank" class="btn btn-success pull-right">Payer</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

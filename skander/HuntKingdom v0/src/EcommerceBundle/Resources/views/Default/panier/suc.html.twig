@@ -1,0 +1,85 @@
+{% extends "layout/layout.html.twig" %}
+
+{% block body %}
+
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 responsive-991-width">
+                        <!--Eco our products items-->
+
+                        <div class="col-md-4">
+                            <svg viewBox="0 0 76 76" width="200px" >
+                                <circle cx="38" cy="38" r="36"/>
+                                <path fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M17.7,40.9l10.9,10.9l28.7-28.7"/>
+                            </svg>
+                        </div>
+                        <div class="col-md-8" >
+                            <h1 class="success-message__title">Paiement Reçu</h1>
+                            <div class="success-message__content">
+                                <p>votre commande sera traité et livré ultérieurement</p>
+                                <a href="{{ path('render') }}" class="btn btn-primary " >vers le store</a>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block script %}
+
+    <script>
+        function PathLoader(el) {
+            this.el = el;
+            this.strokeLength = el.getTotalLength();
+
+            // set dash offset to 0
+            this.el.style.strokeDasharray =
+                this.el.style.strokeDashoffset = this.strokeLength;
+        }
+
+        PathLoader.prototype._draw = function (val) {
+            this.el.style.strokeDashoffset = this.strokeLength * (1 - val);
+        }
+
+        PathLoader.prototype.setProgress = function (val, cb) {
+            this._draw(val);
+            if(cb && typeof cb === 'function') cb();
+        }
+
+        PathLoader.prototype.setProgressFn = function (fn) {
+            if(typeof fn === 'function') fn(this);
+        }
+
+        var body = document.body,
+            svg = document.querySelector('svg path');
+
+        if(svg !== null) {
+            svg = new PathLoader(svg);
+
+            setTimeout(function () {
+                document.body.classList.add('active');
+                svg.setProgress(1);
+            }, 200);
+        }
+
+        document.addEventListener('click', function () {
+
+            if(document.body.classList.contains('active')) {
+                document.body.classList.remove('active');
+                svg.setProgress(0);
+                return;
+            }
+            document.body.classList.add('active');
+            svg.setProgress(1);
+        });
+    </script>
+
+{% endblock %}

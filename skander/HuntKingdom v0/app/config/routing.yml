@@ -1,0 +1,80 @@
+pages:
+    resource: "@PagesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ecommerce:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /Ecommerce
+
+panier:
+    resource: "@PanierBundle/Resources/config/routing.yml"
+    prefix:   /panier
+
+produit:
+    resource: "@ProduitBundle/Resources/config/routing.yml"
+    prefix:   /produit
+
+espece:
+    resource: "@EspeceBundle/Resources/config/routing.yml"
+    prefix:   /espece
+
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix:   /reclamation
+
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /forum
+
+evenement:
+    resource: "@EvenementBundle/Resources/config/routing.yml"
+    prefix:   /evenement
+
+
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+main:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /Main
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+Main:
+    path:     /Main
+    defaults: { _controller: MainBundle:Default:index }
+
+
+
+Evenement:
+    path:     /Evenement
+    defaults: { _controller: EvenementBundle:Evenement:index }
+
+Produit:
+    path:     /Produit
+    defaults: { _controller: ProduitBundle:Default:index }
+
+Panier:
+    path:     /Panier
+    defaults: { _controller: PanierBundle:Default:index }
+
+Espece:
+    path:     /Espece
+    defaults: { _controller: EspeceBundle:Default:index }
+
+Reclamation:
+    path:     /Reclamation
+    defaults: { _controller: ReclamationBundle:Default:index }
+
+Forum:
+    path:     /Forum
+    defaults: { _controller: ForumBundle:Default:index }
+
