@@ -1,0 +1,76 @@
+{% extends 'Front/Front.html.twig'%}
+
+{% block content %}
+<style>
+    .myButton {
+        background-color:#44c767;
+        border-radius:28px;
+        border:1px solid #18ab29;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:17px;
+        padding:16px 31px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #2f6627;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+
+</style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Reclamation/rec.css') }}">
+    <!------ Include the above in your HEAD tag ---------->
+    <center>
+        <div class="container contact">
+            <div class="row">
+
+
+
+                <div class="col-md-10">
+                    <h4>Votre Feedback/Reclamation est apprecier,ca va optimiser nos services MERCI !</h4><br>
+
+                    <div class="contact-form">
+                        {{ form_start(form) }}
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="comment">Type:</label>
+                            <div class="col-sm-2">
+                                {{ form_widget(form.rec_type,{
+                                    label:false
+                                }) }}
+                            </div><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="comment">Sujet:</label>
+                            <div class="col-sm-10">
+                                {{ form_widget(form.sujet,{
+                                    label:false
+                                }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="comment">Description:</label>
+                            <div class="col-sm-10">
+                                {{ form_widget(form.description,{
+                                    label:false
+                                }) }}
+                            </div>
+                        </div>
+
+                        <input class="myButton" type="submit" value="Create" />
+                        {{ form_end(form) }}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+
+{% endblock %}

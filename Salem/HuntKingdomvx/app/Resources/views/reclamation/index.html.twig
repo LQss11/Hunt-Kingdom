@@ -1,0 +1,102 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <div style="padding-left: 265px" class="w3-container">
+        <center><h2>Reclamation List</h2></center>
+        <form action="{{ path('reclamation_index') }}" method="get" >
+
+            <table width="500" class="w3-table-all">
+
+                <tr class="w3-blue" >
+                    <th colspan="9" style="text-align: center">WebService Reclamations</th>
+                </tr>
+
+
+                <tr class="w3-red">
+                    <td>User Id</td>
+                    <td>Id</td>
+                    <td>Etat</td>
+                    <td>Sujet</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                    <td>Accept</td>
+                    <td>Refus</td>
+                    <td>Delete</td>
+
+                </tr>
+
+
+                {% for reclamation in reclamations %}
+
+                    {% if 'WS' in reclamation.id %}
+
+                        <tr>
+                            <td>{{ reclamation.idU }}</td>
+                            <td><a href="{{ path('reclamation_show', { 'id': reclamation.id }) }}">{{ reclamation.id }}</a></td>
+                            <td>{{ reclamation.etat }}</td>
+                            <td>{{ reclamation.sujet }}</td>
+                            <td>{{ reclamation.description }}</td>
+                            <td>{{ reclamation.date|date("m/d/Y") }}</td>
+                            <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_etatacc', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_etatrej', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': reclamation.id }) }}">Delete</a></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+
+
+                <tr class="w3-blue" >
+                    <th colspan="9" style="text-align: center">BUG Reclamations</th>
+                </tr>
+
+
+                <tr class="w3-red">
+                    <td>User Id</td>
+                    <td>Id</td>
+                    <td>Etat</td>
+                    <td>Sujet</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                    <td>Accept</td>
+                    <td>Refus</td>
+                    <td>Delete</td>
+
+                </tr>
+
+
+
+
+                {% for reclamation in reclamations %}
+
+                    {% if 'BG' in reclamation.id %}
+
+
+
+                        <tr>
+                            <td>{{ reclamation.idU }}</td>
+                            <td><a href="{{ path('reclamation_show', { 'id': reclamation.id }) }}">{{ reclamation.id }}</a></td>
+                            <td>{{ reclamation.etat }}</td>
+                            <td>{{ reclamation.sujet }}</td>
+                            <td>{{ reclamation.description }}</td>
+                            <td>{{ reclamation.date|date("m/d/Y") }}</td>
+                            <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_etatacc', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_etatrej', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': reclamation.id }) }}">Delete</a></td>
+
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+
+            </table>
+        </form>
+
+    </div>
+<center><iframe src="http://localhost:5601/goto/55ff3d96614772bb79bc42cc1a5c52ac?embed=true" height="600" width="800"></iframe></center>
+
+
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    espece.example:
+#        class: EspeceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
