@@ -1,0 +1,46 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Saison</h1>
+
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>Idsaison</th>
+                <td>{{ saison.idSaison }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ saison.nom }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ saison.periode }}</td>
+            </tr>
+            <tr>
+                <th>Mode</th>
+                <td>{{ saison.mode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('saison_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('saison_edit', { 'idSaison': saison.idSaison }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+        <li>
+            <a href="{{ path('saison_new') }}">Create new saion</a>
+        </li>
+    </ul>
+    <div class="navigation">
+        {{ knp_pagination_render(espece) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Saisons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idsaison</th>
+                <th>Nom</th>
+                <th>Periode</th>
+                <th>Mode</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for saison in saisons %}
+            <tr>
+                <td><a href="{{ path('saison_show', { 'idSaison': saison.idSaison }) }}">{{ saison.idSaison }}</a></td>
+                <td>{{ saison.nom }}</td>
+                <td>{{ saison.periode }}</td>
+                <td>{{ saison.mode }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('saison_show', { 'idSaison': saison.idSaison }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('saison_edit', { 'idSaison': saison.idSaison }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('saison_new') }}">Create a new saison</a>
+        </li>
+    </ul>
+{% endblock %}
