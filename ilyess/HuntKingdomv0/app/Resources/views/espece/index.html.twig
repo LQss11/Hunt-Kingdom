@@ -1,0 +1,317 @@
+{% extends 'Front/Front.html.twig'%}
+
+{% block content %}
+
+
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+
+        <title>Hunt Kingdom</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Hunt Kingdom organise de chasse et pecheen Tunisie depuis 40 ans.">
+        <meta name="author" content="">
+        <meta name="google-site-verification" content="tcdt96YTww-3Fq21DdKW_jbfbd6mcnnyJfhtM9jU4yk" />
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="js/bootstrap.min.js" rel="stylesheet">
+        <!--javascript-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jss.js"></script>
+        <!-- Custom CSS -->
+        <link href="css/agency.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            .ss{
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .ss:hover{
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+
+            #btn_up
+            {
+                position: fixed;
+                bottom: 100px;
+                right: 25px;
+                cursor: pointer;
+                display: none;
+            }
+
+        </style>
+        <script language="JavaScript">
+
+            $(function(){
+                $('#btn_up').click(function() {
+                    $('html,body').animate({scrollTop: 0}, 'slow');
+                });
+
+                $(window).scroll(function(){
+                    if($(window).scrollTop()<550){
+                        $('#btn_up').fadeOut();
+                    }else{
+                        $('#btn_up').fadeIn();
+                    }
+                });
+            });
+
+
+        </script>
+
+    </head>
+
+    <body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Hunt Kingdom<br></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services" title="Services chasse et peche">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio" title="Album photo chasse et peche">Album photo</a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- Presentation -->
+    <section id="presentation" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Presentation</h2>
+                    <h3 class="section-subheading text-muted">Hunt Kingdom</h3>
+                </div>
+            </div>
+            <center ><p class="text-muted" >
+                    Cher Ami, aujourd'hui, cela fait quatre décennies que nous organisons des séjours de chasse dans le continent tunisien
+                    ces séjours sont destinés aux passionnés de la chasse venants de tous les coins du monde.
+                    Soucieux de satisfaire nos clients, nous faisons un travail de professionnels; sérieux et rigoureux.
+                    Nous les faisons profiter de notre longue expérience dans ce domaine, ce qui nous a permis de fidéliser des centaines de clients dont la plupart sont devenus des amis.
+                    Notre objectif majeur, chaque fois que nous organisons ces inoubliables aventures est de vivre des moments uniques dans des cadres pittoresques et magiques.
+                    Nous tenons à offrir à nos clients des services de haute qualité durant leurs séjours de chasse,
+                    en leur offrant toujours de nouvelles possibilités en essayant d'anticiper et de satisfaire tous ceux qui comme nous, sont des amoureux de ce monde.
+                    Notre continent Tunisien vous permet de choisir entre les différents types de gibiers migrateurs;comme 'la grive'et sédentaires comme 'le sanglier' avec l’exclusivité de certains territoires.
+                    Notre parfaite connaissance de la terre tunisienne et de son peuple réputés tous les deux par leur générosité et leur hospitalité,
+                    nous permet de vous proposer différentes possibilités de logement allant du gite rurale à l’hôtel de luxe, en passant par les maisons de charme,
+                    leur objectif commun est de vous permettre de vous détendre après une longue et passionnante journée de chasse.<br>
+                </p></center>
+        </div>
+        <div id="btn_up">
+            <img src="image/topp.png" width="40" alt="Retour en haut"  />
+        </div>
+
+
+    </section>
+
+    <!-- Presentation -->
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <h3 class="section-subheading text-muted">Hunt Kingdom</h3>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- Three columns of text below the carousel -->
+            <center>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="img-circle ss" src="{{ asset('Log/images/3.jpg')}}" alt="chasse au sanglier en tunisie" style="width: 140px; height: 140px;">
+                        <h2>Sanglier</h2>
+                        <p><a class="btn btn-warning" href="{{ path('espece_show1')}}" role="button" title=" tunisie chasse au sanglier"> details »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle ss" src="{{ asset('Log/images/2.jpg')}}" alt="chasse au grive en tunisie" style="width: 140px; height: 140px;">
+                        <h2>Grive</h2>
+                        <p><a class="btn btn-warning" href="{{ path('espece_show1')}}" role="button" title="chasse au grive en tunisie"> details »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4">
+                        <img class="img-circle ss" src="{{ asset('Log/images/1.jpg')}}" alt="la peche en tunisie" style="width: 140px; height: 140px;">
+                        <h2>Peche</h2>
+
+                        <p><a class="btn btn-warning" href="{{ path('espece_show1')}}" role="button" title=" la peche en tunisie"> details »</a></p>
+                    </div><!-- /.col-lg-4 -->
+                </div></center>
+        </div><!-- /.row -->
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Album photo</h2>
+                    <h3 class="section-subheading text-muted">Hunt Kingdom</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="{{ path('espece_affiche') }}" class="portfolio-link" title="nos photos prises après la chasse">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ asset('Log/images/3.jpg')}}" class="img-responsive" alt="album photo sanglier">
+                    </a>
+                    <div class="portfolio-caption">
+                        <p class="text-muted">Album</p>
+                        <h4>SANGLIER</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Clients Aside -->
+    <aside class="clients bg-light-gray">
+        <div class="container">
+            <!-- <div class="row">
+                 <div class="col-md-3 col-sm-6">
+                     <a href="#">
+                         <img src="img/logos/envato.jpg" class="img-responsive img-centered" alt="">
+                     </a>
+                 </div>
+                 <div class="col-md-3 col-sm-6">
+                     <a href="#">
+                         <img src="img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
+                     </a>
+                 </div>
+                 <div class="col-md-3 col-sm-6">
+                     <a href="#">
+                         <img src="img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
+                     </a>
+                 </div>
+                 <div class="col-md-3 col-sm-6">
+                     <a href="#">
+                         <img src="img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
+                     </a>
+                 </div>
+             </div>-->
+        </div>
+    </aside>
+    <!------------------------------------------------------------------------------>
+    </section>
+    <!------------------------------------------------------------------------------>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2020</span>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>WEBSITE BY
+                        </li>
+                        <li><a href="" target="_blank">Enigma Team</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59793975-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    </body>
+
+    </html>
+
+
+{% endblock %}

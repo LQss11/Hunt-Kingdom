@@ -1,0 +1,46 @@
+{% extends 'Front/Front.html.twig' %}
+{% block content %}
+    <div class="col-xl-12">
+        <div class="section_title text-center mb-75">
+            <h3>Our Products</h3>
+        </div>
+    </div>
+
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+
+
+                {% for produit in pagination %}
+                    <div class="col-lg-4 col-md-6">
+                        <center> <div class="single-product">
+                                <a href="{{ path('produit_showFront', { 'id': produit.id }) }}" class="social-info">
+                                    <img class="img-fluid" src="{{  asset(asset('images/' ~ produit.image ))  }}" width="200" height="300" >
+                                </a>
+                                <div class="product-details"  >
+                                    <div class="product-details">
+                                        <h4>{{ produit.nom }}</h4>
+                                        <div class="price"><h6> {{ produit.prix }} dt</h6></div>
+                                    </div>
+                                    <div class="prd-bottom">
+                                        <a href=""  class="social-info">
+                                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                        </a>
+                                        <a href="{{ path('produit_showFront', { 'id': produit.id }) }}" class="social-info">
+                                            <img class="img-fluid"src="{{  asset('images/det.png' )  }}" title="details" >
+                                        </a>
+                                    </div>
+                                </div>
+                            </div></center>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navigation text-center" style="margin-top: 20px; margin-bottom:40px ;text-align: center; margin-left: 44%">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

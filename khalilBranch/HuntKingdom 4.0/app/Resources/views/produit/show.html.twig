@@ -1,0 +1,58 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Product</h1>
+    <a href="{{ path('produit_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Product Display</button></a>
+<table>
+  <td> <table>
+        <tbody>
+
+                <tr>
+                    <th> <label for="exampleInputEmail1">ID du Produit</label></th>
+                    <td>{{ produit.id }}</td>
+
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Nom du Produit</label></th>
+                    <td>{{ produit.nom }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Quantite du Produit</label></th>
+                    <td>{{ produit.quantite }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Description du Produit</label></th>
+                    <td>{{ produit.description }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Prix du Produit</label></th>
+                    <td>{{ produit.prix }}$</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Nom du Fournisseur</label></th>
+                    <td>{{ produit.idFournisseur }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Est il en Promotion</label></th>
+                    <td width="20">{{ produit.etatPromo }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Guarantie</label></th>
+                    <td>{{ produit.garantie }}</td>
+                </tr>
+
+
+
+
+
+        <tr>
+            <th> <a class="btn btn-primary btn-sm" href="{{ path('produit_edit', { 'id': produit.id }) }}">Edit</a></th>
+            <td>{{ form_start(delete_form) }}
+                <input  class="btn btn-danger" type="submit" value="Delete This Product">
+                {{ form_end(delete_form) }}</td>
+        </tr>
+        </tbody>
+    </table></td><td><img src="{{  asset(asset('images/' ~ produit.image ))  }}"></td>
+</table>
+
+{% endblock %}

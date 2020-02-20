@@ -1,0 +1,39 @@
+categorie_index:
+    path:    /admin/
+    defaults: { _controller: "ProduitBundle:Categorie:index" }
+    methods:  GET
+
+categorie_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProduitBundle:Categorie:show" }
+    methods:  GET
+
+categorie_new:
+    path:     /new
+    defaults: { _controller: "ProduitBundle:Categorie:new" }
+    methods:  [GET, POST]
+
+categorie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProduitBundle:Categorie:edit" }
+    methods:  [GET, POST]
+
+categorie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProduitBundle:Categorie:delete" }
+    methods:  DELETE
+
+categorie_showProducts:
+    path:     /{id}/showProducts
+    defaults: { _controller: "ProduitBundle:Categorie:showProducts" }
+    methods:  GET
+
+categorie_showProductsFront:
+    path:     /{id}/showProductsFront
+    defaults: { _controller: "ProduitBundle:Categorie:showProductsFront" }
+    methods:  GET
+
+categorie_Front:
+    path:     /Front
+    defaults: { _controller: "ProduitBundle:Categorie:Front" }
+    methods:  GET

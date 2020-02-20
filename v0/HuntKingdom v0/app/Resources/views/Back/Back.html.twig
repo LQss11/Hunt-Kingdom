@@ -168,22 +168,31 @@
 
 
 
-                            <li class="nav-item has-treeview menu-close">
-                                <a href="#" class="nav-link active">
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="{{ path('produit_index') }}" class="nav-link active">
                                     <i class="fab fa-product-hunt"></i>
-                                    <p> Produits <i class="right fas fa-angle-left"></i></p>
+                                    <p>
+                                        Produits
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="./index.html" class="nav-link">
+                                        <a href="{{ path('categorie_index') }}" class="nav-link">
                                             <i class="fas fa-boxes"></i>
-                                            <p>111</p>
+                                            <p>Gestion des Categories</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="./index2.html" class="nav-link">
+                                        <a href="{{ path('promotion_index') }}" class="nav-link">
                                             <i class="fas fa-percent"></i>
-                                            <p>222</p>
+                                            <p>Gestion des Promotions</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ path('produit_index') }}" class="nav-link ">
+                                            <i class="fab fa-product-hunt"></i>
+                                            <p>Gestion des Produits</p>
                                         </a>
                                     </li>
                                 </ul>
@@ -329,8 +338,10 @@
             </aside>
         </div>
         {% endblock %}
+            <div class="content-wrapper">
             {% block content %}
             {% endblock %}
+            </div>
             {% block footer %}
                 <footer class="main-footer">
 

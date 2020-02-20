@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5962c0bc-36c7-4221-8ee8-34b005ffc724" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="d6f59111-f157-4207-ad79-3cb09ab18e9a" />
+    </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="HuntKingdom 4.0" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-apcu" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/symfony" />
+      <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/incenteev/composer-parameter-handler" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/sensio/distribution-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/generator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/json-builder" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/google-map" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/google-map-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/blackknight467/star-rating-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/h4cc/wkhtmltopdf-amd64" />
+      <path value="$PROJECT_DIR$/vendor/nomaya/social-bundle" />
+      <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/ob/highcharts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-json" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1XRuooJ9uM4a4GqH4zdiA3sWjEe" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fixit-symfony-master" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\HuntKingdom 4.0\web\FrontEnd\img" />
+      <recent name="C:\wamp64\www\HuntKingdom 4.0\app\Resources" />
+      <recent name="C:\wamp64\www\HuntKingdom 4.0\app\Resources\views" />
+      <recent name="C:\wamp64\www\HuntKingdom\src\MainBundle\Resources\views\MainView" />
+      <recent name="C:\wamp64\www\HuntKingdom\app\Resources\views\Back" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\HuntKingdom\web\FrontEnd\img" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="s server:run" />
+      <command value="php bin/console generate:bundle" />
+      <command value="php composer.phar friendsofsymfony/user-bundle &quot;~2.0&quot;" />
+      <command value="s doctrine:database:create" />
+      <command value="php bin/console doctrine:generate:entity" />
+      <command value="s generate:controller" />
+      <command value="c dump-autoload" />
+      <command value="s cache:clear" />
+      <command value="s generate:bundle" />
+      <command value="php bin/console doctrine:database:create" />
+      <command value="php bin/console doctrine:schema:update --force " />
+      <command value="sudo mv composer.phar /usr/local/bin/composer" />
+      <command value="curl -s https://getcomposer.org/installer | php" />
+      <command value="composer require egeloen/google-map-bundle" />
+      <command value="composer update" />
+      <command value="s doctrine:generate:entities ProduitBundle:Categorie" />
+      <command value="s doctrine:generate:entities ProduitBundle:Whishlist" />
+      <command value="s doctrine:generate:crud ProduitBundle:Categorie" />
+      <command value="s doctrine:generate:crud ProduitBundle:Promotion" />
+      <command value="s doctrine:generate:crud ProduitBundle:Rating" />
+      <command value="s doctrine:generate:entities ProduitBundle:Rating" />
+      <command value="s doctrine:generate:entities MainBundle:User" />
+      <command value="s doctrine:generate:crud MainBundle:User" />
+      <command value="s doctrine:generate:crud ProduitBundle:Produit" />
+      <command value="s doctrine:generate:entities ProduitBundle:Produit" />
+      <command value="s doctrine:generate:entities ProduitBundle:Promotion" />
+      <command value="s doctrine:generate:crud ProduitBundle:Whishlist" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s doctrine:generate:entities MainBundle:Mail" />
+      <command value="s doctrine:generate:form MainBundle:Mail" />
+      <command value="s doctrine:schema:update --force " />
+      <command value="s doctrine:schema:validate" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5962c0bc-36c7-4221-8ee8-34b005ffc724" name="Default Changelist" comment="" />
+      <created>1581021405927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581021405927</updated>
+      <workItem from="1581021581487" duration="8392000" />
+      <workItem from="1581081263102" duration="11601000" />
+      <workItem from="1581109128122" duration="4818000" />
+      <workItem from="1581120378662" duration="7033000" />
+      <workItem from="1581174589070" duration="41884000" />
+      <workItem from="1581435820053" duration="3282000" />
+      <workItem from="1581445943349" duration="1610000" />
+      <workItem from="1581464905031" duration="21764000" />
+      <workItem from="1581498029416" duration="2523000" />
+      <workItem from="1581632919965" duration="4147000" />
+      <workItem from="1581679833690" duration="7862000" />
+      <workItem from="1581705290127" duration="428000" />
+      <workItem from="1581719127818" duration="10094000" />
+      <workItem from="1581756889000" duration="32641000" />
+      <workItem from="1581857354450" duration="7817000" />
+      <workItem from="1581878006571" duration="9310000" />
+      <workItem from="1581978277566" duration="2776000" />
+      <workItem from="1581982184856" duration="8307000" />
+      <workItem from="1582025381483" duration="29810000" />
+      <workItem from="1582061935205" duration="31000" />
+      <workItem from="1582066419511" duration="29434000" />
+      <workItem from="1582121589707" duration="3731000" />
+      <workItem from="1582126709258" duration="28550000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/show_content.html.twig</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/src/ProduitBundle/Controller/ProduitController.php</url>
+          <line>186</line>
+          <properties>
+            <option name="className" value="\ProduitBundle\Controller\ProduitController" />
+            <option name="methodName" value="deleteAction" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/src/ProduitBundle/Entity/Promotion.php</url>
+          <line>168</line>
+          <properties>
+            <option name="className" value="\ProduitBundle\Entity\Promotion" />
+            <option name="methodName" value="getDateDebut" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

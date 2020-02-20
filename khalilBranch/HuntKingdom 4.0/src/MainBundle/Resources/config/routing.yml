@@ -1,0 +1,16 @@
+main_user:
+    resource: "@MainBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+main_homepage:
+    path:     /Index
+    defaults: { _controller: MainBundle:Default:index }
+
+main_homepageback:
+    path:     /IndexBack
+    defaults: { _controller: MainBundle:Default:indexBack }
+
+whishlist_new:
+    path:     /{id}/new
+    defaults: { _controller: "ProduitBundle:Whishlist:new" }
+    methods:  [GET, POST]

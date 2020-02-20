@@ -1,0 +1,53 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <h1>Promotions list</h1>
+    <div class="card-body">
+        <a  href="{{ path('promotion_new') }}"><button class="btn btn-block bg-gradient-success">Create a new Promotion</button></a>
+
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pourcentage</th>
+                <th>Nom du Produit </th>
+                <th>Date Debut</th>
+                <th>Date Fin</th>
+                <th>Active</th>
+                <th>Show</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for promotion in promotions %}
+
+                <tr>
+                    <td><a href="{{ path('promotion_show', { 'id': promotion.id }) }}">{{ promotion.id }}</a></td>
+                    <td>{{ promotion.pourcentage }}</td>
+                    <td>
+                    <a class="genric-btn success-border circle" href="{{ path('produit_show', { 'id': promotion.idProduit.id }) }}">
+                        {{ promotion.idProduit.nom }}</a>
+                    </td>
+                    <td>{{ promotion.dateDebut |date("d/m/Y")}}</td>
+                    <td>{{ promotion.dateFin|date("d/m/Y")}}</td>
+                    <td>  <a href="{{ path('promo_ChangeEtat', { 'id': promotion.id }) }}">
+                            {% if promotion.active==1 %}
+                                <button type="button" class="btn btn-block btn-success btn-sm">active</button>
+                            {% else %}<button type="button" class="btn btn-block btn-danger btn-sm">Desabled</button>
+                            {% endif %}
+                        </a></td>
+                    <td><a class="btn btn-primary btn-sm" href="{{ path('promotion_show', { 'id': promotion.id }) }}">
+                            <i class="fas fa-folder">
+                            </i>show</a></td>
+                    <td><a class="btn btn-info btn-sm" href="{{ path('promotion_edit', { 'id': promotion.id }) }}">
+                            <i class="fas fa-pencil-alt">
+                            </i>edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

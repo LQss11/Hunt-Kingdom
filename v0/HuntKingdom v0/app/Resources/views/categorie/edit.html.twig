@@ -1,0 +1,51 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Categorie edit</h1>
+    <a href="{{ path('categorie_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Categrories Display</button></a>
+
+    {{ form_start(edit_form) }}
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom de la Categorie</label>
+            {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description de la Categorie</label>
+            {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            {{ form_widget(edit_form.image,  {'attr': {'class': 'form-control'}}) }}</label>
+
+        </div>
+
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+        <input class="btn btn-primary" type="submit" value="Edit" />
+    </div>
+    {{ form_rest(edit_form) }}
+
+
+    {{ form_end(edit_form) }}
+
+    <ul>
+
+
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-danger" type="submit" value="Delete This Categorie">
+        {{ form_end(delete_form) }}
+
+    </ul>
+    <ul>
+
+
+        {{ form_rest(edit_form) }}
+
+
+        {{ form_end(edit_form) }}
+
+    </ul>
+{% endblock %}

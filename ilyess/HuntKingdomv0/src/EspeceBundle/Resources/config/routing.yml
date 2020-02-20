@@ -1,0 +1,10 @@
+espece_espece:
+    resource: "@EspeceBundle/Resources/config/routing/espece.yml"
+    prefix:   /espece
+espece_saison:
+        resource: "@EspeceBundle/Resources/config/routing/saison.yml"
+        prefix:   /saison
+
+espece_homepage:
+    path:     /
+    defaults: { _controller: EspeceBundle:Default:index }

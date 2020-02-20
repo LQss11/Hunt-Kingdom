@@ -1,0 +1,63 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ asset('BackEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}"
+          xmlns="http://www.w3.org/1999/html">
+
+    <h1>Categories list</h1>
+    <div class="card-body">
+
+        <a  href="{{ path('categorie_new') }}"><button class="btn btn-block bg-gradient-success">Create a new Categorie</button></a>
+        </br>
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Products</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for categorie in categories %}
+                <tr>
+                    <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a></td>
+                    <td>{{ categorie.nom }}</td>
+                    <td>{{ categorie.description }}</td>
+                    <td><a class="btn btn-primary btn-sm" href="{{ path('categorie_show', { 'id': categorie.id }) }}"><i class="fas fa-folder">
+                            </i>show</a></td>
+                    <td><a class="btn btn-info btn-sm" href="{{ path('categorie_edit', { 'id': categorie.id }) }}"><i class="fas fa-pencil-alt">
+                            </i>edit</a></td>
+                     <td><a class="btn btn-info btn-sm" href="{{ path('categorie_showProducts', { 'id': categorie.id }) }}">
+                             Products</a></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Products</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="{{ asset('BackEnd/jquery.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable();
+        } );
+    </script>
+
+    <script src="{{ asset('BackEnd/plugins/dataTables/datatables.min.js') }}"></script>
+    <script src="{{ asset('BackEnd/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('BackEnd/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+
+
+{% endblock %}
