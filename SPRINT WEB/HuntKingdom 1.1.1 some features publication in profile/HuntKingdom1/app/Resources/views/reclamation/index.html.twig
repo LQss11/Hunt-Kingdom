@@ -1,0 +1,166 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+
+
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+
+                ['Type', 'Count'],
+                {% for r in results %}               
+                    
+                    {% set values = 0 %}
+
+                    {% for reclamation in reclamations %}
+
+                        {% if r.type in reclamation.type %}
+
+                            {% set values = values+1 %} 
+
+                        {% endif %}{% endfor %}
+
+                    ['{{r.type}}',{{values}}], 
+
+                {% endfor %}
+
+            ]);
+
+
+
+            var options = {
+                title: 'Nbr Type Reclamation',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('Type'));
+            chart.draw(data, options);
+        }
+    </script>
+  
+
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Etat', 'Count'],
+                ['Pending',     {{ Pen }}],
+                ['Accepted',      {{ Acc }}],
+                ['Rejected',  {{ Rej }}]
+            ]);
+
+
+            var options = {
+                title: 'Nbr Etat Reclamation',
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('Etat'));
+            chart.draw(data, options);
+        }
+    </script>
+
+
+
+
+
+    <center><h2>Useful Information</h2></center>
+
+
+    <table>
+
+        <tr>
+
+            <td><div style="width: 700px; height: 500px;" id="Etat"></div></td>
+            <td><div style="width: 700px; height: 500px;" colspan="9"id="Type" ></div></td>
+
+        </tr>
+
+
+    </table>
+
+
+      <center><h2>Reclamation List ({{ count }})</h2></center>  
+
+        <form action="{{ path('reclamation_index') }}" method="get" >
+
+        {% for r in results %}
+
+            <table  class="w3-table-all">
+
+                {% set values = 0 %}
+
+                {% for reclamation in reclamations %}
+
+                    {% if r.type in reclamation.type %}
+
+                        {% set values = values+1 %} 
+
+                    {% endif %}
+
+                {% endfor %}
+                
+                <br><br><br>
+
+                <tr class="w3-blue" >
+
+                    <th colspan="9" style="text-align: center">{{ r.type }} Reclamations {{values}}</th>
+
+                </tr>
+
+                <tr class="w3-red">
+
+                    <td>UserName</td>
+                    <td>Id</td>
+                    <td>Etat</td>
+                    <td>Sujet</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                    <td>Accept</td>
+                    <td>Refus</td>
+                    <td>Delete</td>
+
+                </tr>
+
+                {% for reclamation in reclamations %}
+
+                    {% if r.type in reclamation.type %}
+
+                        <tr>
+
+                            <td>{{ reclamation.idU }}</td>
+                            <td><a href="{{ path('reclamation_show', { 'id': reclamation.id }) }}">{{ reclamation.id }}</a></td>
+                            <td>{{ reclamation.etat }}</td>
+                            <td>{{ reclamation.sujet }}</td>
+                            <td>{{ reclamation.description }}</td>
+                            <td>{{ reclamation.date|date("m/d/Y") }}</td>
+                            <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_etatacc', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-secondary" href="{{ path('reclamation_etatrej', { 'id': reclamation.id }) }}">update</a></td>
+                            <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': reclamation.id }) }}">Delete</a></td>
+
+                        </tr>
+                    {% endif %}
+
+                {% endfor %}
+        </table>
+
+            {% endfor %}
+
+
+    </form>
+
+
+
+{% endblock %}

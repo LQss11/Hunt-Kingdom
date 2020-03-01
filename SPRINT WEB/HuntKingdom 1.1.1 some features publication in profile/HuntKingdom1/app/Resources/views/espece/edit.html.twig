@@ -1,0 +1,58 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Espece edit</h1>
+
+    {{ form_start(edit_form) }}
+<div class="card-body">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nom du espece</label>
+        {{ form_widget(edit_form.nomEspece, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Description Espece</label>
+        {{ form_widget(edit_form.descriptionEspece, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        {{ form_widget(edit_form.image,  {'attr': {'class': 'form-control'}}) }}</label>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Saison</label>
+        {{ form_widget(edit_form.idS,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">poids Espece</label>
+        {{ form_widget(edit_form.poids, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">type de l'Espece</label>
+        {{ form_widget(edit_form.type, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Zone</label>
+        {{ form_widget(edit_form.zone, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">ville</label>
+        {{ form_widget(edit_form.ville , {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+</div>
+    <div class="card-footer">
+        <input class="btn btn-primary" type="submit" value="Edit" />
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-danger" type="submit" value="Delete ">
+        {{ form_end(delete_form) }}
+    </div>
+
+    {{ form_rest(edit_form) }}
+    {{ form_end(edit_form) }}
+
+    <div class="card-footer">
+            <a href="{{ path('espece_indexBack') }}"><button class="btn btn-warning toastsDefaultWarning">Liste des Espece</button></a>
+    </div>
+
+
+{% endblock %}

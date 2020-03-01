@@ -1,0 +1,64 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <h1>Promotion edit</h1>
+    <a href="{{ path('promotion_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Promotion Display</button></a>
+    {{ form_start(edit_form) }}
+    <div class="card-body">
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Pourcentage de Promotion</label>
+            {{ form_widget(edit_form.pourcentage, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="">Pourcentage de Promotion</label>
+            {{ form_widget(edit_form.idProduit, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">date de debut de Promotion</label>
+            {{ form_widget(edit_form.dateDebut,{'attr': {'class': 'form-control'}}) }}
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">date de fin de Promotion</label>
+            {{ form_widget(edit_form.dateFin, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+    </div>
+
+    <div class="card-footer">
+        <input class="btn btn-primary" type="submit" value="Edit" />
+    </div>
+    {{ form_rest(edit_form) }}
+
+
+    {{ form_end(edit_form) }}
+
+    <ul>
+
+
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-danger" type="submit" value="Delete This Product">
+        {{ form_end(delete_form) }}
+
+    </ul>
+    <ul>
+
+
+        {{ form_rest(edit_form) }}
+
+
+        {{ form_end(edit_form) }}
+
+    </ul>
+    <script>
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+
+{% endblock %}

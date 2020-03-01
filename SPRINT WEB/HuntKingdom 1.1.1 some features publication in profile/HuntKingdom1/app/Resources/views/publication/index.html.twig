@@ -1,0 +1,155 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+
+    <!--Bloc CSS -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/fonts/themify/themify-icons.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/animsition/css/animsition.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/daterangepicker/daterangepicker.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/slick/slick.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/lightbox2/css/lightbox.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/css/util.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/css/main.css') }}">
+
+
+    <!-- end bloc-->
+
+
+
+    <div class="container">
+
+
+    <h2>Rechercher des publications !!</h2>
+    <div class="sidebar-search">
+        <div class="input-group custom-search-form">
+            <input type="text" id="search" class="form-control" placeholder="Search here">
+        </div>
+        <!-- /input-group -->
+    </div>
+    <ul class="nav" id="side-menu">
+        <li>
+            <a href="search"> Entities<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level" id="entitiesNav">
+            </ul>
+        </li>
+    </ul><br><br><br><br>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            var searchRequest = null;
+            $("#search").keyup(function() {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNav").html('');
+                if (value.length >= minlength ) {
+                    if (searchRequest != null)
+                        searchRequest.abort();
+                    searchRequest = $.ajax({
+                        type: "GET",
+                        url: "{{ path('search') }}",
+                        data: {
+                            'q' : value
+                        },
+                        dataType: "text",
+                        success: function(msg){
+                            //we need to check if the value is the same
+                            if (value===$(that).val()) {
+                                var result = JSON.parse(msg);
+                                $.each(result, function(key, arr) {
+                                    $.each(arr, function(id, value) {
+                                        if (key === 'publication') {
+                                            if (id !== 'error') {
+                                                console.log(value[1]);
+                                                entitySelector.append('<li><b>'+value[1]+'</b><a href="show/'+id+'"></a></li>');
+                                            } else {
+                                                entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+    <h1>Liste des Publications</h1>
+
+    <div class="container">
+
+
+    </div>
+
+    {% for publication in publications %}
+
+        <div class="container">
+
+            <div class="col-md-10" >
+                <div class="p-t-80 p-b-124 bo5-r h-full p-r-50 p-r-0-md bo-none-md" >
+
+                        <a href="{{ path('publication_new')}}"><button type="button" class="btn btn-sm btn-outline-primary">Créer et poster des publications</button></a>
+
+                    </div>
+
+
+                    <div class="blo4 p-b-63">
+                        <div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
+
+                            <a href="#" > <img src="{{ asset('uploads/' ~ publication.type)}}" alt="IMG-BLOG">
+                            </a>
+
+                        </div>
+
+
+                        <div class="text-blo4 p-t-33">
+                            <h4 class="p-b-16">
+                                <a href="{{ path('publication_show',{'id': publication.id}) }}" class="tit9"> <p class="listing-tagline">{{ publication.contenu|trim }}</p></a>
+                            </h4>
+
+
+
+                            <a href="{{ path('publication_show',{'id': publication.id}) }}" class="dis-block txt4 m-t-30">
+                                Continue Reading
+                                <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

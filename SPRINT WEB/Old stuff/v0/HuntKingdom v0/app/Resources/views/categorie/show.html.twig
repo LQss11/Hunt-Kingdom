@@ -1,0 +1,31 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Categories</h1>
+    <a href="{{ path('categorie_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Categorie Display</button></a>
+
+    <table><td><table>
+        <tbody>
+        <tr>
+            <th> <label for="exampleInputEmail1">ID of the Ctagorie</label></th>
+            <td>{{ categorie.id }}</td>
+        </tr>
+        <tr>
+            <th> <label for="exampleInputEmail1">Name of the categorie</label></th>
+            <td>{{ categorie.nom }}</td>
+        </tr>
+        <tr>
+            <th> <label for="exampleInputEmail1">Description of the Categorie</label></th>
+            <td>{{ categorie.description }}</td>
+        </tr>
+        <tr>
+            <th> <a class="btn btn-primary btn-sm" href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Edit</a></th>
+            <td>{{ form_start(delete_form) }}
+                <input  class="btn btn-danger" type="submit" value="Delete This Categorie">
+                {{ form_end(delete_form) }}</td>
+        </tr>
+        </tbody></table></td><td><img src="{{  asset(asset('images/' ~ categorie.image ))  }}"></td>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,434 @@
+
+
+
+/*===========================================
+	Template Background colors
+============================================*/
+.eco-login-registration:after,
+.eco-thumb-bg .feature_blog_caption:after,
+.form-submit-eco-btn button,
+.eco_count_up:before,
+.eco_service_cols:hover span,
+.kode_top_donate span,
+.kode_navigaion_bar,
+.eco_hover_effect:hover:after,
+.eco_hover_effect:after,
+.eco_testimonial-section .slick-dots li.slick-active button,
+.eco_video_section:before,
+.icon-style,
+.white-login-form .login_style,
+.kode_checkbox_style input[type="radio"]:checked ~ span:before,
+.kode_radio_style input[type="radio"]:checked ~ span:before,
+.kode_buying-items.dropdown-menu sub,
+.kode_eco_buy_item sub,
+.eco_feature_campaigns li:hover:before,
+.date_tag ul,
+.eco_share-tag .social-icons li:hover a,
+.eco_leave_comment_form button,
+.kode_radio_style input[type="radio"]:checked + span:before,
+.eco_donate_button .mediem_btn_02,
+#form02 .modal-header,
+.event_listing_style .icon-style,
+.coming-soon_submit button,
+.spacial-btn,
+.xsmall-btn,
+.eco_detail_address,
+.eco_about-us-data ul li.active a,
+.eco_donate-bar,
+.eco_normal-offers .eco_feature_campaigns li:before,
+.eco_donate-bar02,
+.eco_social-communications a,
+.eco_count_up_qty input:focus,
+.social-color-change li:hover a,
+.progress-bar.progress-bar-success,
+.search_div button,
+.btn-mediem:hover,
+.btn-mediem02:hover,
+.simple-btn-style,
+.btn-likes-heart,
+.eco_pagination_1 ul li:hover a,
+.event_date,
+.eco_about-us-data ul li:hover a,
+.eco_about-us-data ul li a.active,
+.slick-next.slick-arrow:hover,
+.slick-prev.slick-arrow:hover,
+.widget_tags li:hover a,
+.eco_counter li:before,
+
+/*=====================================
+	Home page 2
+=====================================*/
+.kode_coo_gall.col-md-4:hover figure:before,
+.kode_coo_gall.col-md-3:hover figure:before,
+.bar,
+.kode_product_fig  .kode_product_more:hover,
+.kode_eco_gallery_cap a:hover,
+.kode_solar_caption h6,
+.kode_copy_span:hover,
+.kode_footer_gallery figure:hover:before,
+.kode_eco_footer_logo ul li a:hover,
+.kode_action_wraper,
+.kode_eco_facts_progres .bar,
+.kode_facts_span span:before,
+.kode_testmonial_wraper .owl-next:before,
+.kode_testmonial_wraper .owl-prev:after,
+.kode_testmonial_cols,
+.mediem_btn_02.tcolor:hover,
+.kode_latest_star li a span,
+.kode_coo_gall.col-md-4 h1,
+.kode_coo_gall.col-md-3 h1,
+.kode_solar_caption a,
+.kode_eco_support_caption a,
+.kode_eco_solar:hover a,
+.kode_eco_solar:hover span,
+.kode_banner_caption a,
+.kode_top_donate button,
+.progress-bar
+
+		
+{
+	background-color: #7abf18;
+	
+}
+.eco_importer .active-result.result-selected.highlighted{
+	background: #7abf18 !important;
+}
+/*===========================================
+	Template Colors
+============================================*/
+.login_style,
+.eco_count_up span i,
+.eco_testimonial-section:after,
+.eco_testimonial-section:before,
+.eco_filter-anchor li:hover a,
+.eco_filter-anchor li.active a,
+.eco-blog-caption p,
+.eco_page_link li.active a,
+.kode_eco_captions h2 b,
+.eco_testimonial_meta li a,
+.video-effect-btn a,
+.nav-menu-mega li:hover a:after,
+.nav-menu-mega li:hover a,
+.navigation > ul .children li:hover a:after,
+.navigation > ul > li:hover > a,
+.white-login-form .eco_title_form h3 b,
+.kode_checkbox_style small,
+.kode_radio_style small,
+.kode_radio_style input[type="radio"]:checked ~ small,
+.kode_checkbox_style input[type="checkbox"]:checked ~ small,
+.kode_buying-items ul li a .eco_buy_item_captions b,
+.social-accounts li:hover a,
+.eco_post-content p a:hover,
+.eco_feature_campaigns li:hover a,
+blockquote:after,
+blockquote:before,
+blockquote p:after,
+blockquote p:before,
+.eco_pagination_shareing_tag li:hover a,
+.eco_pagination_shareing_tag li:hover a::before,
+.event_orgnizer_points li:before,
+.tcolor,
+.kode_radio_style .amount-heading,
+.kode_radio_style input[type="radio"]:checked ~ small,
+.eco_listing_caption small,
+.eco-big-title h3 b,
+.content_style02 .widget_post_author_content h6 del,
+.location-marker li i,
+.your-submit-message h5 i,
+.eco_small-blogs span,
+.about-us-play a,
+.white-style:hover,
+.eco_count_cause_up ul li span,
+.eco_count_cause_up ul li p,
+.eco_descriptions_tabs ul li.active a,
+.eco_descriptions_tabs ul li:hover a,
+.eco-others-details h5,
+.detail-communication .social-accounts li:hover a,
+.eco_expertise li:before,
+.eco-meta-category li:hover a,
+.your-rateing label input[type="radio"]:checked ~ span,
+.eco-progress-row .progress .skill .val,
+.search-menu_02 a,
+.btn-small,
+.btn-mediem02,
+.mediem_btn_02:hover,
+.eco_headings h5,
+.eco_headings p,
+.eco_headings h6,
+.eco_headings h3 b,
+.eco_heading_style_02 h3 b,
+.event_date_02 b,
+.event_date_02,
+.event_date_03,
+.event_date_03 b,
+.social-icons li:hover a,
+.eco_widget_list_style li:hover a:before,
+.eco_widget_list_style li:hover a,
+.widget_post_author_content h6,
+.events-detail > li:hover .icon-style,
+
+/*=====================================
+	Home page 2
+=====================================*/
+.kode_footer_copy_cap a:hover,
+.kode_eco_gallery_cap a,
+.kode_product_fig:hover  .kode_product_cap h5,
+.kode_product_fig:hover .kode_product_social li a,
+.kode_footer_copy_cap  ul li a:hover,
+.kode_footer_social_icon  ul li a:hover,
+.kode_footer_caption p:hover,
+.kode_facts_span:hover .kode_facts_caption h5,
+.kode_eco_latest_caption a:hover,
+.kode_eco_latest_com li a:hover,
+.kode_latest_star li a:hover,
+.kode_eco_solar:hover h5,
+.kode_navigation ul li a.active,
+.kode_navigation ul li a:hover,
+.kode_top_social_icon ul li a:hover, 
+.kode_top_left_cap ul li a:hover,
+.kode_buying-items ul li a .cross:hover,
+.eco_skills .eco-progress-row .color-change
+
+
+{
+	
+	color:#7abf18;
+}
+
+/*===========================================
+	Template border colors
+============================================*/
+.eco_offices_info .social-icons li:hover a,
+.kode_radio_style span,
+.kode_checkbox_style span,
+.social-accounts li a:before,
+.eco_feature_campaigns li:hover:after,
+.tcolor,
+.kode_radio_style input[type="radio"]:checked + span,
+.eco_normal-offers .eco_feature_campaigns li:after ,
+.btn-mediem:hover,
+.btn-mediem02,
+.btn-mediem02:hover,
+.events-detail > li:hover .icon-style,
+.eco_heading_style_02 h3 b,
+
+/*=====================================
+	Home page 2
+=====================================*/
+.kode_product_fig:hover .kode_product_cap:before,
+.kode_product_fig  .kode_product_more:hover,
+.kode_product_fig:hover figure:before,
+.kode_counter_wraper:hover:before,
+.kode_testmonial_fig_cap figure,
+.kode_eco_count:hover:before,
+.kode_eco_solar:hover a,
+.kode_eco_solar:hover span::before,
+.kode_navigation ul li a.active:before,
+.kode_navigation ul li a.active:after,
+.kode_navigation ul li a:hover:before,
+.kode_navigation ul li a:hover:after
+{
+	
+	border-color: #7abf18;
+}
+
+.eco_heading_style_02 h3 b,
+.widget_post_content .eco_sm_titles:before,
+.eco_descriptions_tabs ul li.active a:before,
+.eco_descriptions_tabs ul li:hover a:before{
+	
+	border-bottom-color: #7abf18;
+}
+
+
+
+
+/*===========================================
+	Template transitions
+============================================*/
+.kode_eco_social_icons ul li a:before,
+.kode_eco_social_icons ul li a,
+.kode_eco_social_icons ul li,
+.navigation ul  li  a,
+.btn-mediem,
+.eco_service_cols span:before,
+.eco_service_cols span,
+.eco_service_cols,
+.slick-next.slick-arrow,
+.slick-prev.slick-arrow,
+.slick-next.slick-arrow:before,
+.slick-prev.slick-arrow:before,
+.navigation ul .children li a:after,
+.navigation ul .children li a,
+.social-icons li a,
+.mediem_btn_02,
+.eco_widget_list_style li a:before,
+.eco_widget_list_style li a,
+.kode_button a,
+.eco_feature_campaigns li:before,
+.eco_feature_campaigns li a,
+.eco_feature_campaigns li:after,
+.eco_post-content p a,
+.eco_filter-anchor li a,
+.widget_tags li a,
+.widget_tags li,
+.effective-div,
+.social-icons,
+.eco_pagination_shareing_tag li a:before,
+.eco_pagination_shareing_tag li a,
+.eco_pagination_shareing_tag li,
+.eco_pagination_1 ul li,
+.event_listing_style .event_meta .eco_share i,
+.event_listing_style .eco-event-title p i,
+.event_listing_style .event_meta li p a,
+.event_listing_style .event_meta li small,
+.event_listing_style .event_meta .eco_share,
+.event_listing_style .eco-event-title h5,
+.event_listing_style .eco-event-title .eco_address_marker,
+.event_listing_style .eco_event_content p,
+.eco_pagination_1 ul li a,
+.event_listing_style:before,
+.event_listing_style:after,
+.events-detail > li .icon-style:after,
+.eco_hover_effect .eco_hover_btn,
+.events-detail > li .eco-event-title p,
+.events-detail > li .eco-event-title p i,
+.events-detail > li .eco-event-title h5,
+.social-accounts li a,
+.eco_descriptions_tabs ul li a:before,
+.eco_descriptions_tabs ul li a,
+.eco_descriptions_tabs ul li,
+.btn-mediem02,
+.events-detail > li:before,
+.events-detail > li:after,
+#boxes #dialog .close,
+#boxes,
+#boxes #dialog,
+.btn-small,
+.no-touch .dl-menuwrapper li a,
+.no-touch .dl-menuwrapper ul,
+.social-accounts li a:before,
+.social-icons li,
+/*=====================================
+	Home page 2
+====================================*/
+.kode_product_cap a,
+.kode_coo_gall figure:before,
+.kode_footer_copy_cap a,
+.kode_product_cap .kode_product_more,
+.kode_product_cap:before,
+.kode_navigation ul ul,
+.kode_product_fig  .kode_product_more,
+.kode_product_cap h5,
+.kode_product_fig .kode_product_social li a,
+.kode_product_fig figure:before,
+.kode_eco_gallery_cap a,
+.kode_eco_solar_pow img,
+.kode_copy_span,
+.kode_footer_copy_cap  ul li a,
+.kode_footer_social_icon  ul li a,
+.kode_footer_gallery figure:before,
+.kode_footer_gallery img,
+.kode_footer_fig img,
+.kode_footer_caption p,
+.kode_eco_footer_logo ul li a,
+.kode_eco_action_cap a,
+.kode_facts_span span:before,
+.kode_facts_span .kode_facts_caption h5,
+.kode_testmonial_wraper .owl-prev:after,
+.kode_testmonial_wraper .owl-next:before,
+.kode_eco_count:before,
+.kode_eco_latest_caption a,
+.kode_eco_latest_com li a,
+.kode_latest_star li a span,
+.kode_latest_star li a,
+.kode_coo_gall h5,
+.kode_eco_gallery_fig .kode_coo_gall h5,
+.kode_coo_gall h1,
+.kode_solar_caption a,
+.kode_eco_support_caption a,
+.kode_eco_solar .fa.fa-angle-right,
+.kode_eco_solar a,
+.kode_eco_solar h5,
+.kode_eco_solar span::before,
+.kode_eco_solar span,
+.kode_top_donate a,
+.kode_banner_caption a,
+.kode_navigation ul li a,
+.kode_navigation ul li a:before,
+.kode_navigation ul li a:after,
+.kode_top_social_icon ul li a,
+.kode_top_left_cap ul li a,
+li.kode_coo_gall figure:after,
+li.kode_coo_gall figure:before,
+.kode_buying-items ul li a .cross,
+#trans-nav ul .children li
+
+{
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-ms-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+
+}
+#trans-nav ul li ul,
+#trans-nav:hover:before{
+	transition:all 0.4s ease-in-out;
+	-moz-transition:all 0.4s ease-in-out;
+	-ms-transition:all 0.4s ease-in-out;
+	-o-transition:all 0.4s ease-in-out;
+	-webkit-transition:all 0.4s ease-in-out;
+}
+#trans-nav ul li a:before{
+	transition:all 0.5s ease-in-out;
+	-moz-transition:all 0.5s ease-in-out;
+	-ms-transition:all 0.5s ease-in-out;
+	-o-transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+}
+#trans-nav ul .eco-mega-menu{
+	transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-ms-transition:all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+	-webkit-transition:all 0.2s ease-in-out;
+}
+
+.eco_thumb div a:before,
+.eco_thumb div a:after,
+.mediem_btn_02.tcolor:before,
+.mediem_btn_02.tcolor:after,
+.eco_hover_effect:after{
+	transition:all 0.3s ease-in-out 0.3s;
+	-moz-transition:all 0.3s ease-in-out 0.3s;
+	-ms-transition:all 0.3s ease-in-out 0.3s;
+	-o-transition:all 0.3s ease-in-out 0.3s;
+	-webkit-transition:all 0.3s ease-in-out 0.3s;
+}
+
+
+.eco_hover_effect:before{
+	transition:transform 0.6s ease-in-out 0s;
+	-moz-transition:transform 0.6s ease-in-out 0s;
+	-ms-transition:transform 0.6s ease-in-out 0s;
+	-o-transition:transform 0.6s ease-in-out 0s;
+	-webkit-transition:transform 0.6s ease-in-out 0s;
+}
+
+.kode_counter_wraper:before,
+.kode_eco_latest_fig img{
+	transition:all 1s ease-in-out;
+	-moz-transition:all 1s ease-in-out;
+	-webkit-transition:all 1s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <div class="content-wrapper">
+
+
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>{{ evenement.nom }}  "Evenement"</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Affichage</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Welcome To {{ evenement.nom }} </h3>
+                            </div>
+
+
+
+
+
+                            <table id="example2" class="table table-bordered table-hover">
+                                <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <td>{{ evenement.id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nom</th>
+                                    <td>{{ evenement.nom }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>{{ evenement.type }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Prix</th>
+                                    <td>{{ evenement.prix }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nbrplace</th>
+                                    <td>{{ evenement.nbrplace }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                </tr>
+                                <tr>
+                                    <th>Place</th>
+                                    <td>{{ evenement.place }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Description</th>
+                                    <td>{{ evenement.description }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Duree</th>
+                                    <td>{{ evenement.duree }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Image</th>
+                                    <td><img src="{{ asset('uploads/' ~  evenement.image )}}" width="150" height="150"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <td>
+                                <tr>
+                                    <a href="{{ path('evenement_index') }}" type="button" class="btn btn-block btn-primary btn-sm">Afficher Tous Les Evenements</a>
+                                </tr>
+                                <tr>
+                                    <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}" type="button" class="btn btn-block  btn-warning btn-sm">Modifier L'evenement</a>
+                                </tr>
+                                <tr>
+                                    {{ form_start(delete_form) }}
+                                    <input class="btn btn-block  btn-danger btn-sm" type="submit" value="Delete">
+                                    {{ form_end(delete_form) }}
+                                </tr>
+                                <tr>
+                                    <a href="{{ path('participationss', { 'id': evenement.id }) }}" type="button" class="btn btn-block  btn-warning btn-sm">Show Participants</a>
+                                </tr>
+
+                            </td>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

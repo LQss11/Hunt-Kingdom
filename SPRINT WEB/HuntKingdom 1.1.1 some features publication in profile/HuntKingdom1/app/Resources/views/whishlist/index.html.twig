@@ -1,0 +1,78 @@
+{% extends 'Front/Front.html.twig' %}
+{% block content %}
+
+    <style type="text/css">
+        .sale {
+            position: relative;
+            display: inline-block;
+            background: orange;
+            color: white;
+            height: 45px ;
+            width: 60px ;
+            border-radius: 8px;
+            text-align: center;
+            vertical-align: top;
+            line-height: 2.5rem;
+            margin-bottom:0px;
+            left: 50%;
+            transform: rotate(-20deg);
+            animation: beat 1s ease infinite alternate;
+        &:before,
+        &:after {
+             content:"";
+             position: absolute;
+             background: inherit;
+             height: inherit;
+             width: inherit;
+             top: 0;
+             left: 0;
+             z-index: -1;
+             transform: rotate(30deg);
+         }
+        &:after {
+             transform: rotate(60deg);
+         }
+        }
+
+        @keyframes beat {
+            from {	transform: rotate(-20deg) scale(1); }
+            to {	transform: rotate(-20deg) scale(1.1); }
+        }
+
+
+    </style>
+<br><br><br><br>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+
+
+                {% for produit in products %}
+                    <div class="col-lg-4 col-md-6">
+                        <center> <div class="single-product">
+                                {% if produit.idProduit.etatPromo==1 %}<span class="sale">Promo</span>{% endif %}
+                                <a href="{{ path('produit_showFront', { 'id': produit.idProduit.id }) }}" class="social-info">
+
+                                    <img class="img-fluid" src="{{  asset(asset('images/' ~ produit.idProduit.image ))  }}" width="200" height="300" >
+                                </a>
+                                <div class="product-details"  >
+                                    <div class="product-details">
+                                        <h4>{{ produit.idProduit.nom }}</h4>
+                                        <div class="price"><h6> {{ produit.idProduit.prix }} dt</h6></div>
+                                    </div>
+                                    <div class="prd-bottom">
+                                        <a href="{{ path('whishlist_supp', { 'id': produit.id }) }}"  class="social-info">
+                                            <button type="button" class="btn btn-danger">delete</button>
+                                        </a>
+                                        <a class="btn btn-warning" href="{{ path('produit_showFront', { 'id': produit.idProduit.id }) }}" role="button" title="chasse au grive en tunisie"> details »</a>
+                                        <br><br><br>
+                                </div>
+                            </div></center>
+                    </div>
+                {% endfor %}
+                <br><br>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

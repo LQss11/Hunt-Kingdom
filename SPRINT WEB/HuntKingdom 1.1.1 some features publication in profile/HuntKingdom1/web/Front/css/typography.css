@@ -1,0 +1,497 @@
+/*==================================================
+	Typography FILE.CSS
+====================================================*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i,700,700i|Roboto:400,500,500i,700);
+/*
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+*/
+.eco_page_link li a,
+.kode_eco_captions p{
+	font-family: 'Roboto', sans-serif;
+}
+*{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;	
+}
+body {
+    color: #2b2b2b;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+	font-weight:400;
+    font-weight: normal;
+    background-color: #fff;
+}
+/* Heading Typo */
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    color:#2e2e2e;
+    font-style: normal;
+    font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+    line-height: normal;
+    margin: 0px 0px 10px 0px;
+    text-transform: capitalize;
+}
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 40px;
+    /*font-size: 48px;*/
+}
+
+h3 {
+    font-size: 30px;
+    /*font-size: 36px;*/
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color:#2e2e2e;
+}
+/* Paragraph Typo */
+p {
+	color:#2e2e2e;
+	margin:0px 0px 5px 0px;
+	font-weight:400;
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;
+	
+}
+p a {
+    color: #7abf18;
+}
+/* Link Typo */
+a {
+    color:#2e2e2e;
+    text-decoration: none;
+	font-size:14px;
+	font-weight:500;
+	font-family: 'Open Sans', sans-serif;
+}
+a:hover, a:focus, a:active {
+    outline: none;
+    text-decoration: none;
+}
+/* HTML-5 Element Typo */
+header,
+detail,
+article,
+aside,
+hgroup,
+nav,
+section,
+figure,
+figcaption,
+footer{
+	display:block;	
+}
+audio,
+video,
+canvas{
+	float:left;
+	width:100%;	
+}
+/* UL Typo */
+ul {
+    margin-bottom: 0px;
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul,
+ol {
+	list-style: none;
+	margin: 0 0 0px 0px;
+	padding:0px;
+}
+li > ul,
+li > ol {
+	margin: 0 0 0 0px;
+}
+li ol li:last-child,
+li ul li:last-child{
+	margin-bottom:0px;
+}
+/* Figure Element Typo */
+img {
+    max-width: 100%;
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	vertical-align: middle;
+	width:100%;
+}
+figure {
+	margin: 0;
+	position:relative;
+}
+/* Clear Typo */
+.clear {
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+}
+
+/* Defaul Elment Typo */
+strong {
+    color: #2b2b2b;
+}
+address {
+	font-style: italic;
+	margin-bottom: 24px;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted #2b2b2b;
+	cursor: help;
+}
+
+b,
+strong {
+	font-weight: 700;
+	color: #2b2b2b;
+}
+
+cite,
+dfn,
+em,
+i {
+	font-style: italic;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+code,
+kbd,
+tt,
+var,
+samp,
+pre {
+	font-family: monospace, serif;
+	font-size: 15px;
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+	line-height: 24px;
+}
+
+pre {
+	border: 1px solid #2b2b2b;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	margin-bottom: 24px;
+	max-width: 100%;
+	overflow: auto;
+	padding: 12px;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+blockquote,
+q {
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	-ms-hyphens:     none;
+	hyphens:         none;
+	quotes: none;
+}
+
+blockquote cite,
+blockquote small {
+	color: #2b2b2b;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	margin-top:10px;
+	clear:both;
+	display:inline-block;
+}
+
+blockquote em,
+blockquote i,
+blockquote cite {
+	font-style: normal;
+}
+
+blockquote strong,
+blockquote b {
+	font-weight: 400;
+}
+
+small {
+	font-size: smaller;
+	font-size: 14px;
+	color:#2b2b2b;
+}
+
+big {
+	font-size: 125%;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+dl {
+	margin-bottom: 24px;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-bottom: 24px;
+}
+del {
+	color: #767676;
+}
+
+hr {
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 0;
+	height: 1px;
+	margin-bottom: 23px;
+}
+/* IFrame Typo */
+iframe {
+    border: none;    
+    width: 100%;
+}
+/* Form Input Typo */
+fieldset {
+	border: 1px solid #2b2b2b;
+	margin: 0 0 24px;
+	padding: 11px 12px 0;
+}
+
+legend {
+	white-space: normal;
+}
+
+label {
+    color: #2e2e2e;
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+select {
+    border: 1px solid #c0c0c0;
+    color: #2e2e2e;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 300;
+    height: 40px;
+    padding: 8px 12px;
+    width: 100%;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+button {
+    border: none;
+}
+
+button,
+input,
+select,
+textarea {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	font-size: 100%;
+	margin: 0;
+	max-width: 100%;
+	vertical-align: baseline;
+	color: #575757;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+input,
+textarea {
+	background-image: -webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0)); /* Removing the inner shadow, rounded corners on iOS inputs */
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+textarea, input[type="text"], 
+input[type="password"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="color"], 
+.uneditable-input {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+    border: 1px solid #cccccc;
+    color: #b2b2b2;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    line-height: 20px;
+    outline: none;
+    padding: 4px 10px;
+    vertical-align: middle;
+	font-family: 'Open Sans', sans-serif;
+}
+form p {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+form p span i {
+    color: #555;
+    left: 16px;
+    position: absolute;
+    top: 13px;
+}
+/* ThemeUnit Style's */
+.fullsection {
+    width: 100%;
+    padding: 0px;
+}
+.fullsection .row {
+    margin: 0px;
+}
+.fullsection [class*="col-md-"] {
+    padding: 0px;
+}
+.full-content {
+    width: 100%;
+    float: left;
+    padding: 0px;
+}
+.full-content .row { 
+	margin: 0px; 
+}
+.thememargin { 
+	margin: 0px 0px 30px 0px; 
+}
+.kd-pagesection {
+    float: left;
+    width: 100%;
+}
+/*Table Typo*/
+table,
+th,
+td {
+	border: 1px solid #c0c0c0;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+	
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: bold;
+	padding:15px;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+	padding:15px;
+}
+
+/* Place Holder Typo */
+::-webkit-input-placeholder 	{color: #b2b2b2; text-transform:capitalize;}
+:-moz-placeholder 				{ color: #b2b2b2; opacity: 1; text-transform:capitalize;}
+::-moz-placeholder 				{ color: #b2b2b2; opacity: 1; text-transform:capitalize;}
+:-ms-input-placeholder 			{color: #b2b2b2; text-transform:capitalize;}
