@@ -1,0 +1,43 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+    <br>
+    <center><h1>Liste des Publications</h1></center>
+    <div class="card-body">
+        </br>
+        <table id="example1" class="table table-bordered table-striped">
+
+        <table class="table table-bordered table-striped" id="dataTable">
+                        <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Contenu</th>
+                            <th scope="col">Posteur</th>
+                            <th scope="col">Commentaires</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for publication in publications %}
+                        <tr> <td>{{ publication.id }}</td>
+                            <td>image</td>
+                            <td>{{ publication.contenu }}</td>
+                            <td>{{ publication.idUser.username }}</td>
+
+                            <td><a class="btn btn-info btn-sm" href="{{ path('publication_showComs', { 'id': publication.id }) }}">
+                                    Voir Commentaires</a></td>
+                            </td>
+                            <td><a class="btn btn-danger btn-sm" href="{{ path('publication_delete1', { 'id': publication.id,'check':'back' }) }}">Supprimer</a>
+                                <a href="{{ path('publication_show', { 'id': publication.id }) }}"></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+            </div>
+
+
+{% endblock %}

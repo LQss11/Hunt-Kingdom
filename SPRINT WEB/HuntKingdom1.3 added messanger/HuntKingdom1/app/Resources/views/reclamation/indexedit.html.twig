@@ -1,0 +1,102 @@
+{% extends 'Back/Back.html.twig'%}
+
+{% block content %}
+    <style>
+        .myButton {
+            background-color:#44c767;
+            border-radius:28px;
+            border:1px solid #18ab29;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #2f6627;
+        }
+        .myButton:hover {
+            background-color:#5cbf2a;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+        .myButton2 {
+            background-color:#f44336;
+            border-radius:28px;
+            border:1px solid #fa4436;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #a52d29;
+        }
+        .myButton2:hover {
+            background-color: #ff5058;
+        }
+        .myButton2:active {
+            position:relative;
+            top:1px;
+        }
+
+
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Reclamation/rec.css') }}">
+    <!------ Include the above in your HEAD tag ---------->
+    <center>
+
+
+
+
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Quick Example</h3>
+            </div>
+            {{ form_start(edit_form) }}
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="comment">Type:</label>
+                <div class="col-sm-2">
+                    {{ form_widget(edit_form.type,{
+                        label:false,
+                    }) }}
+                </div><br><br>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="comment">Sujet:</label>
+                <div class="col-sm-10">
+                    {{ form_widget(edit_form.sujet,{'attr': {'class': 'form-control','placeholder': 'Sujet...',"rows":"4"}},{
+                        label:false
+                    }) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="Description">Description:</label>
+                <div class="col-sm-10">
+                    {{ form_widget(edit_form.description,{'attr': {'class': 'form-control','placeholder': 'Enter...',"rows":"3"}},{
+                        label:false
+                    }) }}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button  class="btn btn-primary" value="Create">Submit</button>
+            </div>
+            {{ form_end(edit_form) }}
+
+        </div>
+
+
+        {{ form_start(delete_form) }}
+        <td><input type="submit" class="myButton2" value="Delete"></td>
+        {{ form_end(delete_form) }}
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+    </center>
+{% endblock %}

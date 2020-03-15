@@ -1,0 +1,108 @@
+{% extends 'Front/Front.html.twig' %}
+{% block content %}
+    <style type="text/css">
+        .sale {
+            position: relative;
+            display: inline-block;
+            background: orange;
+            color: white;
+            height: 45px ;
+            width: 60px ;
+            border-radius: 8px;
+            text-align: center;
+            vertical-align: top;
+            line-height: 2.5rem;
+            margin-bottom:0px;
+            left: 50%;
+            transform: rotate(-20deg);
+            animation: beat 1s ease infinite alternate;
+        &:before,
+        &:after {
+             content:"";
+             position: absolute;
+             background: inherit;
+             height: inherit;
+             width: inherit;
+             top: 0;
+             left: 0;
+             z-index: -1;
+             transform: rotate(30deg);
+         }
+        &:after {
+             transform: rotate(60deg);
+         }
+        }
+
+        @keyframes beat {
+            from {	transform: rotate(-20deg) scale(1); }
+            to {	transform: rotate(-20deg) scale(1.1); }
+        }
+
+
+    </style>
+    <div class="col-xl-12">
+        <div class="section_title text-center mb-75">
+            <h3>Our Products </h3>
+
+            <div>
+                <form  method="get">
+                    <input name="filter" type="text" placeholder="Search">
+                    <button type="submit" class="btn btn-default btn-sm">Filter Results</button>
+                </form>
+            </div>
+
+            <div class="container">
+                <div class="row" >
+
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">Filter by</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ path('produit_Sort',{'id':'1'}) }}">Prix Croissant</a></li>
+                        <li><a href="{{ path('produit_Sort', {'id':'2'} ) }}">Prix Decroissant</a></li>
+                        <li><a href="{{ path('produit_Sort',{'id':'3'}) }}">Nom</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row">
+
+
+                {% for produit in pagination %}
+                    <div class="col-lg-4 col-md-6">
+                        <center> <div class="single-product">
+                                {% if produit.etatPromo==1 %}<span class="sale">Promo</span>{% endif %}
+                                <a href="{{ path('produit_showFront', { 'id': produit.id }) }}" class="social-info">
+
+                                    <img class="img-fluid" src="{{  asset(asset('images/' ~ produit.image ))  }}" width="200" height="300" >
+                                </a>
+                                <div class="product-details"  >
+                                    <div class="product-details">
+                                        <h4>{{ produit.nom }}</h4>
+                                        <div class="price"><h6> {{ produit.prix }} dt</h6></div>
+                                    </div>
+                                    <div class="prd-bottom">
+
+                                        {% if panier[produit.id] is not defined %}
+                                            <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
+                                        {% endif %}
+                                            <a class="btn btn-warning" href="{{ path('produit_showFront', { 'id': produit.id }) }}" role="button" title="chasse au grive en tunisie"> details »</a>
+                                        <br><br><br></div>
+                                </div>
+                            </div></center>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navigation text-center" style="margin-top: 20px; margin-bottom:40px ;text-align: center; margin-left: 44%">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

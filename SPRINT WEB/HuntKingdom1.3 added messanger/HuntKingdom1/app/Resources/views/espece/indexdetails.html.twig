@@ -1,0 +1,234 @@
+{% extends 'Front/Front.html.twig'%}
+
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="organisation des journées inoubliables au peche en tunisie ">
+        <meta name="author" content="">
+        <title>tunisie peche</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/agency.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <!-- include jQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+
+            body{
+
+                background-color: #fff;
+            }
+
+            .cycle-slideshow {
+                width: 1000px;
+                height: 400px;
+                margin-top: 1px;
+                overflow: hidden;
+                border-radius: 0px;
+                border: solid;
+                border-color: #FCF5F5;
+                border-width: 6px;
+            }
+
+            .cycle-slideshow img {
+                width: 1000px;
+                height: 400px;
+
+            }
+
+
+            .marge{
+
+                margin-top: 100px;
+            }
+
+            body{
+
+                font-size: 17px;
+            }
+            .ff{
+                background: #fff;
+            }
+
+            .nav{
+
+                background: black;
+            }
+
+            #sha{
+
+                display: block;
+                margin-top: -160px;
+                margin-bottom: -30px;
+            }
+        </style>
+
+
+
+
+
+    </head>
+    <body >
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59793975-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <div class="container">
+
+        <div class="marge">
+            <center><div class="cycle-slideshow">
+                    <img id="1" src="{{ asset('Log/images/3.jpg')}}" data-cycle-fx=tileSlide  data-cycle-tile-vertical=false>
+                    <img id="2" src="{{ asset('Log/images/2.jpg')}}"data-cycle-fx=tileBlind  data-cycle-tile-count=20>
+                    <img id="3" src="{{ asset('Log/images/1.jpg')}}"data-cycle-fx=tileSlide  data-cycle-tile-count=20>
+                </div>
+
+        </div>
+        <br><br>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <center>Hunt Kingdom</center>
+                        </a>
+                    </h4>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <center>Chasse de sanglier</center>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        La saison de chasse au sanglier débute au mois <b>d'octobre</b> jusqu'à la fin du <b>janvier</b>, dans tous le pays ...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <center>Chasse de grive</center>
+                        </a>
+                    </h4>
+                </div>
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                        <b>Décembre</b> jusqu'à la première semaine de <b>mars</b>. Exceptionnelle densité de gibier qui permet de
+                        réaliser de magnifiques tableaux de chasse. Dans ce payer d’accueil...
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            <center>Peche de poisson</center>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                        Partager nos expériences, apprendre et se perfectionner dans l'art de chasse et pêche en méditerranée,
+                        barque et surf casting dans diverses régions de la Tunisie, aussi bien qu’en eau douce.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <br><br>
+    <div class="ff">
+
+        <style type="text/css">
+
+            .copyright{
+
+                color: #fff;
+            }
+            footer{
+
+                background: black;
+            }
+
+
+        </style>
+<center><h1> Places autorise pour chasse</h1>
+    <iframe src="http://localhost:5601/app/kibana#/dashboard/13b5ccf0-573b-11ea-a9b8-efd9928ce139?embed=true&_g=()&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(isLayerTOCOpen:!t,mapCenter:(lat:35.76525,lon:11.27205,zoom:6.27),openTOCDetails:!()),gridData:(h:15,i:'711c3c75-5d6a-4d7a-9414-e726596211b8',w:24,x:14,y:0),id:ad5267c0-573a-11ea-a9b8-efd9928ce139,panelIndex:'711c3c75-5d6a-4d7a-9414-e726596211b8',type:map,version:'7.4.2')),query:(language:kuery,query:''),timeRestore:!f,title:'New+Dashboard',viewMode:view)" height="600" width="800"></iframe></center>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <span class="copyright">Copyright &copy; 2014</span>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="list-inline quicklinks">
+                            <li class="copyright" >WEBSITE BY
+                            </li>
+                            <li><a href="https://www.facebook.com/lbrasse.TBl"  target="_blank">Lbrassel TB</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!--------------------script---------------------->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <script src="http://malsup.github.io/jquery.cycle2.tile.js"></script>
+
+
+    </body>
+    </html>
+
+{% endblock %}

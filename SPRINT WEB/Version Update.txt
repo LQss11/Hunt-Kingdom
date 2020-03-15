@@ -1,0 +1,6 @@
+HuntKingdom 1.0 Validation
+HuntKingdom 1.1 Profile
+HuntKingdom 1.1.1 some features publication in profile
+HuntKingdom1.2 user image and phone number !!!!!!!!!!!!!bug change password!!!!!!!!!!!!!!!
+HuntKingdom1.2.2 added admin icon and comment field reclamation user
+HuntKingdom1.3 added messanger reclamation

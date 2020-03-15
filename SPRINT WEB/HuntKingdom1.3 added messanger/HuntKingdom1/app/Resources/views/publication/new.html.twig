@@ -1,0 +1,60 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+
+    <!--Bloc CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/fonts/themify/themify-icons.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/animsition/css/animsition.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/daterangepicker/daterangepicker.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/slick/slick.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/vendor/lightbox2/css/lightbox.min.css') }}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/css/util.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('Forum/css/main.css') }}">
+
+    <div class="container" >
+
+
+<table><td>
+    <h1>What's in your Mind</h1>
+
+
+        <img src="{{ asset('Forum/images/forum.jpeg') }}" width="300" height="300">
+    </td>
+<td>
+    {{ form_start(form) }}
+       {{ form_widget(form.contenu, {'attr':{'class':'form-control'}}) }}
+       {{ form_widget(form.type, {'attr':{'class':'form-control'}}) }}
+
+        <input type="submit" value="Publier" class="btn3 flex-c-m size31 txt11 trans-0-4" />
+    {{ form_end(form) }}
+</td>
+
+</table>
+       <ul>
+           <li>
+               <a href="{{ path('publication_index') }}"><button type="button" class="btn btn-sm btn-outline-primary">Back to the list</button></a>
+           </li>
+       </ul>
+   </div>
+{% endblock %}

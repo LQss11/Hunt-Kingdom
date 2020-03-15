@@ -1,0 +1,59 @@
+espece_index:
+    path:     /
+    defaults: { _controller: "EspeceBundle:espece:index" }
+    methods:  GET
+
+espece_indexBack:
+    path:     /indexBack
+    defaults: { _controller: "EspeceBundle:espece:indexBack" }
+    methods:  GET
+
+espece_show1:
+    path:     /show1
+    defaults: { _controller: "EspeceBundle:espece:indexdetails" }
+    methods:  GET
+
+espece_showBack:
+    path:      /{idEspece}/showBack
+    defaults: { _controller: "EspeceBundle:espece:showBack" }
+    methods:  GET
+
+espece_affiche:
+    path:      /show3
+    defaults: { _controller: "EspeceBundle:espece:album" }
+    methods:  GET
+
+espece_show:
+    path:      /show
+    defaults: { _controller: "EspeceBundle:espece:show" }
+    methods:  GET
+
+espece_show2:
+        path:  /{idEspece}/show
+        defaults: { _controller: "EspeceBundle:espece:indexdetails2" }
+        methods:  GET
+
+espece_show3:
+        path:  /{idEspece}/show
+        defaults: { _controller: "EspeceBundle:espece:indexdetails3" }
+        methods:  GET
+
+espece_new:
+    path:     /new
+    defaults: { _controller: "EspeceBundle:espece:new" }
+    methods:  [GET, POST]
+
+espece_edit:
+    path:     /{idEspece}/edit
+    defaults: { _controller: "EspeceBundle:espece:edit" }
+    methods:  [GET, POST]
+
+espece_delete:
+    path:     /delete/{idEspece}
+    defaults: { _controller: "EspeceBundle:espece:delete" }
+    methods:  [GET, POST,DELETE]
+
+ele_show:
+    path:      /ele
+    defaults: { _controller: "EspeceBundle:espece:showfront" }
+    methods:  GET

@@ -1,0 +1,68 @@
+{% extends 'back/back.html.twig' %}
+
+{% block content %}
+    <h1>Espece</h1>
+
+    <table class="table table-bordered table-hover">
+        {% for espece in espece %}
+        <tbody>
+            <tr>
+                <th>Idespece</th>
+                <td>{{ espece.idEspece }}</td>
+            </tr>
+            <tr>
+                <th>Nomespece</th>
+                <td>{{ espece.nomEspece }}</td>
+            </tr>
+            <tr>
+                <th>Descriptionespece</th>
+                <td>{{ espece.descriptionEspece }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+
+                <td><img src="{{ asset('uploads/espece/' ~ espece.image) }}" width="200" height="200"></td>
+
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ espece.poids }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ espece.type }}</td>
+            </tr>
+            <tr>
+                <th>Zone</th>
+                <td>{{ espece.zone }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ espece.ville }}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('espece_show') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('espece_edit', { 'idEspece': espece.idEspece }) }}">Edit</a>
+        </li>
+        <li>
+            <a href="{{ path('espece_delete', { 'idEspece': espece.idEspece }) }}">Delete</a>
+        </li>
+    </ul>
+    {% endfor %}
+<ul>
+    <li>
+        <a href="{{ path('espece_new') }}">Create new espece</a>
+    </li>
+</ul>
+    <div class="navigation">
+        {{ knp_pagination_render(espece) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Saison</h1>
+
+    <a  href="{{ path('saison_index') }}"><button class="btn btn-warning toastsDefaultWarning">
+            Back to the List </button></a>
+
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th for="exampleInputEmail1">Idsaison</th>
+                <td>{{ saison[0].idSaison }}</td>
+            </tr>
+            <tr>
+                <th for="exampleInputEmail1">Nom</th>
+                <td>{{ saison[0].nom }}</td>
+            </tr>
+            <tr>
+                <th for="exampleInputEmail1">Periode</th>
+                <td>{{ saison[0].periode }}</td>
+            </tr>
+            <tr>
+                <th for="exampleInputEmail1">Mode</th>
+                <td>{{ saison[0].mode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+
+
+            <a class="btn btn-primary btn-sm" href="{{ path('saison_edit', { 'idSaison': saison[0].idSaison }) }}">Edit</a>
+
+            {{ form_start(delete_form) }}
+                <input  class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+
+    </ul>
+
+{% endblock %}

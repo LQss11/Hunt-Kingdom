@@ -1,0 +1,47 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Promotion</h1>
+    <a href="{{ path('promotion_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Promotion Display</button></a>
+
+    <table>
+        <tbody>
+        <tr>
+            <th> <label for="exampleInputEmail1">ID de la promotion</label></th>
+            <td>{{ promotion.id }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">Pourcentage de la Promotion</label></th>
+            <td>{{ promotion.pourcentage }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">date de debut de la Promotion</label></th>
+            <td>{{ promotion.dateDebut|date("m/d/Y")  }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">date de fin de la Promotion</label></th>
+            <td>{{ promotion.dateFin|date("m/d/Y")  }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">Nom du produit</label></th>
+            <td>{{ product[0].nom }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">Quantite du produit</label></th>
+            <td>{{ product[0].quantite }}</td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputEmail1">nouveau prix du produit</label></th>
+            <td>{{ promotion.prix }} Dt</td>
+        </tr>
+        <tr>
+            <th> <a class="btn btn-primary btn-sm" href="{{ path('promotion_edit', { 'id': promotion.id }) }}">Edit</a></th>
+            <td>{{ form_start(delete_form) }}
+                <input  class="btn btn-danger" type="submit" value="Delete This Promotion">
+                {{ form_end(delete_form) }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+reclamation_index:
+    path:     /
+    defaults: { _controller: "ReclamationBundle:Reclamation:index" }
+    methods:  GET
+
+reclamation_show:
+    path:     /{id}/show
+    defaults: { _controller: "ReclamationBundle:Reclamation:show" }
+    methods:  GET
+
+reclamation_indexshow:
+    path:     /{id}/indexshow
+    defaults: { _controller: "ReclamationBundle:Reclamation:show" }
+    methods:  GET
+
+reclamation_new:
+    path:     /new
+    defaults: { _controller: "ReclamationBundle:Reclamation:new" }
+    methods:  [GET, POST]
+
+reclamation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ReclamationBundle:Reclamation:edit" }
+    methods:  [GET, POST]
+
+reclamation_indexedit:
+    path:     /{id}/indexedit
+    defaults: { _controller: "ReclamationBundle:Reclamation:edit" }
+    methods:  [GET, POST]
+
+reclamation_com:
+    path:     /{id}/com
+    defaults: { _controller: "ReclamationBundle:Reclamation:com" }
+    methods:  [GET, POST]
+
+reclamation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ReclamationBundle:Reclamation:delete" }
+    methods:  DELETE
+
+
+
+
+reclamation_own:
+    path:     /own
+    defaults: { _controller: "ReclamationBundle:Reclamation:own" }
+    methods:  GET
+
+
+reclamation_del:
+    path:     /{id}/del
+    defaults: { _controller: "ReclamationBundle:Reclamation:deletebyid" }
+
+
+reclamation_home:
+    path:     /home
+    defaults: { _controller: "ReclamationBundle:Reclamation:home" }
+    methods:  GET
+
+reclamation_logs:
+    path:     /logs
+    defaults: { _controller: "ReclamationBundle:Reclamation:logs" }
+    methods:  GET
+
+
+
+reclamation_etatacc:
+    path:     /{id}/etatacc
+    defaults: { _controller: "ReclamationBundle:Reclamation:etatacc" }
+    methods:  [GET, POST]
+reclamation_etatrej:
+    path:     /{id}/etatrej
+    defaults: { _controller: "ReclamationBundle:Reclamation:etatrej" }
+    methods:  [GET, POST]
+
+
+reclamation_new_object:
+    path:     /{id}-{type}/newO
+    defaults: { _controller: "ReclamationBundle:Reclamation:newO" }
+    methods:  [GET, POST]
