@@ -1,0 +1,13 @@
+Set a better design for the front 
+Set a better routes for each page
+Set a uniform database names
+Set On delete cascade on entities to generate every time
+User with image 
+Reclamation Pop Up On click 
+Image ReSize
+Remove Extra unwanted folders
+Refine the User Page
+Elk Map stack ilyes work + salem logs dashboard
+Mailer
+Check if admin or user
+Control de saisi

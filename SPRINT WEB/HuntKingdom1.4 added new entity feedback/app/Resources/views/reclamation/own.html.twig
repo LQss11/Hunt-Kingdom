@@ -1,0 +1,111 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<style>
+table, table th, table td {
+    border-collapse: collapse;
+    border: #888 1px solid;
+    padding: 0 5px;
+}
+#more {
+    cursor: pointer;
+    background: #eee;
+}
+</style>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Sujet</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Etat</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for rec in reclamations %}
+            {% if id == rec.idU %}
+            <tr>
+                <td>{{ rec.id }}</td>
+                <td>{{ rec.sujet }}</td>
+                {% set reclam = rec.description|split('*') %}
+                {% for recall in reclam|slice(0,1) %}
+
+                <td style="display: block">{{ recall }}</td>
+
+                {% endfor %}
+                <td>{{ rec.type }}</td>
+
+                {% if rec.etat == "Pending" %}
+                    <td style="width: 10px"><span class="badge bg-warning">{{ rec.etat }}</span></td>
+                    <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_show', { 'id': rec.id }) }}">show</a></td>
+                    <td><a class="btn btn-block btn-outline-info" href="{{ path('reclamation_edit', { 'id': rec.id }) }}">edit</a></td>
+                    <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': rec.id }) }}">Delete</a></td>
+                {% elseif rec.etat == "Accepted"  %}
+                    <td style="width: 10px"><span class="badge bg-success">{{ rec.etat }}</span></td>
+                    <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_show', { 'id': rec.id }) }}">show</a></td>
+                    <td><button class="btn btn-block btn-outline-info" disabled>edit</button></td>
+                    <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': rec.id }) }}">Delete</a></td>
+
+                {% else %}
+                    <td style="width: 10px"><span class="badge bg-danger">{{ rec.etat }}</span></td>
+                    <td><a class="btn btn-block btn-outline-success" href="{{ path('reclamation_show', { 'id': rec.id }) }}">show</a></td>
+                    <td><button class="btn btn-block btn-outline-info" disabled>edit</button></td>
+                    <td><a class="btn btn-block btn-outline-danger" href="{{ path('reclamation_del', { 'id': rec.id }) }}">Delete</a></td>
+
+                {% endif %}
+
+            </tr>
+            {% endif %}
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+<script>
+var numShown = 5; // Initial rows shown & index
+var numMore = 5;  // Increment
+
+var $table = $('table').find('tbody');  // tbody containing all the rows
+var numRows = $table.find('tr').length; // Total # rows
+
+$(function () {
+    // Hide rows and add clickable div
+    $table.find('tr:gt(' + (numShown - 1) + ')').hide().end()
+        .after('<tbody id="more"><tr><td colspan="' +
+               $table.find('tr:first td').length + '"><div style="text-align:center;">Show <span>' +
+               numMore + '</span> More</div></tbody></td></tr>');
+
+    $('#more').click(function() {
+        numShown = numShown + numMore;
+        // no more "show more" if done
+        if (numShown >= numRows) {
+            $('#more').remove();
+        }
+        // change rows remaining if less than increment
+        if (numRows - numShown < numMore) {
+            $('#more span').html(numRows - numShown);
+        }
+        $table.find('tr:lt(' + numShown + ')').show();
+    });
+
+});
+</script>
+
+{% endblock %}

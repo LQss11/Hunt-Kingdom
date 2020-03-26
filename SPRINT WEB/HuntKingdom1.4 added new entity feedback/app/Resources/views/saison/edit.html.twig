@@ -1,0 +1,39 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Saison edit</h1>
+    <a href="{{ path('saison_index') }}"><button class="btn btn-warning toastsDefaultWarning">Liste des Saisons</button></a>
+
+    {{ form_start(edit_form) }}
+<div class="card-body">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nom de la Saison</label>
+        {{ form_widget(edit_form.nom, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">periode de la Saison</label>
+        {{ form_widget(edit_form.periode, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">mode de la Saison</label>
+        {{ form_widget(edit_form.mode, {'attr': {'class': 'form-control'}}) }}
+    </div>
+</div>
+    <div class="card-footer">
+        <input class="btn btn-primary" type="submit" value="Edit" />
+    </div>
+    {{ form_rest(edit_form) }}
+
+
+    {{ form_end(edit_form) }}
+
+    <ul>
+
+
+        {{ form_start(delete_form) }}
+        <input  class="btn btn-danger" type="submit" value="Delete ">
+        {{ form_end(delete_form) }}
+
+    </ul>
+{% endblock %}

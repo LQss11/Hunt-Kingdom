@@ -1,0 +1,44 @@
+{% extends 'Back/Back.html.twig' %}
+
+
+{% block content %}
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <h1>Feedback list</h1>
+
+    <table  class="w3-table-all">
+        <tr class="w3-red">
+
+                <th>UserID</th>
+                <th>Description</th>
+                <th>Rate</th>
+                <th>Date</th>
+                <th>User e-mail</th>
+                <th>Username</th>
+
+
+        </tr>
+        {% for feedback in feedback %}
+            <tr>
+                <td>{{ feedback.idU.id }}</td>
+                <td>{{ feedback.description }}</td>
+                <td>{{ feedback.rate }}</td>
+                <td>{% if feedback.date %}{{ feedback.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ feedback.idU.email }}</td>
+                <td>{{ feedback.idU.username }}</td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Espece creation</h1>
+    {{ form_start(form) }}
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom du espece</label>
+            {{ form_widget(form.nomEspece, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description Espece</label>
+            {{ form_widget(form.descriptionEspece, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            {{ form_widget(form.image,  {'attr': {'class': 'form-control'}}) }}</label>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Saison</label>
+            {{ form_widget(form.idS,  {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">poids Espece</label>
+            {{ form_widget(form.poids, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">type de l'Espece</label>
+            {{ form_widget(form.type, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Zone</label>
+            {{ form_widget(form.zone, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">ville</label>
+            {{ form_widget(form.ville , {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <input  class="btn btn-primary" type="submit" value="Create" />
+    </div>
+    {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+    <div class="card-footer">
+        <a href="{{ path('espece_indexBack') }}"><button class="btn btn-warning toastsDefaultWarning">Liste des Espece</button></a>
+    </div>
+
+{% endblock %}

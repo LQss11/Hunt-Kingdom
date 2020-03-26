@@ -1,0 +1,33 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Tous Les Participations</h3>
+    </div>
+    <div class="card-body">
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id Inscription</th>
+                <th>User Name</th>
+                <th>Evenement Name</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for inscription in inscriptions %}
+            <tr>
+                <td>{{ inscription.id }}</td>
+                <td>{{ inscription.iduser }}</td>
+                <td>{{ inscription.idevent }}</td>
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

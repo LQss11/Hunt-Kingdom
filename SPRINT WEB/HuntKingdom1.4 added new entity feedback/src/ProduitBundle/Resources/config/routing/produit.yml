@@ -1,0 +1,60 @@
+produit_index:
+    path:     /admin/BackOffice/
+    defaults: { _controller: "ProduitBundle:Produit:index" }
+    methods:  GET
+
+produit_Front:
+    path:     /front
+    defaults: { _controller: "ProduitBundle:Produit:front" }
+    methods:  GET
+
+produit_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProduitBundle:Produit:show" }
+    methods:  GET
+
+produit_showFront:
+    path:     /{id}/showFront
+    defaults: { _controller: "ProduitBundle:Produit:showFront" }
+    methods:  [GET, DELETE, POST]
+
+produit_Sort:
+    path:     /{id}/sort
+    defaults: { _controller: "ProduitBundle:Produit:sort" }
+    methods:  GET
+
+produit_new:
+    path:     /new
+    defaults: { _controller: "ProduitBundle:Produit:new" }
+    methods:  [GET, POST]
+
+produit_edit:
+    path:     /admin/MainView/{id}/edit
+    defaults: { _controller: "ProduitBundle:Produit:edit" }
+    methods:  [GET, POST]
+
+produit_delete:
+    path:     /admin/MainView/{id}/delete
+    defaults: { _controller: "ProduitBundle:Produit:delete" }
+    methods:  [GET, DELETE, POST]
+
+produit_deleteC:
+    path:     /{id}/deleteC
+    defaults: { _controller: "ProduitBundle:Produit:deleteC" }
+    methods:  [GET, DELETE, POST]
+
+produit_deleteCCC:
+  path:     /{id}/deleteCCC
+  defaults: { _controller: "ProduitBundle:Produit:deleteCCC" }
+  methods:  [GET, DELETE, POST]
+
+
+produit_delete1:
+    path:     /admin/MainView/{id}/delete1
+    defaults: { _controller: "ProduitBundle:Produit:delete1" }
+    methods:  [GET, DELETE, POST]
+
+produit_pdf:
+    path:     /pdf
+    defaults: { _controller: "ProduitBundle:Produit:pdf" }
+    methods:  [GET, POST]

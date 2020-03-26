@@ -1,0 +1,66 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+    <div class="content-wrapper">
+
+        <div>
+            <form  method="get">
+                <input name="filter" type="text" placeholder="Search">
+                <button type="submit" class="btn btn-default btn-sm">Filter Results</button>
+            </form>
+        </div>
+        <div class="Delicious_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-50">
+                            <h3>Les Meilleurs événements Pour Vous</h3>
+                            <a href="{{ path('show_mine')}}" class="button button-contactForm boxed-btn">Afficher Mes Evenements</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                         aria-labelledby="pills-home-tab">
+                        <div class="row">
+
+
+                            {% for evenement in evenements %}
+
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single_delicious d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="{{ asset('uploads/' ~  evenement.image ) }}" width="150"
+                                                 height="150">
+                                        </div>
+                                        <div class="info">
+                                            <a class="d-inline-block" href="{{ path('evenement_showfront', { 'id': evenement.id }) }}">
+                                                <h2>#{{ evenement.id }}.{{ evenement.nom }}</h2>
+                                            </a>
+                                            <p>{{ evenement.description }}.</p>
+                                            <span>${{ evenement.prix }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    {{ knp_pagination_render(evenements) }}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+{% endblock %}

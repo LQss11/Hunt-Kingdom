@@ -4,3 +4,4 @@ HuntKingdom 1.1.1 some features publication in profile
 HuntKingdom1.2 user image and phone number !!!!!!!!!!!!!bug change password!!!!!!!!!!!!!!!
 HuntKingdom1.2.2 added admin icon and comment field reclamation user
 HuntKingdom1.3 added messanger reclamation
+HuntKingdom1.4 feedback entity + some fixes on reclamation entity 

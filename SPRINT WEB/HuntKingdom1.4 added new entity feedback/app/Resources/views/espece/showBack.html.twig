@@ -1,0 +1,56 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Espece</h1>
+    <a href="{{ path('espece_indexBack') }}"><button class="btn btn-warning toastsDefaultWarning">Liste des Espece</button></a>
+    <table>
+        <td> <table>
+                <tbody>
+
+                <tr>
+                    <th> <label for="exampleInputEmail1">Id espece</label></th>
+                    <td>{{ espece.idEspece }}</td>
+
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Nom espece</label></th>
+                    <td>{{ espece.nomEspece }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Description</label></th>
+                    <td>{{ espece.descriptionEspece }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Poids</label></th>
+                    <td>{{ espece.poids }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Type</label></th>
+                    <td>{{ espece.type }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Zone</label></th>
+                    <td>{{ espece.zone }}</td>
+                </tr>
+                <tr>
+                    <th> <label for="exampleInputEmail1">Ville</label></th>
+                    <td width="20">{{ espece.ville }}</td>
+                </tr>
+
+
+
+
+
+
+                <tr>
+                    <th> <a class="btn btn-primary btn-sm" href="{{ path('espece_edit', { 'idEspece': espece.idEspece }) }}">Edit</a></th>
+                    <td>{{ form_start(delete_form) }}
+                        <input  class="btn btn-danger" type="submit" value="Delete ">
+                        {{ form_end(delete_form) }}</td>
+                </tr>
+                </tbody>
+
+            </table></td><td><img src="{{ asset('uploads/espece/' ~ espece.image) }}" width="400" height="400"></td>
+    </table>
+
+{% endblock %}

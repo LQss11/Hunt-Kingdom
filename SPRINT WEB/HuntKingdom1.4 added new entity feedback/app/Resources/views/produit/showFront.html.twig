@@ -1,0 +1,199 @@
+{% extends 'Front/Front.html.twig' %}
+{% block content %}<link rel="stylesheet" href="{{ asset('FrontEnd/css/rating.css') }}">
+<center> <br><br><br><br>
+
+
+    {% if produit.etatPromo== 0 %}
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+                    <div class="preview-pic tab-content">
+                        <img src="{{  asset(asset('images/' ~ produit.image ))  }}" width="450" height="450">
+                    </div>
+
+                </div>
+
+                <div class="details col-md-6" ><br><br><br><br>
+                    <h3 class="product-title">{{ produit.nom }}</h3>
+                    <div class="rating" >
+                        <div class="stars">
+
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">Garantie : {{ produit.garantie }} years </span>
+                    </div>
+
+                    <h4 class="price" >current price: <span>{{ produit.prix }} dt</span></h4>
+
+                    <p class="vote">
+
+                        {% if produit.quantite >10 %} <strong>{{ produit.quantite }}</strong>
+                    {% elseif produit.quantite >0 %}<strong> ONLY {{ produit.quantite }} left</strong>
+                    {% else  %}<strong><h5 style="color: red;">SOLD OUT</h5></strong>
+                        {% endif %}
+                    <p class="product-description">  {{ produit.description }}</p>
+                    <div class="action">
+                        {% if panier[produit.id] is not defined %}
+                            <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
+                        {% endif %}
+                        {% if test==2 %}
+                            <a href="{{ path('whishlist_new', { 'id': produit.id }) }}"  class="social-info">
+                                <button class="like btn btn-default" type="button">add to whishlist</button>
+                            </a>
+                        {% elseif test==1 %}
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+{% else %}
+                        {% endif %}
+                        {{ socialButtons( {'twitter':false} ) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></center>
+
+
+
+
+
+<!--  produit en promo-->
+
+
+
+
+    {% else  %}
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <img src="{{  asset(asset('images/' ~ produit.image ))  }}" width="450" height="450">
+                        </div>
+
+                    </div>
+                    <div class="details col-md-6"><br><br><br><br>
+                        <h3 class="product-title">{{ produit.nom }}</h3>
+                        <div class="rating">
+                            <div class="stars">
+
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">Garantie : {{ produit.garantie }} years </span>
+                        </div>
+
+                        <h4 class="price">Last price: <span><strike>{{ produit.prix }} dt</strike></span></h4>
+                        <h4 class="price">Current price: <span>{{ promotion[0].prix }} dt</span></h4>
+                        <p class="vote">
+
+                            {% if produit.quantite >10 %} <strong>{{ produit.quantite }} piece disponible</strong>
+                            {% elseif produit.quantite >0 %}<strong> ONLY {{ produit.quantite }} left</strong>
+                            {% else  %}<strong><h5 style="color: red;">SOLD OUT</h5></strong>
+                            {% endif %}
+                        <p class="product-description">  {{ produit.description }}</p>
+                        <div class="action">
+                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+
+                            {% if test==2 %}
+                                <a href="{{ path('whishlist_new', { 'id': produit.id }) }}"  class="social-info">
+                                    <button class="like btn btn-default" type="button">add to whishlist</button>
+                                </a>
+                            {% elseif test==1 %}
+                                <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                            {% else %}
+                            {% endif %}
+                            {% if panier[produit.id] is not defined %}
+                                <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
+                            {% endif %}
+
+                            {{ socialButtons( {'twitter':false} ) }}
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></center>
+    {% endif %}
+
+<br><br>
+
+    {% for comment in comments %}
+<div role="tabpanel" class="tab-pane" id="review">
+
+    <div class="review-content">
+        <h4 class="description-title"></h4>
+        <div class="costomer-review-items">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="card card-white post">
+                                <div class="post-heading">
+
+                                    <div class="float-left meta">
+                                        <div class="title h4">
+                                            <a href="#"><b>{{ comment.idClient.username }}</b></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-description">
+                                    <p>{{ comment.contenu }}</p>                                </div>
+                            </div>
+                        </div>
+                        {% if comment.idClient.id == user.id %}
+
+                            <a class="btn btn-danger btn-sm" href="{{ path('produit_deleteC', { 'id': comment.id }) }}"> Supprimer</a>
+
+
+                        {% endif %}
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            {% endfor %}
+
+            {% if test!=0 %}
+
+            <div class="review-submit">
+
+                {{ form_start(form) }}
+                <div class="row form-group">
+
+                    <div class="col-3 col-md-3"><label class=" form-control-label">Votre Commentaire  </label></div>
+                    <div class="col-3 col-md-6"> {{ form_widget(form.contenu, { 'attr': {'class': 'form-control'} }) }}<small class="form-text text-muted"></small></div>
+                    <button type="submit" class="btn btn-info btn-sm">Post</button>
+                    <div class="col-12 col-md-9">
+                    </div>
+
+                </div>
+                {{ form_end(form) }}
+            </div>
+
+
+{% endif %}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script src="{{ asset('FrontEnd/js/rating.js') }}"></script>
+
+<br><br><br><br><br><br>
+{% endblock %}

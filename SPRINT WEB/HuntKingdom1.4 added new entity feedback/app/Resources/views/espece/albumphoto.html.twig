@@ -1,0 +1,302 @@
+{% extends 'Front/Front.html.twig'%}
+
+{% block content %}
+<!-- Custom CSS -->
+<link href="css/agency.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style type="text/css">
+    .ss{
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .ss:hover{
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    #btn_up
+    {
+        position: fixed;
+        bottom: 100px;
+        right: 25px;
+        cursor: pointer;
+        display: none;
+    }
+
+</style>
+<script language="JavaScript">
+
+    $(function(){
+        $('#btn_up').click(function() {
+            $('html,body').animate({scrollTop: 0}, 'slow');
+        });
+
+        $(window).scroll(function(){
+            if($(window).scrollTop()<550){
+                $('#btn_up').fadeOut();
+            }else{
+                $('#btn_up').fadeIn();
+            }
+        });
+    });
+
+
+</script>
+
+</head>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" >
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="row">
+                <table class="table table-bordered table-hover">
+                {% for espece in espece %}
+                    <tbody>
+                    <tr  align="center">
+
+
+                        <td><img src="{{ asset('uploads/espece/' ~ espece.image) }}" width="500" height="200"></td>
+
+                    </tr>
+                    <tr>
+                        <th><b>Nom:</b>{{ espece.nomEspece }}</th>
+
+
+                    </tr>
+                    <tr>
+                        <th><b>Description:</b>{{ espece.descriptionEspece }}</th>
+
+                    </tr>
+
+                    <tr>
+                        <th><b>Poids:</b>{{ espece.poids }}</th>
+
+                    </tr>
+                    <tr>
+                        <th><b>Type:</b>{{ espece.type }}</th>
+
+                    </tr>
+                    <tr>
+                        <th><b>Zone:</b>{{ espece.zone }}</th>
+
+                    </tr>
+                    <tr>
+                        <th><b>Ville:</b>{{ espece.ville }}</th>
+
+                    </tr>
+                    <tr>
+                        <th><b>Saison:</b>{{ espece.idS }}</th>
+
+                    </tr>
+
+
+                    </tbody>
+
+
+
+
+                {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(espece) }}
+        </div>
+    </section>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <p class="item-intro text-muted">Hunt Kingdom</p>
+                            <img class="img-responsive img-centered" src="image/grive/3.jpg" alt="">
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <p class="item-intro text-muted">Hunt Kingdom</p>
+                            <img class="img-responsive img-centered" src="image/grive/2.jpg" alt="">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <p class="item-intro text-muted">Hunt Kingdom</p>
+                            <img class="img-responsive img-centered" src="image/grive/4.jpg" alt="">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <p class="item-intro text-muted">Hunt Kingdom</p>
+                            <img class="img-responsive img-centered" src="image/grive/5.jpg" alt="">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <p class="item-intro text-muted">Hunt Kingdom</p>
+                            <img class="img-responsive img-centered" src="image/grive/6.jpg" alt="">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+
+        .copyright{
+
+            color: #fff;
+        }
+        footer{
+
+            background: black;
+        }
+
+
+    </style>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2020</span>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>WEBSITE BY
+                        </li>
+                        <li><a href="" target="_blank">Enigma Team</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59793975-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+
+{% endblock %}
