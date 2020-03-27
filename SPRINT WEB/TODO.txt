@@ -13,3 +13,4 @@ Check if admin or user
 Control de saisi
 Reclamation messanger <DONE> 
 reclamation type object   
+Footer front
