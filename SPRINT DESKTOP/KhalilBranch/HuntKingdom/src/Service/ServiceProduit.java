@@ -5,7 +5,7 @@
  */
 package Service;
 import entities.Produit;
-import Utils.DataSource;
+import Utils.DataBase;
 import entities.Categorie;
 import entities.Promotion;
 import java.sql.Connection;
@@ -30,12 +30,12 @@ public class ServiceProduit {
     private PreparedStatement pst;
 
     public ServiceProduit() {
-        con =DataSource.getInstance().getCnx();
+        con =DataBase.getInstance().getConnection();
     }
 
      public static void ajouterProduit (Produit p) throws SQLException
     {
-        Connection cnx = DataSource.getInstance().getCnx();
+        Connection cnx = DataBase.getInstance().getConnection();
          Statement st = cnx.createStatement();
 
    try { 

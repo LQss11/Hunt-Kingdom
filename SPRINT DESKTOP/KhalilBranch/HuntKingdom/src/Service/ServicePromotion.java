@@ -7,7 +7,7 @@ package Service;
 import entities.Produit;
 import entities.Promotion;
 
-import Utils.DataSource;
+import Utils.DataBase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,12 +28,12 @@ public class ServicePromotion {
     private PreparedStatement pst;
 
     public ServicePromotion() {
-        con =DataSource.getInstance().getCnx();
+        con =DataBase.getInstance().getConnection();
     }
     
     public static void ajouterPromotion (Promotion p) throws SQLException
     {
-        Connection cnx = DataSource.getInstance().getCnx();
+        Connection cnx = DataBase.getInstance().getConnection();
          Statement st = cnx.createStatement();
 
    try { 
