@@ -19,23 +19,30 @@ public class Categorie {
     public Categorie() {
     }
 
+    public Categorie(int id, String nom, String description) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
+    }
+
     public Categorie(String nom, String description, String image) {
         this.nom = nom;
         this.description = description;
         this.image = image;
     }
-
-    @Override
-    public String toString() {
-        return "Categorie{" + "id=" + id + ", nom=" + nom + ", description=" + description + ", image=" + image + '}';
-    }
-
-    public Categorie(int id, String nom, String description, String image) {
+ public Categorie(int id, String nom, String description, String image) {
         this.id = id;
         this.nom = nom;
         this.description = description;
         this.image = image;
     }
+ 
+    @Override
+    public String toString() {
+        return "" + nom  ;
+    }
+
+   
     
     
     public int getId() {

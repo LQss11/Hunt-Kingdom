@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -34,41 +35,16 @@
             </Pane>
             <StackPane prefHeight="491.0" prefWidth="592.0">
                <children>
-                  <Pane fx:id="paneCategorie" prefHeight="502.0" prefWidth="592.0" style="-fx-background-color: #FFFFFF;">
-                     <effect>
-                        <DropShadow height="0.0" radius="0.0" width="0.0" />
-                     </effect>
-                     <children>
-                        <TextField fx:id="textFieldNomCategorie" layoutX="114.0" layoutY="29.0" prefHeight="26.0" prefWidth="124.0" />
-                        <Label layoutX="23.0" layoutY="33.0" text="nom " />
-                        <TextField fx:id="textFieldDescCategorie" layoutX="114.0" layoutY="84.0" prefHeight="26.0" prefWidth="124.0" />
-                        <Label layoutX="22.0" layoutY="88.0" text="Description" />
-                        <Label layoutX="19.0" layoutY="171.0" text="Image" />
-                        <Button fx:id="buttonSupprimerCategorie" layoutX="502.0" layoutY="369.0" mnemonicParsing="false" text="Supprimer" />
-                        <Button fx:id="buttonImportCategorie" layoutX="149.0" layoutY="164.0" mnemonicParsing="false" text="import" />
-                        <TableView fx:id="TableViewCategorie" layoutX="305.0" layoutY="27.0" prefHeight="327.0" prefWidth="332.0">
-                          <columns>
-                            <TableColumn fx:id="idCategorie" prefWidth="75.0" text="ID" />
-                            <TableColumn fx:id="nomCategorie" prefWidth="87.0" text="nom" />
-                              <TableColumn fx:id="descriptionCategorie" prefWidth="169.0" text="Description" />
-                          </columns>
-                        </TableView>
-                        <Button fx:id="buttonModifierCategorie" layoutX="362.0" layoutY="369.0" mnemonicParsing="false" text="Modifier" />
-                        <Button fx:id="buttonAjoutCategorie" layoutX="104.0" layoutY="255.0" mnemonicParsing="false" text="ajouter" />
-                     </children>
-                  </Pane>
                   <Pane fx:id="panePromotion" style="-fx-background-color: #FFFFFF;">
                      <children>
                         <Label layoutX="40.0" layoutY="29.0" text="Formulaire d'ajout:" />
                         <Label layoutX="40.0" layoutY="75.0" text="pourcentage" />
                         <Label layoutX="40.0" layoutY="120.0" text="Produit" />
-                        <Label layoutX="40.0" layoutY="164.0" text="Prix" />
-                        <Label layoutX="40.0" layoutY="211.0" text="Date Debut" />
-                        <Label layoutX="40.0" layoutY="262.0" text="Date Fin" />
+                        <Label layoutX="44.0" layoutY="179.0" text="Date Debut" />
+                        <Label layoutX="44.0" layoutY="233.0" text="Date Fin" />
                         <TextField fx:id="TextFieldPourcentagePromotion" layoutX="135.0" layoutY="72.0" prefHeight="26.0" prefWidth="124.0" />
-                        <TextField fx:id="TextFieldPrixPromotion" layoutX="135.0" layoutY="160.0" prefHeight="26.0" prefWidth="124.0" />
-                        <DatePicker fx:id="datePickerDateDebPromo" layoutX="120.0" layoutY="208.0" prefHeight="26.0" prefWidth="133.0" />
-                        <DatePicker fx:id="datePickerDateFinPromo" layoutX="123.0" layoutY="259.0" prefHeight="26.0" prefWidth="133.0" />
+                        <DatePicker fx:id="datePickerDateDebPromo" layoutX="131.0" layoutY="175.0" prefHeight="26.0" prefWidth="133.0" />
+                        <DatePicker fx:id="datePickerDateFinPromo" layoutX="131.0" layoutY="229.0" prefHeight="26.0" prefWidth="133.0" />
                         <ComboBox fx:id="comboBoxProduit" layoutX="122.0" layoutY="126.0" prefHeight="28.0" prefWidth="133.0" />
                         <TableView fx:id="tableViewPromotion" layoutX="267.0" layoutY="22.0" prefHeight="302.0" prefWidth="374.0">
                           <columns>
@@ -80,10 +56,34 @@
                               <TableColumn fx:id="etatPromotion" prefWidth="50.0" text="etat" />
                           </columns>
                         </TableView>
-                        <Button fx:id="buttonAjourPromotion" layoutX="109.0" layoutY="352.0" mnemonicParsing="false" text="ajouter" />
-                        <Button fx:id="buttonSupprimerPromotion" layoutX="360.0" layoutY="356.0" mnemonicParsing="false" text="supprimer" />
-                        <Button fx:id="buttonModifierPromotion" layoutX="502.0" layoutY="356.0" mnemonicParsing="false" text="modifier" />
-                        <Button fx:id="buttonActiverPromotion" layoutX="406.0" layoutY="414.0" mnemonicParsing="false" text="Activer promotion" />
+                        <Button fx:id="buttonAjourPromotion" layoutX="109.0" layoutY="352.0" mnemonicParsing="false" onAction="#ajouterPromotion" text="ajouter" />
+                        <Button fx:id="buttonSupprimerPromotion" layoutX="360.0" layoutY="356.0" mnemonicParsing="false" onAction="#supprimerPromotion" text="supprimer" />
+                        <Button fx:id="buttonModifierPromotion" layoutX="502.0" layoutY="356.0" mnemonicParsing="false" onAction="#modifierPromotion" text="modifier" />
+                        <Button fx:id="buttonActiverPromotion" layoutX="406.0" layoutY="414.0" mnemonicParsing="false" onAction="#activerPromotion" text="Activer promotion" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneCategorie" prefHeight="502.0" prefWidth="592.0" style="-fx-background-color: #FFFFFF;">
+                     <effect>
+                        <DropShadow height="0.0" radius="0.0" width="0.0" />
+                     </effect>
+                     <children>
+                        <TextField fx:id="textFieldNomCategorie" layoutX="114.0" layoutY="29.0" prefHeight="26.0" prefWidth="124.0" />
+                        <Label layoutX="23.0" layoutY="33.0" text="nom " />
+                        <TextField fx:id="textFieldDescCategorie" layoutX="114.0" layoutY="84.0" prefHeight="26.0" prefWidth="124.0" />
+                        <Label layoutX="22.0" layoutY="88.0" text="Description" />
+                        <Label layoutX="19.0" layoutY="171.0" text="Image" />
+                        <Button fx:id="buttonSupprimerCategorie" layoutX="502.0" layoutY="369.0" mnemonicParsing="false" onAction="#SupprimerCategorie" text="Supprimer" />
+                        <Button fx:id="buttonImportCategorie" layoutX="149.0" layoutY="164.0" mnemonicParsing="false" onAction="#AjouterImageCategorie" text="import" />
+                        <TableView fx:id="TableViewCategorie" layoutX="305.0" layoutY="27.0" prefHeight="327.0" prefWidth="332.0">
+                          <columns>
+                            <TableColumn fx:id="idCategorie" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="nomCategorie" prefWidth="87.0" text="nom" />
+                              <TableColumn fx:id="descriptionCategorie" prefWidth="169.0" text="Description" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="buttonModifierCategorie" layoutX="362.0" layoutY="369.0" mnemonicParsing="false" onAction="#ModifierCategorie" text="Modifier" />
+                        <Button fx:id="buttonAjoutCategorie" layoutX="101.0" layoutY="378.0" mnemonicParsing="false" onAction="#AjouterCategorie" text="ajouter" />
+                        <ImageView fx:id="ImageViewCategorie" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
                   <Pane fx:id="paneProduits" prefHeight="486.0" prefWidth="589.0" style="-fx-background-color: #FFFFFF;">
@@ -96,26 +96,27 @@
                         <Label layoutX="22.0" layoutY="152.0" text="garantie" />
                         <Label layoutX="24.0" layoutY="294.0" text="prix" />
                         <ComboBox fx:id="ComboBoxCategorie" layoutX="128.0" layoutY="93.0" prefHeight="28.0" prefWidth="110.0" />
-                        <TextField fx:id="TextFieldNomProduit" layoutX="96.0" layoutY="49.0" prefHeight="26.0" prefWidth="124.0" />
-                        <TextField fx:id="TextFieldGarantieProduit" layoutX="103.0" layoutY="148.0" prefHeight="26.0" prefWidth="133.0" />
-                        <TextField fx:id="TextFieldQuantiteProduit" layoutX="98.0" layoutY="197.0" prefHeight="26.0" prefWidth="133.0" />
-                        <TextField fx:id="TextFieldDescProduit" layoutX="98.0" layoutY="239.0" prefHeight="26.0" prefWidth="133.0" />
-                        <TextField fx:id="TextFieldPrixProduit" layoutX="100.0" layoutY="290.0" prefHeight="26.0" prefWidth="133.0" />
+                        <TextField fx:id="TextFieldNomProduit" layoutX="141.0" layoutY="49.0" prefHeight="26.0" prefWidth="97.0" />
+                        <TextField fx:id="TextFieldGarantieProduit" layoutX="108.0" layoutY="148.0" prefHeight="26.0" prefWidth="133.0" />
+                        <TextField fx:id="TextFieldQuantiteProduit" layoutX="108.0" layoutY="197.0" prefHeight="26.0" prefWidth="133.0" />
+                        <TextField fx:id="TextFieldDescProduit" layoutX="108.0" layoutY="239.0" prefHeight="26.0" prefWidth="133.0" />
+                        <TextField fx:id="TextFieldPrixProduit" layoutX="108.0" layoutY="290.0" prefHeight="26.0" prefWidth="133.0" />
                         <TableView fx:id="tableViewProduit" layoutX="257.0" layoutY="62.0" prefHeight="327.0" prefWidth="374.0">
                           <columns>
                             <TableColumn fx:id="nomProduit" prefWidth="60.0" text="nom" />
-                            <TableColumn fx:id="categorieProduit" prefWidth="72.0" text="categorie" />
-                              <TableColumn fx:id="garantieProduit" prefWidth="68.0" text="garantie" />
-                              <TableColumn fx:id="prixProduit" prefWidth="53.0" text="prix" />
-                              <TableColumn fx:id="descriptionProduit" prefWidth="122.0" text="description" />
+                            <TableColumn fx:id="categorieProduit" prefWidth="129.0" text="categorie" />
+                              <TableColumn fx:id="garantieProduit" prefWidth="61.0" text="garantie" />
+                              <TableColumn fx:id="prixProduit" prefWidth="49.0" text="prix" />
+                              <TableColumn fx:id="descriptionProduit" prefWidth="76.0" text="description" />
                           </columns>
                         </TableView>
-                        <Button fx:id="buttonAjourProduit" layoutX="74.0" layoutY="409.0" mnemonicParsing="false" text="ajouter" />
-                        <Button fx:id="buttonSupprimerProduit" layoutX="326.0" layoutY="409.0" mnemonicParsing="false" text="supprimer" />
-                        <Button fx:id="buttonModifierProduit" layoutX="535.0" layoutY="409.0" mnemonicParsing="false" text="Modifier" />
-                        <Button layoutX="519.0" layoutY="16.0" mnemonicParsing="false" text="imprimer liste" />
+                        <Button fx:id="buttonAjourProduit" layoutX="326.0" layoutY="409.0" mnemonicParsing="false" onAction="#ajouterProduit" text="ajouter" />
+                        <Button fx:id="buttonSupprimerProduit" layoutX="429.0" layoutY="409.0" mnemonicParsing="false" onAction="#supprimerProduit" text="supprimer" />
+                        <Button fx:id="buttonModifierProduit" layoutX="535.0" layoutY="409.0" mnemonicParsing="false" onAction="#modifierProduit" text="Modifier" />
+                        <Button fx:id="buttonImprimerProduit" layoutX="519.0" layoutY="16.0" mnemonicParsing="false" onAction="#imprimerListeProduit" text="imprimer liste" />
                         <Label layoutX="21.0" layoutY="353.0" text="image" />
-                        <Button fx:id="buttonImporterProduit" layoutX="132.0" layoutY="350.0" mnemonicParsing="false" text="importer" />
+                        <Button fx:id="buttonImporterProduit" layoutX="27.0" layoutY="409.0" mnemonicParsing="false" onAction="#AjouterImageProduit" text="importer" />
+                        <ImageView fx:id="imageViewProduit" fitHeight="135.0" fitWidth="142.0" layoutX="103.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
                </children>

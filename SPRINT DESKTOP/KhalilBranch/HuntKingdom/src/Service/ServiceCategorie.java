@@ -31,9 +31,7 @@ public class ServiceCategorie {
     public ServiceCategorie() {
        con =DataBase.getInstance().getConnection(); 
     }
-
    
-    
      public static void ajouterCategorie (Categorie c) throws SQLException
     {
         Connection cnx = DataBase.getInstance().getConnection();
@@ -72,7 +70,27 @@ public class ServiceCategorie {
      }
     return arr;
     }
-    
+     
+      public String getNomFromId(int id) throws SQLException {
+        List<Categorie> arr=new ArrayList<>();
+    ste=con.createStatement();
+     String Name="null";
+    ResultSet rs=ste.executeQuery("select * from categorie where id='"+id+"'");
+     while (rs.next()) {                           
+              Name=rs.getString("nom");
+            
+     }return Name;
+    }
+       public int getIDFromNom(String nom) throws SQLException {
+        List<Categorie> arr=new ArrayList<>();
+    ste=con.createStatement();
+     int id=0;
+    ResultSet rs=ste.executeQuery("select * from categorie where nom='"+nom+"'");
+     while (rs.next()) {                           
+             id=rs.getInt("id");
+            
+     }return id;
+    }
      
       public int deletecategory(int id) throws SQLException  {
         int i = 0;

@@ -23,6 +23,16 @@ public class Produit {
     private String image;
     private Promotion promotion;
 
+    //for affichage
+    private String nomCat;
+
+    public String getNomCat() {
+        return nomCat;
+    }
+
+    public void setNomCat(String nomCat) {
+        this.nomCat = nomCat;
+    }
     public Promotion getPromotion() {
         return promotion;
     }
@@ -36,7 +46,7 @@ public class Produit {
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", categorie=" + categorie +
+        return "Produit{" + "id=" + id + ", categorie=" + categorie.getId() +
                 ", nom=" + nom + ", quantite=" + quantite + ", prix=" + prix + 
                 ", description=" + description + ", etatPromo=" + etatPromo + 
                 ", garantie=" + garantie + ", image=" + image +'}' ;
@@ -150,6 +160,14 @@ public class Produit {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Produit(String nom, float prix, String description, int garantie, String nomCat) {
+        this.nom = nom;
+        this.prix = prix;
+        this.description = description;
+        this.garantie = garantie;
+        this.nomCat = nomCat;
     }
     
 }
