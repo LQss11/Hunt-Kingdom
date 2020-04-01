@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SignInController">
+    <stylesheets>
+        <URL value="@signin.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="171.0" layoutY="172.0" text="Login" />
+      <Label layoutX="171.0" layoutY="242.0" text="Password" />
+      <TextField layoutX="276.0" layoutY="168.0" prefHeight="25.0" prefWidth="217.0" />
+      <PasswordField layoutX="276.0" layoutY="238.0" prefHeight="25.0" prefWidth="217.0" />
+      <Label layoutX="306.0" layoutY="40.0" prefHeight="50.0" prefWidth="89.0" text="Login" textFill="#611d1d" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Button layoutX="343.0" layoutY="322.0" mnemonicParsing="false" text="Login" />
+      <Hyperlink layoutX="486.0" layoutY="323.0" text="You don't have account" />
+   </children>
+</AnchorPane>
