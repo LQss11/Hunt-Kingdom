@@ -4,29 +4,34 @@
  * and open the template in the editor.
  */
 package Gui;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import doryan.windowsnotificationapi.fr.Notification;
 import com.jfoenix.controls.JFXButton;
-import java.net.URL;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.layout.Pane;
+import java.sql.Date;
+import java.sql.Statement;
+import java.sql.Connection;
+import Utils.DataBase;
 import Service.ServiceCategorie;
 import Service.ServiceProduit;
 import Service.ServicePromotion;
 import Service.ServiceWhishlist;
+import static com.qoppa.pdf.b.oc.wb;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import entities.Categorie;
 import entities.Whishlist;
 import entities.User;
 import entities.Promotion;
 import entities.Produit;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -41,37 +46,31 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javafx.scene.layout.Pane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.control.ComboBox;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
-import java.sql.Connection;
-import Utils.DataBase;
-import doryan.windowsnotificationapi.fr.Notification;
+
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.awt.AWTException;
 import java.awt.TrayIcon;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileOutputStream;
 import java.net.MalformedURLException;
-import javafx.scene.input.MouseEvent;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ComboBox;
-import org.apache.commons.lang3.RandomStringUtils;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 /**
@@ -156,7 +155,7 @@ private ObservableList<Promotion> dataPromotion;
     @FXML
     private DatePicker datePickerDateFinPromo;
     @FXML
-    private ComboBox<Produit> comboBoxProduit;
+    private ComboBox<String> comboBoxProduit;
     @FXML
     private TableView<Promotion> tableViewPromotion;
     @FXML
@@ -197,6 +196,14 @@ private ObservableList<Promotion> dataPromotion;
     private TableColumn<Promotion, ?> etatPromotion;
     @FXML
     private ImageView ImageViewCategorie;
+    
+    
+    
+    
+    
+    private XSSFWorkbook wb;
+    private XSSFSheet sheet;
+     private XSSFRow header;
 /////////////////////////////////////////////////////////////////////////////////// 
           /////////////////////////////////////////////////////////////////////////////////// 
           /////////////////////////////////////////////////////////////////////////////////// 
@@ -228,20 +235,26 @@ private ObservableList<Promotion> dataPromotion;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         con = DataBase.getInstance().getConnection();
+     
         dataCategorie= FXCollections.observableArrayList();
         dataProduit= FXCollections.observableArrayList();
         dataPromotion= FXCollections.observableArrayList();  
         
-       refresh();
+        try {
+            refresh();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
     }    
-    public void refresh()
+    public void refresh() throws SQLException
     {
          initComboBoxProduit();
         initComboBoxCategorie();
          loadDataCategorie();
        afficherCategorie();      
-       
+        loadDataPromotion();
+       afficherPromotion();
         try {
             loadDataProduit();
         } catch (SQLException ex) {
@@ -401,7 +414,7 @@ Image image1=null;
              photo = saveToFileImageNormal(image1);
    
               ServiceCategorie sc = new ServiceCategorie();
-              
+             
               if(photo==null)
               {             Categorie categ = new Categorie(c,nom,description);
                             System.out.println(categ);
@@ -462,13 +475,20 @@ private void loadDataProduit() throws SQLException {
          try {
           List<Produit> listp=new ArrayList<>();
           ServiceProduit pr=new ServiceProduit();
+          ServicePromotion spromo= new ServicePromotion();
           listp=pr.sortedbyId();
         
         listp.forEach((k)->{
             
             float prix;
         if(k.getEtatPromo()!=0)
-        {prix=k.getPromotion().getPrix();
+        {float x=0;
+                try {
+                    x = spromo.PrixPromo(k.getId());
+                } catch (SQLException ex) {
+                    Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            prix=x;
         }else{prix=k.getPrix();}
         ServiceCategorie sc= new ServiceCategorie();
         String nomcat="";
@@ -569,7 +589,7 @@ prod_search.setOnKeyReleased(e->{
     Categorie c=new Categorie();
                    System.out.println("ici");
    c= ComboBoxCategorie.getSelectionModel().getSelectedItem();
-    System.out.println("ici");
+    
 Image image1=null;
              image1=imageViewProduit.getImage();
               String photo = null;
@@ -581,7 +601,7 @@ Image image1=null;
             System.out.println(p);
          sp.ajouterProduit(p);
 
-     // Notification.sendNotification("HuntKingdom"," \n  Product Has been added ." ,TrayIcon.MessageType.WARNING);
+     //Notification.sendNotification("HuntKingdom"," \n  Product Has been added ." ,TrayIcon.MessageType.WARNING);
         
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information");
@@ -593,7 +613,7 @@ Image image1=null;
     }
 
     @FXML
-    private void supprimerProduit(ActionEvent event) throws SQLException {
+    private void supprimerProduit(ActionEvent event) throws SQLException, AWTException, MalformedURLException {
         
          TableColumn.CellEditEvent edittedcell = null;
             Produit x=gettempProduit(edittedcell);         
@@ -605,6 +625,7 @@ Image image1=null;
             int s=sp.deleteProduit(i);
               if(s==1)
         {
+            Notification.sendNotification("HuntKingdom"," \n  Product Has been added ." ,TrayIcon.MessageType.WARNING);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information");
                 alert.setHeaderText(null);
@@ -615,7 +636,7 @@ Image image1=null;
     }
 
     @FXML
-    private void modifierProduit(ActionEvent event) throws SQLException {
+    private void modifierProduit(ActionEvent event) throws SQLException  {
         
         
         
@@ -638,12 +659,9 @@ Image image1=null;
    
               ServiceProduit sp = new ServiceProduit();
               
-              if(photo==null)
-              {            Produit p= new Produit(id,cat, nom, quantite, prix, description, garantie, photo);                            
-                             i=sp.updateProduit(p);}
-              
-              else{         Produit p= new Produit(id,cat, nom, quantite, prix, description, garantie, photo);                         
-                             i=sp.updateProduit(p);}
+                         Produit p= new Produit(id,cat, nom, quantite, prix, description, garantie, photo);                            
+                             i=sp.updateProduit(p);
+       
               
           
               if(i==1)
@@ -653,14 +671,65 @@ Image image1=null;
                 alert.setHeaderText(null);
                 alert.setContentText("produit updated");
                 alert.showAndWait();
-                clearFormCategorie();
-         refresh();
+                clearFormProduit();
+        try {
+            refresh();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
            
         }
     }
 
     @FXML
     private void imprimerListeProduit(ActionEvent event) {
+   try {
+         String query ="select * from produit";
+        
+            pst=con.prepareStatement(query);
+        
+        rs= pst.executeQuery();
+        
+        
+         wb= new XSSFWorkbook();
+        sheet= wb.createSheet("Product Details");
+        header =sheet.createRow(0);
+        header.createCell(0).setCellValue("id Produit");
+        header.createCell(1).setCellValue("Nom Produit");
+        header.createCell(2).setCellValue("Prix");
+        header.createCell(3).setCellValue("garantie ");
+        
+        int index=1;
+          
+        while(rs.next()){
+          XSSFRow row=sheet.createRow(index);
+            row.createCell(0).setCellValue(rs.getString("id"));
+            row.createCell(1).setCellValue(rs.getString("nom"));
+            row.createCell(2).setCellValue(rs.getString("prix"));
+            row.createCell(3).setCellValue(rs.getString("garantie"));
+            index++;
+        }
+        
+       FileOutputStream fileOut= new FileOutputStream("Produit.xlsx");
+        wb.write(fileOut);
+        fileOut.close();
+        
+        Alert alert =new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Product Details Exported in Excel Sheet.");
+        alert.showAndWait();
+        
+        pst.close();
+        rs.close();
+        
+    }
+    catch (SQLException ex) {
+            Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    catch (IOException ex) {
+        Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
 
     @FXML
@@ -702,7 +771,8 @@ Image image1=null;
           /////////////////////////////////////////////////////////////////////////////////// 
         
      public Promotion gettempPromotion(TableColumn.CellEditEvent edittedCell) {
-        Promotion test = tableViewPromotion.getSelectionModel().getSelectedItem();        
+        Promotion test = tableViewPromotion.getSelectionModel().getSelectedItem();  
+         System.out.println(test);
         return test;
     }
    
@@ -715,21 +785,123 @@ Image image1=null;
     }
 
     @FXML
-    private void ajouterPromotion(ActionEvent event) {
+    private void ajouterPromotion(ActionEvent event) throws SQLException {
+        
+         int pourcentage = Integer.valueOf(TextFieldPourcentagePromotion.getText());
+            Date dated=Date.valueOf(datePickerDateDebPromo.getValue());
+            Date dateF=Date.valueOf(datePickerDateFinPromo.getValue());  
+            String prod= comboBoxProduit.getSelectionModel().getSelectedItem();
+        ServicePromotion sp = new ServicePromotion();
+        ServiceProduit sprod=new ServiceProduit();
+    
+            Produit pp=sprod.searchByNomProduit(prod);
+            
+      
+        
+        Promotion promo = new Promotion(pourcentage, pp, dateF, dated,  pourcentage);
+           
+           
+        sp.ajouterPromotion(promo);
+
+        System.out.println(prod);
+        
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Promotion added");
+                alert.showAndWait();
+                clearFormPromotion();
+                  refresh();
+        
     }
 
     @FXML
-    private void supprimerPromotion(ActionEvent event) {
+    private void supprimerPromotion(ActionEvent event) throws SQLException {
+        
+          TableColumn.CellEditEvent edittedcell = null;
+            Promotion promo=gettempPromotion(edittedcell);         
+            int i=promo.getId();
+           ServiceProduit sprod= new ServiceProduit();  
+            
+            ServicePromotion sp=new ServicePromotion();
+                 int idp=sp.ProduitPromo(i);
+             sprod.updateEtatPromoProduit(idp);
+            int s=sp.deletePromotion(i);
+              if(s==1)
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Promotion deleted");
+                alert.showAndWait();
+          refresh();
+        }
+        
     }
 
     @FXML
-    private void modifierPromotion(ActionEvent event) {
+    private void modifierPromotion(ActionEvent event) throws SQLException {
+        TableColumn.CellEditEvent edittedcell = null;
+           Promotion x=gettempPromotion(edittedcell);
+           int id=x.getId();
+         int pourcentage = Integer.valueOf(TextFieldPourcentagePromotion.getText());
+          Date dated=Date.valueOf(datePickerDateDebPromo.getValue());
+          Date dateF=Date.valueOf(datePickerDateFinPromo.getValue());  
+Produit prod=new Produit();
+   //prod= comboBoxProduit.getSelectionModel().getSelectedItem();
+        ServicePromotion sp = new ServicePromotion();
+        Promotion promo = new Promotion(id,pourcentage, prod, dateF, dated);
+            System.out.println(promo);
+         sp.updatePromotion(promo);
+
+      
+        
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setHeaderText(null);
+                alert.setContentText("Promotion added");
+                alert.showAndWait();
+                clearFormPromotion();
+                  refresh();
+        
+        
     }
 
     @FXML
     private void activerPromotion(ActionEvent event) {
     }
 
+    
+    
+    private void afficherPromotion(){
+            idPromotion.setCellValueFactory(new PropertyValueFactory <>("id"));
+             pourcentagePromotion.setCellValueFactory(new PropertyValueFactory <>("pourcentage"));
+             dateDebutPromotion.setCellValueFactory(new PropertyValueFactory <>("dateDebut"));
+             dateFinPromotion.setCellValueFactory(new PropertyValueFactory <>("DateFin"));
+             prixPromotion.setCellValueFactory(new PropertyValueFactory <>("prix"));
+             etatPromotion.setCellValueFactory(new PropertyValueFactory <>("active"));
+                  
+    }
+    
+private void loadDataPromotion() throws SQLException {
+   dataPromotion.clear();
+         try {
+           pst =con.prepareStatement("Select * from promotion");
+
+    rs=pst.executeQuery();
+     while (rs.next()) {                
+             dataPromotion.add(new  Promotion(rs.getInt("id"),rs.getInt("pourcentage"),
+                     rs.getDate("dateFin"),rs.getDate("dateDebut"), rs.getInt("active")));
+             System.out.println("jbed promo");
+     }       }
+       catch (SQLException ex) {
+           Logger.getLogger(ServiceCategorie.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        tableViewPromotion.setItems(dataPromotion);
+    }
+    
+    
+    
     private void initComboBoxProduit() {
     ObservableList datacat=FXCollections.observableArrayList();
    comboBoxProduit.getSelectionModel().clearSelection();
@@ -738,7 +910,8 @@ Image image1=null;
 
     rs=pst.executeQuery();
      while (rs.next()) {                
-             datacat.add(rs.getString("nom"));
+             datacat.add(
+                     rs.getString("nom"));
      }       }
        catch (SQLException ex) {
            Logger.getLogger(ServiceProduit.class.getName()).log(Level.SEVERE, null, ex);

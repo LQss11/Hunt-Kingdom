@@ -41,12 +41,12 @@ public class Produit {
         this.promotion = promotion;
     }
     public Produit() {
-      promotion.setId(0);
+     
     }
 
     @Override
     public String toString() {
-        return "Produit{" + "id=" + id + ", categorie=" + categorie.getId() +
+        return "Produit{" + "id=" + id  +
                 ", nom=" + nom + ", quantite=" + quantite + ", prix=" + prix + 
                 ", description=" + description + ", etatPromo=" + etatPromo + 
                 ", garantie=" + garantie + ", image=" + image +'}' ;

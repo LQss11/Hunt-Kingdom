@@ -35,37 +35,35 @@ public class ServicePromotion {
     {
         Connection cnx = DataBase.getInstance().getConnection();
          Statement st = cnx.createStatement();
+          ServiceProduit pc=new ServiceProduit();
 
-   try { 
-            String req = "insert into `promotion` (`pourcentage`, `idProduit`, `dateFin`,"
-                    + "`dateDebut`,`prix`,``active)"
-                    + " values (?,?,?,"
-                    + "?,?)";
-           
-            String req2="update produit set etatPromo=1 where id='"+p.getProduit().getId()+"'";
+          
+             String req2="update produit set etatPromo=1 where id='"+p.getProduit().getId()+"'";
         PreparedStatement pre2 = cnx.prepareStatement(req2);      
         pre2.executeUpdate() ; 
-        
-        
-        ServiceProduit pc=new ServiceProduit();
-       Float px= pc.PrixForPromo(p.getProduit().getId());
-        
+   
+            String req = "insert into `promotion` (`pourcentage`, `idProduit`, `dateFin`,"
+                    + "`dateDebut`,`prix`,`active`)"
+                    + " values (?,?,?,"
+                    + "?,?,?)";
        
+       float px= p.getProduit().getPrix();
+        float x=0;
+       x=(px*100)-(px*p.getPourcentage());
+       x/=100;
+       p.setActive(1);
+       p.setPrix(x);
         PreparedStatement pre = cnx.prepareStatement(req);
             pre.setInt(1,p.getPourcentage()) ; 
             pre.setInt(2,p.getProduit().getId()) ;
             pre.setDate(3,p.getDateFin()) ;
             pre.setDate(4,p.getDateDebut()) ;
-            px*=p.getPourcentage();
-            pre.setFloat(5,px) ;           
-          pre.setInt(6,1) ;
+            pre.setFloat(5,x) ;           
+          pre.setInt(6,p.getActive()) ;
+          System.out.println(p);
   
             pre.executeUpdate() ; 
-            System.out.println("DONE Promotion");
-            
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
+       
    
     }
      
@@ -102,6 +100,8 @@ public class ServicePromotion {
      
            public int deletePromotion(int id) throws SQLException  {
         int i = 0;
+        
+        
        try {
            ste=con.createStatement();
            String sql="DELETE FROM promotion WHERE id="+id;   
@@ -115,7 +115,7 @@ public class ServicePromotion {
            
        public int updatePromotion(Promotion p) throws SQLException {
          
-           String requestUpdate="UPDATE `produit` SET `pourcentage`=?, `dateFin`=? WHERE `id`=?";       
+           String requestUpdate="UPDATE `promotion` SET `pourcentage`=?, `dateFin`=? WHERE `id`=?";       
         PreparedStatement statement =con.prepareStatement(requestUpdate);
         statement.setInt(1,p.getPourcentage());
         statement.setDate(2, p.getDateFin());
@@ -125,7 +125,7 @@ public class ServicePromotion {
     }
          public int ActiverPromotion(Promotion p) throws SQLException {
          
-           String requestUpdate="UPDATE `produit` SET `active`=? WHERE `id`=?";       
+           String requestUpdate="UPDATE `promotion` SET `active`=? WHERE `id`=?";       
         PreparedStatement statement =con.prepareStatement(requestUpdate);
         statement.setInt(1,p.getActive());
       
@@ -134,4 +134,29 @@ public class ServicePromotion {
          return statement.executeUpdate();
     }
     
+           public float PrixPromo(int idP) throws SQLException {
+      
+    ste=con.createStatement();
+    Statement stee;
+    float prix=0;
+    stee=con.createStatement();
+    ResultSet rs=ste.executeQuery("select * from promotion where idProduit ='"+idP+"'");
+     while (rs.next()) {                              
+                prix =rs.getFloat("Prix");          
+     }
+    return prix;
+    }
+            public int ProduitPromo(int idP) throws SQLException {
+      
+    ste=con.createStatement();
+    Statement stee;
+    int id=0;
+    stee=con.createStatement();
+    ResultSet rs=ste.executeQuery("select * from promotion where id ='"+idP+"'");
+     while (rs.next()) {                              
+                id =rs.getInt("idProduit");          
+     }
+    return id;
+    }
+         
 }

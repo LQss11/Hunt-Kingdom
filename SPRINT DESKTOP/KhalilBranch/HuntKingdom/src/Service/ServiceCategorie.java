@@ -151,7 +151,7 @@ public class ServiceCategorie {
                                         ppp.setId(idp);
                                     int pourcentage =rspp.getInt("pourcentage");
                                         ppp.setPourcentage(pourcentage);
-                                    Float prixpromo=rspp.getFloat("prix");
+                                    float prixpromo=rspp.getFloat("prix");
                                         ppp.setPrix(prixpromo);
                                     Date date=rspp.getDate("dateFin");
                                         ppp.setDateFin(date);

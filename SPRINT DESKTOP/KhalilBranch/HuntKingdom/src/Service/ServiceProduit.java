@@ -96,7 +96,7 @@ public class ServiceProduit {
                                         ppp.setId(idp);
                                     int pourcentage =rspp.getInt("pourcentage");
                                         ppp.setPourcentage(pourcentage);
-                                    Float prixpromo=rspp.getFloat("prix");
+                                    float prixpromo=rspp.getFloat("prix");
                                         ppp.setPrix(prixpromo);
                                     Date date=rspp.getDate("dateFin");
                                         ppp.setDateFin(date);
@@ -105,9 +105,7 @@ public class ServiceProduit {
                                                     }
                                 rspp.close();
                                             }
-              
-             System.out.println("jbed produit");  
-               
+                             
      arr.add(p);
      }
     return arr;
@@ -156,8 +154,6 @@ public class ServiceProduit {
                                 rspp.close();
                                             }
               
-             System.out.println("jbed produit");  
-               
      arr.add(p);
      }
     return arr;
@@ -205,15 +201,14 @@ public class ServiceProduit {
                                                     }
                                 rspp.close();
                                             }
-              
-             System.out.println("jbed produit");  
-               
+           
      arr.add(p);
      }
     return arr;
     }
      
-        public List<Produit> sortedbyNom() throws SQLException {
+       
+          public List<Produit> sortedbyNom() throws SQLException {
         List<Produit> arr=new ArrayList<>();
     ste=con.createStatement();
     Statement stee;
@@ -255,12 +250,41 @@ public class ServiceProduit {
                                                     }
                                 rspp.close();
                                             }
-              
-             System.out.println("jbed produit");  
+             
+                            
+                            
                
      arr.add(p);
      }
     return arr;
+    }
+       
+       
+       
+       
+        public Produit searchByNomProduit(String nomp) throws SQLException {
+       Produit pr=new Produit();
+    ste=con.createStatement();
+    Statement stee;
+    stee=con.createStatement();
+    ResultSet rs=ste.executeQuery("select * from produit where nom='"+nomp+"'");
+     while (rs.next()) {                
+               int id=rs.getInt(1);
+               int idCat=rs.getInt("categorie");
+               String nom=rs.getString("nom");
+               int quantite =rs.getInt("quantite");
+               String description=rs.getString("description");
+               float prix=rs.getFloat("Prix");
+               int etatPromo =rs.getInt("etatPromo");
+               int garantie =rs.getInt("garantie");
+               String image= rs.getString("image");
+               
+               Categorie c=new Categorie();
+               c.setId(idCat);
+              Produit p=new Produit(id, c,nom, quantite,prix, description,garantie, image) ;  
+              return p;
+     }
+    return pr;
     }
        
       public List<Produit> searchByNom(String nomm) throws SQLException {
@@ -306,7 +330,7 @@ public class ServiceProduit {
                                 rspp.close();
                                             }
               
-             System.out.println("jbed produit");  
+           
                
      arr.add(p);
      }
@@ -356,8 +380,7 @@ public class ServiceProduit {
                                 rspp.close();
                                             }
               
-             System.out.println("jbed produit");  
-               
+          
      arr.add(p);
      }
     return arr;
@@ -406,7 +429,7 @@ public class ServiceProduit {
                                 rspp.close();
                                             }
               
-             System.out.println("jbed produit");  
+        
                
      arr.add(p);
      }
@@ -434,7 +457,6 @@ public class ServiceProduit {
                c.setId(idCat);
               Produit p=new Produit(id, c,nom, quantite,prix, description,garantie, image) ;
               p.setEtatPromo(etatPromo);
-    System.out.println("jbed produit");  
                
      return p;
      }
@@ -453,11 +475,10 @@ public class ServiceProduit {
      finally{ste.close();}
       return i;  
     }
-           
-       public int updateProduit(Produit p) throws SQLException {
+           public int updateProduit(Produit p) throws SQLException {
          
            String requestUpdate="UPDATE `produit` SET `nom`=?, `description`=?, "
-                   + "`image`=? ,`quantite`=?,`prix`=?, `garantie`=?  WHERE `id`=?";       
+                   + "`image`=? ,`quantite`=?,`prix`=?, `garantie`=?, `categorie`=? WHERE `id`=?";       
         PreparedStatement statement =con.prepareStatement(requestUpdate);
         statement.setString(1,p.getNom());
         statement.setString(2, p.getDescription());
@@ -465,10 +486,26 @@ public class ServiceProduit {
         statement.setInt(4,p.getQuantite());
         statement.setFloat(5,p.getPrix());
         statement.setInt(6,p.getGarantie());
-        statement.setInt(7,p.getId());
+        int x=Integer.valueOf(p.getCategorie().getId());
+        statement.setInt(7,x);
+        statement.setInt(8,p.getId());
+        ServiceCategorie sc= new  ServiceCategorie();
         
          return statement.executeUpdate();
     }
+      
+           
+        public int updateEtatPromoProduit(int idp) throws SQLException {
+         
+           String requestUpdate="UPDATE `produit` SET  `etatPromo`=? WHERE `id`=?";       
+        PreparedStatement statement =con.prepareStatement(requestUpdate);
+        statement.setInt(1,1);
+        statement.setInt(2, idp);
+         
+         return statement.executeUpdate();
+    }    
+           
+           
     //cette fonction aide a cree le prix de la promotion
     public Float PrixForPromo(int idD) throws SQLException {
       
@@ -482,4 +519,7 @@ public class ServiceProduit {
      }
    return prix; 
     }
+    
+    
+    
 }

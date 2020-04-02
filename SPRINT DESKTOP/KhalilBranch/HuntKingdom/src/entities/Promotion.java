@@ -20,12 +20,27 @@ public class Promotion {
     private float prix;
     private int active;
 
-    public Promotion(int pourcentage, Produit Produit, Date dateFin, Date dateDebut, float prix, int active) {
+    public Promotion(int pourcentage, Produit Produit, Date dateFin, Date dateDebut,  int active) {
         this.pourcentage = pourcentage;
         this.Produit = Produit;
         this.dateFin = dateFin;
         this.dateDebut = dateDebut;
-        this.prix = prix;
+        this.active = active;
+    }
+
+    public Promotion(int id, int pourcentage, Produit Produit, Date dateFin, Date dateDebut) {
+        this.id = id;
+        this.pourcentage = pourcentage;
+        this.Produit = Produit;
+        this.dateFin = dateFin;
+        this.dateDebut = dateDebut;
+    }
+
+    public Promotion(int id, int pourcentage, Date dateFin, Date dateDebut, int active) {
+        this.id = id;
+        this.pourcentage = pourcentage;
+        this.dateFin = dateFin;
+        this.dateDebut = dateDebut;
         this.active = active;
     }
 
@@ -109,7 +124,9 @@ public class Promotion {
 
     @Override
     public String toString() {
-        return "Promotion{" + "id=" + id + '}';
+        return "Promotion{" + "id=" + id + ", pourcentage=" + pourcentage + ", Produit=" + Produit + ", dateFin=" + dateFin + ", dateDebut=" + dateDebut + ", prix=" + prix + ", active=" + active + '}';
     }
+
+    
     
 }
