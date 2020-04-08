@@ -97,6 +97,32 @@ public class ServicePromotion {
     return arr;
     }
     
+       public Promotion ReturnPRomotionById(int idPromo ) throws SQLException {
+       
+    ste=con.createStatement();
+    Statement stee;
+    stee=con.createStatement();
+    Promotion pp=new Promotion();
+    ResultSet rs=ste.executeQuery("select * from promotion where id='"+idPromo+"'");
+     while (rs.next()) {                
+               int id=rs.getInt(1);
+               int pourcentage=rs.getInt("pourcentage");           
+               int idp =rs.getInt("idProduit");     
+               Date datefin=rs.getDate("dateFin");
+               Date dateDebut=rs.getDate("dateDebut");
+               Float prix =rs.getFloat("Prix");
+               int active =rs.getInt("active");
+               
+               
+              ServiceProduit pc=new ServiceProduit();
+       Produit p= new Produit();  
+               p=pc.ProduitReturn(idp);
+               
+               pp=new Promotion(id,pourcentage,p,datefin,dateDebut,prix,active);
+      return pp;
+     }
+    return pp;
+    }
      
            public int deletePromotion(int id) throws SQLException  {
         int i = 0;
@@ -123,14 +149,29 @@ public class ServicePromotion {
         
          return statement.executeUpdate();
     }
-         public int ActiverPromotion(Promotion p) throws SQLException {
+         public int ActiverPromotion(int id) throws SQLException {
          
            String requestUpdate="UPDATE `promotion` SET `active`=? WHERE `id`=?";       
         PreparedStatement statement =con.prepareStatement(requestUpdate);
-        statement.setInt(1,p.getActive());
-      
-        statement.setInt(2,p.getId());
-        
+        statement.setInt(1,1);
+        ServicePromotion spromo=new ServicePromotion();
+      Promotion promo=spromo.ReturnPRomotionById(id);
+        statement.setInt(2,id);
+        ServiceProduit sprod=new ServiceProduit();
+        sprod.updateEtatPromoProduit(promo.getProduit().getId(), 1);
+         return statement.executeUpdate();
+         
+    }
+            public int DesActiverPromotion(int id) throws SQLException {
+         
+           String requestUpdate="UPDATE `promotion` SET `active`=? WHERE `id`=?";       
+        PreparedStatement statement =con.prepareStatement(requestUpdate);
+        statement.setInt(1,0);
+      ServicePromotion spromo=new ServicePromotion();
+      Promotion promo=spromo.ReturnPRomotionById(id);
+        statement.setInt(2,id);
+        ServiceProduit sprod=new ServiceProduit();
+        sprod.updateEtatPromoProduit(promo.getProduit().getId(), 0);
          return statement.executeUpdate();
     }
     

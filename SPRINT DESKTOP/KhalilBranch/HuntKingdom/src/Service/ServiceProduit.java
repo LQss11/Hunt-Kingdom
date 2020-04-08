@@ -495,11 +495,11 @@ public class ServiceProduit {
     }
       
            
-        public int updateEtatPromoProduit(int idp) throws SQLException {
+        public int updateEtatPromoProduit(int idp,int up) throws SQLException {
          
            String requestUpdate="UPDATE `produit` SET  `etatPromo`=? WHERE `id`=?";       
         PreparedStatement statement =con.prepareStatement(requestUpdate);
-        statement.setInt(1,1);
+        statement.setInt(1,up);
         statement.setInt(2, idp);
          
          return statement.executeUpdate();

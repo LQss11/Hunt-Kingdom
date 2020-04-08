@@ -19,6 +19,7 @@ import Service.ServiceCategorie;
 import Service.ServiceProduit;
 import Service.ServicePromotion;
 import Service.ServiceWhishlist;
+import Service.SendMail;
 import static com.qoppa.pdf.b.oc.wb;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -34,6 +35,8 @@ import java.awt.image.BufferedImage;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -48,6 +51,9 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.scene.layout.Pane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
+import javafx.scene.control.Label;
 import javafx.scene.control.ComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -73,6 +79,8 @@ import java.util.logging.Logger;
 
 
 
+
+
 /**
  * FXML Controller class
  *
@@ -85,9 +93,15 @@ private ObservableList<Categorie> dataCategorie;
 private ObservableList<Promotion> dataPromotion;
    private Connection con;
     private ResultSet rs=null;
-    private PreparedStatement pst;
+    private ResultSet rs1=null;
+    private PreparedStatement pst,pst1;
     
-    
+       PieChart piechart1;
+    ObservableList<PieChart.Data> piechartdata;
+    private final ObservableList<PieChart.Data> details= FXCollections.observableArrayList();
+private PieChart pieChart;
+    ArrayList<Integer> np=new ArrayList<Integer>();
+ArrayList<String> cat=new ArrayList<String>();
     
     
     
@@ -216,7 +230,22 @@ private ObservableList<Promotion> dataPromotion;
     private Button buttonImprimerProduit;
     @FXML
     private ImageView imageViewProduit;
+    @FXML
+    private Pane PaneDashboard;
+    @FXML
+    private PieChart PieChartCategorie;
+    @FXML
+    private Label labelDashboard;
+    @FXML
+    private Label labelProduit;
+    @FXML
+    private TextField SearchProduitField;
+    
         
+
+
+
+
     @FXML
     void handleButtonAction(ActionEvent event) {
    if (event.getSource() == buttonProduits)
@@ -231,15 +260,25 @@ private ObservableList<Promotion> dataPromotion;
            {
                paneCategorie.toFront();
            }
+        else if (event.getSource() == labelDashboard)
+           {
+               PaneDashboard.toFront();
+           }
+   else if (event.getSource() == labelProduit)
+           {
+               PaneHeadProduit.toFront();
+           }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         con = DataBase.getInstance().getConnection();
-     
+     RecupererProduit();
+     RecupererCategorie();
+     RecupererPromotion();
         dataCategorie= FXCollections.observableArrayList();
         dataProduit= FXCollections.observableArrayList();
         dataPromotion= FXCollections.observableArrayList();  
-        
+      searchProduit();
         try {
             refresh();
         } catch (SQLException ex) {
@@ -249,6 +288,8 @@ private ObservableList<Promotion> dataPromotion;
     }    
     public void refresh() throws SQLException
     {
+          initStatProduit();
+          PieChartCategorie.setData(piechartdata);
          initComboBoxProduit();
         initComboBoxCategorie();
          loadDataCategorie();
@@ -262,6 +303,46 @@ private ObservableList<Promotion> dataPromotion;
         }
         afficherProduit();
     
+    }
+    
+    
+    private void initStatProduit()
+    {
+      piechartdata=FXCollections.observableArrayList();
+    try {
+        
+        pst=con.prepareStatement("select * from categorie");
+           
+      
+        rs=pst.executeQuery();
+       
+        while(rs.next() )
+        {
+              pst1=con.prepareStatement("SELECT COUNT(*) as countab FROM produit WHERE categorie='"+rs.getString("id")+"'");
+        rs1=pst1.executeQuery();
+            //Servicecategory cat=new Servicecategory();
+        while(rs1.next())
+        {
+            int i=Integer.valueOf(rs1.getString("countab"));
+            piechartdata.add(new PieChart.Data(rs.getString(2),i));
+            np.add(i);
+            cat.add(rs.getString("nom"));
+        }
+        }
+    } catch (SQLException ex) {
+        System.out.println("stat produit");
+    }
+    
+    }
+
+    @FXML
+    private void showDashboard(MouseEvent event) {
+        PaneDashboard.toFront();
+    }
+
+    @FXML
+    private void showProduits(MouseEvent event) {
+        PaneDashboard.toBack();
     }
            public static String saveToFileImageNormal(Image image)throws SQLException  {
 
@@ -278,6 +359,10 @@ private ObservableList<Promotion> dataPromotion;
         }
         return name;
     } 
+           
+           
+           
+           
     
     /////////////////////////////////////////////////////////////////////////////////// 
           /////////////////////////////////////////////////////////////////////////////////// 
@@ -310,7 +395,15 @@ private void loadDataCategorie() {
        }
         TableViewCategorie.setItems(dataCategorie);
     }
-  
+  private void RecupererCategorie() {
+        TableViewCategorie.setOnMouseClicked(e -> {
+ Categorie test = TableViewCategorie.getSelectionModel().getSelectedItem();               
+            textFieldNomCategorie.setText(test.getNom());
+            textFieldDescCategorie.setText(String.valueOf(test.getDescription()));
+        }
+        );
+    }
+     
     @FXML
     private void AjouterCategorie(ActionEvent event) throws SQLException {
 
@@ -507,7 +600,29 @@ private void loadDataProduit() throws SQLException {
         tableViewProduit.setItems(dataProduit);
     }
     
-    
+      
+    private void RecupererProduit() {
+        tableViewProduit.setOnMouseClicked(e -> {
+ Produit test = tableViewProduit.getSelectionModel().getSelectedItem();        
+        
+      ServiceProduit sp=new ServiceProduit(); 
+      int Quantite=0;
+      String image="";
+            try {
+             Produit    prod= sp.searchByNomProduit(test.getNom());
+             Quantite=prod.getQuantite();
+             image=prod.getImage();
+            } catch (SQLException ex) {
+                System.out.println("RecupererProduit() get produit  par nom");            }
+            TextFieldNomProduit.setText(test.getNom());
+           TextFieldGarantieProduit.setText(String.valueOf(test.getGarantie()));
+            TextFieldDescProduit.setText(String.valueOf(test.getDescription()));
+           TextFieldPrixProduit.setText(String.valueOf(test.getPrix()));
+           TextFieldQuantiteProduit.setText(String.valueOf(Quantite));
+         
+        }
+        );
+    }   
     
             public Produit gettempProduit(TableColumn.CellEditEvent edittedCell) {
         Produit test = tableViewProduit.getSelectionModel().getSelectedItem();        
@@ -534,47 +649,47 @@ ComboBoxCategorie.setItems(datacat);
 
 }
             
-         /*   public void searchProduct(){
-prod_search.setOnKeyReleased(e->{
-    if(prod_search.getText().equals("")){
-        loadDataprod();
+           public void searchProduit(){
+SearchProduitField.setOnKeyReleased(e->{
+    if(SearchProduitField.getText().equals("")){
+        try {
+            loadDataProduit();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     else{
-        datap.clear();
-          String sql = "Select * from product where productName LIKE '%"+prod_search.getText()+"%'"
-                + "UNION Select * from product where productPrice LIKE '%"+prod_search.getText()+"%'" ;
+        dataProduit.clear();
+          String sql = "Select * from produit where nom LIKE '%"+SearchProduitField.getText()+"%'"
+                + "UNION Select * from produit where prix LIKE '%"+SearchProduitField.getText()+"%'" ;
     try {
       
         pst=con.prepareStatement(sql);
         rs=pst.executeQuery();
         while(rs.next())
-        {
-            int idProduct=rs.getInt("idProduct");
-         String productName=rs.getString("productName");
-         Float productPrice=rs.getFloat("productPrice");
-         int idcat=rs.getInt("categoryId");
-                        //datap.add(new Produits(idProduct,productName,productPrice,idcat));
-                        Servicecategory cat =new Servicecategory();
-             datap.add(new Produits(idProduct,productName,productPrice,cat.getNamecatbyId(idcat)));
+        {   int idc=rs.getInt("categorie");
+            String nom=rs.getString("nom");
+            float prix=rs.getFloat("prix");
+            int garantie=rs.getInt("garantie");
+            String description=rs.getString("description");
+            ServiceCategorie sc= new ServiceCategorie();
+            String nomcat="";
+              try {
+                  nomcat= sc.getNomFromId(idc);
+              } catch (SQLException ex) {
+                  System.out.println("requete database  nom categorie");
+              } 
+             dataProduit.add(new Produit(nom,prix,description,garantie,nomcat));
  
         }
-        tab_prod.setItems(datap);
+        tableViewProduit.setItems(dataProduit);
     } catch (SQLException ex) {
-        Logger.getLogger(produitsController.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        System.err.println("requete search");    }
     
     }
 });
 }
-            
-            
-            
-            
-            
-            */
-            
-            
-            
+    
             
                @FXML
     private void ajouterProduit(ActionEvent event) throws SQLException, AWTException, MalformedURLException {
@@ -748,8 +863,7 @@ Image image1=null;
             System.out.println(ex.getMessage());
         }
     }
-            
-            
+    
              private void clearFormProduit()
     {
     TextFieldNomProduit.clear();
@@ -772,7 +886,6 @@ Image image1=null;
         
      public Promotion gettempPromotion(TableColumn.CellEditEvent edittedCell) {
         Promotion test = tableViewPromotion.getSelectionModel().getSelectedItem();  
-         System.out.println(test);
         return test;
     }
    
@@ -825,7 +938,7 @@ Image image1=null;
             
             ServicePromotion sp=new ServicePromotion();
                  int idp=sp.ProduitPromo(i);
-             sprod.updateEtatPromoProduit(idp);
+             sprod.updateEtatPromoProduit(idp,0);
             int s=sp.deletePromotion(i);
               if(s==1)
         {
@@ -868,11 +981,29 @@ Produit prod=new Produit();
     }
 
     @FXML
-    private void activerPromotion(ActionEvent event) {
+    private void activerPromotion(ActionEvent event) throws SQLException {
+         TableColumn.CellEditEvent edittedcell = null;
+           Promotion x=gettempPromotion(edittedcell);
+           int id=x.getId();
+           ServicePromotion spromo=new ServicePromotion();
+          Promotion p=spromo.ReturnPRomotionById(id);
+           if( x.getActive()==0)
+           {spromo.ActiverPromotion(id);
+           SendMail.sendMail("mohamedkhalil.chakroun@esprit.tn", "Promotionn!!","nouvelle promotion pour l'objet"+p.getProduit().getNom()+"de pourcentage"+p.getPourcentage()+"");
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText(null);
+        alert.setContentText("The Email Has Been Sent ");
+        alert.showAndWait();
+           }
+           else{spromo.DesActiverPromotion(id);}
+        
+        
+        refresh();
+        
     }
 
-    
-    
     private void afficherPromotion(){
             idPromotion.setCellValueFactory(new PropertyValueFactory <>("id"));
              pourcentagePromotion.setCellValueFactory(new PropertyValueFactory <>("pourcentage"));
@@ -891,17 +1022,14 @@ private void loadDataPromotion() throws SQLException {
     rs=pst.executeQuery();
      while (rs.next()) {                
              dataPromotion.add(new  Promotion(rs.getInt("id"),rs.getInt("pourcentage"),
-                     rs.getDate("dateFin"),rs.getDate("dateDebut"), rs.getInt("active")));
-             System.out.println("jbed promo");
+                     rs.getDate("dateFin"),rs.getDate("dateDebut"), rs.getInt("active")));           
      }       }
        catch (SQLException ex) {
            Logger.getLogger(ServiceCategorie.class.getName()).log(Level.SEVERE, null, ex);
        }
         tableViewPromotion.setItems(dataPromotion);
-    }
-    
-    
-    
+    }    
+       
     private void initComboBoxProduit() {
     ObservableList datacat=FXCollections.observableArrayList();
    comboBoxProduit.getSelectionModel().clearSelection();
@@ -920,11 +1048,16 @@ comboBoxProduit.setItems(datacat);
 
 }
      
-     
-     
-     
-     
-     
+     private void RecupererPromotion() {
+        tableViewPromotion.setOnMouseClicked(e -> {
+Promotion test = tableViewPromotion.getSelectionModel().getSelectedItem();     
+TextFieldPourcentagePromotion.setText(String.valueOf(test.getPourcentage()));
+    datePickerDateDebPromo.getEditor().setText(String.valueOf(test.getDateDebut()));
+     datePickerDateFinPromo.getEditor().setText(String.valueOf(test.getDateFin()));
+        
+        }
+        );
+    }
      
      
      
