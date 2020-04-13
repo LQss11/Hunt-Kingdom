@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReclamationOwnController">
+        
+    <TableView fx:id="TableViewReclamation" layoutX="25.0" layoutY="60.0" prefHeight="266.0" prefWidth="713.0">
+        <columns>
+            <TableColumn fx:id="idReclamation" prefWidth="68.0" text="Id" />
+            <TableColumn fx:id="typeReclamation" prefWidth="54.0" text="Type" />
+            <TableColumn fx:id="idoReclamation" prefWidth="35.0" text="Ido" />
+            <TableColumn fx:id="sujetReclamation" prefWidth="101.0" text="Sujet" />
+            <TableColumn fx:id="descriptionReclamation" prefWidth="273.0" text="Description" />
+            <TableColumn fx:id="dateReclamation" prefWidth="94.0" text="Date" />
+            <TableColumn fx:id="etatReclamation" prefWidth="87.0" text="Etat" />
+        </columns>
+    </TableView>
+    <Button fx:id="buttonSupprimerReclamation" layoutX="527.0" layoutY="339.0" mnemonicParsing="false" onAction="#SupprimerReclamtion" text="Supprimer" />
+   <Text fill="#1f3e61" layoutX="237.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mes Reclamations">
+      <font>
+         <Font size="33.0" />
+      </font>
+   </Text>
+   <Button fx:id="buttonRefreshReclamation" layoutX="94.0" layoutY="339.0" mnemonicParsing="false" onAction="#RefreshReclamation" text="Refresh" />
+</AnchorPane>
