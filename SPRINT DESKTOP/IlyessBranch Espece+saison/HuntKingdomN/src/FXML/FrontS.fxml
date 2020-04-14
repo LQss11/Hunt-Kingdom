@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FrontSController">
+   <children>
+      <Label layoutX="-1.0" prefHeight="134.0" prefWidth="678.0" text="Cher Ami, aujourd'hui, cela fait quatre décennies que nous organisons des séjours de chasse dans le continent tunisien ces séjours sont destinés aux passionnés de la chasse venants de tous les coins du monde. " textOverrun="WORD_ELLIPSIS" />
+      <Label fx:id="Laffiche" layoutX="8.0" layoutY="313.0" prefHeight="82.0" prefWidth="522.0" />
+      <Button fx:id="BSaison" layoutX="543.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleButtonSaisonAction" text="Saison" />
+      <Button fx:id="AlbumPhoto" layoutX="321.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleButtonAlbumAction" text="ALBUM PHOTO" />
+      <Button fx:id="Retour" layoutX="594.0" layoutY="430.0" mnemonicParsing="false" onAction="#RetourBack" text="Retour" />
+      <Button fx:id="BVideo" layoutX="260.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleButtonVideoAction" prefHeight="111.0" prefWidth="199.0" text="Videos de Chasse" />
+   </children>
+</AnchorPane>
