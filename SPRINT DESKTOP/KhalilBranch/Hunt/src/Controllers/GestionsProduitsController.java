@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controllers;
+import Validation.TextFieldvalidation;
 import doryan.windowsnotificationapi.fr.Notification;
 import com.jfoenix.controls.JFXButton;
 
@@ -260,6 +261,34 @@ ArrayList<String> cat=new ArrayList<String>();
     private PieChart PieChartCategorie;
     @FXML
     private Button ButtonStat;
+    @FXML
+    private Label ErrorPourcentagePromotion;
+    @FXML
+    private Label ErrorProduitPromotion;
+    @FXML
+    private Label ErrorDateDebPromotion;
+    @FXML
+    private Label ErrorDateFinPromotion;
+    @FXML
+    private Label ErrorNomCategorie;
+    @FXML
+    private Label ErrorDescriptionCategorie;
+    @FXML
+    private Label ErrorImageCategorie;
+    @FXML
+    private Label ErrorNomProduit;
+    @FXML
+    private Label ErrorCategorieProduit;
+    @FXML
+    private Label ErrorGarantieProduit;
+    @FXML
+    private Label ErrorImageProduit;
+    @FXML
+    private Label ErrorQuantiteProduit;
+    @FXML
+    private Label ErrorDescriptionProduit;
+    @FXML
+    private Label ErrorPrixProduit;
 
     /**
      * Initializes the controller class.
@@ -473,48 +502,49 @@ searchCategorieField.setOnKeyReleased(e->{
     } 
 
     @FXML
-    private void AjouterCategorie(ActionEvent event)  throws SQLException {
+    private void AjouterCategorie(ActionEvent event)  throws SQLException, AWTException, MalformedURLException {
 
-        // int id = Integer.valueOf(Ab_IdAb.getText());
-        //Date dateDebut = Date.valueOf(datePickerDateDebPromo.getValue());
-         String nom = textFieldNomCategorie.getText();
-          String description = textFieldDescCategorie.getText();
+        boolean isNameEmpty=Validation.TextFieldvalidation.TextFieldNom(textFieldNomCategorie, ErrorNomCategorie, "Name required");
+        boolean isDescEmpty=Validation.TextFieldvalidation.TextFieldNom(textFieldDescCategorie, ErrorDescriptionCategorie, "Description required");
+       
+        
+            String nom = textFieldNomCategorie.getText();
+            String description = textFieldDescCategorie.getText();
              
-Image image1=null;
-             image1=ImageViewCategorie.getImage();
-              String photo = null;
-             photo = saveToFileImageNormal(image1);
-        ServiceCategorie sc = new ServiceCategorie();
+            Image image1=null;
+            image1=ImageViewCategorie.getImage();
+            String photo = null;
+            photo = saveToFileImageNormal(image1);
+        
+            if(isNameEmpty && isDescEmpty )
+            {ServiceCategorie sc = new ServiceCategorie();
         Categorie c = new Categorie(nom,description,photo);
-            System.out.println(c);
+            
+        
          sc.ajouterCategorie(c);
 
       
-        
+         Notification.sendNotification("HuntKingdom"," \n  Categorie Has been added ." ,TrayIcon.MessageType.WARNING);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information");
                 alert.setHeaderText(null);
                 alert.setContentText("Categorie added");
                 alert.showAndWait();
                 clearFormCategorie();
-                  refresh();
+                  refresh();}
 
     }
 
     @FXML
-    private void ModifierCategorie(ActionEvent event) throws SQLException {
+    private void ModifierCategorie(ActionEvent event) throws SQLException, AWTException, MalformedURLException {
         
-        //boolean isIdEmpty=validation.TextFieldvalidation.istextFieldTypeNumber(tf_idcat, error_idcat, "id must be number");
-        //boolean isNameEmpty=validation.TextFieldvalidation.isTextFieldNoEmpty(tf_nomcat, error_namecat, "Name is require");
-    // boolean isIdEmpty=validation.TextFieldvalidation.istextFieldTypeNumber(tf_idprod, error_idprod, "id must be number");
-        //boolean isNameEmpty=validation.TextFieldvalidation.isTextFieldNoEmpty(tf_nameprod, error_nameprod, "Name is require");
-         //boolean isPriceEmpty=validation.TextFieldvalidation.isTextFieldNoEmpty(tf_prodprice, error_priceprod, "price is require");
-       /**
-        * tl
-        */  
+       
+        boolean isNameEmpty=Validation.TextFieldvalidation.TextFieldNom(textFieldNomCategorie, ErrorNomCategorie, "Name required");
+        boolean isDescEmpty=Validation.TextFieldvalidation.TextFieldNom(textFieldDescCategorie, ErrorDescriptionCategorie, "Description required");
+       
     
 
-        int i;            
+        int i=0;            
     TableColumn.CellEditEvent edittedcell = null;
            Categorie x=gettempCategorie(edittedcell);
            int c=x.getId();
@@ -526,25 +556,22 @@ Image image1=null;
              image1= ImageViewCategorie.getImage();
               String photo = null;
              photo = saveToFileImageNormal(image1);
-   
+    if(isNameEmpty && isDescEmpty )
+            {
               ServiceCategorie sc = new ServiceCategorie();
              
               if(photo==null)
-              {             Categorie categ = new Categorie(c,nom,description);
-                            System.out.println(categ);
-                             i=sc.updatecategory(categ);}
+              {     ErrorDescriptionCategorie.setText("Image Required") ;      }
               
               else{         Categorie categ = new Categorie(c,nom,description,photo);
                             System.out.println(categ);
                             i=sc.updatecategory(categ);}
-              
-          
-              if(i==1)
-        {          
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    
+                Notification.sendNotification("HuntKingdom"," \n  Categorie Has been updated." ,TrayIcon.MessageType.WARNING);
+                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information");
                 alert.setHeaderText(null);
-                alert.setContentText("categorie updated");
+                alert.setContentText("Categorie updated");
                 alert.showAndWait();
                 clearFormCategorie();
          refresh();
@@ -555,7 +582,7 @@ Image image1=null;
     }
 
     @FXML
-    private void SupprimerCategorie(ActionEvent event) throws SQLException {
+    private void SupprimerCategorie(ActionEvent event) throws SQLException, AWTException, MalformedURLException {
         TableColumn.CellEditEvent edittedcell = null;
             Categorie x=gettempCategorie(edittedcell);         
             int i=x.getId();
@@ -566,10 +593,11 @@ Image image1=null;
             int s=cat.deletecategory(i);
               if(s==1)
         {
+                Notification.sendNotification("HuntKingdom"," \n  Categorie Has been removed." ,TrayIcon.MessageType.WARNING);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information");
                 alert.setHeaderText(null);
-                alert.setContentText("Categorie deleted");
+                alert.setContentText("Categorie removed");
                 alert.showAndWait();
           refresh();
         }
@@ -604,9 +632,11 @@ Image image1=null;
     
       @FXML
     private void modifierProduit(ActionEvent event) throws SQLException  {
-        
-        
-        
+          boolean isNameEmpty=Validation.TextFieldvalidation.TextFieldNom(TextFieldNomProduit, ErrorNomProduit, "Name required");
+        boolean isDescEmpty=Validation.TextFieldvalidation.TextFieldNom(TextFieldDescProduit, ErrorDescriptionProduit, "Description required");
+        boolean isGarantieEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldGarantieProduit, ErrorGarantieProduit, "Garantie required");
+        boolean isPrixEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldPrixProduit, ErrorPrixProduit, "Prix required");
+         boolean isQuantiteEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldQuantiteProduit, ErrorQuantiteProduit, "Quantite required");
         int i;            
     TableColumn.CellEditEvent edittedcell = null;
            Produit x=gettempProduit(edittedcell);
@@ -618,7 +648,8 @@ Image image1=null;
     int quantite=Integer.valueOf(TextFieldQuantiteProduit.getText());
     Categorie cat=new Categorie();
     cat= ComboBoxCategorie.getSelectionModel().getSelectedItem();
-    
+     if(isNameEmpty && isDescEmpty && isGarantieEmpty && isPrixEmpty && isQuantiteEmpty)
+            {
            Image image1=null;
              image1= imageViewProduit.getImage();
               String photo = null;
@@ -652,12 +683,16 @@ Image image1=null;
         } catch (SQLException ex) {
             System.out.println("Controllers.GestionsProduitsController.modifierProduit()/refresh");        }
            
-        }
+        }}
     }
 
     @FXML
     private void ajouterProduit(ActionEvent event)  throws SQLException, AWTException, MalformedURLException {
-        
+        boolean isNameEmpty=Validation.TextFieldvalidation.TextFieldNom(TextFieldNomProduit, ErrorNomProduit, "Name required");
+        boolean isDescEmpty=Validation.TextFieldvalidation.TextFieldNom(TextFieldDescProduit, ErrorDescriptionProduit, "Description required");
+        boolean isGarantieEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldGarantieProduit, ErrorGarantieProduit, "Garantie required");
+        boolean isPrixEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldPrixProduit, ErrorPrixProduit, "Prix required");
+         boolean isQuantiteEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldQuantiteProduit, ErrorQuantiteProduit, "Quantite required");
           
              
          String nom =  TextFieldNomProduit.getText();
@@ -674,8 +709,8 @@ Image image1=null;
               String photo = null;
              photo = saveToFileImageNormal(image1);
         ServiceProduit sp = new ServiceProduit();
-        
-       // c.setNom(nom);
+       if(isNameEmpty && isDescEmpty && isGarantieEmpty && isPrixEmpty && isQuantiteEmpty)
+            {
         Produit p= new Produit(c, nom, quantite, prix, description, garantie, photo);
             System.out.println(p);
          sp.ajouterProduit(p);
@@ -689,7 +724,7 @@ Image image1=null;
                 alert.showAndWait();
                 clearFormProduit();
                   refresh();
-    }
+    }} 
 
     @FXML
     private void imprimerListeProduit(ActionEvent event) {
@@ -991,13 +1026,19 @@ ComboBoxCategorie.setItems(datacat);
     @FXML
     private void ajouterPromotion(ActionEvent event)throws SQLException {
         
+        boolean isPourcentageEmpty=Validation.TextFieldvalidation.TextFieldNumber(TextFieldPourcentagePromotion, ErrorPourcentagePromotion, "Pourcentage required");
+        boolean isDateDebEmpty=Validation.TextFieldvalidation.isTextFieldNoEmpty(datePickerDateDebPromo, ErrorDateDebPromotion, "date required");
+        boolean isDateFinEmpty=Validation.TextFieldvalidation.isTextFieldNoEmpty(datePickerDateFinPromo, ErrorDateFinPromotion, "date required");
+        
+        
          int pourcentage = Integer.valueOf(TextFieldPourcentagePromotion.getText());
             Date dated=Date.valueOf(datePickerDateDebPromo.getValue());
             Date dateF=Date.valueOf(datePickerDateFinPromo.getValue());  
             String prod= comboBoxProduit.getSelectionModel().getSelectedItem();
         ServicePromotion sp = new ServicePromotion();
         ServiceProduit sprod=new ServiceProduit();
-    
+    if(isPourcentageEmpty && isDateDebEmpty && isDateFinEmpty )
+            {
             Produit pp=sprod.searchByNomProduit(prod);
             
       
@@ -1016,7 +1057,7 @@ ComboBoxCategorie.setItems(datacat);
                 alert.showAndWait();
                 clearFormPromotion();
                   refresh();
-        
+            }
     }
 
     @FXML
@@ -1229,5 +1270,14 @@ searchPromotionField.setOnKeyReleased(e->{
 
   
 
+     
+     
+    
+     
+     
+     
+     
+     
+     
     
 }
