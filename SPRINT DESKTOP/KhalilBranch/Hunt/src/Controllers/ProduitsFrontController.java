@@ -49,6 +49,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
@@ -90,7 +91,7 @@ private ObservableList<Promotion> dataPromotion;
     private PreparedStatement pst,pst1;
     
      int count = 0;
-    
+    int count1 = 0;
     private int nRows = 3;  //no of row for tile pane
     private int nCols = 4;  // no of column for tile pane
     
@@ -105,6 +106,14 @@ private ObservableList<Promotion> dataPromotion;
     private Button butonSearchProduit;
     @FXML
     private JFXTextField SearchProduitFront;
+    @FXML
+    private JFXButton buttonWishlist;
+    @FXML
+    private TilePane tilePane2;
+    @FXML
+    private ScrollPane PaneProduits;
+    @FXML
+    private ScrollPane PaneWishlist;
     /**
      * Initializes the controller class.
      */
@@ -128,19 +137,22 @@ private ObservableList<Promotion> dataPromotion;
           
           tilePane.setPrefColumns(nCols);
         tilePane.setPrefRows(nRows);
-
+tilePane2.setPrefColumns(nCols);
+        tilePane2.setPrefRows(nRows);
         tilePane.setHgap(GAP);
         tilePane.setVgap(GAP); 
-        
+        tilePane2.setHgap(GAP);
+        tilePane2.setVgap(GAP);
         
        createElements(0); 
         
     } 
-    
+    createWishElements();
     }   
 
     @FXML
     private void openhome(ActionEvent event) {
+         PaneProduits.toFront();
     }
 
     @FXML
@@ -217,10 +229,115 @@ private ObservableList<Promotion> dataPromotion;
             }
             
             pageBox.setSpacing(10);
+           ImageView ivv=new ImageView();
+            String strr="file:C://Users/Khalil/Documents/NetBeansProjects/Hunt/src/FXML/images/hr.png";
+           ivv.setImage(new Image(strr));
+                ivv.setFitWidth(10);
+                ivv.setFitHeight(10);
+Button btnWish = new Button("Accept", ivv);
+            btnWish.setOnAction((ActionEvent event) -> {
+               
+                ServiceWhishlist sw= new ServiceWhishlist();
+                Utilisateurs u=new Utilisateurs();
+                u.setID(1);
+                Whishlist w = new Whishlist(p, u);
+     try {
+         sw.ajouterWishlist(w);
+     } catch (SQLException ex) {
+         Logger.getLogger(ProduitsFrontController.class.getName()).log(Level.SEVERE, null, ex);
+     }
+            });
+             pageBox.getChildren().add(btnWish);
         return pageBox;
     } 
     
-    
+     public VBox createPage2(Produit p) {
+ String str="file:C://Users/Khalil/Documents/NetBeansProjects/Hunt/src/FXML/images/"+p.getImage();
+        //System.out.println(str);
+        
+       //ImageView iv = new ImageView(getClass().getResource(str).toExternalForm());
+        ImageView v = new ImageView();
+                 
+                v.setImage(new Image(str));
+                v.setFitWidth(ELEMENT_SIZE);
+                v.setFitHeight(ELEMENT_SIZE);
+                
+  Label label=new Label();
+  label.setText("                 "+p.getNom());
+  label.setFont(new Font("Arial", 20)); 
+  
+  Label labelQuantite=new Label();
+  labelQuantite.setTextFill(Color.web("#008000"));
+  if(p.getQuantite()>10)
+  { labelQuantite.setText("  In Stock");}
+  else {
+   if(p.getQuantite()==00)
+  { labelQuantite.setText("  Out Of Stock");
+  labelQuantite.setTextFill(Color.web("#FF0000"));}
+   else{labelQuantite.setText(" only "+p.getQuantite()+"Piece");
+   labelQuantite.setTextFill(Color.web("#ADFF2F"));
+   	}
+  }
+  labelQuantite.setFont(new Font("Arial", 20));
+  
+  Label labelPrix=new Label();
+  labelPrix.setText("   prix : "+p.getPrix()+"Dinars");
+  labelPrix.setFont(new Font("Arial", 18));
+      
+          
+            VBox pageBox = new VBox();
+           
+            if(p.getEtatPromo()!=0)
+            {
+                
+                Label labelPrix2=new Label();
+            labelPrix.setText("Anncien prix : "+p.getPrix()+"Dinars");
+  labelPrix.setFont(new Font("Arial", 18));
+  labelPrix2.setText("Nouveau prix : "+p.getPromotion().getPrix()+"Dinars");
+  labelPrix2.setFont(new Font("Arial", 18));
+  Label labelPourcentage=new Label();
+  labelPourcentage.setText("   "+p.getPromotion().getPourcentage()+"% de Promotion");
+  labelPourcentage.setStyle("-fx-border-color:black;");
+  
+  v.setFitHeight(170);
+            pageBox.getChildren().add(labelPourcentage); 
+            pageBox.getChildren().add(v); 
+            pageBox.getChildren().add(label); 
+            pageBox.getChildren().add(labelQuantite);
+            pageBox.getChildren().add(labelPrix);
+            pageBox.getChildren().add(labelPrix2);
+            
+            
+            }else{
+            pageBox.getChildren().add(v); 
+            pageBox.getChildren().add(label); 
+            pageBox.getChildren().add(labelQuantite);
+             pageBox.getChildren().add(labelPrix);
+            }
+            
+            pageBox.setSpacing(10);
+           ImageView ivv=new ImageView();
+            String strr="file:C://Users/Khalil/Documents/NetBeansProjects/Hunt/src/FXML/images/hr.png";
+           ivv.setImage(new Image(strr));
+                ivv.setFitWidth(10);
+                ivv.setFitHeight(10);
+Button btnWish = new Button("Accept", ivv);
+            btnWish.setOnAction((ActionEvent event) -> {
+               
+                ServiceWhishlist sw= new ServiceWhishlist();
+                Utilisateurs u=new Utilisateurs();
+                u.setID(1);
+                Whishlist w = new Whishlist(p, u);
+     try {
+         sw.deleteFromWhishlist(1, p.getId());
+         createWishElements();
+     } catch (SQLException ex) {
+         Logger.getLogger(ProduitsFrontController.class.getName()).log(Level.SEVERE, null, ex);
+     }
+            });
+             pageBox.getChildren().add(btnWish);
+        return pageBox;
+    } 
     
       private void createElements(int methode) {
             tilePane.getChildren().clear();
@@ -250,6 +367,8 @@ private ObservableList<Promotion> dataPromotion;
             }
             count=0;
         }
+      
+      
     private void createElementsSearch(String str) {
           tilePane.getChildren().clear();
           ServiceProduit sp=new ServiceProduit();
@@ -304,7 +423,35 @@ SearchProduitFront.setOnKeyReleased(e->{
     cat= ComboBoxFilterCategorie.getSelectionModel().getSelectedItem();
     createElements(cat.getId());
     }
-      
+
+    @FXML
+    private void openWishlist(ActionEvent event) {
+       PaneWishlist.toFront();
+        
+    }
+   public void createWishElements(){
+     tilePane2.getChildren().clear();
+     count1=0;
+             ServiceWhishlist sw=new ServiceWhishlist();
+             ServiceCategorie sc=new ServiceCategorie();
+          List<Produit> arr=new ArrayList<>();
+                                   
+                                      try {
+                                      arr=sw.Display(1); 
+                                           } catch (SQLException ex) {
+                                      System.out.println("Controllers.ProduitsFrontController.initialize() produit diplay");        }
+                                                
+          int x= arr.size();
+            for (int i = 0; i <x; i++) {
+             Produit p=  arr.get(count1);
+                    tilePane2.getChildren().add(createPage2(p));
+                    count1++;
+                            
+                
+            }
+            
+    
+    }  
       
     
 }
