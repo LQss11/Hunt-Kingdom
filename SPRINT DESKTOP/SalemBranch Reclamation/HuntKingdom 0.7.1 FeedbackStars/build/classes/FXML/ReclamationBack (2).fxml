@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ReclamationBackController">
+          <TableView fx:id="TableViewReclamation" layoutX="23.0" layoutY="183.0" prefHeight="266.0" prefWidth="713.0">
+        <columns>
+            <TableColumn fx:id="idReclamation" prefWidth="68.0" text="Id" />
+          <TableColumn fx:id="typeReclamation" prefWidth="54.0" text="Type" />
+            <TableColumn fx:id="idoReclamation" prefWidth="35.0" text="Ido" />
+          <TableColumn fx:id="sujetReclamation" prefWidth="101.0" text="Sujet" />
+            <TableColumn fx:id="descriptionReclamation" prefWidth="228.0" text="Description" />
+            <TableColumn fx:id="dateReclamation" prefWidth="98.0" text="Date" />
+            <TableColumn fx:id="etatReclamation" prefWidth="79.0" text="Etat" />
+            <TableColumn fx:id="idUReclamation" prefWidth="49.0" text="idU" />
+        </columns>
+      </TableView>
+   <JFXButton fx:id="buttonRetour" buttonType="RAISED" layoutX="132.0" layoutY="462.0" onAction="#home" ripplerFill="#8f7a46" text="Retour" textFill="#947953" />
+   <JFXButton fx:id="buttonRefuser" buttonType="RAISED" layoutX="290.0" layoutY="142.0" onAction="#refuserReclamation" text="Refuser" textFill="#bf3535" />
+   <JFXButton fx:id="buttonAccepter" buttonType="RAISED" layoutX="398.0" layoutY="141.0" onAction="#AccepterReclamation" text="Accepter" textFill="#4b8a66" />
+   <JFXButton fx:id="buttonSupprimer" buttonType="RAISED" layoutX="575.0" layoutY="461.0" onAction="#supprimerReclamation" text="Supprimer" textFill="#949447" />
+   <JFXButton fx:id="buttonRefresh" buttonType="RAISED" layoutX="352.0" layoutY="462.0" onAction="#refreshReclamation" text="Refresh" textFill="#28406f" />
+   <Label layoutX="208.0" layoutY="45.0" text="Liste des Reclamations" textFill="#27366b">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <JFXButton fx:id="buttonAfficher" buttonType="RAISED" layoutX="352.0" layoutY="526.0" onAction="#afficherCell" text="Afficher" textFill="#1c2b2f" />
+</AnchorPane>

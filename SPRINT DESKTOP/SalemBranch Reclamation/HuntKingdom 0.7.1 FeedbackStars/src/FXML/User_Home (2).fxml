@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.User_HomeController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="166.0" prefWidth="1271.0" style="-fx-background-color: #5e91c1;" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="953.0" fitWidth="1305.0" layoutX="-1.0" layoutY="-331.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/back.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="name" layoutX="224.0" layoutY="47.0" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox layoutX="-1.0" layoutY="146.0" prefHeight="477.0" prefWidth="246.0" style="-fx-background-color: #5e91c1;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #5e91c1;" textFill="#171717">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="60.0" />
+               </VBox.margin>
+            </Label>
+            <JFXButton fx:id="bnthome" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openhome" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #C3 #5e91c1A05E;" text="Acceuil" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text=" Mon Profil" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#logout" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="Se Déconnecter" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="ReclamationFront" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openReclalmation" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #C3 #5e91c1A05E;" text="Reclamation" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="FeedbackFront" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openFeedback" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #C3 #5e91c1A05E;" text="Feedback" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </VBox>
+      <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
+         </effect>
+         <children>
+            <ImageView fx:id="profilephoto" fitHeight="131.0" fitWidth="145.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <ScrollPane layoutX="251.0" layoutY="167.0" prefHeight="457.0" prefWidth="1019.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="167.0">
+         <content>
+            <VBox fx:id="pnl_scroll" prefHeight="441.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;" />
+         </content>
+      </ScrollPane>
+      <HBox layoutX="251.0" layoutY="143.0" prefHeight="30.0" prefWidth="1019.0" style="-fx-background-color: #5e91c1;" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
