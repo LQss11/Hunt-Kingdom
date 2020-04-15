@@ -74,8 +74,6 @@ public class ProduitsFrontController implements Initializable {
     @FXML
     private JFXButton btn_logout;
     @FXML
-    private ImageView profilephoto;
-    @FXML
     private VBox pnl_scroll;
     @FXML
     private TilePane tilePane;
@@ -107,13 +105,23 @@ private ObservableList<Promotion> dataPromotion;
     @FXML
     private JFXTextField SearchProduitFront;
     @FXML
-    private JFXButton buttonWishlist;
-    @FXML
     private TilePane tilePane2;
     @FXML
     private ScrollPane PaneProduits;
     @FXML
     private ScrollPane PaneWishlist;
+    @FXML
+    private JFXButton buttonRetourProduits;
+    @FXML
+    private JFXButton WishlistBut;
+    @FXML
+    private JFXButton buttonEvenements;
+    @FXML
+    private JFXButton buttonEspece;
+    @FXML
+    private JFXButton buttonProduitsFront;
+    @FXML
+    private JFXButton buttonReclamations;
     /**
      * Initializes the controller class.
      */
@@ -150,18 +158,9 @@ tilePane2.setPrefColumns(nCols);
     createWishElements();
     }   
 
-    @FXML
-    private void openhome(ActionEvent event) {
-         PaneProduits.toFront();
-    }
+   
 
-    @FXML
-    private void openprofile(ActionEvent event) {
-    }
-
-    @FXML
-    private void logout(ActionEvent event) {
-    }
+    
     
     
     public VBox createPage(Produit p) {
@@ -289,7 +288,7 @@ Button btnWish = new Button("Accept", ivv);
            
             if(p.getEtatPromo()!=0)
             {
-                
+                System.out.println(p.getPromotion());
                 Label labelPrix2=new Label();
             labelPrix.setText("Anncien prix : "+p.getPrix()+"Dinars");
   labelPrix.setFont(new Font("Arial", 18));
@@ -426,6 +425,7 @@ SearchProduitFront.setOnKeyReleased(e->{
 
     @FXML
     private void openWishlist(ActionEvent event) {
+         createWishElements();
        PaneWishlist.toFront();
         
     }
@@ -437,7 +437,7 @@ SearchProduitFront.setOnKeyReleased(e->{
           List<Produit> arr=new ArrayList<>();
                                    
                                       try {
-                                      arr=sw.Display(1); 
+                                      arr=sw.Display(22); 
                                            } catch (SQLException ex) {
                                       System.out.println("Controllers.ProduitsFrontController.initialize() produit diplay");        }
                                                 
@@ -452,6 +452,35 @@ SearchProduitFront.setOnKeyReleased(e->{
             
     
     }  
-      
+
+    @FXML
+    private void openProduits(ActionEvent event) {
+        PaneProduits.toFront();
+    }
+    
+    
+    @FXML
+    private void openprofile(ActionEvent event) {
+    }
+
+    @FXML
+    private void logout(ActionEvent event) {
+    }
+      @FXML
+    private void openhome(ActionEvent event) {
+         PaneProduits.toFront();
+    } 
+
+    @FXML
+    private void openEvenements(ActionEvent event) {
+    }
+
+    @FXML
+    private void openEspece(ActionEvent event) {
+    }
+
+    @FXML
+    private void openReclamations(ActionEvent event) {
+    }
     
 }

@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Hunt.jar" size="75388897" download="eager" />
+    <jar href="Hunt.jar" size="75389199" download="eager" />
     <jar href="lib\Bulk_SMS_Library.jar" size="3292" download="eager" />
     <jar href="lib\NotificationAPI.jar" size="2821" download="eager" />
     <jar href="lib\activation-1.1.jar" size="62983" download="eager" />
