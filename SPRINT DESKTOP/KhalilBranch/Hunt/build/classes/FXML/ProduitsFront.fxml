@@ -19,102 +19,117 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProduitsFrontController">
+<AnchorPane id="AnchorPane" fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="623.0" prefWidth="1257.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProduitsFrontController">
    <children>
       <Pane layoutX="-2.0" prefHeight="166.0" prefWidth="1271.0" style="-fx-background-color: #5e91c1;" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="953.0" fitWidth="1305.0" layoutX="-1.0" layoutY="-331.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="953.0" fitWidth="1305.0" layoutX="-34.0" layoutY="-304.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/back.jpg" />
                </image>
             </ImageView>
+            <JFXButton fx:id="buttonEvenements" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="837.0" onAction="#openEvenements" prefHeight="50.0" prefWidth="212.0" ripplerFill="#6fa8e2" style="-fx-background-color: #6fa8e2;" text="Evenements" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="buttonEspece" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="591.0" onAction="#openEspece" prefHeight="50.0" prefWidth="181.0" ripplerFill="#6fa8e2" style="-fx-background-color: #6fa8e2;" text="Especes" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="buttonProduitsFront" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" layoutX="43.0" onAction="#openProduits" prefHeight="50.0" prefWidth="181.0" ripplerFill="#6fa8e2" style="-fx-background-color: #6fa8e2;" text="Produits" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="buttonReclamations" buttonType="RAISED" layoutX="297.0" onAction="#openReclamations" prefHeight="33.0" prefWidth="236.0" ripplerFill="#473499" style="-fx-background-color: #6fa8e2;" text="Mes Reclamations" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
             <Label fx:id="name" layoutX="224.0" layoutY="47.0" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
+            <VBox layoutX="1111.0" layoutY="-3.0" prefHeight="166.0" prefWidth="146.0" style="-fx-background-color: #5e91c1;">
+               <children>
+                  <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#logout" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="Se Déconnecter" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="16" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text=" Mon Profil" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="bnthome" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openhome" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #C3 #5e91c1A05E;" text="Acceuil" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
          </children>
       </Pane>
-      <VBox layoutX="-1.0" layoutY="146.0" prefHeight="477.0" prefWidth="246.0" style="-fx-background-color: #5e91c1;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="146.0">
+      <StackPane layoutX="10.0" layoutY="171.0" prefHeight="442.0" prefWidth="1244.0">
          <children>
-            <Label prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #5e91c1;" textFill="#171717">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets top="60.0" />
-               </VBox.margin>
-            </Label>
-            <JFXButton fx:id="bnthome" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openhome" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #C3 #5e91c1A05E;" text="Acceuil" textFill="WHITE">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openprofile" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text=" Mon Profil" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" />
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="buttonWishlist" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#openWishlist" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="My Wishlist" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="archive" size="16" text="W" />
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#logout" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="Se Déconnecter" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="16" />
-               </graphic>
-            </JFXButton>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </VBox>
-      <Pane layoutX="71.0" layoutY="44.0" prefHeight="131.0" prefWidth="142.0" style="-fx-background-color: #fff;">
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" width="10.0" />
-         </effect>
-         <children>
-            <ImageView fx:id="profilephoto" fitHeight="131.0" fitWidth="145.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </Pane>
-      <StackPane layoutX="251.0" layoutY="171.0" prefHeight="442.0" prefWidth="1003.0">
-         <children>
+            <ScrollPane fx:id="PaneWishlist" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <content>
+                  <VBox prefHeight="447.0" prefWidth="1229.0">
+                     <children>
+                        <HBox prefHeight="67.0" prefWidth="1229.0">
+                           <children>
+                              <Label prefHeight="65.0" prefWidth="416.0" text="Wishlist:">
+                                 <font>
+                                    <Font name="System Bold Italic" size="37.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <JFXButton fx:id="buttonRetourProduits" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="10.0" onAction="#openProduits" prefHeight="50.0" prefWidth="424.0" ripplerFill="#6fa8e2" text="Retour a la liste des Produits">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </JFXButton>
+                        <TilePane fx:id="tilePane2" prefHeight="312.0" prefWidth="992.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
             <ScrollPane fx:id="PaneProduits" prefHeight="450.0" prefWidth="1019.0" style="-fx-background-color: #fff;">
                <content>
-                  <VBox fx:id="pnl_scroll" prefHeight="441.0" prefWidth="1023.0" spacing="20.0" style="-fx-background-color: #fff;">
+                  <VBox fx:id="pnl_scroll" prefHeight="441.0" prefWidth="1237.0" spacing="20.0" style="-fx-background-color: #fff;">
                      <children>
-                        <Label prefHeight="2.0" prefWidth="0.0" />
                         <HBox fx:id="HboxBarre" prefHeight="198.0" prefWidth="1023.0">
                            <children>
                               <Label prefHeight="35.0" prefWidth="166.0" text="          Filter By Categorie:" />
@@ -133,6 +148,14 @@
                                     <Insets left="200.0" top="18.0" />
                                  </HBox.margin>
                               </JFXTextField>
+                              <JFXButton fx:id="WishlistBut" onAction="#openWishlist" prefHeight="44.0" prefWidth="139.0" text="My Wishlist">
+                                 <HBox.margin>
+                                    <Insets left="300.0" top="18.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </JFXButton>
                            </children>
                         </HBox>
                         <TilePane fx:id="tilePane" prefHeight="453.0" prefWidth="955.0">
@@ -144,24 +167,8 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <ScrollPane fx:id="PaneWishlist" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
-               <content>
-                  <VBox prefHeight="447.0" prefWidth="992.0">
-                     <children>
-                        <Label prefHeight="65.0" prefWidth="416.0" text="Wishlist:">
-                           <font>
-                              <Font name="System Bold Italic" size="37.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="44.0" prefWidth="423.0" />
-                        <TilePane fx:id="tilePane2" prefHeight="312.0" prefWidth="992.0" />
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
          </children>
       </StackPane>
-      <HBox layoutX="251.0" layoutY="143.0" prefHeight="30.0" prefWidth="1019.0" style="-fx-background-color: #5e91c1;" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
    </children>
    <opaqueInsets>
       <Insets />

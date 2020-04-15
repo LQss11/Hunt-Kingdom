@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="729.0" prefWidth="1219.0" style="-fx-background-color: #5e91c1;" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProfilController">
+   <children>
+      <ImageView fitHeight="799.0" fitWidth="1213.0" layoutX="65.0" layoutY="-75.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/back.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ProfilImgId" fitHeight="255.0" fitWidth="290.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="EditBtn" layoutX="1016.0" layoutY="38.0" mnemonicParsing="false" onAction="#EditProfil" prefHeight="52.0" prefWidth="216.0" text="Modifier mon compt">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="NomUser" layoutX="503.0" layoutY="55.0" prefHeight="45.0" prefWidth="216.0" />
+      <Label fx:id="PrenomUser" layoutX="503.0" layoutY="147.0" prefHeight="45.0" prefWidth="216.0" />
+      <Label fx:id="EmailUser" layoutX="503.0" layoutY="233.0" prefHeight="45.0" prefWidth="216.0" />
+      <Label fx:id="DateUser" layoutX="503.0" layoutY="324.0" prefHeight="45.0" prefWidth="216.0" />
+      <Label fx:id="TelephoneUser" layoutX="503.0" layoutY="431.0" prefHeight="45.0" prefWidth="216.0" />
+      <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="1016.0" layoutY="90.0" onAction="#logout" prefHeight="43.0" prefWidth="216.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="Se Déconnecter" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="16" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
