@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="1271.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.User_HomeController">
+   <children>
+      <Pane layoutX="-2.0" prefHeight="131.0" prefWidth="1271.0" style="-fx-background-color: #5e91c1;" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView layoutX="-1.0" layoutY="-331.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/back.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="name" layoutX="224.0" layoutY="47.0" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn_logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="1093.0" onAction="#logout" prefHeight="43.0" prefWidth="180.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text="Se Déconnecter" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="1093.0" layoutY="43.0" onAction="#openprofile" prefHeight="43.0" prefWidth="180.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1;" text=" Mon Profil" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="bnthome" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="1093.0" layoutY="86.0" onAction="#openhome" prefHeight="43.0" prefWidth="180.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Acceuil" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="16" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="ReclamationFront" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="867.0" onAction="#openReclalmation" prefHeight="43.0" prefWidth="157.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Reclamation" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="PanBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="726.0" onAction="#OpenPanier" prefHeight="43.0" prefWidth="131.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Panier" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="EvntBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="561.0" onAction="#OpenEvenements" prefHeight="43.0" prefWidth="157.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Evenements" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="ProdBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="425.0" onAction="#OpenProduit" prefHeight="43.0" prefWidth="131.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Produits" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="EspBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="287.0" onAction="#OpenEspeces" prefHeight="43.0" prefWidth="131.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Especes" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+            <JFXButton fx:id="FeedbackFront" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="163.0" onAction="#openFeedback" prefHeight="43.0" prefWidth="157.0" ripplerFill="#bfadf8" style="-fx-background-color: #5e91c1 #5e91c1;" text="Feedback" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
