@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Hunt.jnlp">
+  <information>
+    <title>Hunt</title>
+    <vendor>RAFIK</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Hunt.jar" size="23851862" download="eager" />
+    <jar href="lib\Bulk_SMS_Library.jar" size="3292" download="eager" />
+    <jar href="lib\NotificationAPI.jar" size="2821" download="eager" />
+    <jar href="lib\activation-1.1.jar" size="62983" download="eager" />
+    <jar href="lib\activation.jar" size="55147" download="eager" />
+    <jar href="lib\commons-codec-1.9.jar" size="263965" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-javaflow-20060411.jar" size="96529" download="eager" />
+    <jar href="lib\commons-lang3-3.7-javadoc.jar" size="1277784" download="eager" />
+    <jar href="lib\commons-lang3-3.7-sources.jar" size="550341" download="eager" />
+    <jar href="lib\commons-lang3-3.7-test-sources.jar" size="450015" download="eager" />
+    <jar href="lib\commons-lang3-3.7.jar" size="499634" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60841" download="eager" />
+    <jar href="lib\commons-logging-1.1.3.jar" size="62050" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib\core-3.3.0-javadoc.jar" size="1073633" download="eager" />
+    <jar href="lib\core-3.3.0.jar" size="541078" download="eager" />
+    <jar href="lib\fontawesomefx-8.5.jar" size="181458" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\hamcrest-core-1.3.jar" size="45024" download="eager" />
+    <jar href="lib\itextpdf-5.4.0.jar" size="1889485" download="eager" />
+    <jar href="lib\itextpdf-5.5.13.jar" size="2320581" download="eager" />
+    <jar href="lib\jPDFNotes.jar" size="5817079" download="eager" />
+    <jar href="lib\jasperreports-6.2.0.jar" size="5300024" download="eager" />
+    <jar href="lib\jasperreports-fonts-6.2.0.jar" size="2478098" download="eager" />
+    <jar href="lib\jasperreports-javaflow-6.2.0.jar" size="5344915" download="eager" />
+    <jar href="lib\javax.mail-1.6.2.jar" size="659031" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\javax.servlet-3.0.jar" size="83586" download="eager" />
+    <jar href="lib\jbcrypt-0.3m.jar" size="17750" download="eager" />
+    <jar href="lib\jcommon-1.0.23.jar" size="330246" download="eager" />
+    <jar href="lib\jfoenix-8.0.2.jar" size="2442326" download="eager" />
+    <jar href="lib\jfoenix-8.0.7.jar" size="2631271" download="eager" />
+    <jar href="lib\jfoenix-8.0.8.jar" size="2708772" download="eager" />
+    <jar href="lib\jfreechart-1.0.19-experimental.jar" size="13796" download="eager" />
+    <jar href="lib\jfreechart-1.0.19-swt.jar" size="79793" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1570157" download="eager" />
+    <jar href="lib\junit-4.12.jar" size="314932" download="eager" />
+    <jar href="lib\log4j-1.2.17.jar" size="489884" download="eager" />
+    <jar href="lib\mail.jar" size="521000" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.15-bin.jar" size="785998" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\notification-4.4.6.jar" size="2462" download="eager" />
+    <jar href="lib\poi-3.13-20150929.jar" size="2497380" download="eager" />
+    <jar href="lib\poi-examples-3.13-20150929.jar" size="344456" download="eager" />
+    <jar href="lib\poi-excelant-3.13-20150929.jar" size="30520" download="eager" />
+    <jar href="lib\poi-ooxml-3.13-20150929.jar" size="1142386" download="eager" />
+    <jar href="lib\poi-ooxml-schemas-3.13-20150929.jar" size="5641539" download="eager" />
+    <jar href="lib\poi-scratchpad-3.13-20150929.jar" size="1307277" download="eager" />
+    <jar href="lib\restfb-2.0.0.jar" size="542455" download="eager" />
+    <jar href="lib\twilio-7.9.1-jar-with-dependencies.jar" size="7531656" download="eager" />
+    <jar href="lib\xmlbeans-2.6.0.jar" size="2730866" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Hunt" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="hunt.Hunt"  name="Hunt" />
+  <update check="always"/>
+</jnlp>
