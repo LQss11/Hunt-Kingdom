@@ -19,7 +19,7 @@ public class DataSource { private Connection cnx ;
     
     private static DataSource instance;
     
-    private String url= "jdbc:mysql://localhost:3306/hunt?zeroDateTimeBehavior=convertToNull";
+    private String url= "jdbc:mysql://localhost:3306/rafik?zeroDateTimeBehavior=convertToNull";
     
     private String username="root";
     
