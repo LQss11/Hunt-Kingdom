@@ -47,7 +47,7 @@ class commentaire
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="publication",inversedBy="publication")
+     * @ORM\ManyToOne(targetEntity="publication",inversedBy="commentaire")
      * @ORM\JoinColumn(name="id_publication", referencedColumnName="id")
      */
     private $id_publication;

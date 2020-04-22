@@ -62,7 +62,7 @@ class publication
 
 
     /**
-     * @ORM\OneToMany(targetEntity="commentaire", mappedBy="publication")
+     * @ORM\OneToMany(targetEntity="commentaire", mappedBy="id_publication")
      */
     private $commentaire;
 
