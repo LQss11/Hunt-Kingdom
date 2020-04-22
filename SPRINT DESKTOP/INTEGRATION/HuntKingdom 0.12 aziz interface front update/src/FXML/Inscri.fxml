@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="399.0" prefWidth="949.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.InscriController">
+   <children>
+      <Pane layoutX="29.0" layoutY="22.0" prefHeight="338.0" prefWidth="896.0" style="-fx-background-color: #fff;">
+         <children>
+            <ImageView id="imageEv" fitHeight="70.0" fitWidth="76.0" layoutX="41.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_500px_64px.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="41.0" layoutY="94.0" prefHeight="0.0" prefWidth="763.0" />
+            <Label id="nomEv" layoutX="123.0" layoutY="18.0" text="Nom Evenement" textFill="#3a1c9d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="113.0" text="Description" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="623.0" layoutY="113.0" text="Prix" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="646.0" layoutY="169.0" text="Nombre de places" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label id="prixEv" layoutX="612.0" layoutY="139.0" prefHeight="19.0" prefWidth="44.0" style="-fx-background-color: #aeacac;" text="Toggle" textFill="#fffefe">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label id="nbrplcEv" layoutX="673.0" layoutY="194.0" prefHeight="19.0" prefWidth="58.0" style="-fx-background-color: #aeacac;" text="Software" textFill="#fffefe">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Pane layoutY="269.0" prefHeight="70.0" prefWidth="896.0" style="-fx-background-color: #F0F0F0;">
+               <children>
+                  <Button id="pariciper" layoutX="407.0" layoutY="20.0" mnemonicParsing="false" text="Participer" />
+                  <Button id="annuler" layoutX="369.0" layoutY="20.0" mnemonicParsing="false" text="Annuler Participation" />
+               </children>
+            </Pane>
+            <Label layoutX="614.0" layoutY="12.0" text="Duree" textFill="#3a1c9d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label id="dureeEv" layoutX="617.0" layoutY="41.0" text="16" textFill="#aeacac">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="660.0" layoutY="42.0" text="Heures" textFill="#3a1c9d" />
+            <Separator layoutX="708.0" layoutY="19.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="0.0" />
+            <Label layoutX="725.0" layoutY="13.0" text="Desired Start" textFill="#3a1c9d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label id="dateEv" layoutX="715.0" layoutY="41.0" text="25" textFill="#aeacac">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label id="typeEv" layoutX="123.0" layoutY="51.0" text="Type" textFill="#b2b0b0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label id="descEv" fx:id="te" alignment="TOP_LEFT" layoutX="51.0" layoutY="139.0" prefHeight="128.0" prefWidth="448.0" text="teeeee" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label layoutX="750.0" layoutY="113.0" text="Place" textFill="#aeacac">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label id="placeEv" layoutX="744.0" layoutY="139.0" prefHeight="19.0" prefWidth="44.0" style="-fx-background-color: #aeacac;" text="Toggle" textFill="#fffefe">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#d7d2d2" height="50.0" radius="24.5" width="50.0" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
