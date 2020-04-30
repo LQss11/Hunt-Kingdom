@@ -1,0 +1,37 @@
+saison_all:
+    path:     /all
+    defaults: { _controller: "EspeceBundle:saison:all" }
+    methods:  GET
+
+saison_add:
+    path:     /add/{nom}/{periode}/{mode}
+    defaults: { _controller: EspeceBundle:saison:add}
+	
+	
+
+
+
+    public function allAction()
+    {
+        $saison = $this->getDoctrine()->getManager()
+            ->getRepository('EspeceBundle:saison')
+            ->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($saison);
+        return new JsonResponse($formatted);
+    }
+    public function addAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $saison = new Saison();
+        $saison->setNom($request->get('nom'));
+        $saison->setPeriode($request->get('periode'));
+        $saison->setMode($request->get('mode'));
+
+        $em->persist($saison);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($saison);
+        return new JsonResponse($formatted);
+    }	
+	
