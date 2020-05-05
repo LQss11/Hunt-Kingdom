@@ -37,3 +37,8 @@ promo_ChangeEtat:
     path:     /{id}/change
     defaults: { _controller: "ProduitBundle:Promotion:changeEtat" }
     methods:  GET
+
+promotion_displayMobile:
+    path:     /displayMobile
+    defaults: { _controller: "ProduitBundle:Promotion:displayMobile" }
+    methods:  [GET, POST]

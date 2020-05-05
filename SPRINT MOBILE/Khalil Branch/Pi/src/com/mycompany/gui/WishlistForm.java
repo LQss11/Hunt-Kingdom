@@ -11,6 +11,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.services.ServiceProduit;
 import com.codename1.components.FileEncodedImage;
 import com.codename1.components.ImageViewer;
+import com.codename1.components.ShareButton;
 import com.codename1.components.SpanLabel;
 import com.codename1.io.FileSystemStorage;
 import com.codename1.io.Log;
@@ -24,6 +25,7 @@ import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
+import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.events.ScrollListener;
@@ -65,6 +67,10 @@ public class WishlistForm extends Form{
      current = new Form("My Wishlist", BoxLayout.y());
           current.setScrollableY(true);
     
+            
+          
+          
+          
           ServiceProduit sp=new ServiceProduit();
            for (Whishlist w:sp.getListWishlist())
              {
@@ -104,20 +110,44 @@ public class WishlistForm extends Form{
                                                 Label ldesc= new Label(p.getDescription());
                                                 ldesc.getAllStyles().setFgColor(0x00002);                                                      
                                                 Label lprix= new Label("prix:"+p.getPrix());
-                                                lprix.getAllStyles().setFgColor(0x00002);    
+                                                lprix.getAllStyles().setFgColor(0x00002);   
+                                                Label lquantite= new Label("In Stock");
+                                                if(p.getQuantite()==0){lquantite.setText("out of Stock");}
                                                     details.add(ldesc);
                                                     details.add(lprix);    
-                                                    
+                                                    details.add(lquantite); 
                                                     Button bdelete=new Button("Remove from Wishlist");                                                                                                      
                                                      Whishlist newWish= new Whishlist();
                                                      bdelete.addActionListener(ev->{
                                                    
                                                         sp.deleteWishlist(w.getId());
-                                                       current.animate();
-                                                       current.revalidate();
-                                                       current.show();
-                                                      
-                                                    });
+                                                        WishlistForm   form;
+                                                            try {
+                                                                form = new WishlistForm();
+                                                                form.setScrollable(true);
+                                                             form.getCurrent().show();
+                                                            } catch (InterruptedException ex) {
+                                                                System.out.println("direction vers page wishlist");     }                                                           
+                                                    });                                                      
+    ShareButton sb = new ShareButton();
+sb.setText("Share Product");
+details.add(sb);
+
+Image screenshot = Image.createImage(fprod2.getWidth(), fprod2.getHeight());
+details.revalidate();
+details.setVisible(true);
+details.paintComponent(screenshot.getGraphics(), true);
+
+String imageFile = FileSystemStorage.getInstance().getAppHomePath() + "screenshot.png";
+try(OutputStream os = FileSystemStorage.getInstance().openOutputStream(imageFile)) {
+    ImageIO.getImageIO().save(screenshot, os, ImageIO.FORMAT_PNG, 1);
+} catch(IOException err) {
+    
+}
+sb.setImageToShare(imageFile, "file://C:/wamp64/www/images/whiteHeart.png");                                   
+                                                
+                                                     
+                                                                         
                                                      
                                                      
                                                     details.add(bdelete);

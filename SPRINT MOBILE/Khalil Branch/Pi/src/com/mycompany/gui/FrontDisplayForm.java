@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package com.mycompany.gui;
+import com.codename1.notifications.LocalNotification;
+import com.codename1.share.FacebookShare;
+import com.codename1.media.Media;
+import com.codename1.share.ShareService;
+import com.codename1.messaging.Message;
 import com.codename1.components.SpanLabel;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
@@ -11,6 +16,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.services.ServiceProduit;
 import com.codename1.components.FileEncodedImage;
 import com.codename1.components.ImageViewer;
+import com.codename1.components.ShareButton;
 import com.codename1.components.SpanLabel;
 import com.codename1.io.FileSystemStorage;
 import com.codename1.io.Log;
@@ -24,6 +30,7 @@ import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
+import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.events.ScrollListener;
@@ -39,7 +46,9 @@ import com.mycompany.services.ServiceProduit;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+
 import static javafx.scene.input.KeyCode.R;
 import javafx.scene.web.WebView;
 
@@ -50,7 +59,7 @@ import javafx.scene.web.WebView;
 public class FrontDisplayForm extends Form{
     Form current,details;
     SpanLabel lb;
-
+ public ArrayList<Produit> Produits= new ArrayList<>();
     public Form getCurrent() {
         return current;
     }
@@ -67,10 +76,44 @@ public class FrontDisplayForm extends Form{
           current = new Form("Produits", BoxLayout.y());
           current.setScrollableY(true);
     
-          ServiceProduit sp=new ServiceProduit();
-          for(Produit p :sp.getListProduit()){
+          Container fsearch= new Container( BoxLayout.x());
+          TextField tfsearch=new TextField();
+              Button btsearch= new Button("Search");
+          fsearch.add(tfsearch).add(btsearch);
+      current.add(fsearch);
+      ServiceProduit sp=new ServiceProduit();
+      
+      Produits=sp.getListProduit();
+            Display( Produits);
+          btsearch.addActionListener(e->{
               
-              
+          Produits=sp.getListProduit();
+          if(tfsearch.getText()!="")
+          { Produits=sp.getSearchListProduit(tfsearch.getText());
+          current.revalidate();
+          current.removeAll();
+          current.add(fsearch);
+          Display( Produits);}
+          else{Produits=sp.getListProduit();
+          current.revalidate();
+          current.removeAll();
+          current.add(fsearch);
+           Display( Produits);
+          }
+          });
+    
+        
+          
+
+    }
+
+    
+     public void Display(ArrayList<Produit> Produits)
+     {
+       for(Produit p :Produits){
+             
+           
+                ServiceProduit sp=new ServiceProduit();
                 Container fprod = new Container( BoxLayout.y());
                 Container fprod2= new Container( BoxLayout.x());
                 Container fButtons= new Container( BoxLayout.x());
@@ -97,28 +140,90 @@ public class FrontDisplayForm extends Form{
                                                 ImageViewer ivv = new ImageViewer(setimg);
                                                     details.add(ivv);
                                                 Label ldesc= new Label(p.getDescription());
+                                                Label lquantite= new Label("In Stock");
+                                                if(p.getQuantite()==0){lquantite.setText("out of Stock");}
                                                 ldesc.getAllStyles().setFgColor(0x00002);                                                      
                                                 Label lprix= new Label("prix:"+p.getPrix());
                                                 lprix.getAllStyles().setFgColor(0x00002);    
                                                     details.add(ldesc);
                                                     details.add(lprix);    
+                                                    details.add(lquantite);   
                                                     
                                                     Image imwish = FileEncodedImage.create("file://C:/wamp64/www/images/whiteHeart.png",35,35);                                                 
                                                     Button bdetails=new Button("In Wishlist");
-                                                     for (Whishlist w:sp.getListWishlist())
-                                                    {if (w.getProduit().getId()==p.getId() && w.getUser().getID()==2)
-                                                    {bdetails.setText("In Wishlist");
-                                                        break;}
-                                                    else{
-                                                        bdetails.setText("Add to wishlist");
+                                                      bdetails.setText("Add to wishlist");
                                                      Whishlist newWish= new Whishlist();
                                           Produit np=new Produit();    np.setId(p.getId());   newWish.setProduit(np);
                                           Utilisateurs nu= new Utilisateurs();nu.setID(2);    newWish.setUser(nu);
-                                                    bdetails.addActionListener(ev->{
-                                                   
+                                                    bdetails.addActionListener(ev->{                                                  
+                                                        sp.ajoutWishlist(newWish);
+        LocalNotification n = new LocalNotification();
+        n.setId("notif");
+        n.setAlertBody("Produit ajoutee a votre wishlist");
+        n.setAlertTitle("Wishlist!");
+        n.setAlertSound("/notification_sound_bells.mp3"); //file name must begin with notification_sound
+        Display.getInstance().scheduleLocalNotification(
+                n,
+                 System.currentTimeMillis()+100 , 
+                LocalNotification.REPEAT_NONE  // Whether to repeat and what frequency
+        ); 
+        localNotificationReceived(n.getId());
+        
+        //Message m = new Message(" We are very glad to tell you that your Product has been successfully added to your personal Wishlist");
+       // Display.getInstance().sendMessage(new String[] {"mohamedkhalil.chakroun@esprit.tn"}, "HuntKingdom", m);
+                                                                                                
+                                                    });
+                                                    
+                                                     for (Whishlist w:sp.getListWishlist())
+                                                    {if (w.getProduit().getId()==p.getId() && w.getUser().getID()==2)
+                                                        {bdetails.setText("In Wishlist");
+                                                        
+                                                    /*    bdetails.removeActionListener(ev->{                                                  
                                                         sp.ajoutWishlist(newWish);
                                                     });
+*/
+                                                     bdetails.addActionListener(ev->{                                                  
+                                                      WishlistForm   form;
+                                                            try {
+                                                                form = new WishlistForm();
+                                                                form.setScrollable(true);
+                                                             form.getCurrent().show();
+                                                            } catch (InterruptedException ex) {
+                                                                System.out.println("direction vers page wishlist"
+                                                                        + "");                                                            }
+                                                            
+                                                    });
+                                                        break;}
+                                                    else{
+                                                      
                                                     } }
+                                                     
+                                                     
+                                                     
+                           
+ShareButton sb = new ShareButton();
+sb.setText("Share Product");
+details.add(sb);
+
+Image screenshot = Image.createImage(fprod2.getWidth(), fprod2.getHeight());
+details.revalidate();
+details.setVisible(true);
+details.paintComponent(screenshot.getGraphics(), true);
+
+String imageFile = FileSystemStorage.getInstance().getAppHomePath() + "screenshot.png";
+try(OutputStream os = FileSystemStorage.getInstance().openOutputStream(imageFile)) {
+    ImageIO.getImageIO().save(screenshot, os, ImageIO.FORMAT_PNG, 1);
+} catch(IOException err) {
+    
+}
+sb.setImageToShare(imageFile, "file://C:/wamp64/www/images/whiteHeart.png");                                   
+                                                
+                                                     
+                                                     
+                                                     
+                                                     
+                                                     
+                                                     
                                                      
                                                     details.add(bdetails);
      
@@ -148,9 +253,13 @@ current.add(lempty) ;
           current.show();
           
           
-          
+     
+     
+     
+     
+     }
 
+    private void localNotificationReceived(String id) {
+       System.out.println("Received local notification "+id);
     }
-
-    
 }

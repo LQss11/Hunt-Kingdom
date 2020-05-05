@@ -4,7 +4,11 @@ namespace ProduitBundle\Controller;
 use MainBundle\Entity\User;
 use ProduitBundle\Entity\Whishlist;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Whishlist controller.
@@ -123,5 +127,47 @@ class WhishlistController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+
+    function displayMobileAction(Request $request)
+    {
+
+        $entitymanager = $this->getDoctrine()->getManager();
+        $produits = $entitymanager->getRepository('ProduitBundle:Whishlist')->findAll();
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($produits,'json', [AbstractNormalizer::ATTRIBUTES => ['id','idProduit'=>['id'],'idClient'=>['id']]]);
+        return new JsonResponse($formatted);
+    }
+
+    function newMobileAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $wish=new Whishlist();
+        $products = $em->getRepository('ProduitBundle:Produit')->findById($request->get('idp'));
+        $wish->setIdProduit($products[0]);
+        $user= $em->getRepository('MainBundle:User')->findById($request->get('idc'));
+        $wish->setIdClient($user[0]);
+
+        $em->persist($wish);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($wish,'json', [AbstractNormalizer::ATTRIBUTES => ['id','idProduit'=>['id'],'idClient'=>['id']]]);
+        return new JsonResponse($formatted);
+    }
+    function deleteMobileAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $wish=new Whishlist();
+        $wish = $em->getRepository('ProduitBundle:Whishlist')->findById($request->get('idw'));
+
+        $em->remove($wish[0]);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($wish,'json', [AbstractNormalizer::ATTRIBUTES => ['id','idProduit'=>['id'],'idClient'=>['id']]]);
+        return new JsonResponse($formatted);
     }
 }

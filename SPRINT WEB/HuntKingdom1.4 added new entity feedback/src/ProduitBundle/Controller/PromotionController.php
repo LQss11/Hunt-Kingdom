@@ -4,7 +4,10 @@ namespace ProduitBundle\Controller;
 
 use ProduitBundle\Entity\Promotion;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Promotion controller.
@@ -222,4 +225,18 @@ $promotion->setActive(1);
         $em->flush();
         return $this->redirectToRoute('promotion_index');
     }
+
+
+
+    function displayMobileAction(Request $request)
+    {
+        $token = $request->get('idUser');
+        $entitymanager = $this->getDoctrine()->getManager();
+        $produits = $entitymanager->getRepository('ProduitBundle:Promotion')->findAll();
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($produits);
+        return new JsonResponse($formatted);
+    }
+
 }

@@ -8,7 +8,11 @@ use ProduitBundle\Entity\ComProduit;
 use ProduitBundle\Entity\Produit;
 use ProduitBundle\Entity\Rating;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
 
@@ -562,5 +566,25 @@ $html=$html." </tbody>
 
 
     }
+    function displayMobileAction(Request $request)
+    {
+        $token = $request->get('idUser');
+        $entitymanager = $this->getDoctrine()->getManager();
+        $produits = $entitymanager->getRepository('ProduitBundle:Produit')->findAll();
 
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($produits);
+        return new JsonResponse($formatted);
+    }
+
+    function findMobileAction(Request $request)
+    {
+        $token = $request->get('search');
+        $entitymanager = $this->getDoctrine()->getManager();
+        $produits = $entitymanager->getRepository('ProduitBundle:Produit')->mefind($token);
+       // $produits = $entitymanager->getRepository('ProduitBundle:Produit')->findBy(array('nom'=>$token));
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($produits);
+        return new JsonResponse($formatted);
+    }
 }

@@ -111,7 +111,7 @@ public class ServiceProduit {
        
         public ArrayList<Produit> getSearchListProduit(String q) {
         ConnectionRequest con = new ConnectionRequest();
-        con.setUrl("http://localhost/HuntKingdom/web/app_dev.php/mobile/findMobile?search="+q);
+        con.setUrl("http://localhost/HuntKingdom/web/app_dev.php/produit/produit/findMobile?search="+q);
 
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

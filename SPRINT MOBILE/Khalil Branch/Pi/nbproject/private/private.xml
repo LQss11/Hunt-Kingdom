@@ -6,6 +6,8 @@
         <group>
             <file>file:/C:/Users/khalil/Documents/NetBeansProjects/Pi/src/com/mycompany/services/ServiceProduit.java</file>
             <file>file:/C:/Users/khalil/Documents/NetBeansProjects/Pi/src/com/mycompany/gui/FrontDisplayForm.java</file>
+            <file>file:/C:/Users/khalil/Documents/NetBeansProjects/Pi/src/com/mycompany/entities/Whishlist.java</file>
+            <file>file:/C:/Users/khalil/Documents/NetBeansProjects/Pi/src/com/mycompany/gui/WishlistForm.java</file>
             <file>file:/C:/Users/khalil/Documents/NetBeansProjects/Pi/src/com/mycompany/gui/HomeForm.java</file>
         </group>
     </open-files>

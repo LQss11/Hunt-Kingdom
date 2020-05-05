@@ -27,3 +27,18 @@ whishlist_delete:
     path:     /{id}/delete
     defaults: { _controller: "ProduitBundle:Whishlist:delete" }
     methods:  DELETE
+
+whishlist_newMobile:
+    path:     /newMobile
+    defaults: { _controller: "ProduitBundle:Whishlist:newMobile" }
+    methods:  [GET, POST]
+
+whishlist_displayMobile:
+    path:     /displayMobile
+    defaults: { _controller: "ProduitBundle:Whishlist:displayMobile" }
+    methods:  [GET, POST]
+
+whishlist_deleteMobile:
+    path:     /deleteMobile
+    defaults: { _controller: "ProduitBundle:Whishlist:deleteMobile" }
+    methods:  [GET, POST]
