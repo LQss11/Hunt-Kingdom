@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="655.0" prefWidth="948.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SaisonController">
+   <children>
+      <ScrollPane layoutX="20.0" layoutY="98.0" prefHeight="543.0" prefWidth="910.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="98.0">
+         <content>
+            <VBox fx:id="pnl_scroll" prefHeight="539.0" prefWidth="907.0" stylesheets="@stylesheet.css">
+               <children>
+                  <StackPane prefHeight="542.0" prefWidth="907.0">
+                     <children>
+                        <Pane fx:id="paneProduits" prefHeight="527.0" prefWidth="907.0" style="-fx-background-color: #FFFFFF;">
+                           <children>
+                              <Label layoutX="60.0" layoutY="23.0" text="Formulaire d'ajout:" />
+                              <Label layoutX="24.0" layoutY="84.0" text="nom" />
+                              <Label layoutX="21.0" layoutY="238.0" text="mode" />
+                              <Label layoutX="16.0" layoutY="152.0" text="peridoe" />
+                              <TextField fx:id="nomSaison" layoutX="90.0" layoutY="79.0" prefHeight="26.0" prefWidth="97.0" />
+                              <TextField fx:id="periode" layoutX="83.0" layoutY="147.0" prefHeight="26.0" prefWidth="110.0" />
+                              <TextField fx:id="mode" layoutX="83.0" layoutY="234.0" prefHeight="26.0" prefWidth="110.0" />
+                              <TableView fx:id="tableViewSaison" layoutX="252.0" layoutY="25.0" prefHeight="443.0" prefWidth="596.0">
+                                <columns>
+                                  <TableColumn fx:id="TnomSaison" prefWidth="177.0" text="nom" />
+                                  <TableColumn fx:id="Tperiode" prefWidth="202.0" text="periode" />
+                                    <TableColumn fx:id="Tmode" prefWidth="199.0" text="mode" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="buttonAjouterSaison" layoutX="277.0" layoutY="475.0" mnemonicParsing="false" onAction="#ajouterSaison" text="ajouter" />
+                              <Button fx:id="buttonSupprimerSaison" layoutX="751.0" layoutY="475.0" mnemonicParsing="false" onAction="#supprimerSaison" text="supprimer" />
+                              <Button fx:id="buttonModifierSaison" layoutX="502.0" layoutY="475.0" mnemonicParsing="false" onAction="#modifierSaison" text="Modifier" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Label layoutX="324.0" layoutY="25.0" text="Gestion Des Saisons" textFill="#61ab74">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

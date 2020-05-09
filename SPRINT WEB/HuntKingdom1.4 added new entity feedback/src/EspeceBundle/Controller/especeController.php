@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\File\File;
 use EspeceBundle\Form\especeType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Espece controller.
@@ -221,5 +224,78 @@ private function createDeleteForm(espece $espece)
     }
 
 
+    public function allAction()
+    {
+        $tasks = $this->getDoctrine()->getManager()
+            ->getRepository('EspeceBundle:espece')
+            ->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($tasks);
+        return new JsonResponse($formatted);
+    }
+
+    public function findAction(Request $request)
+    {
+
+            $token = $request->get('search');
+            $entitymanager = $this->getDoctrine()->getManager();
+            $especes = $entitymanager->getRepository('EspeceBundle:Espece')->mefind($token);
+            // $produits = $entitymanager->getRepository('ProduitBundle:Produit')->findBy(array('nom'=>$token));
+            $serializer = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serializer->normalize($especes);
+            return new JsonResponse($formatted);
+        }
+
+
+    public function addAction(Request $request)
+    {   /*
+        $em = $this->getDoctrine()->getManager();
+        $espece = new Task();
+        $espece->setName($request->get('name'));
+        $espece->setStatus($request->get('status'));
+ *
+        $espece = new Espece();
+        $form = $this->createForm(especeType::class, $espece);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $file = $espece->getImage();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('photos_directory'), $fileName);
+            $espece->setImage($fileName);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($espece);
+            $em->flush();
+            $em->persist(espece);
+            $em->flush();
+            $serializer = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serializer->normalize($espece);
+            return new JsonResponse($formatted);
+        }
+            */
+
+        $em = $this->getDoctrine()->getManager();
+        $espece = new Espece();
+        $espece->setNomEspece($request->get('nomEspece'));
+        $espece->setDescriptionEspece($request->get('descriptionEspece'));
+        $espece->setImage($request->get('image'));
+        $espece->setPoids($request->get('poids'));
+        $espece->setType($request->get('type'));
+        $espece->setZone($request->get('zone'));
+        $espece->setVille($request->get('ville'));
+        //$espece->setIdS($request->get('idS'));
+
+
+        $em->persist($espece);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($espece);
+        return new JsonResponse($formatted);
+
+
+
+    }
 
 }
