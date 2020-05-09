@@ -57,3 +57,16 @@ ele_show:
     path:      /ele
     defaults: { _controller: "EspeceBundle:espece:showfront" }
     methods:  GET
+
+espece_all:
+    path:     /all
+    defaults: { _controller: "EspeceBundle:espece:all" }
+    methods:  GET
+
+espece_add:
+    path:     /add/{nomEspece}/{descriptionEspece}/{image}/{poids}/{type}/{zone}/{ville}
+    defaults: { _controller: EspeceBundle:espece:add}
+espece_find:
+    path:     /find
+    defaults: { _controller: EspeceBundle:espece:find}
+    methods:  [GET, POST]
