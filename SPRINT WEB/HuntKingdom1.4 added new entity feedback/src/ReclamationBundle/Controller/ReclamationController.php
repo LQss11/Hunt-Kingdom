@@ -5,6 +5,13 @@ namespace ReclamationBundle\Controller;
 use ReclamationBundle\Entity\Reclamation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Reclamation controller.
@@ -309,6 +316,133 @@ class ReclamationController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+
+
+
+
+
+
+
+    public function allAction()
+    {
+
+        $reclamations = $this->getDoctrine()->getManager()
+            ->getRepository('ReclamationBundle:Reclamation')
+            ->findAll();
+
+        //$serializer = new Serializer([new ObjectNormalizer()]);
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($reclamations,'json', [AbstractNormalizer::ATTRIBUTES => ['id','type','ido','sujet','description','date','etat','idU'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+
+    public function findAction($id)
+    {
+        $reclamations = $this->getDoctrine()->getManager()
+            ->getRepository('ReclamationBundle:Reclamation')
+            ->find($id);
+        /*$serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($feedback);*/
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($reclamations,'json', [AbstractNormalizer::ATTRIBUTES => ['id','type','ido','sujet','description','date','etat','idU'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+
+
+
+    public function remAction(Request $request)
+    {
+        $reclamation = $this->getDoctrine()->getManager()
+            ->getRepository('ReclamationBundle:Reclamation')
+            ->find($request->get('id'));
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($reclamation);
+        $em->flush();
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($reclamation,'json', [AbstractNormalizer::ATTRIBUTES => ['id','type','ido','sujet','description','date','etat','idU'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+
+
+    public function modAction(Request $request)
+    {
+        $reclamation = $this->getDoctrine()->getManager()
+            ->getRepository('ReclamationBundle:Reclamation')
+            ->find($request->get('id'));
+
+
+        $em = $this->getDoctrine()->getManager();
+        $reclamation->setDescription($request->get('description'));
+        $reclamation->setEtat($request->get('etat'));
+
+        $em->persist($reclamation);
+        $em->flush();
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($reclamation,'json', [AbstractNormalizer::ATTRIBUTES => ['id','type','ido','sujet','description','date','etat','idU'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+
+
+    public function addAction(Request $request)
+    {
+
+        $user = $this->getDoctrine()->getManager()
+            ->getRepository('MainBundle:User')
+            ->find($request->get('idU'));
+
+
+        $em = $this->getDoctrine()->getManager();
+        $reclamation = new Reclamation();
+        $reclamation->setType($request->get('type'));
+        $reclamation->setSujet($request->get('sujet'));
+        $reclamation->setDescription($request->get('description'));
+        $reclamation->setEtat("Pending");
+
+        $reclamation->setDate(new \DateTime());
+        $reclamation->setIdo(0);
+
+        $reclamation->setIdU($user);
+
+        $em->persist($reclamation);
+        $em->flush();
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($reclamation,'json', [AbstractNormalizer::ATTRIBUTES => ['id','type','ido','sujet','description','date','etat','idU'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+
+
 
 
 

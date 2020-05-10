@@ -82,3 +82,29 @@ reclamation_new_object:
     path:     /{id}-{type}/newO
     defaults: { _controller: "ReclamationBundle:Reclamation:newO" }
     methods:  [GET, POST]
+
+
+
+
+reclamation_all:
+    path:     /all
+    defaults: { _controller: "ReclamationBundle:Reclamation:all" }
+
+
+reclamation_find:
+    path:     /find/{id}
+    defaults: { _controller: "ReclamationBundle:Reclamation:find" }
+
+
+reclamation_rem:
+    path:     /rem/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:rem}
+
+reclamation_mod:
+    path:     /mod/{id}/{description}/{etat}
+    defaults: { _controller: ReclamationBundle:Reclamation:mod}
+
+reclamation_add:
+    path:     /add/{type}/{sujet}/{description}/{idU}
+    defaults: { _controller: ReclamationBundle:Reclamation:add}
+
