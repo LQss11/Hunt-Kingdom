@@ -22,6 +22,14 @@ class Feedback
     private $id;
 
     /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
@@ -147,6 +155,7 @@ class Feedback
     }
     public function __toString()
     {
-        return (string)$this->getRate();
+        //return (string)$this->getRate();
+        return (string)$this->getIdU();
     }
 }
