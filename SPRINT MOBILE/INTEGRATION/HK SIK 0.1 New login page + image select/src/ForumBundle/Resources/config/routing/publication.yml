@@ -40,3 +40,20 @@ publication_delete1:
 search:
     path:     /search
     defaults: { _controller: "ForumBundle:publication:search" }
+
+
+publication_all:
+    path:     /all
+    defaults: {_controller: "ForumBundle:publication:all" }
+
+publication_find:
+    path:     /find/{id}
+    defaults: { _controller: "ForumBundle:publication:find"}
+
+publication_create:
+    path:     /create/{contenu}/{type}/{idUser}
+    defaults: { _controller: "ForumBundle:publication:create"}
+
+publication_rem:
+    path:     /sup/{id}
+    defaults: { _controller: "ForumBundle:publication:rem"}

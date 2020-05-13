@@ -7,7 +7,13 @@ use ForumBundle\Entity\publication;
 use ForumBundle\ForumBundle;
 use MainBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -263,6 +269,82 @@ class publicationController extends Controller
         $notif->setMessage('This a notification.');
 
        $manager->addNotification(array($this->getUser()), $notif, true);
+
+    }
+
+
+    public function allAction()
+    {
+        $publications = $this->getDoctrine()->getManager()
+            ->getRepository('ForumBundle:publication')
+            ->findAll();
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($publications,'json', [AbstractNormalizer::ATTRIBUTES
+        => ['id','contenu','datePublication','type','idUser'=>['id']]]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+    public function findAction($id)
+    {
+        $publication = $this->getDoctrine()->getManager()
+            ->getRepository('ForumBundle:publication')
+            ->find($id);
+
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($publication,'json', [AbstractNormalizer::ATTRIBUTES =>
+            ['id','contenu','datePublication','type']]);
+
+        return new JsonResponse($formatted);
+
+    }
+
+    public function createAction(Request $request)
+    {
+        $user = $this->getDoctrine()->getManager()
+            ->getRepository('MainBundle:User')
+            ->find($request->get('idUser'));
+
+        $em = $this->getDoctrine()->getManager();
+        $publication = new Publication();
+        $publication->setContenu($request->get('contenu'));
+        $publication->setIdUser($user);
+
+        $publication->setdatePublication(new \DateTime("now"));
+        $publication->setType($request->get('type'));
+        $em->persist($publication);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($publication,'json', [AbstractNormalizer::ATTRIBUTES =>
+            ['id','contenu','datePublication'|date(DATE_RFC2822),'type','idUser'=>['id']]]);
+        return new JsonResponse($formatted);
+    }
+
+
+    public function remAction(Request $request)
+    {
+        $publication = $this->getDoctrine()->getManager()
+            ->getRepository('ForumBundle:publication')
+            ->find($request->get('id'));
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($publication);
+        $em->flush();
+
+        $normalizer = new ObjectNormalizer(null, null, null, new ReflectionExtractor());
+
+        $serializer = new Serializer([new DateTimeNormalizer(), $normalizer]);
+        $formatted = $serializer->normalize($publication,'json', [AbstractNormalizer::ATTRIBUTES =>
+            ['id','contenu','datePublication'|date(DATE_RFC2822),'type','idUser'=>['id']]]);
+
+        return new JsonResponse($formatted);
 
     }
 

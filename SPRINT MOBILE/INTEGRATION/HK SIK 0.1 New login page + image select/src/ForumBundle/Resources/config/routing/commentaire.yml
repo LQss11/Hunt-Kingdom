@@ -9,3 +9,20 @@ update_page:
 delete_page:
   path:     /delete/{id}
   defaults: { _controller: "ForumBundle:commentaire:delete" }
+
+
+all:
+  path:     /all
+  defaults: { _controller: "ForumBundle:commentaire:all" }
+
+find_task:
+  path:     /find/{id}
+  defaults: { _controller: "ForumBundle:commentaire:find"}
+
+create_task:
+  path:     /new/{contenu}/{idpublication}/{idUser}
+  defaults: { _controller: "ForumBundle:commentaire:new"}
+
+Coment_task:
+  path:     /Coment/{id}
+  defaults: { _controller: "ForumBundle:commentaire:Comnts"}
