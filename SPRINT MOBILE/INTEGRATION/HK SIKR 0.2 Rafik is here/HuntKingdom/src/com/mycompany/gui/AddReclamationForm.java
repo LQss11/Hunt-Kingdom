@@ -15,6 +15,7 @@ import com.codename1.io.Util;
 import com.codename1.media.Media;
 import com.codename1.media.MediaManager;
 import com.codename1.ui.Button;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.FontImage;
@@ -41,7 +42,23 @@ public class AddReclamationForm extends Form {
         setTitle("Add a new Reclamation");
         setLayout(BoxLayout.y());
 
-        TextField tfType = new TextField("", "Type Reclamation:");
+        //TextField tfType = new TextField("", "Type Reclamation:");
+        String typeRec = "";
+
+        ComboBox<String> tfType = new ComboBox<String>("WebService","Bug","Other") ;
+        
+        if (previous.toString().substring(0, previous.toString().indexOf("[")).equals("HomeForm") ) {
+            tfType.addItem("Home");
+
+            tfType.setSelectedItem("Home");
+            tfType.setEnabled(false);
+			
+			
+        }
+		
+		
+        System.out.println("prev == " + previous.toString().substring(0, previous.toString().indexOf("[")));
+
         TextField tfSujet = new TextField("", "Sujet Reclamation:");
         TextField tfDescription = new TextField("", "Description Reclamation:");
         //TextField tfEtat = new TextField("", "Etat Reclamation:");
@@ -51,11 +68,12 @@ public class AddReclamationForm extends Form {
         btnValider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                if ((tfDescription.getText().length() == 0) || (tfSujet.getText().length() == 0) || (tfType.getText().length() == 0)) {
+
+                if ((tfDescription.getText().length() == 0) || (tfSujet.getText().length() == 0) || (tfType.getSelectedItem().length() == 0)) {
                     Dialog.show("Alert", "Please fill all the fields", "OK", null);
                 } else {
                     try {
-                        Reclamation r = new Reclamation(tfType.getText(), tfSujet.getText(), tfDescription.getText());
+                        Reclamation r = new Reclamation(tfType.getSelectedItem(), tfSujet.getText(), tfDescription.getText());
                         if (ServiceReclamation.getInstance().addReclamation(r)) {
                             Dialog.show("Success", "Complaint added successfuly", "OK", null);
                             HomeForm h = new HomeForm();
@@ -85,9 +103,8 @@ public class AddReclamationForm extends Form {
         } catch (IOException ex) {
         }
          */
-                InputStream in = Display.getInstance().getResourceAsStream(
+        InputStream in = Display.getInstance().getResourceAsStream(
                 Form.class, "/Mario.mp3");
-                        System.out.println("path == " + in);
 
         playButton.addActionListener((e) -> {
             try {
