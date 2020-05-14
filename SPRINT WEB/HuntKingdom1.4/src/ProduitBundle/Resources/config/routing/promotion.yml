@@ -1,0 +1,39 @@
+promotion_index:
+    path:     /
+    defaults: { _controller: "ProduitBundle:Promotion:index" }
+    methods:  GET
+
+promotion_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProduitBundle:Promotion:show" }
+    methods:  GET
+
+promotion_new:
+    path:     /new
+    defaults: { _controller: "ProduitBundle:Promotion:new" }
+    methods:  [GET, POST]
+
+promotion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProduitBundle:Promotion:edit" }
+    methods:  [GET, POST]
+
+promotion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProduitBundle:Promotion:delete" }
+    methods:  DELETE
+
+promotion_delete1:
+    path:     /{id}/delete1
+    defaults: { _controller: "ProduitBundle:Promotion:delete1" }
+    methods:  [GET, DELETE,POST]
+
+promotion_Front:
+    path:     /front
+    defaults: { _controller: "ProduitBundle:Promotion:front" }
+    methods:  GET
+
+promo_ChangeEtat:
+    path:     /{id}/change
+    defaults: { _controller: "ProduitBundle:Promotion:changeEtat" }
+    methods:  GET
