@@ -42,3 +42,8 @@ whishlist_deleteMobile:
     path:     /deleteMobile
     defaults: { _controller: "ProduitBundle:Whishlist:deleteMobile" }
     methods:  [GET, POST]
+
+whishlist_emailMobile:
+    path:     /emailMobile
+    defaults: { _controller: "ProduitBundle:Whishlist:emailMobile" }
+    methods:  [GET, POST]

@@ -212,7 +212,7 @@ $promotion->setActive(1);
             $message = \Swift_Message::newInstance()
                 ->setSubject("Promotion !!!")
                 ->setFrom('huntkingdomtn@gmail.com')
-                ->setTo('khalilchakroun11@gmail.com')
+                ->setTo('mohamedkhalil.chakroun@esprit.tn')
                 ->setBody('come check the prmotion');
             $this->get('mailer')->send($message);
         }
@@ -238,5 +238,7 @@ $promotion->setActive(1);
         $formatted = $serializer->normalize($produits);
         return new JsonResponse($formatted);
     }
+
+
 
 }
