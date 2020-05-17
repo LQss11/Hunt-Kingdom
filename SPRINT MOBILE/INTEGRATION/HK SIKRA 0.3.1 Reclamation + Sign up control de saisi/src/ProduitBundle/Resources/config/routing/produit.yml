@@ -69,3 +69,7 @@ produit_findMobile:
   defaults: { _controller: "ProduitBundle:Produit:findMobile" }
   methods:  [GET, POST]
 
+produit_pdfMobile:
+  path:     /pdfMobile
+  defaults: { _controller: "ProduitBundle:Produit:pdfMobile" }
+  methods:  [GET, POST]

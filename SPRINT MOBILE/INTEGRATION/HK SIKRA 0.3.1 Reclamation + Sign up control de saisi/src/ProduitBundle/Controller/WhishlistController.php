@@ -141,8 +141,9 @@ class WhishlistController extends Controller
         return new JsonResponse($formatted);
     }
 
-    function newMobileAction(Request $request)
+   function newMobileAction(Request $request)
     {
+
 
         $em = $this->getDoctrine()->getManager();
         $wish=new Whishlist();
@@ -150,6 +151,13 @@ class WhishlistController extends Controller
         $wish->setIdProduit($products[0]);
         $user= $em->getRepository('MainBundle:User')->findById($request->get('idc'));
         $wish->setIdClient($user[0]);
+        $n=$products[0]->getNom();
+        $message = \Swift_Message::newInstance()
+            ->setSubject("Hunt Kingdom")
+            ->setFrom('huntkingdomtn@gmail.com')
+            ->setTo('mohamedkhalil.chakroun@esprit.tn')
+            ->setBody($n.'has been successfully added to your wishlist , from now on you wil receive e-mails about any update on this product ');
+        $this->get('mailer')->send($message);
 
         $em->persist($wish);
         $em->flush();
@@ -168,6 +176,23 @@ class WhishlistController extends Controller
         $em->flush();
         $serializer = new Serializer([new ObjectNormalizer()]);
         $formatted = $serializer->normalize($wish,'json', [AbstractNormalizer::ATTRIBUTES => ['id','idProduit'=>['id'],'idClient'=>['id']]]);
+        return new JsonResponse($formatted);
+    }
+     function emailMobileAction(Request $request)
+    {
+        $message = \Swift_Message::newInstance()
+            ->setSubject("Hunt Kingdom")
+            ->setFrom('huntkingdomtn@gmail.com')
+            ->setTo('mohamedkhalil.chakroun@esprit.tn')
+            ->setBody('This prodcut has been successfully added to your wishlist , from now on you wil receive e-mails about any update on this product ');
+        $this->get('mailer')->send($message);
+
+        //$token = $request->get('idUser');
+        $entitymanager = $this->getDoctrine()->getManager();
+        $produits = $entitymanager->getRepository('ProduitBundle:Promotion')->findAll();
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($produits);
         return new JsonResponse($formatted);
     }
 }

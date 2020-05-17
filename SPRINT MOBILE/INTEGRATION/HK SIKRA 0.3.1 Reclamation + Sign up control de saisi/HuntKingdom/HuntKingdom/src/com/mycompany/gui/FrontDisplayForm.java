@@ -108,6 +108,10 @@ public class FrontDisplayForm extends Form {
 
     }
 
+
+
+
+
     public void Display(ArrayList<Produit> Produits) {
         Preferences UserId = null;
         int iduse = UserId.get("id", 2);
@@ -125,13 +129,13 @@ public class FrontDisplayForm extends Form {
 
             fprod2.add(iv);
             Label lnom = new Label(p.getNom());
-            lnom.getAllStyles().setFgColor(0xff000);
+            lnom.getAllStyles().setFgColor(0x00000);
             fprod.add(lnom);
-
+lnom.setUIID("Label");
             Label l1 = new Label("prix :" + p.getPrix());
             l1.getAllStyles().setFgColor(0xff000);
             fprod.add(l1);
-
+ l1.setUIID("Label");
             //produit details 
             //////////
             fprod2.addPointerPressedListener(e -> {
@@ -144,9 +148,9 @@ public class FrontDisplayForm extends Form {
                 if (p.getQuantite() == 0) {
                     lquantite.setText("out of Stock");
                 }
-                ldesc.getAllStyles().setFgColor(0x00002);
+                ldesc.getAllStyles().setFgColor(0x00000);
                 Label lprix = new Label("prix:" + p.getPrix());
-                lprix.getAllStyles().setFgColor(0x00002);
+                lprix.getAllStyles().setFgColor(0xff000);
 
                 details.add(ldesc);
                 details.add(lprix);
@@ -171,21 +175,22 @@ public class FrontDisplayForm extends Form {
                 newWish.setUser(nu);
                 bdetails.addActionListener(ev -> {
                     sp.ajoutWishlist(newWish);
-                    LocalNotification n = new LocalNotification();
-                    n.setId("notif");
-                    n.setAlertBody("Produit ajoutee a votre wishlist");
-                    n.setAlertTitle("Wishlist!");
-                    n.setAlertSound("/notification_sound_bells.mp3"); //file name must begin with notification_sound
-                    Display.getInstance().scheduleLocalNotification(
-                            n,
-                            System.currentTimeMillis() + 100,
-                            LocalNotification.REPEAT_NONE // Whether to repeat and what frequency
-                    );
-                    localNotificationReceived(n.getId());
 
-                    //Message m = new Message(" We are very glad to tell you that your Product has been successfully added to your personal Wishlist");
-                    // Display.getInstance().sendMessage(new String[] {"mohamedkhalil.chakroun@esprit.tn"}, "HuntKingdom", m);
-                });
+
+
+                                                                LocalNotification n = new LocalNotification();
+                                                                n.setId("notif");
+                                                                n.setAlertBody("Produit ajoutee a votre wishlist");
+                                                                n.setAlertTitle("Wishlist!");
+                                                                n.setAlertSound("/notification_sound_bells.mp3"); //file name must begin with notification_sound
+                                                                Display.getInstance().scheduleLocalNotification(
+                                                                        n,
+                                                                        System.currentTimeMillis() + 100,
+                                                                        LocalNotification.REPEAT_NONE // Whether to repeat and what frequency
+                                                                );
+                                                                localNotificationReceived(n.getId());
+
+                  });
 
                 for (Whishlist w : sp.getListWishlist()) {
                     if (w.getProduit().getId() == p.getId() && w.getUser().getID() == iduse) {
@@ -215,7 +220,7 @@ public class FrontDisplayForm extends Form {
 
                 ShareButton sb = new ShareButton();
                 sb.setText("Share Product");
-                details.add(sb);
+                //details.add(sb);
 
                 Image screenshot = Image.createImage(fprod2.getWidth(), fprod2.getHeight());
                 details.revalidate();

@@ -245,7 +245,17 @@ public class ServiceProduit {
         
 }
        
-       
+      public void emailWishlist(int idw) {
+        ConnectionRequest con = new ConnectionRequest();// création d'une nouvelle demande de connexion
+        String Url = "http://localhost/HuntKingdom/web/app_dev.php/produit/whish/deleteMobile?" + "idw=" + idw;// création de l'URL
+         System.out.println("/////////////removing/////////////////////////");
+        con.setUrl(Url);// Insertion de l'URL de notre demande de connexion
+        con.addResponseListener((e) -> {
+            String str = new String(con.getResponseData());//Récupération de la réponse du serveur
+            System.out.println(str);//Affichage de la réponse serveur sur la console
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);// Ajout de notre demande de connexion à la file d'attente du NetworkManager
+    } 
        
        public void ajoutWishlist(Whishlist w) {
         ConnectionRequest con = new ConnectionRequest(); 
@@ -270,5 +280,20 @@ public class ServiceProduit {
         });
         NetworkManager.getInstance().addToQueueAndWait(con);// Ajout de notre demande de connexion à la file d'attente du NetworkManager
     }
-       
+  public void pdf() {
+        ConnectionRequest con = new ConnectionRequest();// création d'une nouvelle demande de connexion
+        String Url = Statics.BASE_URL+"/produit/produit/pdfMobile"; // création de l'URL
+         System.out.println("/////////////pdf/////////////////////////");
+         Util.downloadUrlToStorage("http://localhost/"
+                  + "HuntKingdom/web/uploads/ListOfProducts//ProductsList.pdf",
+                  "ProductsList.pdf",true);
+        con.setUrl(Url);// Insertion de l'URL de notre demande de connexion
+        con.addResponseListener((e) -> {
+            String str = new String(con.getResponseData());//Récupération de la réponse du serveur
+            System.out.println(str);//Affichage de la réponse serveur sur la console
+             
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);// Ajout de notre demande de connexion à la file d'attente du NetworkManager
+    }       
+
 }
