@@ -1,0 +1,180 @@
+﻿{% extends 'Front/Front.html.twig'%}
+
+{% block content %}
+    <div class="content-wrapper">
+
+
+
+
+        <div class="Delicious_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-50">
+                            <h3>Les Meilleurs Evenements pour Vous </h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                         aria-labelledby="pills-home-tab">
+                        <div class="row">
+
+
+                            {% for evenement in evenements |slice(0, 3)%}
+
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single_delicious d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="{{ asset('uploads/evenement/' ~  evenement.image ) }}" width="150"
+                                                 height="150">
+                                        </div>
+                                        <div class="info">
+                                            <a class="d-inline-block" href="{{ path('evenement_showfront', { 'id': evenement.id }) }}">
+                                                <h2>#{{ evenement.id }}.{{ evenement.nom }}</h2>
+                                            </a>
+                                            <p>{{ evenement.description }}.</p>
+                                            <span>${{ evenement.prix }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Delicious_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-50">
+                            <h3>Nos Produits</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="row">
+
+
+                            {% for produit in produits |slice(0, 6)%}
+                                <div class="col-lg-4 col-md-6">
+                                    <center> <div class="single-product">
+                                            {% if produit.etatPromo==1 %}<span class="sale">Promo</span>{% endif %}
+                                            <a href="{{ path('produit_showFront', { 'id': produit.id }) }}" class="social-info">
+
+                                                <img class="img-fluid" src="{{  asset(asset('images/' ~ produit.image ))  }}" width="200" height="300" >
+                                            </a>
+                                            <div class="product-details"  >
+                                                <div class="product-details">
+                                                    <h4>{{ produit.nom }}</h4>
+                                                    <div class="price"><h6> {{ produit.prix }} dt</h6></div>
+                                                </div>
+                                                <div class="prd-bottom">
+
+                                                    {% if panier[produit.id] is not defined %}
+                                                        <a class="btn btn-success" href="{{ path('ajouter', { 'id' : produit.id }) }}">Ajouter au panier</a>
+                                                    {% endif %}
+                                                    <a class="btn btn-warning" href="{{ path('produit_showFront', { 'id': produit.id }) }}" role="button" title="chasse au grive en tunisie"> details »</a>
+                                                    <br><br><br></div>
+                                            </div>
+                                        </div></center>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Delicious_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section_title text-center mb-50">
+                            <h3>Notre Forum</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="row">
+
+
+                            {% for publication in publications |slice(0, 3)%}
+
+                            <div class="container">
+
+                                <div class="col-md-10" >
+
+
+
+                                    <div class="blo4 p-b-63">
+                                        <div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
+
+                                            <a href="#" > <img src="{{ asset('uploads/' ~ publication.type)}}" alt="IMG-BLOG">
+                                            </a>
+
+                                        </div>
+
+
+                                        <div class="text-blo4 p-t-33">
+                                            <h4 class="p-b-16">
+                                                <a href="{{ path('publication_show',{'id': publication.id}) }}" class="tit9"> <p class="listing-tagline">{{ publication.contenu|trim }}</p></a>
+                                            </h4>
+
+
+
+                                            <a href="{{ path('publication_show',{'id': publication.id}) }}" class="dis-block txt4 m-t-30">
+                                                Continue Reading
+                                                <i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+                                            </a>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+{% endblock %}
