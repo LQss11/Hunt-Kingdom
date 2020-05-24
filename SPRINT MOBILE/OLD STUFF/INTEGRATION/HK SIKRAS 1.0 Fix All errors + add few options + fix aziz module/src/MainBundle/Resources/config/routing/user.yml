@@ -1,0 +1,30 @@
+user_index:
+    path:     /
+    defaults: { _controller: "MainBundle:User:index" }
+    methods:  GET
+
+user_show:
+    path:     /{id}/show
+    defaults: { _controller: "MainBundle:User:show" }
+    methods:  GET
+
+user_ChangeEtat:
+    path:     /{id}/change
+    defaults: { _controller: "MainBundle:User:changeEtat" }
+    methods:  GET
+
+all:
+    path:     /all/{username}
+    defaults: { _controller: "MainBundle:User:all" }
+
+
+add:
+    path:     /add/{username}/{email}/{password}/{firstname}/{lastname}/{phone}/{image}
+    defaults: { _controller: "MainBundle:User:add" }
+    requirements:
+        password: .+
+        image: .+
+
+user_by_id:
+    path:     /find/{id}
+    defaults: { _controller: "MainBundle:User:ubi" }

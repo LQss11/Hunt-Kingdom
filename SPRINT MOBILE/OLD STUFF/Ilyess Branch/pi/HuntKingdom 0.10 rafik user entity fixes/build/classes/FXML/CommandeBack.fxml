@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CommandeBackController">
+   <children>
+      <TableView fx:id="tableviewcommande" layoutX="307.0" layoutY="100.0" prefHeight="234.0" prefWidth="493.0">
+        <columns>
+          <TableColumn fx:id="userid" prefWidth="182.0" text="utilisiateur id" />
+          <TableColumn fx:id="date" prefWidth="119.0" text="date" />
+            <TableColumn fx:id="valide" prefWidth="194.0" text="Validé" />
+            <TableColumn fx:id="nbrprod" prefWidth="204.0" text="Total Produits" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TableViewProduits" layoutX="251.0" layoutY="420.0" prefHeight="200.0" prefWidth="605.0">
+        <columns>
+            <TableColumn fx:id="nomprod" minWidth="0.0" prefWidth="138.0" text="nom du produit" />
+            <TableColumn fx:id="qnt" prefWidth="122.0" text="quantité" />
+            <TableColumn fx:id="prixunitaire" prefWidth="161.0" text="prix unitaire" />
+            <TableColumn fx:id="totaleprod" prefWidth="183.0" text="totale/produit" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonAfficher" layoutX="515.0" layoutY="361.0" mnemonicParsing="false" onAction="#showCommande" text="Afficher" />
+      <Label fx:id="totalPrix" layoutX="609.0" layoutY="630.0" text="tot">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="630.0" text="PRIX TOTAL:" textFill="#0a2d3c">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="417.0" layoutY="14.0" text="Commandes" textFill="#6b258f">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

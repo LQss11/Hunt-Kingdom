@@ -1,0 +1,13 @@
+forum_publication:
+    resource: "@ForumBundle/Resources/config/routing/publication.yml"
+    prefix:   /publication
+
+forum_commentaire:
+        resource: "@ForumBundle/Resources/config/routing/commentaire.yml"
+        prefix:   /commentaire
+
+forum_homepage:
+    path:     /
+    defaults: { _controller: ForumBundle:Default:index }
+
+
