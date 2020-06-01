@@ -1,0 +1,44 @@
+evenement_index:
+    path:     /indexback
+    defaults: { _controller: "EvenementBundle:Evenement:index" }
+    methods:  GET
+
+evenement_indexfront:
+    path:     /indexfront
+    defaults: { _controller: "EvenementBundle:Evenement:indexfront" }
+    methods:  GET
+
+evenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "EvenementBundle:Evenement:show" }
+    methods:  GET
+
+evenement_showfront:
+    path:     /{id}/showfront
+    defaults: { _controller: "EvenementBundle:Evenement:showfront" }
+    methods:  GET
+
+evenement_new:
+    path:     /new
+    defaults: { _controller: "EvenementBundle:Evenement:new" }
+    methods:  [GET, POST]
+
+evenement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EvenementBundle:Evenement:edit" }
+    methods:  [GET, POST]
+
+evenement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EvenementBundle:Evenement:delete" }
+    methods:  DELETE
+
+show_mine:
+    path:     /showmine
+    defaults: { _controller: "EvenementBundle:Evenement:showmine" }
+    methods:  GET
+
+participationss:
+    path:     /{id]/participations
+    defaults: { _controller: "EvenementBundle:Evenement:particip" }
+    methods:  GET

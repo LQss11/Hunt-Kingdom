@@ -1,0 +1,14 @@
+validationCommande:
+    path:  /api/banque/{id}
+    defaults: { _controller: EcommerceBundle:Commandes:validationCommande }
+BackCommande:
+    path:  /Back/Commandes
+    defaults: { _controller: EcommerceBundle:Back:Back }
+
+DelCommande:
+    path:  /Back/Commandes/Del/{id}
+    defaults: { _controller: EcommerceBundle:Back:Del }
+
+commander:
+    path:  /commander/{spanier}/{pprix}/{pid}/{ptva}/{pnom}/{lprenom}/{lnom}/{ltel}/{laddr}/{lcp}/{lville}/{lpays}/{lcomp}/{fprenom}/{fnom}/{ftel}/{faddr}/{fcp}/{fville}/{fpays}/{fcompl}
+    defaults: { _controller: EcommerceBundle:Commandes:cmd }
