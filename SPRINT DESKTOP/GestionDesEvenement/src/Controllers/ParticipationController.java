@@ -10,8 +10,6 @@ import Entities.User;
 import Service.ServiceEvenement;
 import Service.ServiceInscription;
 import Utils.DataSource;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,0 +1,98 @@
+{% extends "Front/Front.html.twig" %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+
+
+            <div class="span9">
+
+
+                <h2>Valider mon panier</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Références</th>
+                        <th>Quantité</th>
+                        <th>Prix unitaire</th>
+                        <th>Total HT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for produit in commande.commande.produit %}
+                        <tr>
+                            <td>{{ produit.reference }}</td>
+                            <td>
+                                {{ produit.quantite }}
+                            </td>
+                            <td>{{ produit.prixHT }} €</td>
+                            <td>{{ produit.prixHT * produit.quantite }} €</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <dl class="dl-horizontal pull-right">
+                    <dt>Total HT :</dt><dd>{{ commande.commande.prixHT }} €</dd>
+
+                    {% for key, tva in commande.commande.tva %}
+                        <dt>TVA {{ key }} :</dt><dd>{{ tva }} €</dd>
+                    {% endfor %}
+
+                    <dt>Total TTC :</dt><dd>{{ commande.commande.prixTTC }} €</dd>
+                </dl>
+
+                <div class="span3 pull-request">
+                    <dl class="pull-request">
+                        <dt><h4>Adresse de livraison</h4></dt>
+                        <dt>{{ commande.commande.livraison.prenom }} {{ commande.commande.livraison.nom }}</dt>
+                        <dt>{{ commande.commande.livraison.adresse }}</dt>
+                        <dt>{{ commande.commande.livraison.cp }} {{ commande.commande.livraison.ville }} - {{ commande.commande.livraison.pays }}</dt>
+                    </dl>
+                </div>
+
+                <div class="span3 pull-left">
+                    <dl class="pull-left">
+                        <dt><h4>Adresse de facturation</h4></dt>
+                        <dt>{{ commande.commande.facturation.prenom }} {{ commande.commande.facturation.nom }}</dt>
+                        <dt>{{ commande.commande.facturation.adresse }}</dt>
+                        <dt>{{ commande.commande.facturation.cp }} {{ commande.commande.facturation.ville }} - {{ commande.commande.facturation.pays }}</dt>
+                    </dl>
+                </div>
+
+                <div class="clearfix"></div>
+
+
+                <a href="{{ path('Store_checkout',{ 'id' : commande.id }) }}" class="btn btn-success pull-right">Payer</a>
+
+
+                <a href="{{ path('livraison') }}" class="btn btn-primary">retour</a>
+            </div>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

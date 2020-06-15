@@ -1,0 +1,39 @@
+evenement_evenement:
+    resource: "@EvenementBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
+evenement_inscription:
+    resource: "@EvenementBundle/Resources/config/routing/inscription.yml"
+    prefix:   /inscription
+
+evenement_homepage:
+    path:     /
+    defaults: { _controller: EvenementBundle:Default:index }
+
+jsonev:
+    path:     /jsoneventall
+    defaults: { _controller: EvenementBundle:Default:allevent }
+
+jsonin:
+    path:     /jsoninscritall
+    defaults: { _controller: EvenementBundle:Default:allinscrit }
+
+jsoninscriptionadd:
+    path:     /jsoninscritadd/{event}/{user}/{r}
+    defaults: { _controller: EvenementBundle:Default:inscrit }
+
+jsoninscriptiondelete:
+    path:     /jsoninscritdelete/{event}/{user}
+    defaults: { _controller: EvenementBundle:Default:Ainscrit }
+
+jsonevid:
+    path:     /jsoneventid/{id}
+    defaults: { _controller: EvenementBundle:Default:idevent }
+
+jsoneventtri:
+    path:     /jsoneventalltri
+    defaults: { _controller: EvenementBundle:Default:Datetri }
+
+jsonrate:
+        path:     /jsonrate/{rate}/{id}
+        defaults: { _controller: EvenementBundle:Default:rate }

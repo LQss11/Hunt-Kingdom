@@ -1,0 +1,14 @@
+feedback_index:
+    path:     /
+    defaults: { _controller: "ReclamationBundle:Feedback:index" }
+    methods:  GET
+
+feedback_new:
+    path:     /new
+    defaults: { _controller: "ReclamationBundle:Feedback:new" }
+    methods:  [GET, POST]
+
+feedback_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ReclamationBundle:Feedback:delete" }
+    methods:  DELETE

@@ -14,11 +14,11 @@ import java.sql.SQLException;
  * @author aziz9
  */
 public class DataSource {
-     private Connection cnx ;
+    private Connection cnx ;
     
     private static DataSource instance;
     
-    private final String url = "jdbc:mysql://localhost:3306/huntkingdom";
+    private final String url = "jdbc:mysql://localhost:3306/symfony";
     private final String username = "root";
     private final String password = "";  
     
