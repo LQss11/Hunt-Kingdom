@@ -1,0 +1,36 @@
+feedback_index:
+    path:     /
+    defaults: { _controller: "ReclamationBundle:Feedback:index" }
+    methods:  GET
+
+feedback_new:
+    path:     /new
+    defaults: { _controller: "ReclamationBundle:Feedback:new" }
+    methods:  [GET, POST]
+
+feedback_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ReclamationBundle:Feedback:delete" }
+    methods:  DELETE
+
+
+feedback_all:
+    path:     /all
+    defaults: { _controller: "ReclamationBundle:Feedback:all" }
+
+feedback_add:
+    path:     /add/{description}/{rate}/{idU}
+    defaults: { _controller: ReclamationBundle:Feedback:add}
+
+feedback_mod:
+    path:     /mod/{id}/{description}
+    defaults: { _controller: ReclamationBundle:Feedback:mod}
+
+feedback_rem:
+    path:     /rem/{id}
+    defaults: { _controller: ReclamationBundle:Feedback:rem}
+
+
+feedback_find:
+    path:     /find/{id}
+    defaults: { _controller: ReclamationBundle:Feedback:find}

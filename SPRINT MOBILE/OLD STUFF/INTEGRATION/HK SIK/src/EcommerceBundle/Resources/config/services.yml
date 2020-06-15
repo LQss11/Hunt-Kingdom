@@ -1,0 +1,25 @@
+parameters:
+#    ecommerce.example.class: Ecommerce\EcommerceBundle\Example
+
+services:
+
+  tva:
+    class: EcommerceBundle\Twig\Extension\TvaExtension
+    tags:
+      - { name: twig.extension }
+  montantTva:
+    class: EcommerceBundle\Twig\Extension\MontantTvaExtension
+    tags:
+      - { name: twig.extension }
+
+  redirectionListener:
+    class: EcommerceBundle\Listener\RedirectionListener
+    arguments: ['@service_container','@session','@security.token_storage']
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+  setNewFacture:
+    class: EcommerceBundle\Services\GetFacture
+    arguments: ['@service_container']
+  setNewReference:
+    class: EcommerceBundle\Services\GetReference
+    arguments: ['@security.authorization_checker','@doctrine.orm.entity_manager']

@@ -1,0 +1,119 @@
+{% extends "layout/layout.html.twig" %}
+{% block body %}
+    <!-- Bootstrap -->
+    <link href="{{ asset('Front/css/bootstrap.css') }}" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="{{ asset('Front/css/font-awesome.css') }}" rel="stylesheet">
+    <!-- chosen.min -->
+    <link href="{{ asset('Front/css/chosen.min.css') }}" rel="stylesheet">
+    <!-- slick-slider -->
+    <link href="{{ asset('Front/css/slick-slider.css') }}" rel="stylesheet">
+    <!-- jquery.bxslider -->
+    <link href="{{ asset('Front/css/jquery.bxslider.css') }}" rel="stylesheet">
+    <!-- prettyPhoto -->
+    <link href="{{ asset('Front/css/prettyPhoto.css') }}" rel="stylesheet">
+    <!-- responsive menu component -->
+    <link href="{{ asset('Front/js/responsive-menu/component.css') }}" rel="stylesheet">
+    <!-- svg-icons -->
+    <link href="{{ asset('Front/css/svg-icons.css') }}" rel="stylesheet">
+    <!-- Typography -->
+    <link href="{{ asset('Front/css/typography.css') }}" rel="stylesheet">
+    <!-- jquery.auto-complete -->
+    <link href="{{ asset('Front/css/jquery.auto-complete.css') }}" rel="stylesheet">
+    <!-- shortcodes -->
+    <link href="{{ asset('Front/css/shortcodes.css') }}" rel="stylesheet">
+    <!-- Colors -->
+    <link href="{{ asset('Front/css/colors.css') }}" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link href="{{ asset('Front/style.css') }}" rel="stylesheet">
+    <!-- Responsive theme-->
+    <link href="{{ asset('Front/css/responsive.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Front/starrating/css/rating.css') }}" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<div class="content">
+    <section>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12 responsive-991-width">
+                    <!--Eco our products items-->
+
+                    <div class="col-md-4">
+                        <svg viewBox="0 0 76 76" width="200px" >
+                            <circle cx="38" cy="38" r="36"/>
+                            <path fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M17.7,40.9l10.9,10.9l28.7-28.7"/>
+                        </svg>
+                    </div>
+                    <div class="icon" ><i class="fa fa-cc-paypal" aria-hidden="false" fa-></i>
+                    </div>
+                    <div class="col-md-8" >
+                        <h1 class="success-message__title">Paiement Reçu</h1>
+                        <div class="success-message__content">
+                            <p>votre commande sera traité et livré ultérieurement</p>
+                            <a href="{{ path('factures') }}" class="btn btn-primary " >factures</a>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        function PathLoader(el) {
+            this.el = el;
+            this.strokeLength = el.getTotalLength();
+
+            // set dash offset to 0
+            this.el.style.strokeDasharray =
+                this.el.style.strokeDashoffset = this.strokeLength;
+        }
+
+        PathLoader.prototype._draw = function (val) {
+            this.el.style.strokeDashoffset = this.strokeLength * (1 - val);
+        }
+
+        PathLoader.prototype.setProgress = function (val, cb) {
+            this._draw(val);
+            if(cb && typeof cb === 'function') cb();
+        }
+
+        PathLoader.prototype.setProgressFn = function (fn) {
+            if(typeof fn === 'function') fn(this);
+        }
+
+        var body = document.body,
+            svg = document.querySelector('svg path');
+
+        if(svg !== null) {
+            svg = new PathLoader(svg);
+
+            setTimeout(function () {
+                document.body.classList.add('active');
+                svg.setProgress(1);
+            }, 200);
+        }
+
+        document.addEventListener('click', function () {
+
+            if(document.body.classList.contains('active')) {
+                document.body.classList.remove('active');
+                svg.setProgress(0);
+                return;
+            }
+            document.body.classList.add('active');
+            svg.setProgress(1);
+        });
+    </script>
+
+
+{% endblock %}

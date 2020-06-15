@@ -1,0 +1,21 @@
+produit_produit:
+    resource: "@ProduitBundle/Resources/config/routing/produit.yml"
+    prefix:   /produit
+
+produit_categorie:
+    resource: "@ProduitBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+produit_promotion:
+    resource: "@ProduitBundle/Resources/config/routing/promotion.yml"
+    prefix:   /promotion
+
+produit_whishlist:
+    resource: "@ProduitBundle/Resources/config/routing/whishlist.yml"
+    prefix:   /whish
+
+produit_homepage:
+    path:     /
+    defaults: { _controller: ProduitBundle:Default:index }
+
+

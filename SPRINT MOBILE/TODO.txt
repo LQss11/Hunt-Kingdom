@@ -1,0 +1,4 @@
+INTERFACE KIZEBIIIIIIIII
+Upload mp3 file to filestorage at first time use (salem)
+remove all id outputs (replace by username ...)
+revalidate pages (no need to go home and go back everytime we need to see updates)

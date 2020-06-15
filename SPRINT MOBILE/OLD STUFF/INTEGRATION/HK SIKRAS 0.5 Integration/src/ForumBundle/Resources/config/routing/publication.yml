@@ -1,0 +1,64 @@
+publication_index:
+    path:     /
+    defaults: { _controller: "ForumBundle:publication:index" }
+    methods:  GET
+
+publication_adminIndex:
+    path:     /ai
+    defaults: { _controller: "ForumBundle:publication:adminIndex" }
+    methods:  GET
+
+publication_showComs:
+    path:     /showComs
+    defaults: { _controller: "ForumBundle:publication:showComs" }
+    methods:  GET
+
+publication_show:
+    path:     /{id}/show
+    defaults: { _controller: "ForumBundle:publication:show" }
+    methods:  [GET, POST]
+
+publication_new:
+    path:     /new
+    defaults: { _controller: "ForumBundle:publication:new" }
+    methods:  [GET, POST]
+
+publication_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ForumBundle:publication:edit" }
+    methods:  [GET, POST]
+
+publication_delete:
+    path:     /delete/{id}
+    defaults: { _controller: "ForumBundle:publication:delete" }
+    methods:  [GET, POST,DELETE]
+publication_delete1:
+    path:     /delete1/{id}-{check}
+    defaults: { _controller: "ForumBundle:publication:delete1" }
+    methods:  [GET, POST,DELETE]
+
+search:
+    path:     /search
+    defaults: { _controller: "ForumBundle:publication:search" }
+
+
+publication_all:
+    path:     /all
+    defaults: {_controller: "ForumBundle:publication:all" }
+
+publication_find:
+    path:     /find/{id}
+    defaults: { _controller: "ForumBundle:publication:find"}
+
+publication_create:
+    path:     /create/{contenu}/{type}/{idUser}
+    defaults: { _controller: "ForumBundle:publication:create"}
+
+publication_rem:
+    path:     /sup/{id}
+    defaults: { _controller: "ForumBundle:publication:rem"}
+
+publication_findMobile:
+    path:     /findMobile
+    defaults: { _controller: "ForumBundle:publication:findMobile" }
+    methods:  [GET, POST]

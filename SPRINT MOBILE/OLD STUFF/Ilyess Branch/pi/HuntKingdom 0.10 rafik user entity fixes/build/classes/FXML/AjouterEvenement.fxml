@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="605.0" prefWidth="1277.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEvenementController">
+   <children>
+      <SplitPane dividerPositions="0.8183856502242152" layoutX="14.0" layoutY="120.0" orientation="VERTICAL" prefHeight="310.0" prefWidth="949.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="120.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="ETable" prefHeight="218.0" prefWidth="946.0">
+                     <columns>
+                        <TableColumn fx:id="id" prefWidth="37.60003739595413" text="id" />
+                        <TableColumn fx:id="nom" prefWidth="68.79998397827148" text="nom" />
+                        <TableColumn fx:id="type" prefWidth="78.40000915527344" text="type" />
+                        <TableColumn fx:id="prix" prefWidth="67.20001220703125" text="prix" />
+                        <TableColumn fx:id="nbrplace" prefWidth="74.39997863769531" text="nbrplace" />
+                        <TableColumn fx:id="date" prefWidth="73.5999755859375" text="date" />
+                        <TableColumn fx:id="place" prefWidth="70.4000244140625" text="place" />
+                        <TableColumn fx:id="description" prefWidth="83.199951171875" text="description" />
+                        <TableColumn fx:id="duree" prefWidth="82.39996337890625" text="duree" />
+                        <TableColumn fx:id="image" prefWidth="62.4000244140625" text="image" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="797.0">
+               <children>
+                  <TextField fx:id="Ename" layoutX="2.0" layoutY="10.0" prefHeight="26.0" prefWidth="74.0" promptText="Name" />
+                  <TextField fx:id="Eprix" layoutX="169.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="Price" />
+                  <TextField fx:id="Enbrplace" layoutX="251.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="NbrPlace" />
+                  <TextField fx:id="Eplace" layoutX="417.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="Place" />
+                  <TextField fx:id="Edescription" layoutX="500.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="Description" />
+                  <TextField fx:id="Eduree" layoutX="583.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="Duree" />
+                  <TextField fx:id="Eid" prefHeight="26.0" prefWidth="74.0" promptText="Name" visible="false" />
+                  <ComboBox fx:id="Etype" layoutX="86.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" promptText="Type" />
+                  <Button layoutX="859.0" layoutY="11.0" mnemonicParsing="false" onAction="#ClearForm" prefHeight="26.0" prefWidth="74.0" text="New" />
+                  <DatePicker fx:id="Edate" layoutX="334.0" layoutY="11.0" prefHeight="26.0" prefWidth="74.0" />
+                  <Button fx:id="SaveChanges" layoutX="757.0" layoutY="11.0" mnemonicParsing="false" onAction="#savechangeevent" text="SaveChanges" />
+                  <Button fx:id="imp" layoutX="674.0" layoutY="11.0" mnemonicParsing="false" onAction="#impajout" text="import" />
+                  <Button fx:id="Save" layoutX="752.0" layoutY="11.0" mnemonicParsing="false" onAction="#AjouterEvenement" prefHeight="26.0" prefWidth="94.0" text="Save" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <TextField fx:id="chercher" layoutX="369.0" layoutY="71.0" prefHeight="26.0" prefWidth="239.0" />
+      <TextField fx:id="Eimage" layoutX="433.0" layoutY="446.0" prefHeight="26.0" prefWidth="74.0" promptText="Image" />
+      <ImageView fx:id="impi" fitHeight="63.0" fitWidth="114.0" layoutX="597.0" layoutY="398.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="282.0" layoutY="76.0" text="Recherche:" />
+      <Label layoutX="301.0" layoutY="14.0" prefHeight="45.0" prefWidth="376.0" text="Gestion Des Evenements" textFill="#2bbcbc" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
