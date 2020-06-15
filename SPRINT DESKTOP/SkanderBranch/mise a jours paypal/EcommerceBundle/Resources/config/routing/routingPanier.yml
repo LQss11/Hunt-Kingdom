@@ -1,0 +1,98 @@
+supprimer:
+  path:  /supprimer/{id}
+  defaults: { _controller: EcommerceBundle:Panier:supprimer }
+
+ajouter:
+  path:  /ajouter/{id}
+  defaults: { _controller: EcommerceBundle:Panier:ajouter }
+
+panier:
+  path:  /
+  defaults: { _controller: EcommerceBundle:Panier:panier }
+
+livraison:
+  path:  /livraison
+  defaults: { _controller: EcommerceBundle:Panier:livraison }
+
+ajouteradr:
+  path:  /adresse/{id}/{nom}/{prenom}/
+  defaults: { _controller: EcommerceBundle:Panier:addSK }
+
+validation:
+  path:  /validation
+  defaults: { _controller: EcommerceBundle:Panier:validation }
+
+livraisonAdresseSuppression:
+  path:  /livraison/adresse/suppression/{id}
+  defaults: { _controller: EcommerceBundle:Panier:adresseSuppression }
+
+
+Store_checkout:
+  path:     /Store/checkout/{id}/
+  defaults: { _controller: EcommerceBundle:Paypal:Payment }
+
+Store_success_P:
+  path:     /Store/pay
+  defaults: { _controller: EcommerceBundle:Paypal:pay }
+  methods:  [GET, POST]
+
+Store_success:
+  path:     /Store/Success
+  defaults: { _controller: EcommerceBundle:Paypal:pay }
+  methods:  [GET, POST]
+
+Store_success_P1:
+  path:     /Store/payy
+  defaults: { _controller: EcommerceBundle:Paypal1:pay }
+  methods:  [GET, POST]
+
+
+
+
+
+
+
+commandes_all:
+  path:     /all
+  defaults: { _controller: "EcommerceBundle:Panier:all" }
+  methods:  GET
+
+commandes_find:
+  path:     /findcmd/{id}
+  defaults: { _controller: "EcommerceBundle:Panier:find" }
+
+adress_find:
+  path:     /getallAdresses/{id}
+  defaults: { _controller: "EcommerceBundle:Panier:getalladress" }
+
+
+adresse_all:
+  path:     /alladresse
+  defaults: { _controller: "EcommerceBundle:Panier:getadress" }
+  methods:  GET
+
+
+
+adresses_rem:
+  path:     /rem/{id}
+  defaults: { _controller: EcommerceBundle:Panier:remadress}
+
+addcmd_add:
+  path:     /addcmd/{valide}/{reference}/{commande}/{utilisateur_id}
+  defaults: { _controller: EcommerceBundle:Panier:adddcmd}
+  requirements:
+       commande: .+
+adresses_add:
+  path:     /add/{nom}/{prenom}/{telephone}/{adresse}/{cp}/{pays}/{ville}/{complement}/{utilisateur_id}
+  defaults: { _controller: EcommerceBundle:Panier:addadress}
+cmd_rem:
+  path:     /remcmd/{id}
+  defaults: { _controller: EcommerceBundle:Panier:remcmd}
+
+storegetAdresse:
+  path:     /Store/Adresses/{id}
+  defaults: { _controller: EcommerceBundle:Panier:getAdressebayrem }
+Store_checkoutt:
+  path:     /Store/check/{id}/
+  defaults: { _controller: EcommerceBundle:Panier:Payment }
+  methods:  [GET, POST]

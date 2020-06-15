@@ -1,0 +1,145 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ asset('BackEnd/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}"
+          xmlns="http://www.w3.org/1999/html">
+    <br>
+    <center><h1>Commandes list</h1></center>
+    <div class="card-body">
+
+        </br>
+        <table id="example1" class="table table-bordered border-darkder table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Utilisateur</th>
+                <th>Date</th>
+                <th>Details</th>
+                <th>Totale</th>
+                <th>Valider ?</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in commande %}
+                <tr >
+                    <td>{{c.id }}</td>
+                    <td>{{c.utilisateur.firstname}} {{c.utilisateur.lastname}}</td>
+                    <td>{{ c.date|date}}</td>
+                    <td>
+
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th>Nom du produit</th>
+                                <th>Quantité</th>
+                                <th>Prix unitaire</th>
+                                <th>Total/produit</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for produit in c.commande.produit %}
+                                <tr>
+                                    <td>{{ produit.reference }}</td>
+                                    <td>
+                                        {{ produit.quantite }}
+                                    </td>
+                                    <td>{{ produit.prixHT }} €</td>
+                                    <td>{{ produit.prixHT * produit.quantite }} €</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+
+
+
+                    </td>
+
+                    <td>
+                        <dl >
+                            <dt>Total HT :</dt><dd>{{ c.commande.prixHT }} €</dd>
+
+                            {% for key, tva in c.commande.tva %}
+                                <dt>TVA {{ key }} :</dt><dd>{{ tva }} €</dd>
+                            {% endfor %}
+
+                            <dt>Total TTC :</dt><dd>{{ c.commande.prixTTC }} €</dd>
+                        </dl>
+                    </td>
+
+                    <td>
+                        {% if c.valider %}
+                            <br>
+                            <br>
+
+                            <span class="btn btn-md btn-success disabled"><i class="fas fa-clipboard-check fa-2x"></i></span>
+
+                        {% else %}
+                            <br>
+                            <br>
+
+
+                            <button type="button" class="btn btn-md btn-danger" data-toggle="modal" data-target="#tt{{c.id}}"><i class="fas fa-clipboard fa-2x"></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="tt{{c.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Suppression du commande</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Vous voulez vraiment supprimer cette <strong>Commandes</strong> ?
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                            <a href="{{ path('DelCommande',{'id' : c.id}) }}" class="btn btn-danger">Supprimer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        {% endif %}
+                    </td>
+
+
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Utilisateur</th>
+                <th>Date</th>
+                <th>Details</th>
+                <th>Totale</th>
+                <th>Valider ?</th>
+
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="{{ asset('BackEnd/jquery.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable();
+        } );
+    </script>
+
+    <script src="{{ asset('BackEnd/plugins/dataTables/datatables.min.js') }}"></script>
+    <script src="{{ asset('BackEnd/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('BackEnd/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
+
+
+{% endblock %}
