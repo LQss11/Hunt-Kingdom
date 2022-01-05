@@ -1,0 +1,5 @@
+monolog:
+    handlers:
+        es:
+            type: service
+            id: Symfony\Bridge\Monolog\Handler\ElasticsearchLogstashHandler

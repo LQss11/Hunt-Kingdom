@@ -1,0 +1,132 @@
+{% extends 'Back/Back.html.twig' %}
+
+
+{% block content %}
+    <style>
+        .myButton {
+            background-color:#44c767;
+            border-radius:28px;
+            border:1px solid #18ab29;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #2f6627;
+        }
+        .myButton:hover {
+            background-color:#5cbf2a;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+        .myButton2 {
+            background-color:#f44336;
+            border-radius:28px;
+            border:1px solid #fa4436;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #a52d29;
+        }
+        .myButton2:hover {
+            background-color: #ff5058;
+        }
+        .myButton2:active {
+            position:relative;
+            top:1px;
+        }
+
+
+    </style>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <div class="w3-container">
+        <center><h2>Reclamation {{ reclamation.id }}</h2></center>
+
+        <table class="w3-table-all">
+            <thead>
+            <tr class="w3-red">
+                <th style="width: 10px">#</th>
+                <th>Sujet</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Etat</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>{{ reclamation.id }}</td>
+                <td>{{ reclamation.sujet }}</td>
+                {% set reclam = reclamation.description|split('*') %}
+                {% for rec in reclam|slice(0,1) %}
+                    <td style="display: block">{{ rec }}</td>
+                {% endfor %}
+
+                <td>{{ reclamation.type }}</td>
+                <td>{{ reclamation.etat }}</td>
+
+            </tr>
+        </table>
+
+
+
+        <table class="w3-table-all">
+            <thead>
+
+            <tr class="w3-red">
+                <th>Comment</th>
+
+                <th>Role</th>
+            </tr>
+            </thead>
+            {% set reclam = reclamation.description|split('*') %}
+            {% for rec in reclam %}
+                <tr>
+
+                    {% set reccomment = rec|split('-') %}
+                    {% for recom in reccomment|slice(0,1) %}
+
+                        <td >{{ recom }}</td>
+
+                    {% endfor %}
+
+                    {% set recrole = rec|split('-') %}
+                    {% for recrol in recrole|slice(1) %}
+
+                        {% if recrol == "ROLE_ADMIN" %}
+                            <td bgcolor="#ffe4c4">Admin</td>
+                        {% elseif recrol == "ROLE_CLIENT"  %}
+                            <td bgcolor="#f0f8ff">Client</td>
+
+                        {% endif %}
+                    {% endfor %}
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <center>
+        <table>
+            <tr>
+                    <td><a class="myButton" href="{{ path('reclamation_index') }}">Back to the list</a></td>
+                    <!--td><a class="myButton" href="{{ path('reclamation_edit', { 'id': reclamation.id }) }}">Edit</a></td-->
+                    <td><a class="myButton" href="{{ path('reclamation_com', { 'id': reclamation.id }) }}">Argue</a></td>
+
+
+
+                {{ form_start(delete_form) }}
+                <!--td><input type="submit" class="myButton2" value="Delete"></td-->
+                {{ form_end(delete_form) }}
+            </tr>
+        </table>
+    </center>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Liste Des Evenements</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Affichage</li>
+                    </ol>
+                </div>
+                <a class="btn btn-block btn-warning btn-sm" href="{{ path('evenement_new') }}">Create a new event</a>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Les Evenements</h3>
+                    </div>
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Type</th>
+                                <th>Prix</th>
+                                <th>Nbrplace</th>
+                                <th>Date</th>
+                                <th>Place</th>
+                                <th>Description</th>
+                                <th>Duree</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for evenement in evenements %}
+                                <tr>
+                                    <td>
+                                        <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">{{ evenement.id }}</a>
+                                    </td>
+                                    <td>{{ evenement.nom }}</td>
+                                    <td>{{ evenement.type }}</td>
+                                    <td>{{ evenement.prix }}</td>
+                                    <td>{{ evenement.nbrplace }}</td>
+                                    <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{{ evenement.place }}</td>
+                                    <td>{{ evenement.description }}</td>
+                                    <td>{{ evenement.duree }}</td>
+                                    <td><img src="{{ asset('uploads/' ~  evenement.image ) }}" width="150"
+                                             height="150"></td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('evenement_show', { 'id': evenement.id }) }}" type="button" class="btn btn-block btn-success btn-sm">Show</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}" type="button" class="btn btn-block btn-warning btn-sm">Edit</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('evenement_delete', { 'id': evenement.id }) }}" type="button" class="btn btn-block btn-danger btn-sm">delete</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+
+                        </table>
+                        <div class="navigation">
+                            {{ knp_pagination_render(evenements) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

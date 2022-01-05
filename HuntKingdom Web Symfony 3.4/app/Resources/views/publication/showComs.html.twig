@@ -1,0 +1,37 @@
+
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <br>
+<center><h1>Les Commentaires de la publications </h1></center>
+<a href="{{ path('publication_adminIndex') }}"><button class="btn btn-warning toastsDefaultWarning">Liste des Publications</button></a>
+<br><br>
+<table id="example1" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Contenu</th>
+        <th>date Commentaire</th>
+        <th>Posteur</th>
+        <th>Supprimer</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for com in commentaires %}
+        <tr>
+            <td>{{ com.id }}</td>
+            <td>{{ com.contenu }}</td>
+            <td>{{ com.dateComnt |date}}</td>
+            <td>{{ com.idUser.username }}</td>
+            <td><a class="btn btn-danger btn-sm" href="{{ path('delete_page', { 'id': com.id }) }}">Supprimer</a>
+
+            </td>
+
+
+        </tr>
+    {% endfor %}
+
+    </tbody>
+
+</table>
+{% endblock %}

@@ -1,0 +1,36 @@
+services:
+  database:
+    container_name: database
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_DATABASE: hunt
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - '4306:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
+  phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin:5.1.1
+    container_name: phpmyadmin-hk
+    restart: always
+    ports:
+      - '9003:80'
+    environment:
+      PMA_HOST: database
+  php:
+    container_name: php
+    build:
+      context: .
+    ports:
+      - '9001:9000'
+      - '9002:8000'
+      - '3001:3000'
+    volumes:
+      - ./:/var/www/symfony_docker
+    depends_on:
+      - database

@@ -1,0 +1,2570 @@
+@media screen and (min-width: 1367px) and (max-width: 1680px) {
+	
+
+}
+
+/*============	Media Between Start ============ */
+@media screen and (min-width: 1199px) and (max-width: 1366px)  {	
+	.eco-testimonial-section .testimonial-slider-bg, 
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper,
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper .bx-viewport{
+		height: 606px;
+	}
+	.testimonial-slider-bg img {
+	    filter: grayscale(100%);
+	    min-height: 250px;
+	    opacity: 1;
+	    transform: scale(3.8);
+	}
+	.feature_blog_caption{
+		height: auto;
+	}
+	.kode_coo_gall h3{
+		visibility: hidden;
+	}
+	.blog_listing_section .eco_blog_content{
+		padding-top: 5px;
+	}
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	.navigation > ul > li > a{
+		padding: 25px 18px 26px;
+	}
+	.kode_eco_logo{
+		margin-right: 20px;
+	}
+	.back.eco-thumb-bg .feature_blog_caption{
+		padding:16px 20px 26px;
+	}
+	.eco_flip-container{
+		height: 460px;
+	}
+	.eco_filterable_columns{
+		width:222px;
+		margin-right: 20px;
+	}
+	.eco_filterable_columns:last-of-type{
+		margin-right: 0px;
+	}
+	.testimonial-slider-bg img {
+	    filter: grayscale(100%);
+	    min-height: 250px;
+	    opacity: 1;
+	    transform: scale(3.8);
+	}
+	.eco-testimonial-section .testimonial-slider-bg, 
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper,
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper .bx-viewport{
+		height: 606px;
+	}
+	.eco_testimonial-section .slider-nav{
+		width: 80%;
+	}
+	.social-icons li{
+		margin-right: 4px;
+	}
+	.eco_process_of_counter{
+		padding: 43px 0 0;
+	}
+	.events-detail > li{
+		padding: 10px 0 10px 50px;
+	}
+	.icon-style{
+		top:3px;
+	}
+	.eco_about-us-data{
+		top:0px;
+		left: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+	}
+	.eco_donate_style-bar h3{
+		font-size: 24px;
+		padding-top: 15px;
+	}
+	.event_slide_pictures .event_nav .eco_width_menage{
+		width:49.3111% !important;
+	}
+	.widget_post_content .eco-thumb-bg .feature_blog_caption{
+		height: auto;
+		padding: 15px 19px 20px;
+	}
+	.widget_post_content .feature_blog_caption h3 {
+	    font-size: 22px;
+	}
+	.widget_post_content .eco-thumb-bg .feature_blog_caption h5 {
+    	font-size: 13px;
+	}
+	.progress .skill .val, .progress .skill, .progress-bar.progress-bar-success > small{
+		font-size: 12px;
+	}
+	.eco_post-content{
+		padding-right: 0px;
+	}
+	.widget_post_content .eco_post-content p a{
+		font-size: 12px;
+	}
+	.widget_post_content .eco_viewers_meta a::before{
+		top: 3px;
+	}
+	.widget_post_content .eco_viewers_meta a{
+		font-size: 11px;
+		font-weight: 500;
+		margin-right: 3px;
+		padding-right: 5px;
+	}
+	.eco_blog_detail_content h4{
+		font-size: 18px;
+	}
+	.feature_blog_caption{
+		height: auto;
+	}
+	.eco_pagination_shareing_tag li{
+		margin-right: 0px;
+	}
+	.eco_pagination_shareing_tag li:first-child{
+		float: left;
+	}
+	.eco_pagination_shareing_tag li:last-child{
+		float: right;
+	}
+	.eco_pagination_shareing_tag{
+		margin-left: 10px;
+	}
+	.eco_share-tag{
+		padding: 10px 20px 11px;
+	}
+	.widget_post_slider .slick-next.slick-arrow{
+		left:32%;
+		right: auto;
+	}
+	.widget_post_slider .slick-prev.slick-arrow{
+		right: 32%;
+		left: auto;
+	}
+	.eco-event-title h6{
+		font-size: 13px;
+		line-height: normal;
+	}
+	.date_tag ul li{
+		padding: 1px 0px;
+	}
+	.eco_listing_caption h5{
+		font-size: 15px;
+	}
+	.padding-70by40 {
+	    padding: 70px 20px 40px;
+	}
+	.masonry-item{
+		float: left;
+		width:100%:;
+	}
+	.masonry-item a img{
+		display: inline-block;
+		width:100%;
+	}
+	.ralated_causes_grids .col-md-4{
+		float: left;
+		width:50%;
+	}
+	.eco_donate-bar02 .eco-progress-row{
+		width: 65%;
+	}
+	.front, .back{
+		height: auto;
+	}
+	.product-detail-items ul li {
+	    display: inline-block;
+	    float: none;
+	    margin-right: 5px;
+	    width: 28%;
+	}
+	.product-detail-items .bx-wrapper .bx-controls-direction a{
+		margin-top: -25px;
+	}
+	.eco_coming_soon{
+		padding: 290px 0 300px;
+	}
+	.kode_content_navigation .kode_navigation > ul > li > a{
+		padding: 36px 9px;
+	}
+	.kode_coo_gall h3{
+		line-height: 150px;
+	}
+	.kode_eco_latest_fig {
+	    float: none;
+	    overflow: hidden;
+	    width: auto;
+	}
+	.kode_eco_latest_caption::before{
+		bottom:0px;
+		width:100%;
+	}
+	.kode_eco_latest_caption{
+		padding-bottom: 20px;
+	}
+	.kode_footer_fig figure{
+		padding: 4px 9px 0px 0px;
+		float: left;
+	}
+	.kode_footer_gallery li{
+		width:29%;
+		float: left;
+	}
+	.kode_footer_caption{
+		float: none;
+	}
+	.blog_listing_section .eco_blog_content{
+		padding-top: 0px;
+	}
+	blockquote::after, blockquote::before{
+		height: 90%;
+	}
+	.filterable-parent-section .eco_filterable_columns{
+		width: 220px;
+	}
+	.width-responsive-donate{
+		float: left;
+		width:100%;
+	}
+	.width-responsive-donate .eco_donations_select li{
+		width: auto;
+		float: left;
+		margin-bottom: 15px;
+	}
+	.width-responsive-donate .eco_donations_select li:last-child{
+		width: auto;
+		float: left;
+	}
+	.width-responsive-donate .eco_donations_select{
+		margin-bottom: 0px;
+	}
+	.eco_events_images{
+		height: 337px;
+	}
+	.eco-event-title h5{
+		font-size: 15px;
+	}
+	.blog_listing_section .eco_blog_content p{
+		margin-bottom: 18px;
+	}
+	.ralated_causes_grids .three-columns .eco_flip-container, 
+	.ralated_causes_grids .three-columns .front, 
+	.ralated_causes_grids .three-columns .back{
+		position: relative;
+		height: auto;
+	}
+	.eco_flip-container:hover .front{
+		transform: rotateY(0deg);
+	}
+	.eco_flip-container .front{
+		position: relative;
+		display: none;
+	}
+	.eco_flip-container .back{
+	}
+	.eco_flip-container .back{
+		transform: rotateY(0deg);
+		position: relative;
+		float: left;
+		width: 100%;
+	}
+	.eco_flip-container{
+		height: auto;
+		margin-bottom: 30px;
+		float: left;
+		width: 100%;
+		position: relative;
+	}
+	
+
+}
+/*============	Media 991Px Start ============ */ 
+
+@media (max-width: 991px) {	
+	.navigation{
+		display: none;
+	}
+	.responsive-column{
+		float: left;
+		width:100%;
+		padding: 0px 15px;
+	}
+	.responsive-991-width{
+		float: left;
+		width:100%;
+	}
+	.blog_single_title .eco-event-title{
+		padding-top: 0px;
+	}
+	.responsive-devider-50{
+		float: left;
+		width: 50% !important;
+	}
+	.eco_events_images{
+		
+	}
+	.event_orgnizer_points li{
+		margin-bottom: 6px;
+	}
+	.eco_share-tag{
+		padding: 10px 12px 11px;
+	}
+	.margin-buttom_50{
+		margin-bottom: 30px;
+	}
+	.dl-menuwrapper{
+		display: block;
+	}
+	#kode-responsive-navigation{
+		display: block;
+		width:auto;
+		float: none;
+		float: right;
+		margin: 6px 6px ;
+	}
+	#kode-responsive-navigation .dl-menu{
+		left: auto;
+		right: 0px;
+		margin-top: 6px;
+	}
+	.kode_eco_search,
+	.kode_eco_logo {
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 12px;
+	}
+	.eco-choose-donation .eco_sm_titles{
+		font-size: 18px;
+	}
+	.eco_donations_select li:last-child,
+	.eco_donations_select li{
+		width:50%;
+	}
+	.eco_donations_select li{
+		margin-bottom: 20px;
+	}
+	.eco_donations_select li:last-child{
+		margin-bottom: 0px;
+	}
+	.kode_eco_search{
+		width:48%;
+	}
+	#boxes #dialog{
+		
+	}
+	.eco_title_form h3{
+		font-size: 24px;
+	}
+	.eco-login-registration{
+		padding: 70px 50px;
+	}
+	.login_style{
+		width:100%;
+	}
+	.kode_eco_search .modal-body .kode-search-menu{
+		padding: 0px;
+	}
+	.kode_eco_search .modal-body .kode-search-menu input{
+		font-size: 20px;
+	}
+	.kode_eco_search .modal-body .kode-search-menu button{
+		font-size: 23px;
+		margin-top: 16px;
+	}
+	.kode_eco-top_bar{
+		text-align: center;
+	}
+	#search .modal-dialog{
+		width:100%;
+		margin:0px;
+	}
+	.kode_eco_logo a{
+		float: none;
+		display: inline-block;
+	}
+	.kode_eco_social_icons{
+		float: left;
+		width:52%;
+		text-align: right;
+	}
+	.kode_eco_social_icons ul{
+		float: none;
+		display: inline-block;
+	}
+	.kode_eco_buy_item{
+		float: right;
+		padding: 3px 0 0 18px;
+	}
+	.kode_button {
+	   float: none; 
+	    float: left;
+	    padding: 6px 10px;
+	    z-index: 1;
+	}
+	.eco-thumb-bg .feature_blog_caption, .front, .back{
+		height: auto;
+	}
+	.kode_eco_captions{
+		margin: -85px auto 0;
+	}
+	.kode_eco_captions h1{
+		font-size: 40px;
+		font-weight: bold;
+	}
+	.kode_eco_captions h2{
+		font-size: 24px;
+	}
+	.kode_eco_captions p{
+		font-size: 14px;
+	}
+	.kode_eco_captions a{
+		width:150px;
+		font-size: 12px;
+	}
+	.thumb-widthout-layer {
+	    text-align: center;
+	    padding-top: 30px;
+	}
+	.eco_items-services{
+		padding-top: 0px;
+	}
+	.eco_items-services .eco_service_cols span{
+		float: right;
+		display: inline-block;
+		margin-left: 0px;
+		margin-bottom: 15px;
+	}
+	.eco_items-services .eco_service_cols.rtl_service span{
+		float: left;
+	}
+	
+	.eco_items-services .eco_service_cols > div{
+		width:100%;
+	}
+	.eco_services_environment .eco_services{
+		margin-bottom: 0px;
+	}
+	.eco_services_environment .eco_service_cols{
+		margin-bottom: 29px;
+	}
+	.eco_count_up h3{
+		font-size: 24px;
+	}
+	.eco_count_up p{
+		font-size: 12px;
+	}
+	.eco_count_up{
+		width: 58%;
+	}
+	.eco_counter li::before{
+		top:40px;
+	}
+	.eco_process_of_counter{
+		padding: 102px 0 0;
+	}
+	.eco_filterable_columns{
+		width:165px;
+		margin-right: 20px;
+	}
+	.eco_filterable_columns:last-of-type{
+		margin-right: 0px;
+	}
+	.eco_video_content h3{
+		font-size: 41px;
+	}
+	.eco_video_content p{
+		width:80%;
+	}
+	.events-detail{
+		text-align: center;
+	}
+	.eco_event_content{
+		text-align: left;
+	}
+	.icon-style {
+	    border: medium none;
+	    display: inline-block;
+	    float: none;
+	    left: 0;
+	    line-height: 88px;
+	    position: relative;
+	    text-align: center;
+	    top: 0;
+	    margin-bottom: 15px;
+	}
+	.event_date_02{
+		font-size: 22px;
+		padding: 15px 15px 0 0;
+		margin-right: 16px;
+	}
+	.event_date_03{
+		font-size: 26px;
+		margin-right: 16px;
+
+	}
+	.event_date_03:before{
+		top:5px;
+
+	}
+	.eco-event-title h5{
+		font-size: 14px;
+		text-transform: capitalize;
+	}
+	.event_date_03 b,
+	.event_date_02 b{
+		font-size: 16px;
+	}
+	.eco_viewers_meta{
+		padding: 6px 0px;
+	}
+	.event_meta li small,
+	.event_meta li .meta-author{
+		margin-right: 0px;
+	}
+	.eco_event_blog_posts .event_meta li small{
+		margin-right: 6px;
+	}
+	.eco-event-title h5{
+		font-size: 15px;
+	}
+	.responsive-padding{
+		padding: 0px;
+	}
+	.events-detail > li{
+		padding: 15px 15px;
+	}
+	.testimonial-slider-bg img {
+	    filter: grayscale(100%);
+	    min-height: 250px;
+	    opacity: 1;
+	    transform: scale(3.8);
+	}
+	.eco-testimonial-section .testimonial-slider-bg, 
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper,
+	.eco-testimonial-section .testimonial-slider-bg .bx-wrapper .bx-viewport{
+		height: 606px;
+	}
+	.eco_testimonial-section::after, .eco_testimonial-section::before{
+		margin-bottom: -72px;
+	}
+	.eco_about-us-data ul li{
+		margin-right: 12px;
+	}
+	.eco_event_img figure{
+		margin-bottom: 30px;
+		float: left;
+		width:100%;
+	}
+	.eco_about-us-data{
+		top:0px;
+		left:0px;
+		padding-left: 0px;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.xsmall-btn {
+	    height: 34px;
+	    width: 84px;
+	    line-height: 33px;
+	    font-size: 12px;
+	}
+	.eco_about-us-data ul{
+		margin-bottom: 25px;
+	}
+	.eco_small-blogs {
+	    width: 100%;
+	}
+	.team_volunteers_img.padding-top{
+		
+	}
+	.eco_donate_style-bar{
+		text-align: center;
+	}
+	.eco_donate_style-bar h3{
+		font-size: 16px;
+		margin-bottom: 15px;
+		padding-bottom: 0;
+		padding-top: 16px;
+	}
+	.eco_donate_style-bar .white-style{
+		float: none;
+	}
+	.main-container .masonry-item{
+		padding: 2px;
+	}
+	.event_slide_pictures .event_nav .eco_width_menage{
+		width:16.5% !important;
+		float: left;
+		margin-left: 3px;
+	}
+	.eco_pagination_shareing_tag li{
+		margin-right: 0px;
+	}
+	.eco_pagination_shareing_tag li:first-child{
+		float: left;
+	}
+	.eco_pagination_shareing_tag li:last-child{
+		float: right;
+	}
+	.radius_icon_event{
+		height: 90px;
+	}
+	.radius_icon_event span{
+		line-height: 90px;
+	}
+	.event_listing_style .icon-style{
+		left: -30px;
+	}
+	.event_listing_style .eco_event_content{
+		padding-left: 150px;
+	}
+	.date_tag ul li{
+		padding: 3px 0px 0px;
+	}
+	.padding-70by40 {
+		float: left;
+		overflow: hidden;
+		padding: 70px 0px 40px;
+		width: 100%;
+	}
+	.masonry-item{
+		float: left;
+		width:100%:;
+	}
+	.masonry-item a img{
+		display: inline-block;
+		width:100%;
+	}
+	.container.main-container .masonry.masonryFlyIn .masonry-item{
+		width:100%;
+		float: left;
+	}
+	.container.main-container{
+		overflow: hidden;
+	}
+	.eco_picture-blog{
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
+	.eco_donation-caption {
+	    padding: 0 15px;
+	    width: 100%;
+	}
+	.eco_simple_services .padding-top-services{
+		padding-top: 0px;
+	}
+	.eco_service_cols{
+		margin-bottom: 30px;
+	}
+	.eco_feature_campaigns{
+		margin-bottom: 30px;
+	}
+	.volenteers_slider_style {
+		margin-bottom: 20px;
+	}
+	.eco_blog_detail > .col-md-9{
+		float: left;
+	}
+	.close-div{
+		display: block;
+	}
+	.widget_post_slider .slick-next.slick-arrow{
+		left:38%;
+		right: auto;
+	}
+	.widget_post_slider .slick-prev.slick-arrow{
+		right:38%;
+		left: auto;
+	}
+	.product-detail-items ul li {
+	    display: inline-block;
+	    float: none;
+	    margin-right: 5px;
+	    width: 28%;
+	}
+	.product-detail-items .bx-wrapper .bx-controls-direction a{
+		margin-top: -25px;
+	}
+	.event_related_blog .eco_filterable_columns{
+		width:100%;
+	}
+	.none{
+		display: block;
+	}
+	.eco_coming_soon{
+		padding: 320px 0;
+	}
+	.page_not_found{
+		width:100%;
+	}
+	.eco_offices_info,
+	.eco_recent_blog_post{
+		margin-bottom: 30px;
+	}
+	.eco_footer_columns{
+		padding: 46px 0 29px;
+	}
+	.blog_listing_section .eco_blog_content{
+		padding: 0px;
+	}
+	
+	.kode_top_logo{
+		width:100%;
+		text-align: center;
+	}
+	.kode_top_donate a{
+		padding: 10px 20px;
+	}
+	.kode_top_donate .shop-items{
+		padding: 11px 17px;
+	}
+	.kode_content_navigation #kode-responsive-navigation{
+		margin:0px;
+	}
+	.kode_content_navigation #kode-responsive-navigation .dl-menu{
+		margin-top: 0px;
+	}
+	.kode_content_navigation .dl-menuwrapper button{
+		height: 43px;
+	}
+	.kode_content_navigation {
+	    float: right;
+	    width: 100%;
+	    margin-bottom: 25px;
+	}
+	.kode_top_donate{
+		float: left;
+	}
+	.kode_banner_caption h3{
+		font-size: 36px;
+		line-height: normal;
+	}
+	.kode_banner_caption p{
+		font-size: 18px;
+		line-height: normal;
+	}
+	.kode_banner_caption{
+		padding: 0px;
+	}
+	.kode_banner_caption{
+		margin: -110px auto 0;
+	}
+	.kode_eco_count{
+		float: left;
+		width:20%;
+		padding: 0px;
+		margin-bottom: 20px;
+	}
+	.kode_eco_count::before{
+		display: none;
+	}
+	.kode_eco_support_caption h3{
+		font-size: 24px;
+		line-height: normal;
+	}
+	.kode_eco_latest_caption{
+		padding-bottom: 30px;
+	}
+	.kode_eco_support_caption h2{
+		font-size: 36px;
+		line-height: normal;
+	}
+	.kode_eco_gallery_cap p{
+		display: none;
+	}
+	.kode_coo_gall h3{
+		line-height: 115px;
+	}
+	.kode_eco_hdg h2{
+		font-size: 24px;
+	}
+	.kode_eco_latest_news{
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.kode_eco_latest_fig{
+		width:100%;
+	}
+	.kode_eco_latest_fig figure{
+		float: left;
+		width:100%;
+	}
+	.kode_eco_latest_caption::before{
+		bottom:0px;
+		width:100%;
+	}
+	.kode_attorney_detail_skill{
+		overflow: hidden;
+	}
+	.kode_eco_action_cap h3{
+		font-size: 24px;
+	}
+	.kode_footer_cols{
+		margin-bottom: 30px;
+	}
+	.kode_footer_copy_right{
+		margin-top: 0px;
+	}
+	.kode_copy_span{
+		top:-50px;
+	}
+	.kode_footer_copy_cap{
+		text-align: center;
+	}
+	.kode_footer_copy_cap p{
+		margin-bottom: 15px;
+		float: none;
+	}
+	.kode_footer_copy_cap ul{
+		float: none;
+		width:100%;
+	}
+	.kode_footer_copy_cap ul li{
+		display: inline-block;
+		float: none;
+	}
+	blockquote::after, blockquote::before{
+		height: 90%;
+	}
+	.eco_donate-bar02 .eco-progress-row{
+		width: 65%;
+	}
+	.filterable-parent-section .eco_filterable_columns{
+		width: 220px;
+	}
+	.login-form .eco-login-registration{
+		padding: 70px 25px;
+	}
+	.event_date_03::before{
+		top:0px;
+	}
+	.ralated_causes_grids .three-columns .eco_flip-container, 
+	.ralated_causes_grids .three-columns .front, 
+	.ralated_causes_grids .three-columns .back{
+		position: relative;
+		height: auto;
+	}
+	.eco_flip-container:hover .front{
+		transform: rotateY(0deg);
+	}
+	.eco_flip-container .front{
+		position: relative;
+		display: none;
+	}
+	.eco_flip-container .back{
+	}
+	.eco_flip-container .back{
+		transform: rotateY(0deg);
+		position: relative;
+		float: left;
+		width: 100%;
+	}
+	.eco_flip-container{
+		height: auto;
+		margin-bottom: 30px;
+		float: left;
+		width: 100%;
+		position: relative;
+	}
+	.kode_top_donate button{
+		padding: 12px 23px;
+	}
+	.ralated_causes_grids .eco_flip-container {
+	    height: 561px;
+	}
+
+}
+
+/*============	Media 768Px Start ============ */ 
+@media (min-width: 768px) and (max-width: 991px) {
+	
+}
+
+/*============ Media 767Px Start ============ */
+@media (max-width: 767px) {
+	.navigation{
+		display: none;
+	}
+	.dl-menuwrapper{
+		display: block;
+	}
+	#kode-responsive-navigation{
+		display: block;
+		width:auto;
+		float: none;
+		float: right;
+		margin: 6px 6px ;
+	}
+	#kode-responsive-navigation .dl-menu{
+		left: auto;
+		right: 0px;
+		margin-top: 6px;
+	}
+	.kode_eco_search,
+	.kode_eco_logo {
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 12px;
+	}
+	.kode_eco_search{
+		width:48%;
+	}
+	#boxes #dialog{
+		width:100% !important;
+		left:0px !important;
+		padding: 10px 15px;
+		top: 80px !important;
+	}
+	.eco_title_form h3{
+		font-size: 24px;
+	}
+	.eco-login-registration{
+		padding: 70px 15px;
+	}
+	.login_style{
+		width:100%;
+	}
+	.kode_eco_search .modal-body .kode-search-menu{
+		padding: 0px;
+	}
+	.kode_eco_search .modal-body .kode-search-menu input{
+		font-size: 20px;
+	}
+	.kode-search-menu input{
+	}
+	.kode_eco_search .modal-body .kode-search-menu button{
+		font-size: 23px;
+		margin-top: 16px;
+	}
+	.kode_eco-top_bar{
+		text-align: center;
+	}
+	#search .modal-dialog{
+		width:100%;
+		margin:0px;
+	}
+	.kode_eco_logo a{
+		float: none;
+		display: inline-block;
+	}
+	.kode_eco_social_icons{
+		float: left;
+		width:52%;
+	}
+	.kode_eco_social_icons .social-accounts{
+		float: none;
+		display: inline-block;
+	}
+	.responsive-col-xs{
+		float: left;
+		width: 100%;
+	}
+	.eco-choose-donation .eco_sm_titles{
+		font-size: 18px;
+	}
+	.eco_donations_select li:last-child,
+	.eco_donations_select li{
+		width:50%;
+	}
+	.eco_donations_select li{
+		margin-bottom: 20px;
+	}
+	.eco_donations_select li:last-child{
+		margin-bottom: 0px;
+	}
+	.eco-event-title h5{
+		font-size: 20px;
+	}
+	.eco_footer_content .eco_footer_columns{
+		padding: 46px 0px 0px;
+	}
+	.kode_eco_buy_item{
+		padding: 3px 0px 0 14px;
+		float: right;
+	}
+	.eco_count_up {
+	    width: 47%;
+	}
+	.kode_button {
+	   float: none; 
+	    float: left;
+	    padding: 6px 10px;
+	    z-index: 1;
+	}
+	.kode_eco_captions{
+		display: none;
+	}
+	.eco_services_environment .eco_items-services{
+		padding-top: 0px;
+		text-align: center;
+	}
+	.eco_service_cols.rtl_service span,
+	.eco_items-services .eco_service_cols.rtl_service span,
+	.eco_items-services .eco_service_cols span{
+		float: none;
+		display: inline-block;
+		text-align: center;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.eco_services_environment .thumb-widthout-layer{
+		margin-bottom: 35px;
+	}
+	.eco_services_environment .eco_services{
+		margin-bottom: 0px;
+	}
+	.eco_service_cols.rtl_service div,
+	.eco_service_cols div{
+		text-align: center;
+		float: left;
+	}
+	.eco_services_environment .rtl_service{
+		margin-bottom: 29px;
+	}
+	.eco_featured_causes{	
+	}
+	.causes-margin-bottom{
+		margin-bottom: 42px;
+	}
+	.eco_counter:before{
+		margin-right: 0px;
+	}
+	.eco_process_of_counter{
+		padding: 30px 0px;
+	}
+	.eco_counter li.left-side::before,
+	.eco_counter li.right-side::before{
+		margin-left: -12px;
+		top:42px;
+	}
+	.eco_counter .left-side .eco_count_up{
+		padding-right: 50px;
+	}
+	.eco_counter .right-side .eco_count_up{
+		padding-left: 54px;
+	}
+	.eco_count_up h3{
+		font-size: 30px;
+	}
+	.eco_count_up p{
+		font-size: 14px;
+	}
+	.filterable-parent-section{
+		margin-right: 0px;
+	}
+	.eco_filterable_columns{
+		margin-right: 0px;
+		padding: 0 0px 0px 0px;
+		margin-bottom: 30px;
+		width:100%;
+	}
+	.eco_our_products{
+		margin-bottom: 0px;
+	}
+	.eco_video_content h3{
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 30px;
+		margin-bottom: 17px;
+	}
+	.eco_video_content p{
+		width:100%;
+	}
+	.event_listing_style .icon-style,
+	.icon-style {
+	    border: 4px solid #fff;
+	    border-radius: 100%;
+	    color: #fff;
+	    float: left;
+	    font-size: 23px;
+	    height: 50px;
+	    left: 10px;
+	    line-height: 42px;
+	    position: absolute;
+	    text-align: center;
+	    top: 10px;
+	    width: 50px;
+	    z-index: 1;
+	}
+	.eco_events_columns .events-detail > li{
+		padding: 56px 0 46px 15px;
+	}
+	.testimonial-information{
+		padding: 0px;
+	}
+	.eco_testimonial-section .slider-nav{
+		width:100%;
+	}
+	.eco_testimonial-section::before,
+	.eco_testimonial-section::after{
+		font-size: 14px;
+	}
+	.eco_testimonial-section:before {
+	    bottom: 50%;
+	    left: 0;
+	    margin-bottom: -12px;
+	    right: auto;
+	}
+	.eco_testimonial-section:after {
+		bottom: 10%;
+		left: auto;
+		margin-bottom: 12px;
+		right: 0px;
+	}
+	.eco_testimonial-section{
+		padding-bottom: 52px;
+	}
+	.eco_testimonial_meta li small{
+		margin-bottom: 0px;
+	}
+	.testimonial-slider-bg img {
+	    filter: grayscale(100%);
+	    min-height: 530px;
+	    min-width: 1710px;
+	    opacity: 1;
+	    transform: scale(1.1);
+	}
+	.eco_our_features,
+	.eco_recent_blog_post,
+	.eco_offices_info{
+		margin-bottom: 20px;
+	}
+	.eco_footer_columns{
+		padding: 46px 0 39px;
+	}
+	.eco_filter-anchor {
+	    float: left;
+	}
+	.eco_flip-container:hover .front{
+		transform: rotateY(0deg);
+	}
+	.eco_flip-container .front{
+		position: relative;
+		display: none;
+	}
+	.eco_flip-container .back{
+	}
+	.eco_flip-container .back{
+		transform: rotateY(0deg);
+	}
+	.eco_flip-container{
+		height: auto;
+	}
+	.eco_flip-container {
+	    float: left;
+	    margin-bottom: 30px;
+	    margin-top: 0;
+	    width: 100%;
+	}
+	.feature_blog_caption {
+	    padding: 30px 8px;
+	}
+	.feature_blog_caption h5{	
+	}
+	.eco_about-us-data{
+		padding: 0px;
+		left:0px;
+		top:0px;
+		margin-top: 0px;
+	}
+	.eco_about-us-data ul li{
+		margin-right: 12px;
+	}
+	.eco_event_img figure{
+		margin-bottom: 30px;
+		float: left;
+		width:100%;
+	}
+	.xsmall-btn {
+	    height: 34px;
+	    width: 84px;
+	    line-height: 33px;
+	    font-size: 12px;
+	}
+	.eco_about-us-data ul{
+		margin-bottom: 25px;
+	}
+	.eco_small-blogs {
+	    width: 100%;
+	}
+	.team_volunteers_img.padding-top{
+		padding-top: 0px;
+	}
+	.eco_donate_style-bar{
+		text-align: center;
+	}
+	.eco_donate_style-bar h3{
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.eco_donate_style-bar .white-style{
+		float: none;
+	}
+	.main-container .masonry-item{
+		padding: 2px 15px;
+	}
+	.eco_inner_page_banner .eco_headings h3{
+		font-size: 36px;
+	}
+	.blog_single_title a{
+		float: left;
+	}
+	.blog_single_title .eco-event-title{
+		padding-top: 0px;
+		float: none;
+	}
+	.blog_single_title h4{
+		font-size: 15px;
+		margin-top: -3px;
+	}
+	.event_date_03{
+		margin-right: 10px;
+		padding-right: 13px;
+	}
+	.blog_single_page .slick-prev.slick-arrow{
+		left:70%;
+	}
+	.blog_single_page .slick-next.slick-arrow{
+		right: 70%;
+	}
+	.blog_single_page .slick-prev.slick-arrow,
+	.blog_single_page .slick-next.slick-arrow{
+		width:40px;
+		height: 40px;
+		margin-top: -20px;
+	}
+	.blog_single_page .slick-next.slick-arrow::before,
+	.blog_single_page .slick-prev.slick-arrow::before{
+		top:-5px;
+	}
+	.event_slide_pictures .event_nav .eco_width_menage{
+		width:20.4%;
+		float: left;
+	}
+	.event_slide_pictures{
+		display: none;
+	}
+	.eco_events_images .no-padding{
+		padding: 0px 15px;
+	}
+	.blog_single_page .eco_events_images{
+		padding: 0px;
+		float: left;
+		height: auto;
+		margin-bottom: 0px;
+	}
+	.blog_single_page .event_date_03::before{
+		top:0px;
+	}
+	blockquote:after, blockquote:before{
+		height: 100px;
+		border-color: #7abf18;
+		left:0px;
+		right: 0px;
+		margin-bottom: -50px;
+	}
+	blockquote:before{
+		left:auto;
+	}
+	blockquote{
+		padding: 0px 15px;
+		position: relative;
+		margin:20px 0px 30px;
+	}
+	blockquote:after{
+		margin-top: 0px;
+		right: auto;
+	}
+	blockquote p:before,
+	blockquote p:after{
+		display: none;
+	}
+	blockquote p{
+		font-size: 14px;
+	}
+	.eco_share-tag span{
+		margin-bottom: 10px;
+	}
+	.eco_pagination_shareing_tag{
+		float: left;
+		width:100%;
+	}
+	.eco_share-tag .social-icons{
+		float: right;
+	}
+	.eco_pagination_shareing_tag li:first-child{
+		float: left;
+	}
+	.eco_pagination_shareing_tag li:last-child{
+		float: right;
+	}
+	.eco_blog_section .eco_blog_column figure{
+		float: left;
+		width: 100%;
+		margin-right: 0px;
+		margin-bottom: 20px;
+	}
+	.blog_listing_section .eco_blog_content{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.responsive-column {
+	    float: left;
+	    padding: 0 15px;
+	    width: 100%;
+	}
+	.event_related_blog .event_column_blog .radius_icon_event span{
+		height: 90px;
+		width: 90px;
+		line-height: 72px;
+	}
+	.event_related_blog .eco-event-title h6{
+		font-size: 18px;
+	}
+	.widget_post_slider .slick-next.slick-arrow{
+		left:40%;
+		right: auto;
+	}
+	.widget_post_slider .slick-prev.slick-arrow{
+		right:40%;
+		left: auto;
+	}
+	.event_listing_style .icon-style{
+		top:4px;
+	}
+	.event_listing_style .event_date_02 b{
+		font-size: 18px;
+	}
+	.event_listing_style .event_date_02{
+		font-size: 24px;
+		padding: 2px 15px 0 0;
+	}
+	.event_listing_style .event_date_02:before{
+		top:0px;
+	}
+	.event_listing_style .eco_event_content{
+		padding-left: 0px;
+	}
+	.event_listing_style{
+		padding: 16px 7px 16px 7px;
+	}
+	.event_listing_style .icon-style{
+		margin-top: 0px;
+		top:50%;
+	}
+	.event_listing_style .eco-event-title h5{
+		margin-bottom: 6px;
+	}
+	.date_tag ul li span{
+		margin-bottom: 0px;
+		font-size: 20px;
+	}
+	.eco_event-orgnizer figure{
+		width: 200px;
+	}
+	.responsive-float{float: left;
+		width:100%;
+	}
+	.date_tag ul li {
+	    padding: 22% 0 0px;
+	}
+	.date_tag ul li b,
+	.date_tag ul li span{
+		font-size: 30px;
+	}
+	.eco_listing_caption h5{
+		font-size: 15px;
+	}
+	.padding-70by40 {
+		float: left;
+		overflow: hidden;
+		padding: 70px 10px 40px;
+		width: 100%;
+	}
+	.masonry-item{
+		float: left;
+		width:100%:;
+	}
+	.masonry-item a img{
+		display: inline-block;
+		width:100%;
+	}
+	.container.main-container{
+		overflow: hidden;
+	}
+	.padding-top-services{
+		padding-top: 0px;
+	}
+	.eco_feature_campaigns{
+		margin-bottom: 20px;
+	}
+	.eco_service_cols{
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.eco_service_cols span{
+		margin-bottom: 15px;
+	}
+	.eco_donation-caption {
+	    width: 100%;
+	}
+	.eco_donation-caption .eco_headings h3{
+		font-size: 18px;
+	}
+	.eco_count_cause_up ul li span{
+		font-size: 22px;
+	}
+	.eco_donate-bar02 .eco-progress-row{
+		width:60%;
+	}
+	.btn-mediem {
+	    border-radius: 30px;
+	    display: inline-block;
+	    font-size: 12px;
+	    height: 44px;
+	    line-height: 42px;
+	    text-align: center;
+	    text-transform: uppercase;
+	    width: 128px;
+	}
+	.eco_blog_detail_content h4{
+		font-size: 20px;
+	}
+	.eco_event-orgnizer figure {
+	    float: left;
+	    width: 100%;
+	}
+	.event_author_content{
+		float: left;
+		overflow: visible;
+		width:100%;
+	}
+	.volenteers_slider_style.widget_post_slider .slick-next.slick-arrow{
+		margin-left: -20px;
+	}
+	.volenteers_slider_style.widget_post_slider .slick-prev.slick-arrow{
+		margin-right: -20px;
+	}
+	.product-slider > li{
+		width:100%;
+	}
+	.product-detail-items{
+		float: left;
+		width:100%;
+		margin: 0px;
+	}
+	.product-detail-items ul li {
+	    display: inline-block;
+	    float: none;
+	    margin-right: 5px;
+	    width: 28%;
+	}
+	.product-detail-items .bx-wrapper .bx-controls-direction a{
+		margin-top: -24px;
+	}
+	.eco-others-details{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.product_title_rate .eco_sm_titles{
+		font-size: 17px;
+	}
+	.eco-others-details .btn-likes-heart,
+	.eco_count_up_btns{
+		margin-right: 3px;
+	}
+	.eco_count_up_btns{
+		margin-right: 20px;
+	}
+	.eco-others-details .btn-mediem02{
+		width: 130px;
+		float: right;
+	}
+	.eco_descriptions_tabs ul li a{
+		font-weight: bold;
+	}
+	.eco_descriptions_tabs ul li{
+		padding-right: 0px;
+		margin-right: 10px;
+	}
+	.eco_descriptions_tabs ul li:last-child{
+		margin-right: 0px;
+	}
+	.eco_descriptions_tabs{
+		margin-bottom: 20px;
+	}
+	.eco_filterable_columns{
+		padding: 0px;
+	}
+	.eco_coming_soon_detail h1{
+		font-size: 60px;
+	}
+	.coming-soon_submit{
+		width:100%;
+	}
+	.page_not_found .eco-big-title h3{
+		font-size: 70px;
+	}
+	.kode_top_left_cap ul li{
+	}
+	.kode_top_left_cap ul,
+	.kode_top_left_cap{
+		width:auto;
+	}
+	.kode_top_donate a{
+		padding:10px 20px;
+	}
+	.kode_top_donate .shop-items{
+		padding:11px 17px;
+	}
+	.kode_top_donate .shop-items::before{
+		top:6px;
+	}
+	.kode_content_navigation #kode-responsive-navigation{
+		border-bottom: 3px solid #03af14;
+		margin: 0px 6px;
+	}
+	.kode_content_navigation{
+		padding-top: 20px;
+	}
+	.kode_banner_caption{
+		display: none;
+	}
+	.kode_eco_count{
+		float: left;
+		width:100%;
+		padding: 0px;
+		margin-bottom: 20px;
+	}
+	.kode_eco_count::before{
+		display: none;
+	}
+	.kode_eco_support_caption h3{
+		font-size: 36px;
+		line-height: normal;
+	}
+	.kode_eco_latest_caption{
+		padding-bottom: 30px;
+	}
+	.kode_eco_support_caption h2{
+		font-size: 46px;
+		line-height: normal;
+	}
+	.kode_eco_gallery_cap p{	
+	}
+	.kode_coo_gall h3{
+		line-height: 175px;
+	}
+	.kode_eco_hdg h2{
+		font-size: 24px;
+	}
+	.kode_eco_latest_news{
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.kode_eco_latest_fig{
+		width:100%;
+	}
+	.kode_eco_latest_fig figure{
+		float: left;
+		width:100%;
+	}
+	.kode_eco_latest_caption::before{
+		bottom:0px;
+		width:100%;
+	}
+	.kode_attorney_detail_skill{
+		overflow: hidden;
+	}
+	.kode_eco_action_cap h3{
+		font-size: 24px;
+	}
+	.kode_footer_copy_cap p{
+		text-align: center;
+		float: none;
+	}
+	.kode_footer_cols{
+		margin-bottom: 30px;
+	}
+	.kode_footer_copy_right{
+		margin-top: 0px;
+	}
+	.kode_copy_span{
+		top:-50px;
+	}
+	.kode_footer_copy_cap{
+		text-align: center;
+	}
+	.kode_footer_copy_cap p{
+		margin-bottom: 15px;
+	}
+	.kode_footer_gallery li{
+		width:14.9%;
+	}
+	.section_grid_cause .responsive-devider-50,
+	.eco_featured_causes .responsive-devider-50{
+		width:100%;
+	}
+	.eco_offices_info .social-icons li{
+		margin-right: 2px;
+	}
+	.responsive-padding{
+		padding: 0px 15px;
+	}
+	.eco_footer_columns .clear{
+		display:block;
+	}
+	.kode_form_modal_newsletter .modal-dialog{
+		padding: 0px 25px;
+	}
+	.event_related_blog .responsive-devider-50{
+		width:100%;
+	}
+	.ralated_causes_grids .responsive-devider-50{
+		width: 100%;
+	}
+	.coming-soon-radio li{
+		width: 50%;
+		margin-right: 0px;
+		float: left;
+		margin-bottom: 20px;
+	}
+	.coming-soon_submit{
+		width:100%;
+	}
+	.eco_service_cols span{
+		float: none;
+		display: inline-block;
+		margin: 0px;
+		margin-bottom: 15px;
+	}
+	.eco_blog_column .eco_thumb{
+		margin-bottom: 0px;
+	}
+	.eco_blog_column figure::before{
+		bottom:0px;
+	}
+	.ralated_causes_grids .three-columns .eco_flip-container, 
+	.ralated_causes_grids .three-columns .front, 
+	.ralated_causes_grids .three-columns .back{
+		position: relative;
+		height: auto;
+	}
+	.eco_flip-container{
+		position: relative;
+		float: left;width: 100%;
+	}
+	.eco_flip-container .back{
+		position: relative;
+		float: left;
+		width: 100%;
+	}
+	.responsive-devider-50{
+		width:100% !important;
+	}
+	.eco_small_gallery_widget ul li{
+		width:16%;
+	}
+	.kode_top_donate button{
+		padding: 12px 23px;
+	}
+}
+/*============ Media 480Px Star ============ */
+@media (max-width: 480px) {
+	.navigation{
+		display: none;
+	}
+	#kode-responsive-navigation{
+		display: block;
+		width:auto;
+		float: none;
+		float: right;
+		margin: 6px 6px ;
+	}
+	#kode-responsive-navigation .dl-menu{
+		left: auto;
+		right: 0px;
+		margin-top: 6px;
+	}
+	.eco_footer_columns .clear{
+		display:block;
+	}
+	.kode_eco_search,
+	.kode_eco_logo {
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 12px;
+	}
+	#boxes #dialog{
+		width:100% !important;
+		left:0px !important;
+		padding: 10px 15px;
+		top: 80px !important;
+	}
+	.eco_title_form h3{
+		font-size: 22px;
+	}
+	.eco-login-registration{
+		padding: 70px 15px;
+	}
+	.login_style{
+		width:100%;
+	}
+	.kode_eco_search .modal-body .kode-search-menu{
+		padding: 0px;
+	}
+	.kode_eco_search .modal-body .kode-search-menu input{
+		font-size: 20px;
+	}
+	.kode-search-menu input{
+		border-right:1px solid #ccc;
+	}
+	.kode_eco_search .modal-body .kode-search-menu button{
+		font-size: 23px;
+		margin-top: 16px;
+	}
+	.kode_eco-top_bar{
+		text-align: center;
+	}
+	#search .modal-dialog{
+		width:100%;
+		margin:0px;
+	}
+	.kode_eco_search .modal-content .close {
+	    margin-top: -70px;
+	    right: 0;
+	}
+	.kode_eco_logo a{
+		float: none;
+		display: inline-block;
+	}
+	.kode_eco_social_icons{
+		float: left;
+		width:100%;
+		text-align: center;
+	}
+	.kode_eco_social_icons .social-accounts{
+		float: none;
+		display: inline-block;
+	}
+	.kode_eco_buy_item{
+		display: inline-block;
+	    float: none;
+	    padding: 0 0 0 13px;
+	    position: relative;
+	    top: -10px;
+	}
+	.eco-choose-donation .eco_sm_titles{
+		font-size: 18px;
+	}
+	.eco_donations_select li:last-child,
+	.eco_donations_select li{
+		width:100%;
+	}
+	.eco_donations_select li{
+		margin-bottom: 20px;
+	}
+	.eco_donations_select li:last-child{
+		margin-bottom: 0px;
+	}
+	.kode_button {
+		float: none; 
+		float: left;
+		padding: 6px 10px;
+		z-index: 1;
+	}
+	.kode_eco_captions{
+		display: none;		
+	}
+	.eco_services_environment .eco_items-services{
+		padding-top: 0px;
+	}
+	.eco_services_environment .thumb-widthout-layer{
+		margin-bottom: 35px;
+	}
+	.eco_services_environment .eco_services{
+		margin-bottom: 0px;
+	}
+	.eco_services_environment .rtl_service{
+		margin-bottom: 29px;
+	}
+	.feature_blog_caption h3{
+		font-size: 32px;
+	}
+	.feature_blog_caption h5{
+		font-size: 17px;
+	}
+	.eco_headings h3{
+		font-size: 26px;
+	}
+	.eco_form_importer{
+		padding: 50px 20px;
+	}
+	.eco_counter:before{
+		margin-right: 0px;
+	}
+	.eco_process_of_counter{
+		padding: 30px 0px;
+	}
+	.eco_counter li.left-side::before,
+	.eco_counter li.right-side::before{
+		margin-left: -12px;
+		top:42px;
+	}
+	.eco_counter .left-side .eco_count_up{
+		padding-right: 50px;
+	}
+	.eco_counter .right-side .eco_count_up{
+		padding-left: 54px;
+	}
+	.eco_count_up h3{
+		font-size: 24px;
+	}
+	.eco_count_up p{
+		font-size: 9px;
+	}
+	.eco_filter-anchor li {
+	    float: left;
+	    margin-right: 20px;
+	}
+	.eco_filterable_columns{
+		margin-right: 0px;
+		padding: 0 30px 0px 0px;
+		margin-bottom: 30px;
+		width:100%;
+	}
+	.eco_our_products{
+		margin-bottom: 0px;
+	}
+	.eco_video_content h3{
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 30px;
+		margin-bottom: 17px;
+	}
+	.eco_video_content p{
+		width:100%;
+	}
+	.event_listing_style .icon-style,
+	.icon-style {
+	    border: 4px solid #fff;
+	    border-radius: 100%;
+	    color: #fff;
+	    float: none;
+	    font-size: 38px;
+	    height: 80px;
+	    left: 0;
+	    line-height: 70px;
+	    position: relative;
+	    text-align: center;
+	    top: 0;
+	    width: 80px;
+	    z-index: 1;
+	}
+	.eco_events_columns .events-detail > li{
+		padding: 40px 0 46px 15px;
+	}
+	.event_meta li small, .event_meta li .meta-author{
+		margin-right: 6px;
+	}
+	.eco-list-event .eco-event-title h5{
+		padding-top: 1px;
+	}
+	.event_date_02::before{
+		top:9px;
+	}
+	.eco_event_content .event_meta li p{
+		margin-right: 6px;
+		margin-left: 0px;
+		margin-bottom: 0px;
+	}
+	.eco_event_content .event_meta li p a{
+		margin: 0px;
+	}
+	.eco_event_content .event_date_02{
+		margin-right: 15px;
+		padding: 11px 15px 0 0;
+	}
+	.testimonial-information{
+		padding: 0px;
+	}
+	.eco_testimonial-section .slider-nav{
+		width:100%;
+	}
+	.eco_testimonial-section::before,
+	.eco_testimonial-section::after{
+		font-size: 14px;
+	}
+	.eco_testimonial-section:before {
+	    bottom: 50%;
+	    left: 0;
+	    margin-bottom: -33px;
+	    right: auto;
+	}
+	.eco_testimonial-section:after {
+		bottom: 10%;
+		left: auto;
+		margin-bottom: -18px;
+		right: 0px;
+	}
+	.eco_testimonial-section{
+		padding-bottom: 12px;
+	}
+	.eco_testimonial_meta li small{
+		margin-bottom: 0px;
+	}
+	.testimonial-slider-bg img {
+	    filter: grayscale(100%);
+	    min-height: 530px;
+	    min-width: 1710px;
+	    opacity: 1;
+	    transform: scale(1.1);
+	}
+	.event_date_03::before{
+		top:0px;
+	}
+	.eco_our_features,
+	.eco_recent_blog_post,
+	.eco_offices_info{
+		margin-bottom: 30px;
+	}
+	.eco_footer_columns{
+		padding: 46px 0 39px;
+	}
+	.eco_filter-anchor {
+	    float: left;
+	}
+	.eco-thumb-bg .feature_blog_caption, .front, .back{
+		height: auto;
+	}
+	.eco_flip-container {
+	    height: auto;
+	    padding: 0px;
+	}
+	.front{
+		float: left;width: 100%;
+	}
+	.eco_about-us-data{
+		padding: 0px;
+		left:0px;
+		top:0px;
+		margin-top: 0px;
+	}
+	.eco_about-us-data ul li{
+		margin-right: 12px;
+	}
+	.eco_event_img figure{
+		margin-bottom: 30px;
+		float: left;
+		width:100%;
+	}
+	.xsmall-btn {
+	    height: 34px;
+	    width: 84px;
+	    line-height: 33px;
+	    font-size: 12px;
+	}
+	.eco_about-us-data ul{
+		margin-bottom: 25px;
+	}
+	.eco_small-blogs {
+	    width: 100%;
+	}
+	.team_volunteers_img.padding-top{
+		padding-top: 0px;
+	}
+	.eco_donate_style-bar{
+		text-align: center;
+	}
+	.eco_donate_style-bar h3{
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.eco_donate_style-bar .white-style{
+		float: none;
+	}
+	.main-container .masonry-item{
+		padding: 2px 15px;
+	}
+	.eco_inner_page_banner .eco_headings h3{
+		font-size: 36px;
+	}
+	.blog_single_title a{
+		float: left;
+	}
+	.blog_single_title .eco-event-title{
+		padding-top: 0px;
+		float: none;
+	}
+	.blog_single_title h4{
+		font-size: 15px;
+		margin-top: -3px;
+	}
+	.event_date_03{
+		margin-right: 10px;
+		padding-right: 13px;
+	}
+	.blog_single_page .slick-prev.slick-arrow{
+		left:70%;
+	}
+	.blog_single_page .slick-next.slick-arrow{
+		right: 70%;
+	}
+	.blog_single_page .slick-prev.slick-arrow,
+	.blog_single_page .slick-next.slick-arrow{
+		width:40px;
+		height: 40px;
+		margin-top: -20px;
+	}
+	.blog_single_page .slick-next.slick-arrow::before,
+	.blog_single_page .slick-prev.slick-arrow::before{
+		top:-5px;
+	}
+	.event_slide_pictures .event_nav .eco_width_menage{
+		width:20.4%;
+		float: left;
+	}
+	.event_slide_pictures{
+		display: none;
+	}
+	.eco_events_images .no-padding{
+		padding: 0px 15px;
+	}
+	.blog_single_page .eco_events_images{
+		padding: 0px;
+		float: left;	
+	}
+	.blog_single_page .event_date_03::before{
+		top:0px;
+	}
+	.eco_blog_detail_post .detail-date-title .event_date {
+		width: 40px;
+		height: 40px;
+		line-height: 12px;
+		padding-top: 7px;
+	}
+	.eco_blog_detail_post .detail-date-title .event_date b,
+	.eco_blog_detail_post .detail-date-title .event_date{	
+		font-size: 16px;
+	}
+	.eco_blog_detail_content h4{
+		font-size: 18px;
+	}
+	blockquote:after, blockquote:before{
+		height: 100px;
+		border-color: #7abf18;
+		left:0px;
+		right: 0px;
+		margin-bottom: -50px;
+	}
+	blockquote:before{
+		left:auto;
+	}
+	blockquote{
+		padding: 0px 15px;
+		position: relative;
+	}
+	blockquote:after{
+		margin-top: 0px;
+		right: auto;
+	}
+	blockquote p:before,
+	blockquote p:after{
+		display: none;
+	}
+	blockquote p{
+		font-size: 14px;
+	}
+	.eco_pagination_shareing_tag{
+		float: left;
+		width:100%;
+	}
+	.eco_share-tag{
+		padding: 10px 10px 11px;
+	}
+	.eco_pagination_shareing_tag li a,
+	.eco_share-tag span{
+		font-size: 14px;
+	}
+	.eco_share-tag span{
+		margin-bottom: 15px;
+	}
+	.eco_share-tag .social-icons{
+		float: none;
+		float: right;
+		margin-bottom: 10px;
+	}
+	.eco_pagination_shareing_tag li{
+		margin-right: 0px;
+	}
+	.eco_pagination_shareing_tag li a::before{
+		top:1px;
+	}
+	.eco_comments li figure{
+		width:60px;
+	}
+	.eco_children{
+		padding: 0px;
+	}
+	.eco_blog_section .eco_blog_column figure{
+		float: left;
+		width: 100%;
+		margin-right: 0px;
+		margin-bottom: 20px;
+	}
+	.blog_listing_section .eco_blog_content{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.responsive-column {
+	    float: left;
+	    padding: 0 15px;
+	    width: 100%;
+	}
+	.eco-event-title h6{
+		font-size: 13px;
+		line-height: normal;
+	}
+	.eco_blog_detail_content .eco-event-title h4{
+		font-size: 17px;
+	}
+	.event_listing_style .event_date_02 b{
+		font-size: 18px;
+	}
+	.event_listing_style .event_date_02{
+		font-size: 24px;
+		padding: 2px 15px 0 0;
+	}
+	.event_listing_style .event_date_02:before{
+		top:0px;
+	}
+	.event_listing_style .eco_event_content{
+		padding-left: 0px;
+	}
+	.event_listing_style .eco-event-title h5{
+		margin-bottom: 6px;
+	}
+	.eco_event-orgnizer figure{
+		float: left;
+		margin-right: 0px;
+		width:100%;
+	}
+	.event_author_content{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.date_tag ul li {
+	    padding: 6% 0 0;
+	}
+	.date_tag ul li b,
+	.date_tag ul li span{
+		font-size: 20px;
+	}
+	.eco_project_listing_column{
+		border:1px solid #ccc;
+	}
+	.eco_project_listing_column figure{
+		float: left;
+		width:100%;
+	}
+	.eco_listing_caption{
+		float: left;
+		width:100%;
+		padding: 10px;
+	}
+	.eco_project_listing_column::before{
+		border:none;
+	}
+	.padding-70by40 {
+	    padding: 70px 20px 40px;
+	}
+	.masonry-item{
+		float: left;
+		width:100%:;
+	}
+	.masonry-item a{
+		display: inline-block;
+		width:100%;
+	}
+	.eco_picture-blog {
+	    float: left;
+	    margin-bottom: 30px;
+	    margin-right: 0;
+	    width: 100%;
+	}
+	.team-detail-items{
+		width:100%;
+		float: left;
+		margin-right: 0px;
+	}
+	.just-team-for-detail{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.just-team-for-detail .eco_admin_info{
+		margin-bottom: 10px;
+	}
+	.just-team-for-detail .detail-communication .social-accounts{
+		float: none;
+		float: left;
+	}
+	.volenteer_blockquote blockquote{
+		margin: 10px 0px;
+	}
+	.eco_skills,
+	.eco_area_experince{
+		float: left;
+		width:100%;
+		padding: 0px 0px;
+		margin-bottom: 15px;
+	}
+	.padding-top-services{
+		padding-top: 0px;
+	}
+	.eco_feature_campaigns{
+		margin-bottom: 20px;
+	}
+	.eco_service_cols{
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.eco_service_cols span{
+		margin-bottom: 15px;
+	}
+	.eco_donation-caption {
+	    width: 100%;
+	}
+	.eco_donation-caption .eco_headings h3{
+		font-size: 18px;
+	}
+	.eco_testimonial-section::before{
+		margin-bottom: -18px;
+	}
+	.eco_testimonial-section::after{
+		margin-bottom: -34px;
+	}
+	.eco_count_cause_up ul li span{
+		font-size: 22px;
+	}
+	.eco_donate-bar02 .eco-progress-row{
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.eco_donate-bar02{
+		text-align: center;
+	}
+	.eco_donate-bar02 a{
+		float: none;
+		display: inline-block;
+	}
+	.eco_blog_detail_content h4{
+		font-size: 20px;
+	}
+	.eco_event-orgnizer figure {
+	    float: left;
+	    width: 100%;
+	}
+	.event_author_content{
+		float: left;
+		overflow: visible;
+		width:100%;
+	}
+	.eco_count_cause_up ul li{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.eco_title_border h4{
+		font-size: 20px;
+	}
+	.volenteers_slider_style.widget_post_slider .slick-next.slick-arrow{
+		margin-left: -20px;
+	}
+	.volenteers_slider_style.widget_post_slider .slick-prev.slick-arrow{
+		margin-right: -20px;
+	}
+	.product-slider > li{
+		width:100%;
+	}
+	.product-detail-items{
+		float: left;
+		width:100%;
+		margin: 0px;
+	}
+	.product-detail-items ul li {
+	    display: inline-block;
+	    float: none;
+	    margin-right: 5px;
+	    width: 28%;
+	}
+	.product-detail-items .bx-wrapper .bx-controls-direction a{
+		margin-top: -24px;
+	}
+	.eco-others-details{
+		float: left;
+		width:100%;
+		overflow: visible;
+	}
+	.product_title_rate .eco_sm_titles{
+		font-size: 17px;
+	}
+	.eco-others-details .btn-likes-heart,
+	.eco_count_up_btns{
+		margin-right: 3px;
+	}
+	.eco-others-details .btn-mediem02{
+		width: 130px;
+		float: right;
+	}
+	.eco_descriptions_tabs ul li a{
+		font-size: 11px;
+		font-weight: bold;
+	}
+	.eco_descriptions_tabs ul li{
+		padding-right: 0px;
+		margin-right: 7px;
+	}
+	.eco_descriptions_tabs ul li:last-child{
+		margin-right: 0px;
+	}
+	.eco_descriptions_tabs{
+		margin-bottom: 20px;
+	}
+	.eco_filterable_columns{
+		padding: 0px;
+	}
+	.eco_coming_soon_detail h1{
+		font-size: 40px;
+	}
+	.coming-soon-radio li{
+		margin-bottom: 20px;
+	}
+	.coming-soon-radio li,
+	.coming-soon_submit{
+		width:100%;
+	}
+	.page_not_found .eco_headings h3{
+		font-size: 36px;
+	}
+	.page_not_found .eco-big-title p{
+		width:100%;
+	}
+	.page_not_found form{
+		width:100%;
+	}
+	/*===================*/
+	.kode_top_left_cap{
+		width:50%;
+	}
+	.kode_top_left_cap ul li i{
+		margin-right: 5px;
+	}
+	.kode_top_left_cap ul li a{
+		font-size: 13px;
+		margin-right: 0px;
+	}
+	.kode_top_social_icon{
+		padding: 8px 0px 0px;
+	}
+	.kode_top_logo{
+		width:100%;
+		text-align: center;
+	}
+	.kode_top_donate a{
+		padding: 10px 20px;
+	}
+	.kode_top_donate .shop-items{
+		padding: 11px 17px;
+	}
+	.kode_content_navigation #kode-responsive-navigation{
+		margin:0px;
+	}
+	.kode_content_navigation #kode-responsive-navigation .dl-menu{
+		margin-top: 0px;
+	}
+	.kode_content_navigation .dl-menuwrapper button{
+		height: 41px;
+	}
+	.kode_content_navigation {
+	    float: right;
+	    width: 100%;
+	    margin-bottom: 25px;
+	}
+	.kode_top_donate{
+		float: left;
+	}
+	.kode_banner_caption{
+		display: none;
+	}
+	.kode_eco_count{
+		float: left;
+		width:100%;
+		padding: 0px;
+		margin-bottom: 20px;
+	}
+	.kode_eco_count::before{
+		display: none;
+	}
+	.kode_eco_support_caption h3{
+		font-size: 24px;
+		line-height: normal;
+	}
+	.kode_eco_latest_caption{
+		padding-bottom: 30px;
+	}
+	.kode_eco_support_caption h2{
+		font-size: 36px;
+		line-height: normal;
+	}
+	.kode_eco_gallery_cap p{
+		display: none;
+	}
+	.kode_coo_gall h3{
+		line-height: 115px;
+	}
+	.kode_eco_hdg h2{
+		font-size: 24px;
+	}
+	.kode_eco_latest_news{
+		width:100%;
+		margin-bottom: 15px;
+	}
+	.kode_eco_latest_fig{
+		width:100%;
+	}
+	.kode_eco_latest_fig figure{
+		float: left;
+		width:100%;
+	}
+	.kode_eco_latest_caption::before{
+		bottom:0px;
+		width:100%;
+	}
+	.kode_attorney_detail_skill{
+		overflow: hidden;
+	}
+	.kode_eco_action_cap h3{
+		font-size: 24px;
+	}
+	.kode_footer_cols{
+		margin-bottom: 30px;
+	}
+	.kode_footer_copy_right{
+		margin-top: 0px;
+	}
+	.kode_copy_span{
+		top:-50px;
+	}
+	.kode_footer_copy_cap{
+		text-align: center;
+	}
+	.kode_footer_copy_cap p{
+		margin-bottom: 15px;
+	}
+	.eco_featured_causes .col-xs-12{
+		width:100%;
+	}
+	.responsive-devider-50{
+		float: left;
+		width: 100%;
+	}
+ 	.eco_hover_effect .eco_hover_btn .mediem_btn_02{
+ 		width: 80%;
+ 	}
+ 	.widget_post_slider .slick-prev.slick-arrow{
+		right: 30%;
+ 	}
+ 	.widget_post_slider .slick-next.slick-arrow{
+ 		left: 30%;
+ 	}
+ 	.eco_items-services .eco_service_cols.rtl_service{
+ 		text-align: center;
+ 	}
+ 	.eco_simple_services .padding-top-services .eco_service_cols.rtl_service span,
+	.eco_items-services .eco_service_cols.rtl_service span,
+	.eco_items-services .eco_service_cols span{
+		float: none;
+		display: inline-block;
+		text-align: center;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	.filterable-parent-section .eco_filterable_columns{
+		width: 100%;
+	}
+	.eco_blog_column .eco_thumb{
+		margin-bottom: 0px;
+	}
+	.eco_blog_column figure::before{
+		bottom:0px;
+	}
+	.eco_flip-container{
+		position: relative;
+		float: left;width: 100%;
+	}
+	.eco_flip-container .back{
+		position: relative;
+		float: left;
+		width: 100%;
+	}
+	.responsive-devider-50{
+		width:100% !important;
+	}
+	.eco_small_gallery_widget ul li{
+		width:24.9999%;
+	}
+	
+
+}
+/*============ Media 360Px Star ============ */
+@media (max-width: 360px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+{% extends 'Front/Front.html.twig' %}
+
+{% block content %}
+
+    <div class="content-wrapper">
+
+        <!-- about_area_start -->
+        <div class="about_area">
+            <div class="icon_1 d-none d-md-block">
+                <img src="img/icon/1.png" alt="">
+            </div>
+            <div class="icon_2 d-none d-md-block">
+                <img src="img/icon/2.png" alt="">
+            </div>
+            <div class="icon_3 d-none d-md-block">
+                <img src="img/icon/3.png" alt="">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about_info_wrap">
+                            <h3>#{{ evenement.id }}..{{ evenement.nom }}</h3>
+                            <h2>Type: " {{ evenement.type }} "</h2>
+                            <h2>Price: " {{ evenement.prix }}$ "</h2>
+                            <h2>Place: " {{ evenement.place }} "</h2>
+
+                            <span class="long_dash"></span>
+                            <p>{{ evenement.description }}.</p>
+                            <ul class="food_list">
+                                <li>
+                                    <span>{% if evenement.date %}{{ evenement.date|date('d-m-Y/H:i') }}{% endif %}</span>
+                                </li>
+                                <li>
+                                    <span>duree: "{{ evenement.duree }}H"</span>
+                                </li>
+                                <li>
+                                    <span>Place: "{{ evenement.nbrplace }}place"</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about_img">
+                            <div class="img_1">
+                                <img src="{{ asset('uploads/' ~  evenement.image )}}">
+                                {% if test==0 %}
+                                <div class="form-group mt-3">
+                                    <a href="{{ path('inscription_newinscrit', { 'id': evenement.id })}}" class="button button-contactForm boxed-btn"> S'inscrire</a>
+                                </div>
+                                {% elseif test==1 %}
+                                <div class="form-group mt-3">
+                                    <a class="button button-contactForm boxed-btn">Deja Inscrit</a>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                            <div class="small_img">
+                                <img>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- about_area_end -->
+
+    </div>
+
+{% endblock %}

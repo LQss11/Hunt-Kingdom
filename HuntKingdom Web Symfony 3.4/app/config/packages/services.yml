@@ -1,0 +1,3 @@
+services:
+    Symfony\Bridge\Monolog\Handler\ElasticsearchLogstashHandler:
+        autowire: false

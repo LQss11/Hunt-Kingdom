@@ -1,0 +1,919 @@
+
+/*======================================
+    Short funcation
+========================================*/
+.no-margin-bottom{
+  margin-bottom: 0px !important;
+}
+.margin-bottom-0{
+    margin-bottom: 0px;
+  }
+  .buttons55{
+    float: left;
+    width:70%;
+    border-radius: 10px;
+    background-color: #ccc;
+    padding: 50px 0px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .buttons55 button,
+  .buttons55 a{
+    margin-bottom: 10px;
+    float: none;
+  }
+
+/*======================================
+    progress bars
+========================================*/  
+.progress {
+  height: 10px;
+  border:1px solid #e0e0e0;
+  background-color: #e0e0e0;
+  margin-bottom: 0px; 
+}
+.progress .skill {
+  left: 0;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -20px;
+}
+.eco-progress-row{
+  position: relative;
+  float: left;
+  width:100%;
+  padding-top: 5px;
+  padding-bottom: 24px;
+}
+.progress .skill .val {
+  float: right;
+  font-style: normal;
+  left: 0;
+  position: absolute;
+  top: 0;
+  color:#fff;
+  font-size: 14px;
+}
+.progress-bar {
+  text-align: left;
+  transition-duration: 3s;
+}
+.progress .eco_progress-heading.skill{
+  left: 34px;
+}
+.progress-bar.progress-bar-success > small {
+  bottom: 0;
+  float: left;
+  position: absolute;
+  width: 100%;
+}
+.progress-bar.progress-bar-success > small.pull-right{
+  left: auto;
+  right: 0px;
+  text-align: right;
+}
+.progress-bar.progress-bar-success{
+}
+
+.eco_skills .eco-progress-row .eco_progress-heading,
+.progress .skill .val,
+.progress .skill,
+.progress-bar.progress-bar-success > small{
+  font-size: 14px;
+  font-weight: 600;
+  color:#575757;
+  text-transform: uppercase;
+}
+.eco-progress-row .progress .skill .val {
+}
+.eco-thumb-bg .progress .skill .val,
+.eco-thumb-bg .progress .skill,
+.eco-thumb-bg .progress-bar.progress-bar-success > small{
+  color:#fff;
+}
+/*======================================
+    search menu 02
+========================================*/
+.search-menu_02{
+  float: left;
+  width:100%;
+  position: relative;
+}
+.search-menu_02 input[type="text"]{
+  border:1px solid #d1d1d1;
+  border-radius: 5px;
+  height: 55px;
+  width:100%
+}
+.search-menu_02 a{
+  position: absolute;
+  right: 0px;
+  top:14px;  
+  font-size:18px;
+  border-left: 1px solid #d1d1d1;
+  width:58px;
+  text-align: center;
+  background-color: transparent;
+}
+/*======================================
+    search menu 03
+========================================*/
+.search_menu_03{
+  float: left;
+  width:100%;
+}
+.search_div{
+  float: left;
+  width:100%;
+  position: relative;
+  border-radius: 20px;
+}
+.search_div input{
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 65px;
+  width: 100%;
+}
+.search_div button{
+  height:28px;
+  width: 48px;
+  text-align: center;
+  line-height: 28px;
+  color:#fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 8px;
+  top:6px;
+}
+
+/*======================================
+    Template buttons
+========================================*/
+.btn-small{
+  background-color: #fff;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  height: 40px;
+  line-height: 39px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 116px;
+}
+.btn-mediem{
+  width:188px;
+  height: 48px;
+  border-radius: 30px;
+  border:2px solid #2e2e2e;
+  line-height: 43px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color:#2e2e2e;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn-mediem:hover{
+  color:#fff;
+}
+.btn-mediem02{
+  width:150px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 30px;
+  border:2px solid ;
+  line-height: 35px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn-mediem02:hover{
+  color:#fff;
+}
+.mediem_btn_02{
+  width:156px;
+  height: 40px;
+  border-radius: 30px;
+  border:2px solid #fff;
+  line-height: 36px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color:#fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mediem_btn_02:hover{
+  background-color:#fff;
+  border-color: transparant;
+}
+.lg-button{
+  height: 50px;
+  border-radius: 30px;
+  line-height: 50px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color:#2e2e2e;
+  text-align: center;
+  text-transform: uppercase;
+  width:100%;
+}
+.simple-btn-style{
+  height: 45px;
+  width:100%;
+  line-height: 45px;
+  color:#fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.btn-likes-heart{
+  display: inline-block;
+  width:40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color:#fff;
+  font-weight: 600;
+  border-radius: 100%;
+}
+
+.btn-small:hover{
+  background-color: #2b2b2b;
+  color:#fff;
+}
+/*======================================
+    Template heading style
+========================================*/
+.eco_headings{
+  float: left;
+  width:100%;
+  text-align: center;
+  margin-bottom: 46px;
+}
+.white-color h3{
+  color:#fff;
+}
+.eco_headings p,
+.eco_headings h6,
+.eco_headings h3{
+  margin-bottom: 0px;
+}
+.eco_headings h3{
+  margin-bottom: 8px;
+  margin-top: -8px;
+  text-transform:uppercase;
+}
+.eco_headings h5,
+.eco_headings p,
+.eco_headings h6{
+  margin-bottom: 13px;
+}
+.eco_headings span{
+  display: inline-block;
+  color:#d4d4d4;
+  position: relative;
+  width:100px;
+  font-size: 16px;
+}
+.eco_headings span:after,
+.eco_headings span:before{
+  position: absolute;
+  content:"";
+  left:0px;
+  top:9px;
+  width:36%;
+  border-top:2px solid #d4d4d4;
+}
+.eco_headings span:after{
+  left:auto;
+  right: 0px;
+}
+.eco_heading_style_02{
+  float: left;
+  width:100%;
+}
+.eco_heading_style_02 h3{
+  text-transform: uppercase;
+  font-weight: 500;
+  color:#333;
+}
+.eco_heading_style_02 h3 b{
+  border-bottom: 2px solid ;
+}
+.eco_heading_style_02 h3{
+    
+}
+/*======================================
+    Template heading small
+========================================*/
+.eco_sm_titles{
+  font-weight: 600;
+  color:#2e2e2e;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+.show-sale{
+  font-size: 12px;
+  width:40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color:#fff;
+  text-transform: uppercase;
+  border-radius: 100%;
+  top:10px;
+  left:10px;
+  display: inline-block;
+  font-weight: 600;
+  position: absolute;
+}
+.bg_green_color{
+  background-color: #7abf18;
+}
+.bg_red_color{
+  background-color:#f2635f;
+}
+
+/*===============slick slider Arrows style 02====================*/
+.blog_single_page .slick-next.slick-arrow{
+  right:84%;
+}
+.blog_single_page .slick-prev.slick-arrow{
+  left: 84%;
+}
+.blog_single_page .slick-next.slick-arrow:before,
+.blog_single_page .slick-prev.slick-arrow:before{
+  left:0px;
+  right: 0px;
+  margin: 0 auto 0px;
+  text-align: center;
+  line-height: 45px;
+  color:#fff;
+}
+.blog_single_page .slick-next.slick-arrow,
+.blog_single_page .slick-prev.slick-arrow{
+  margin: -25px auto -25px;
+  bottom:50%;
+  padding: 0px;
+  width:50px;
+  border-width: 2px;
+  height: 50px;
+  background-color: transparent;
+}
+.blog_single_page .slick-prev.slick-arrow:before{
+  padding: 0px 11px;
+}
+.blog_single_page .slick-arrow:hover{
+  border-color: transparent;
+}
+/*======================================
+    Eco pagination style
+========================================*/
+.eco_pagination_1{
+  float: left;
+  width:100%;
+  margin-bottom: 30px;
+}
+.eco_pagination_1 ul{
+  float: left;
+  width:100%;
+  text-align: center;
+}
+.eco_pagination_1 ul li{
+  display: inline-block;
+}
+.eco_pagination_1 ul li.eco_prev a,
+.eco_pagination_1 ul li.eco_next a{
+  line-height: 30px;
+}
+.eco_pagination_1 ul li:hover a{
+  border-color: transparent;
+  color:#fff;
+}
+.eco_pagination_1 ul li a{
+  display: inline-block;
+  width:35px;
+  height: 35px;
+  border:2px solid #e0e0e0;
+  color:#cccccc;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 100%;
+}
+/*======================================
+    date_left style 
+========================================*/
+.detail-date-title .event_date b{
+  display: block;
+  line-height: 18px;
+  font-size: 22px;
+}
+.detail-date-title .event_date{
+  padding:9px 0 0;
+}
+.event_date{
+  margin: 0px;
+  padding: 0px;
+  border:none;
+  padding-top: 15px;
+  float: none;
+  width:80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 5px;
+}
+.event_date b,
+.event_date{
+  color:#fff;
+  font-weight: 500;
+}
+.event_date_02 b{
+  display:block;
+  font-weight:500;
+  font-size:20px;
+}
+.event_date_02{
+  float: left;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 0;
+  position: relative;
+  margin-right: 20px;
+  padding: 15px 20px 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.event_date_02:before{
+  border-right: 3px solid #dbdbdb;
+  bottom: 0;
+  content: "";
+  height: 46px;
+  position: absolute;
+  right: 0;
+  top: 16px;
+}
+.event_date_03{
+  position:relative;
+  padding-right:23px;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-right: 20px;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+.event_date_03 b{
+  font-weight:700;
+  font-size:20px;
+  display:block;
+}
+.event_date_03:before{
+   border-right: 3px solid #dbdbdb;
+    bottom: 0;
+    content: "";
+    height: 46px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+/*======================================
+    social icons
+========================================*/
+.social-icons{
+  float: left;
+  width:100%;
+}
+.social-icons li{
+  display: inline-block;
+  margin-right:6px;
+}
+.social-icons li:last-child{
+  margin-right:0px;
+}
+.social-icons li a{
+  border: 2px solid #fff;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  height: 35px;
+  line-height: 31px;
+  text-align: center;
+  width: 35px;
+}
+.social-icons li:hover a{
+  background-color:#fff;
+}
+
+/*======================================
+    slider arrows
+========================================*/
+.slick-next.slick-arrow,
+.slick-prev.slick-arrow{
+  border-radius: 100%;
+  bottom: 0;
+  border:1px solid #d4d4d4;
+  font-size: 0;
+  left:0px;
+  right: 0px;
+  line-height: normal;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 99;
+}
+.slick-next.slick-arrow{
+  left:-40px;
+  right:auto;
+}
+.slick-next.slick-arrow:hover,
+.slick-prev.slick-arrow:hover{
+}
+.slick-next.slick-arrow:hover:before,
+.slick-prev.slick-arrow:hover:before{
+  color:#fff;
+}
+.slick-prev.slick-arrow{
+  right: -40px;
+  left:auto;
+}
+.slick-next.slick-arrow:before,
+.slick-prev.slick-arrow:before{
+  border-radius: 100%;
+  bottom: 0;
+  color: #2e2e2e;
+  font-family: fontawesome;
+  font-size: 24px;
+  height: 100%;
+  line-height: 28px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 27px;
+  z-index: -1;
+}
+.slick-next.slick-arrow:before{
+  left:0px;
+  content:"\f104";
+}
+.slick-prev.slick-arrow:before{
+  content:"\f105";
+  right: 0px;
+}
+.widget_post_slider .slick-next.slick-arrow{
+  left:35%;
+  right: auto;
+}
+.widget_post_slider .slick-prev.slick-arrow{
+  right: 35%;
+  left: auto;
+}
+/*======================================
+   total side bar widget
+========================================*/
+.widget_post_content{
+  float: left;
+  width:100%;
+}
+.widget_post_content .eco_post-content p a{
+  color:#2e2e2e;
+}
+.widget_post_content .eco_post-content p{
+  margin-bottom: 0px;
+}
+.widget_post_content .eco_sm_titles{
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  margin-bottom: 27px;
+  padding-bottom: 11px;
+  margin-top: -4px;
+}
+.widget_post_content .eco_sm_titles:before{
+  position: absolute;
+  content:"";
+  bottom:-2px;
+  width:30px;
+  border-radius: 5px;
+  left:0px;
+  border-bottom: 3px solid ;
+}
+.widget_post_content .eco_widget_post li{
+  margin-bottom: 15px;
+}
+.widget_post_content .feature_blog_caption h3{
+  font-size: 28px;
+
+}
+.widget_post_slider{
+  padding-bottom: 60px;
+  float: left;
+  width:100%;
+}
+.widget_post_content .eco-thumb-bg .feature_blog_caption:before{
+  background-image: url(../extra-images/widget-featured_img.jpg);
+}
+.widget_post_content .eco-thumb-bg .feature_blog_caption:after{
+  background-color: #2e2e2e;
+}
+.widget_post_content .eco-thumb-bg .feature_blog_caption{
+  padding: 32px 19px 40px;
+  height: auto;
+}
+.widget_post_content .eco-thumb-bg .feature_blog_caption h5{
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.widget_post_content .progress-wrap{
+  border-radius: 30px;
+  height: 12px;
+  border-width: 3px;
+}
+.widget_post_content .widget_post_slider .progress-wrap{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.widget_post_content .widget_post_slider .progress-names small{
+  font-size: 12px;
+  color:#fff;
+}
+.widget_post_content .eco-thumb-bg .eco-progress-row{
+  margin-bottom: 20px;
+  padding-bottom: 0px;
+}
+.widget_post_content .eco-thumb-bg .feature_blog_caption p{
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+/*======================================
+   total side bar widget
+========================================*/
+.eco_widget_list_style{
+  float: left;
+  width:100%;
+}
+.eco_widget_list_style li{
+  float: left;
+  width:100%;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 12px 0 13px;
+}
+.eco_widget_list_style li:first-child{
+  padding-top: 0px;
+}
+.eco_widget_list_style li:last-child{
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+.eco_widget_list_style li:hover a:before,
+.eco_widget_list_style li:hover a{
+}
+.eco_widget_list_style li a{
+  display: inline-block;
+  width:100%;
+  position: relative;
+  font-weight: 500;
+  color:#636363;
+}
+.eco_widget_list_style li a:before{
+  position: absolute;
+  content:"\f105";
+  top:-3px;
+  right: 0px;
+  color:#636363;
+  font-size: 18px;
+  font-family: fontawesome;
+}
+.eco_widget_list_style li a small{
+  color:#999999;
+  display: inline-block;
+  margin-left: 5px;
+}
+.widget_post_author{
+  float: left;
+  width:100%;
+}
+.widget_authors_posts{
+  float: left;
+  width:100%;
+}
+.widget_authors_posts li{
+  float: left;
+  width:100%;
+  margin-bottom: 20px;
+}
+.widget_authors_posts li:last-child{margin-bottom: 0px;}
+.widget_post_author figure{
+  float: left;
+  width:auto;
+  margin-right: 20px;
+}
+.widget_post_author figure img{
+  border-radius: 4px;
+  width:100%;
+}
+.widget_post_author_content{
+  float: none;
+  width: auto;
+  overflow: hidden;
+  padding: 2px 0px;
+}
+.widget_post_author_content a{
+  font-size: 14px;
+  color:#333333;
+  text-transform: capitalize;
+  display: inline-block;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+.widget_post_author_content p{
+  margin-bottom: 0px;
+  font-size: 13px;
+  color:#636363;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+.widget_post_author_content h6{
+  margin-bottom: 0px;
+  text-transform: uppercase;
+}
+/*======================================
+   total side bar widget
+========================================*/
+.widget_tags ul,
+.widget_tags{
+  float: left;
+  width:100%;
+}
+.widget_tags li{
+  float: left;
+  margin-right: 2px;
+  margin-bottom: 5px;
+}
+.widget_tags li a{
+  display: inline-block;
+  padding: 7px 11.7px;
+  border:2px solid #e0e0e0;
+  color:#636363;
+  background-color: transparent;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+.widget_tags li:hover a{
+  color:#fff;
+  border-color: transparent;
+
+}
+/*======================================
+   rateing stars widget
+========================================*/
+.rateing-starts{
+  height: 15px;
+  width:70px;
+  position: relative;
+  background-image: url(../images/rate.png);
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  text-align: left;
+  overflow: hidden;
+  float: left;
+  margin-bottom: 0;
+  margin-top: 5px;
+  margin-right: 10px; 
+}
+.rateing-star-img{
+  background-image: url(../images/rate02.png);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  height: 15px;
+  z-index: 9;
+  position: absolute;
+}
+/*======================================
+   rateing stars widget ends
+========================================*/
+/*
+=============================================
+	Eco side bar style 02
+=============================================
+*/
+.content_style02 .widget_post_author_content a{
+	margin-bottom: 6px;
+}
+.content_style02 .widget_post_author_content h6 del{
+	display: inline-block;
+}
+/*
+=============================================
+	Eco testimonial style 02
+=============================================
+*/
+.white-page-testimonial{
+	float: left;
+	width:100%;
+}
+.white-page-testimonial .testimonial-information p,
+.white-page-testimonial .eco_testimonial_meta li small{
+	color:#666;
+}
+.testimonial-padding-top{
+	padding-top: 0px;
+}
+/*
+=============================================
+  Eco pop
+=============================================
+*/
+#newsletter-popup {
+  z-index:9000;
+  display:none;
+  top:0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  
+}  
+#newsletter-popup:before{
+  position: absolute;
+  content: "";
+  top:0px;
+  left: 0px;
+  right: 0px;
+  bottom:0px;
+  background-color: #000;
+  opacity: 0.9;
+  min-height: 700px;
+}
+.kode_form_modal_newsletter{
+  margin: 50px 0px;
+}
+.kode_form_modal_newsletter .modal-header .close{
+  background-color: #fff;
+  border-radius: 100%;
+  color: #999;
+  font-size: 16px;
+  font-weight: 100;
+  height: 30px;
+  line-height: 27px;
+  opacity: 1;
+  padding: 0 9px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 30px;
+  z-index: 12;
+}
+
+.kode_form_modal_newsletter .modal-header{
+  padding: 0px;
+  background-color: transparent;
+  box-shadow: none;
+
+}
+
+.kode_form_modal_newsletter .modal-dialog{
+  margin:100px auto;
+  max-width: 430px;
+}
+.kode_form_modal_newsletter .btn-mediem.login_style {
+    display: table-caption;
+    float: none;
+}
+/*=============================================
+          Preloader 
+==============================================*/
+
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff; /* change if the mask should be a color other than white */
+  z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; /* centers the loading animation horizontally on the screen */
+  top:50%; /* centers the loading animation vertically on the screen */
+  background-image:url(../images/status.gif); /* path to your loading animation */
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px; /* is width and height divided by two */
+}

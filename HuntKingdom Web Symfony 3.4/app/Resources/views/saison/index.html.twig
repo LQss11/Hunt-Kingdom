@@ -1,0 +1,38 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}<br>
+    <center><h1>Saisons list</h1></center>
+
+    <a  href="{{ path('saison_new') }}"><button class="btn btn-block bg-gradient-success">Ajouter une Saison</button></a>
+    </br>
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Idsaison</th>
+                <th>Nom</th>
+                <th>Periode</th>
+                <th>Mode</th>
+                <th>show</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for saison in saisons %}
+            <tr>
+                <td><a href="{{ path('saison_show', { 'idSaison': saison.idSaison }) }}">{{ saison.idSaison }}</a></td>
+                <td>{{ saison.nom }}</td>
+                <td>{{ saison.periode }}</td>
+                <td>{{ saison.mode }}</td>
+                <td><a class="btn btn-primary btn-sm" href="{{ path('saison_show', { 'idSaison': saison.idSaison }) }}">
+                                <i class="fas fa-folder"></i>show</a></td>
+                <td><a  class="btn btn-info btn-sm" href="{{ path('saison_edit', { 'idSaison': saison.idSaison }) }}">
+                                <i class="fas fa-pencil-alt"></i>edit</a></td>
+                <td><a class="btn btn-danger btn-sm" href="{{ path('saison_delete', { 'idSaison': saison.idSaison }) }}">
+                        delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

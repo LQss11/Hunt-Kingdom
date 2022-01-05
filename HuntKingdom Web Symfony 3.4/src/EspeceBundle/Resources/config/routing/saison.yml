@@ -1,0 +1,33 @@
+saison_index:
+    path:     /
+    defaults: { _controller: "EspeceBundle:saison:index" }
+    methods:  GET
+
+saison_show:
+    path:     /{idSaison}/show
+    defaults: { _controller: "EspeceBundle:saison:show" }
+    methods:  GET
+
+saison_new:
+    path:     /new
+    defaults: { _controller: "EspeceBundle:saison:new" }
+    methods:  [GET, POST]
+
+saison_edit:
+    path:     /{idSaison}/edit
+    defaults: { _controller: "EspeceBundle:saison:edit" }
+    methods:  [GET, POST]
+
+saison_delete:
+    path:     /{idSaison}/delete
+    defaults: { _controller: "EspeceBundle:saison:delete" }
+    methods:  DELETE
+
+saison_all:
+    path:     /all
+    defaults: { _controller: "EspeceBundle:saison:all" }
+    methods:  GET
+
+saison_add:
+    path:     /add/{nom}/{periode}/{mode}
+    defaults: { _controller: EspeceBundle:saison:add}

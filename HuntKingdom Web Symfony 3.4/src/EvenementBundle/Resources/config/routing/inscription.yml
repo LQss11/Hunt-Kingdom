@@ -1,0 +1,36 @@
+inscription_index:
+    path:     /
+    defaults: { _controller: "EvenementBundle:Inscription:index" }
+    methods:  GET
+
+inscription_show:
+    path:     /{id}/show
+    defaults: { _controller: "EvenementBundle:Inscription:show" }
+    methods:  GET
+
+inscription_new:
+    path:     /new
+    defaults: { _controller: "EvenementBundle:Inscription:new" }
+    methods:  [GET, POST]
+
+inscription_newinscrit:
+    path:     /newinscrit/{id}
+    defaults: { _controller: "EvenementBundle:Inscription:inscrit" }
+    methods:  [GET, POST]
+
+inscription_annulerinscrit:
+    path:   /annulerinscrit/{id}
+    defaults: { _controller: "EvenementBundle:Inscription:annulerinscrit" }
+    methods:  [GET, POST]
+
+inscription_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EvenementBundle:Inscription:edit" }
+    methods:  [GET, POST]
+
+inscription_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EvenementBundle:Inscription:delete" }
+    methods:  DELETE
+
+

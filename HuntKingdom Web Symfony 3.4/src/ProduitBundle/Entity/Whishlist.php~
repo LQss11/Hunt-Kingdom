@@ -1,0 +1,45 @@
+<?php
+
+namespace ProduitBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Whishlist
+ *
+ * @ORM\Table(name="whishlist")
+ * @ORM\Entity(repositoryClass="ProduitBundle\Repository\WhishlistRepository")
+ */
+class Whishlist
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Produit")
+     * @ORM\JoinColumn(name="idProduit", referencedColumnName="id")
+     */
+    private $idProduit;
+    /**
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="idClient", referencedColumnName="id")
+     */
+    private $idClient;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+

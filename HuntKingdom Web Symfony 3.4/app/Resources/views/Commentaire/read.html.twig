@@ -1,0 +1,29 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <div class="content-wrapper">
+
+    <table class="table table-bordered" id="dataTable" width="100%" >
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">contenu</th>
+            <th scope="col">date</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        {% for c in  commentaire %}
+
+            <tr>
+                <td> {{ c.id }}</td>
+                <td> {{ c.contenu }}</td>
+                <td> {{ c.dateComnt|date }}</td>
+
+                <td><a href="{{ path('delete_page',{'id':c.id}) }}" >
+                        <button>Supprimer</button>
+                    </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

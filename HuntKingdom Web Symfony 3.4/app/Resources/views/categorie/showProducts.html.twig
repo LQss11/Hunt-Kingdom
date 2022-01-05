@@ -1,0 +1,57 @@
+{% extends 'Back/Back.html.twig' %}
+
+{% block content %}
+    <h1>Product</h1>
+    <a href="{{ path('categorie_index') }}"><button class="btn btn-warning toastsDefaultWarning">Return to Categorie Display</button></a>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Idfournisseur</th>
+            <th>Promo</th>
+            <th>Garantie</th>
+            <th>Show</th>
+            <th>Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for produit in products %}
+            <tr>
+                <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.quantite }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.idFournisseur }}</td>
+                <td>{{ produit.etatPromo }}</td>
+                <td>{{ produit.garantie }}</td>
+                <td><a class="btn btn-primary btn-sm" href="{{ path('produit_show', { 'id': produit.id }) }}"><i class="fas fa-folder">
+                        </i>show</a></td>
+                <td><a class="btn btn-info btn-sm" href="{{ path('produit_edit', { 'id': produit.id }) }}"><i class="fas fa-pencil-alt">
+                        </i>edit</a></td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Idfournisseur</th>
+            <th>Promo</th>
+            <th>Garantie</th>
+            <th>Show</th>
+            <th>Edit</th>
+        </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
