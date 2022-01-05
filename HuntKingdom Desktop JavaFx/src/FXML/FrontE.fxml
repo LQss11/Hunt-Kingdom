@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="859.0" prefWidth="1100.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FrontEController">
+    <children>
+      <VBox prefHeight="614.0" prefWidth="1100.0" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label prefHeight="56.0" prefWidth="448.0" text="Especes de HuntKingdom" textFill="#2c6b68">
+               <font>
+                  <Font size="39.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="350.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                    <Button fx:id="button" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="133.0" text="Afficher" textFill="#2f9a5e">
+                     <HBox.margin>
+                        <Insets top="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="Laffiche" prefHeight="327.0" prefWidth="562.0">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Pagination fx:id="pagination" cache="true" layoutX="355.0" layoutY="566.0" maxPageIndicatorCount="5" pageCount="0" prefHeight="323.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="355.0" />
+    </children>
+</AnchorPane>

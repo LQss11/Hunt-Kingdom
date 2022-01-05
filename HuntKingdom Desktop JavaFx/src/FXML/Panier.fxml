@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PanierController">
+    
+    <children>
+      <Label layoutX="311.0" layoutY="27.0" prefHeight="31.0" prefWidth="130.0" text="Votre Panier ">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="lp" layoutX="32.0" layoutY="74.0" prefHeight="312.0" prefWidth="415.0" />
+      <VBox fx:id="det" layoutX="473.0" layoutY="99.0" prefHeight="229.0" prefWidth="212.0" />
+      <JFXButton buttonType="RAISED" layoutX="459.0" layoutY="354.0" onAction="#Passercmd" prefHeight="31.0" prefWidth="236.0" style="-fx-background-color: #000000;" text="Passer la commande" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="31.0" layoutY="30.0"               style="-fx-background-color: #000000;" text="&lt; Store" textFill="#fcfafa" />
+      <Label layoutX="45.0" layoutY="417.0" text="Total : ">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="tot" layoutX="115.0" layoutY="417.0" prefHeight="27.0" prefWidth="97.0" textFill="#dd3030">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+    
+</AnchorPane>
